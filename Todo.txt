@@ -27,3 +27,4 @@ Ausweis
 Fahrzeug ohne Versicherung wieder in der Garage
 Spectate Map Marker
 zelle_5 gibt es nicht
+Beim joinen 400x Speck (steht aber nicht in der DB) -> bei Fatum

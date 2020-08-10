@@ -21,4 +21,4 @@ if(!_action) exitWith {};
 [player, _vUID, _insurancePrice] remoteExec ["HC_fnc_insureVehicle", HC_LIFE];
 
 BANK = BANK - _insurancePrice;
-closeDialog 0;
+[player] remoteExecCall ["HC_fnc_getInsuranceVehicles",HC_Life];

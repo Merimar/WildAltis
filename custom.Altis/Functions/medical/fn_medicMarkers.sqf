@@ -15,11 +15,13 @@ if (visibleMap) then {
 
     {
 		private _lootInformation = _x getVariable ["Loot_Information", []];
+		if(count _lootInformation > 0) then {
         _marker = createMarkerLocal [format["%1_dead_marker",_x], visiblePosition _x];
         _marker setMarkerColorLocal "ColorBlack";
         _marker setMarkerTypeLocal "loc_Hospital";
         _marker setMarkerTextLocal format ["%1", _lootInformation param [1, "Unbekannt"]];
         _markers pushBack [_marker, _x];
+		};
     }forEach _units;
 
     while {visibleMap} do {

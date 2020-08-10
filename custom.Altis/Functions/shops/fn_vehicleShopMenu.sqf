@@ -12,3 +12,4 @@ life_veh_money = [0, 1, 1, 1, 1];
 [1] call life_fnc_vehicleSteps;
 
 ((findDisplay 4450) displayCtrl 4451) lbSetCurSel 0;
+showChat false;
