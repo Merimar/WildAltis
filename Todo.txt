@@ -1,0 +1,28 @@
+Im Schliesfach sind 2 Dinger vertauscht von den Aufsätzen
+Locker
+
+Orange: [0.835, 0.462, 0.023, 0.3]
+Pink: [0.69, 0.313, 0.862, 0.3]
+
+Zeus Tempel Schild
+Zeus Tempel Marker
+FAQ neu schreiben
+Vehicle Shop zurück geht nicht richtig
+Baum neben Telos HQ
+Autos nach reloggen nicht mehr abschliesen
+Bootsgarage gibt es nicht
+Spectate
+In den Logs immer Bank und Cash angeben
+medic air HQ ATM geht nicht
+Medic air hq schild keine Textur
+Cop keinen normalen 6,5 schalli
+Gang Rang Welcher Rang was für Rechte anzeigen
+Hexagons im Helikopter buggen (fliegen hoch und runter)
+Hexagons Meteranzahl hinzufügen
+Wenn man Schlüssel bekommt steht da irgendein Fahrzeugcode anstatt zum Beispiel Hummingbird
+Große Tower entfernen
+Wenn man HP verliert und über z.b. 80 Trinken und Essen hat ( Automatische Regeneration) keiner hat irgendwie Bock weil man 4 HP wegen Busch verliert für eine Minute diese fette Verbandskasten zu geben.
+Spectaten
+Ausweis
+Fahrzeug ohne Versicherung wieder in der Garage
+Spectate Map Marker
