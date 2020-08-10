@@ -1,0 +1,1 @@
+[CRIME_LIST] remoteExec ["life_fnc_fahndungGetUpdate", remoteExecutedOwner];

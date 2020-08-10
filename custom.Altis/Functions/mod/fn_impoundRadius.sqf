@@ -1,0 +1,1 @@
+[player] remoteExec ["HC_fnc_adminImpound", HC_LIFE];

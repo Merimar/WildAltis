@@ -1,0 +1,1 @@
+if(isNull findDisplay 4150) then {createDialog "GangCreate";};

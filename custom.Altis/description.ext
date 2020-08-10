@@ -1,0 +1,57 @@
+author = "Merimar";
+onLoadName = "Wild-Altis";
+onLoadMission = "Wir wünschen dir viel Spaß beim Spielen!";
+onLoadIntro = "www.Wild-Altis.de";
+loadScreen = "Images\Map\Loading.jpg";
+
+class Header {
+	gameType = RPG;
+	minPlayers = 1;
+	maxPlayers = 262;
+};
+
+briefing = 0;
+saving = 0;
+persistent = 1;
+joinUnassigned = 1;
+respawn = 3;
+respawndelay = 0;
+disabledAI = 1;
+disableChannels[] = {{0,true,true},{1,false,true},{2,true,true}};
+respawnDialog = 0;
+allowFunctionsRecompile = 0;
+respawnOnStart = -1;
+disableRandomization[] = {"All"};
+showHUD[] = {true,true,false,false,true,false,false,true};
+enableDebugConsole[] = { "76561198180462113" }; // admins and players with their UID in this list have access
+wreckLimit = 1;
+wreckRemovalMinTime = 1;
+wreckRemovalMaxTime = 2;
+corpseLimit = 150;
+corpseRemovalMinTime = 999;
+corpseRemovalMaxTime = 9999;
+unsafeCVL = 1;
+
+#include "Configs\Config_Master.hpp"
+#include "Dialog\MasterHandler.hpp"
+#include "Dialog\titles\Config_RscTitles.hpp"
+
+class CfgDisabledCommands
+{
+    class SETOBJECTTEXTUREGLOBAL
+    {
+        class SYNTAX1
+        {
+            targets[] = {1,0,1};
+            args[] = {{"OBJECT"},{"ARRAY"}};
+        };
+    };
+	
+	class DIAG_CODEPERFORMANCE {
+		class SYNTAX1 {
+			targets[] = {0, 0, 0};
+			args[] = {{}, {"ARRAY"}};
+		};
+	};
+
+};
