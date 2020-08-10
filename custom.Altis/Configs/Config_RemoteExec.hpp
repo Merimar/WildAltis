@@ -12,11 +12,12 @@ class CfgRemoteExec {
         mode = 1;
         jip = 1;
 		
+		/*
 		class BIS_fnc_effectKilledAirDestruction	{ allowedTargets = 0; jip = 0; };
 		class BIS_fnc_effectKilledSecondaries		{ allowedTargets = 0; jip = 0; };
 		class BIS_fnc_objectVar						{ allowedTargets = 0; jip = 0; };
 		class BIS_fnc_setCustomSoundController		{ allowedTargets = 0; jip = 0; };
-		class BIS_fnc_debugConsoleExec       		{ allowedTargets = 0; jip = 0; };
+		*/
 		
 		//--------------------------------------------------------------------------------------------CLIENT----------------------------------------------------------------------------------------
 		
@@ -381,7 +382,6 @@ class CfgRemoteExec {
 		
 		//AC
         F(TON_fnc_adminInvisible,SERVER)
-		F(TON_fnc_localEH,SERVER)
     };
 	
 	class Commands {
