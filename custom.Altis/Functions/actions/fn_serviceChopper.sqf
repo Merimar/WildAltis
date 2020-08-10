@@ -18,6 +18,13 @@ _cP = 0.01;
 for "_i" from 0 to 1 step 0 do {
     sleep  0.2;
     _cP = _cP + 0.01;
+if (isNull _ui) then {
+	5 cutRsc ["life_progress","PLAIN"];
+	_ui = uiNamespace getVariable "life_progress";
+	_progress = _ui displayCtrl 38201;
+	_pgText = _ui displayCtrl 38202;
+};
+
     _progress progressSetPosition _cP;
     _pgText ctrlSetText format["%3 (%1%2)...", round(_cP * 100), "%", _title];
     if (_cP >= 1 || life_isDead || isNull _vehicle || {!(alive _vehicle) || _vehicle distance SERVICE_CHOPPER > 20}) exitWith {};

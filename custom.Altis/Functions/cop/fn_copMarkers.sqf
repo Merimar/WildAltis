@@ -3,7 +3,7 @@ private _cops = [];
 
 sleep 0.5;
 if (visibleMap) then {
-	_cops = playableUnits select {(side _x) isEqualTo west && !(_x getVariable ["restrained", false]) && !(_x getVariable ["isDead", false])};
+	_cops = playableUnits select {isNull (attachedTo _x) && (side _x) isEqualTo west && !(_x getVariable ["restrained", false]) && !(_x getVariable ["isDead", false])};
 	_markers = [];
     {
         
