@@ -90,7 +90,7 @@ switch (_messageType) do {
 	//Admin an Spieler
 	case 9 : {
 		_target = -2;
-		_targetName = "alle Spieler";
+		_targetName = "den Spieler";
 	};
 
 

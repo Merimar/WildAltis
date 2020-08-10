@@ -19,8 +19,8 @@ private _msg = format ["Ein Fahrzeug ist explodiert (OWNER: %1 OWNER_SIDE: %2 VE
 ["VehicleDestroyLog", _msg] call HC_fnc_Log;
 
 if(!("'" in str _pID || "'" in str _pSide || "'" in str _vUID)) then {
-private _query = if(_insurance) then {format["UPDATE vehicles SET insurance = '0' AND active = '0' WHERE owner_id = '%1' AND side_id = '%2' AND vuid = '%3' AND deleted_at IS NULL", _pID, _pSideID, _vUID];}else {format["UPDATE vehicles SET active = '0' AND deleted_at = now() WHERE owner_id = '%1' AND side_id = '%2' AND vuid = '%3' AND deleted_at IS NULL", _pID, _pSideID, _vUID];};
-[_query,1] call HC_fnc_asyncCall;
+private _query = if(_insurance) then {format["UPDATE vehicles SET insurance = '0', active = '0' WHERE owner_id = '%1' AND side_id = '%2' AND vuid = '%3' AND deleted_at IS NULL", _pID, _pSideID, _vUID];}else {format["UPDATE vehicles SET active = '0', deleted_at = now() WHERE owner_id = '%1' AND side_id = '%2' AND vuid = '%3' AND deleted_at IS NULL", _pID, _pSideID, _vUID];};
+[_query, 1] call HC_fnc_asyncCall;
 };
 
 sleep 60;
