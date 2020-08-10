@@ -151,7 +151,6 @@ _btnJoin ctrlShow true;
 
 UZ = 5;
 
-/*
 [] spawn {
 for "_int" from 0 to 1 step 0 do {
 private _str = format ["%1 = %2", "TZ", "UZ"];
@@ -160,7 +159,6 @@ call compile _str;
 sleep (3 * 60);
 };
 };
-*/
 
 [] spawn {
 while {true} do {

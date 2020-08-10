@@ -6,7 +6,7 @@ if(remoteExecutedOwner != 2) exitWith {
 private _remInfo = [remoteExecutedOwner] call HC_fnc_getPlayerByID;
 private _remSuccess = _remInfo select 1;
 private _rem = _remInfo select 0;
-diag_log format ["DISCONNECT HACK: %1 - %2", remoteExecutedOwner, _this];
+diag_log format ["CONNECT HACK: %1 - %2", remoteExecutedOwner, _this];
 if(!_remSuccess) exitWith {};
 diag_log format ["Spieler: %1 (%2 - %3)", name _rem, getPlayerUID _rem, side _rem];
 };

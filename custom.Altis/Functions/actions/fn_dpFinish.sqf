@@ -9,7 +9,7 @@ private _price = round(5.0 * (DP_MISSION_START distance _mission));
 private _extraMoney = (["farmPost"] call life_fnc_getSkillAdvantage) * 1000;
 _price = _price + _extraMoney;
 
-["DeliverySucceeded",[format["Du hast €%1 verdient (+€%2 durch Bonus)", [_price - _extraMoney] call life_fnc_numberText], [_extraMoney] call life_fnc_numberText]]] call bis_fnc_showNotification;
+["DeliverySucceeded",[format["Du hast €%1 verdient (+€%2 durch Bonus)", [_price - _extraMoney] call life_fnc_numberText, [_extraMoney] call life_fnc_numberText]]] call bis_fnc_showNotification;
 DP_MISSION_TASK setTaskState "Succeeded";
 player removeSimpleTask DP_MISSION_TASK;
 CASH = CASH + _price;

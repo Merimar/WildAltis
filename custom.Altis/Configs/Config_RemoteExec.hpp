@@ -15,9 +15,9 @@ class CfgRemoteExec {
 		/*
 		class BIS_fnc_effectKilledAirDestruction	{ allowedTargets = 0; jip = 0; };
 		class BIS_fnc_effectKilledSecondaries		{ allowedTargets = 0; jip = 0; };
+		*/
 		class BIS_fnc_objectVar						{ allowedTargets = 0; jip = 0; };
 		class BIS_fnc_setCustomSoundController		{ allowedTargets = 0; jip = 0; };
-		*/
 		
 		//--------------------------------------------------------------------------------------------CLIENT----------------------------------------------------------------------------------------
 		
@@ -374,6 +374,9 @@ class CfgRemoteExec {
 		F(HC_fnc_boltZenti,HC)
 		F(HC_fnc_chargeZenti,HC)
 		F(HC_fnc_sellZenti,HC)
+		
+		//Virtus
+		F(HC_fnc_vituscrate,HC)
 		
 		//Transaktionen
 		F(HC_fnc_removeItemInteraction,HC)

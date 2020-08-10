@@ -23,7 +23,6 @@ allowFunctionsRecompile = 0;
 respawnOnStart = -1;
 disableRandomization[] = {"All"};
 showHUD[] = {true,true,false,false,true,false,false,true};
-enableDebugConsole[] = { "76561198180462113" }; // admins and players with their UID in this list have access
 wreckLimit = 1;
 wreckRemovalMinTime = 1;
 wreckRemovalMaxTime = 2;
@@ -51,6 +50,12 @@ class CfgDisabledCommands
 		class SYNTAX1 {
 			targets[] = {0, 0, 0};
 			args[] = {{}, {"ARRAY"}};
+		};
+	};
+	
+	class BIS_fnc_debugConsoleExec {
+		class SYNTAX1 {
+			targets[] = {0, 0, 0};
 		};
 	};
 

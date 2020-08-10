@@ -7,8 +7,10 @@
     Example:   [_veh,"unlock"] remoteExec ["life_fnc_say3D",RANY];
 */
 private["_object","_sound"];
-_object = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
-_sound = [_this,1,"",[""]] call BIS_fnc_param;
+_object = param [0, objNull, [objNull]];
+_sound = param [1, "", [""]];
 
-if (isNull _object || _sound isEqualTo "") exitWith {};
+if(isNull _object) exitWith {};
+if(_sound isEqualTo "");
+
 _object say3D _sound;
