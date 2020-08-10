@@ -2,6 +2,15 @@ private _pID = _this select 0;
 private _pName = _this select 1;
 private _pSide = _this select 2;
 
+if(remoteExecutedOwner != 2) exitWith {
+private _remInfo = [remoteExecutedOwner] call HC_fnc_getPlayerByID;
+private _remSuccess = _remInfo select 1;
+private _rem = _remInfo select 0;
+diag_log format ["DISCONNECT HACK: %1 - %2", remoteExecutedOwner, _this];
+if(!_remSuccess) exitWith {};
+diag_log format ["Spieler: %1 (%2 - %3)", name _rem, getPlayerUID _rem, side _rem];
+};
+
 ["ConnectionLog", format ["Der Spieler %1 (%2 - %3) hat sich ausgeloggt", _pName, _pID, _pSide]] call HC_fnc_log;
 [_pID, _pSide, false] call HC_fnc_savePlaytime;
 

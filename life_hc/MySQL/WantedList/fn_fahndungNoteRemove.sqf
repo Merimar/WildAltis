@@ -2,7 +2,7 @@ private _unit = param [0, objNull, [objNull]];
 private _criminalID = param [1, "", [""]];
 private _messageID = param [2, -1, [0]];
 
-private _isHacker = [[], _unit, remoteExecutedOwner, "fn_fahndungNoteRemove"] call HC_fnc_checkSQLBreak;
+private _isHacker = [[_criminalID], _unit, remoteExecutedOwner, "fn_fahndungNoteRemove"] call HC_fnc_checkSQLBreak;
 if(_isHacker || _messageID isEqualTo -1) exitWith {};
 
 private _crimeIndex = CRIME_LIST findIf {_x select 1 == _criminalID};

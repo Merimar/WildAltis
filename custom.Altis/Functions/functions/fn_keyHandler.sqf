@@ -299,8 +299,10 @@ switch (_code) do {
 				
 				if(_lockState isEqualTo 0) then {
 					[_vehicle, "unlock"] remoteExec ["life_fnc_say3D", -2];
+					systemChat "Fahrzeug aufgeschlossen";
 				}else {
 					[_vehicle, "lock"] remoteExec ["life_fnc_say3D", -2];
+					systemChat "Fahrzeug abgeschlossen";
 				};
 			};
     };

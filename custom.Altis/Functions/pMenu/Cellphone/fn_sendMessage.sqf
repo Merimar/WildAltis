@@ -89,8 +89,11 @@ switch (_messageType) do {
 	
 	//Admin an Spieler
 	case 9 : {
-		_target = -2;
-		_targetName = "den Spieler";
+		if(_index isEqualTo -1) exitWith {_exit = true;};
+		private _unit = call compile format ["%1", _unitData];
+		if(isNull _unit) exitWith {_exit = true;};
+		_target = _unit;
+		_targetName = name _unit;
 	};
 
 
