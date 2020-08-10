@@ -36,7 +36,7 @@ switch (_outcome) do {
 		private _house = selectRandom _housePositions;
 		private _bPos = [_house] call life_fnc_getBuildingPositions;
 		{_bPos = _bPos - [(_house buildingPos _x)];}forEach (_house getVariable ["slots",[]]);
-		player setPosATL (selectRandom _bPos);
+		_unit setPosATL (selectRandom _bPos);
 	};
 };
 
