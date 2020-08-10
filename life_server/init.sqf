@@ -110,7 +110,7 @@ waitUntil {life_map_loaded};
 diag_log "Map loaded succesfully";
 
 [] execVM "\life_server\sendTimeUpdate.sqf"; //Zeit Update für Clients
-[] execVM "\life_server\initTime.sqf"; //Restart Zeit Broadcast
+//[] execVM "\life_server\initTime.sqf"; //Restart Zeit Broadcast
 [] execVM "\life_server\initTimeModule.sqf"; //Time Modul
 [] execVM "\life_server\initWeather.sqf"; //Weather Modul
 [] execVM "\life_server\initVehicleLocal.sqf"; //Weather Modul
