@@ -109,7 +109,7 @@ switch (_code) do {
 	case 41: {
 		SHOW_NAMES = !SHOW_NAMES;
 		if(!(isNil "NAME_THREAD")) then {terminate NAME_THREAD;};
-		NAME_THREAD = [] spawn {sleep 10; SHOW_NAMES = false;};
+		NAME_THREAD = [] spawn {sleep 15; SHOW_NAMES = false;};
     };
 	
 	
