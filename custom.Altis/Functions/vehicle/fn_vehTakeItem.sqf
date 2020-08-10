@@ -24,7 +24,7 @@ private _diff = floor ((life_maxWeight - life_carryWeight) / _itemWeight);
 if(_diff <= 0) exitWith {["", "Dein Inventar ist voll"] spawn life_fnc_message;};
 if(_amount > _diff) then {_amount = _diff;};
 
-if(time - life_action_delay < 3) exitWith {["", "Du kannst nur alle 3 Sekunden etwas auslagern"] spawn life_fnc_message;};
+if(time - life_action_delay < 1) exitWith {["", "Du kannst nur jede Sekunden etwas auslagern"] spawn life_fnc_message;};
 life_action_delay = time;
 
 if(!([true, _className, _amount] call life_fnc_handleInv)) exitWith {["", "Du hast nicht genug Platz"] spawn life_fnc_message;};
