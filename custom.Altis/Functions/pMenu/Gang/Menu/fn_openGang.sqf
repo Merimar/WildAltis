@@ -38,6 +38,14 @@ lbClear _combo;
 lbClear _list;
 for "_int" from 0 to 6 step 1 do {_combo lbAdd str _int;};
 
+_combo lbSetToolTip [0, "RECHTE: -"];
+_combo lbSetToolTip [1, "RECHTE: Einladen"];
+_combo lbSetToolTip [2, "RECHTE: Einladen/Upgrade"];
+_combo lbSetToolTip [3, "RECHTE: Einladen/Upgrade/Buffs"];
+_combo lbSetToolTip [4, "RECHTE: Einladen/Upgrade/Buffs/Haus/Offline"];
+_combo lbSetToolTip [5, "RECHTE: Einladen/Upgrade/Buffs/Haus/Offline/Kick/Promote"];
+_combo lbSetToolTip [6, "RECHTE: Einladen/Upgrade/Buffs/Haus/Offline/Kick/Promote/Disband"];
+
 {
 private _xRank = [_x, _group] call life_fnc_getGangRank;
 if(_x != player) then {

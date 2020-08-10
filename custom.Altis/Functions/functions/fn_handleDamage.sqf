@@ -16,11 +16,11 @@ if((vehicle _source) != _source && _source isKindOf "Man" && _unit != _source) t
 
 if(!(isNull _source)) then {
 private _curWep = currentWeapon _source;
-if(!(_projectile in ["B_9x21_Ball", "B_9x21_Ball_Tracer_Red", "B_9x21_Ball_Tracer_Green", "B_9x21_Ball_Tracer_Yellow"])) exitWith {};
-if(_unit getVariable ["Revive", false] || !(_curWep in ["hgun_P07_F", "hgun_P07_khk_F", "hgun_P07_snds_F", "hgun_P07_khk_Snds_F"]) || playerSide == west) exitWith {};
+if(!(isNull objectParent _source)) exitWith {};
+if(!(_curWep in ["hgun_P07_F", "hgun_P07_khk_F", "hgun_P07_snds_F", "hgun_P07_khk_Snds_F"])) exitWith {};
 _damage = getDammage _unit;
 
-if(life_istazed || life_isknocked || _unit distance _source > 35 || ((side _unit) isEqualTo west && (side _source) isEqualTo west)) exitWith {};
+if(life_istazed || life_isknocked || _unit distance _source > 35 || ((side _unit) == west && (side _source) == west)) exitWith {};
 if(isNull objectParent player) then {
 if(typeOf (vehicle player) == "B_Quadbike_01_F") then {
 player action ["Eject",vehicle player];
