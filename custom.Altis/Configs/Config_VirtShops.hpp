@@ -2,7 +2,7 @@ class VirtualShops {
 	class civ {
 		name = "Markt";
 		condition = "true";
-		items[] = { "bacon", "apple", "bananen", "pickaxe", "defibrilator", "adrenalin", "fuelFull", "waterBottle", "steak", "redgull", "firstaidkit", "pfirsich", "kleidungP", "traubenP"};
+		items[] = { "bacon", "apple", "bananen", "pickaxe", "defibrilator", "adrenalin", "fuelFull", "waterBottle", "steak", "redgull", "firstaidkit", "medikit", "pfirsich", "kleidungP", "traubenP"};
 	};
 
 	class kneipe {
@@ -14,25 +14,25 @@ class VirtualShops {
 	class med {
 		name = "Medic Shop";
 		condition = "true";
-		items[] = { "bacon", "waterBottle", "apple", "pfirsich", "fuelFull", "lockpick", "coffee", "firstaidkit", "redgull", "donuts", "steak", "medmarihuana", "adrenalin", "defibrilator"};
+		items[] = { "bacon", "waterBottle", "apple", "pfirsich", "fuelFull", "lockpick", "coffee", "firstaidkit", "medikit", "redgull", "donuts", "steak", "medmarihuana", "adrenalin", "defibrilator"};
 	};
 
 	class reb {
 		name = "Rebellen Markt";
 		condition = "true";
-		items[] = { "bacon", "waterBottle", "apple", "steak", "lockpick", "pickaxe", "fuelFull", "boltcutter", "redgull", "kabelbinder", "blastingcharge", "defibrilator", "firstaidkit", "adrenalin"};
+		items[] = { "bacon", "waterBottle", "apple", "steak", "lockpick", "pickaxe", "fuelFull", "boltcutter", "redgull", "kabelbinder", "blastingcharge", "defibrilator", "firstaidkit", "medikit", "adrenalin"};
 	};
 
 	class hideout {
 		name = "Hideout Markt";
 		condition = "true";
-		items[] = { "bacon", "waterBottle", "apple", "steak", "lockpick", "pickaxe", "fuelFull", "boltcutter", "redgull", "kabelbinder", "blastingcharge", "defibrilator", "firstaidkit", "adrenalin"};
+		items[] = { "bacon", "waterBottle", "apple", "steak", "lockpick", "pickaxe", "fuelFull", "boltcutter", "redgull", "kabelbinder", "blastingcharge", "defibrilator", "firstaidkit", "medikit", "adrenalin"};
 	};
 
 	class cop {
 		name = "Polizei Laden";
 		condition = "true";
-		items[] = { "donuts", "defibrilator", "coffee", "waterBottle", "apple", "fuelFull", "redgull", "spikeStrip", "defusekit", "firstaidkit", "lockpick", "schloss", "adrenalin"};
+		items[] = { "donuts", "defibrilator", "coffee", "waterBottle", "apple", "fuelFull", "redgull", "spikeStrip", "defusekit", "firstaidkit", "medikit", "lockpick", "schloss", "adrenalin"};
 	};
 
 	class drugdealer {
