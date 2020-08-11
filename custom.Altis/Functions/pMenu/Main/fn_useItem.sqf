@@ -102,14 +102,6 @@ switch (true) do {
 			[cursorObject] spawn life_fnc_defi;
     };
 	
-	case (_item isEqualTo "card"): {
-        {_x setVariable ["bis_disabled_Door_1", 0];}foreach [zelle_1, zelle_2, zelle_3, zelle_4, zelle_5, schranke_1, schranke_2, schranke_3, schranke_4, schranke_5, schranke_6, schranke_7, schranke_8];
-		if(!([false, _item, 1] call life_fnc_handleInv)) exitWith {};
-		_removeItem = true;
-		["Du hast nun Zugriff auf alle Schranken und Zellen!", false, "slow"] call life_fnc_showNotification;
-		["Diese Keykarte gibt dir Zugriff über alle Zellentüren und Schranken in den Polizei HQ's.", "Z Inv"] spawn life_fnc_message;
-    };
-	
     case (_item isEqualTo "spikeStrip"): {
         if(player getVariable ["nagelbander", false]) exitWith {}; 
         if(!([false, _item, 1] call life_fnc_handleInv)) exitWith {};

@@ -2,7 +2,6 @@ Im Schliesfach sind 2 Dinger vertauscht von den Aufsätzen
 Zeus Tempel Schild
 In den Logs immer Bank und Cash angeben
 Medic air hq schild keine Textur
-Cop keinen normalen 6,5 schalli
 Hexagons im Helikopter buggen (fliegen hoch und runter)
 Hexagons Meteranzahl hinzufügen
 Ausweis

@@ -9,7 +9,9 @@ private _vehicleData = _vehicle getVariable ["vehicle_info_owners", []];
 private _vehicleName = FETCH_CONFIG2(getText,"CfgVehicles",(typeOf _vehicle),"displayName");
 private _dbInfo = _vehicle getVariable ["dbInfo", []];
 
-if(count _vehicleData isEqualTo 0 || count _dbInfo isEqualTo 0) exitWith {};
+private _rent = _vehicle getVariable ["rent", false];
+
+if((count _vehicleData isEqualTo 0 || count _dbInfo isEqualTo 0) && !_rent) exitWith {};
 private _vehSide = _dbInfo select 1;
 
 private _notification = if(playerSide isEqualTo west) then {"Polizei"}  else {"Feuerwehr"};
