@@ -94,7 +94,11 @@ switch (true) do {
 	
 	case (_item isEqualTo "firstaidkit") : {
 		closeDialog 0;
-		[] spawn life_fnc_healAction;
+		if((player getHitPointDamage "hitLegs") > 0 || (damage player) > (["heal"] call life_fnc_getSkillAdvantage)) then {
+			[] spawn life_fnc_healAction;
+		}else {
+			["", "Du bist schon gesund!"] spawn life_fnc_message;
+		};
 	};
 	
 	case (_item == "defibrilator"): {

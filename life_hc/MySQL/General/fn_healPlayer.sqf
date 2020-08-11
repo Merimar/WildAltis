@@ -26,7 +26,7 @@ if(isNull _healPlayer) then {
 private _prevDamage = getDammage _unit;
 _unit setDamage 0;
 _unit setDammage _prevDamage;
-if(_prevDamage > _healAmount) exitWith {};
+if(_prevDamage < _healAmount) exitWith {};
 _unit setDamage _healAmount;
 }else {
 _healPlayer setDamage _healAmount;
