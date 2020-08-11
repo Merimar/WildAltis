@@ -63,9 +63,11 @@ life_veh_shop set [4, 2];
 private _vehicle = _step1_vehicle param [0, ""];
 private _skins = "true" configClasses (missionConfigFile >> "LifeCfgVehicles" >> _vehicle >> "textures");
 
+if(playerSide in [civilian, east]) then {
 _control lbAdd "Kein Skin";
 _control lbSetData [(lbSize _control)-1, "-1"];
 _control lbSetValue [(lbSize _control)-1, 1];
+};
 
 {
 private _texture = getText (_x >> "name");
@@ -77,6 +79,12 @@ _control lbSetData [(lbSize _control)-1, configName _x];
 _control lbSetValue [(lbSize _control)-1, _forEachIndex];
 };
 }forEach _skins;
+
+if(lbSize _control isEqualTo 0 && playerSide in [west, independent]) then {
+_control lbAdd "Kein Skin";
+_control lbSetData [(lbSize _control)-1, "-1"];
+_control lbSetValue [(lbSize _control)-1, 1];
+};
 
 _progress progressSetPosition 0.4;
 _progressText ctrlSetText "Skin aussuchen (2/5) ...";

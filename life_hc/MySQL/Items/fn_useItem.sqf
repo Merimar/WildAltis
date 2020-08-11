@@ -59,5 +59,11 @@ if(_item == "fuelFull") then {
 [getPlayerUID _unit, side _unit, "fuelEmpty", 1, true] call HC_fnc_handleVirt;
 };
 
+if(_item == "schloss") then {
+private _zelle = _extraInfo param [0, objNull, [objNull]];
+_zelle setVariable ["bis_disabled_Door_1", 1, true];
+[_zelle, "bis_disabled_Door_1", 0, west] remoteExec ["life_fnc_setVariable", west];
+};
+
 private _msg = format ["Der Spieler %1 (%2 - %3) hat ein Item benutzt (%4)", name _unit, getPlayerUID _unit, side _unit, _displayName];
 ["UseLog", _msg] call HC_fnc_Log;

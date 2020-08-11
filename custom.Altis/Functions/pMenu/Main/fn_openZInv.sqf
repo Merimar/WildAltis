@@ -28,11 +28,13 @@ lbClear _licenseList;
 {
 private _item = _x select 0;
 private _amount = _x select 1;
+if(_amount > 0) then {
 private _displayName = getText (missionConfigFile >> "Items" >> _item >> "name");
 private _tooltip = getText (missionConfigFile >> "Items" >> _item >> "itemInfo");
 _itemList lbAdd format["%1x - %2", _amount, _displayName];
 _itemList lbSetData [(lbSize _itemList)-1, _item];
 if(_tooltip != "") then {_itemList lbSetToolTip [(lbSize _itemList)-1, _tooltip];};
+};
 }forEach life_virt_gear;
 
 {

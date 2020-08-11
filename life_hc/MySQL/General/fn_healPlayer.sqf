@@ -22,4 +22,12 @@ private _msg = if(isNull _healPlayer) then {format ["Der Spieler %1 (%2 - %3) ha
 ["HealLog", _msg] call HC_fnc_Log;
 
 private _healAmount = if(([_unit, "heal"] call HC_fnc_isBuffOn) || _withoutHealkit) then {0} else {[getPlayerUID _unit, side _unit, "heal"] call HC_fnc_getSkillAdvantage};
-if(isNull _healPlayer) then {_unit setDamage _healAmount;}else {_healPlayer setDamage _healAmount;};
+if(isNull _healPlayer) then {
+private _prevDamage = getDammage _unit;
+_unit setDamage 0;
+_unit setDammage _prevDamage;
+if(_prevDamage > _healAmount) exitWith {};
+_unit setDamage _healAmount;
+}else {
+_healPlayer setDamage _healAmount;
+};

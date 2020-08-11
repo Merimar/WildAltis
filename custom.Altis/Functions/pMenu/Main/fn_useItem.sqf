@@ -72,9 +72,7 @@ switch (true) do {
         if(playerSide != west) exitWith {["Nur Polizisten können Zellentüren wieder abschliesen.", "Z Inv"] spawn life_fnc_message;};
         if(!([false, _item, 1] call life_fnc_handleInv)) exitWith {};
 		closeDialog 0;
-		_removeItem = true;
-		cursorObject setVariable ["bis_disabled_Door_1", 1, true];
-		[cursorObject, "bis_disabled_Door_1", 0, west] remoteExec ["life_fnc_setVariable", west];
+		[player, _item, [cursorObject]] remoteExec ["HC_fnc_useItem", HC_LIFE];
 		["Du hast die Zellentür wieder abgeschlossen. Zivilisten können sie nun nicht mehr öffnen!", "Z Inv"] spawn life_fnc_message;
     };
 
@@ -85,9 +83,19 @@ switch (true) do {
     };
 
     case (_item isEqualTo "defusekit"): {
+		closeDialog 0;
         [cursorObject] spawn life_fnc_defuseKit;
-        closeDialog 0;
     };
+	
+	case (_item isEqualTo "medikit") : {
+		closeDialog 0;
+		[] spawn life_fnc_mediKit;
+	};
+	
+	case (_item isEqualTo "firstaidkit") : {
+		closeDialog 0;
+		[] spawn life_fnc_healAction;
+	};
 	
 	case (_item == "defibrilator"): {
 		if(!(cursorObject isKindOf "Man") || alive cursorObject) exitWith {};

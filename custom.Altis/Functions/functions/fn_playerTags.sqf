@@ -20,7 +20,7 @@ if (isNull _ui) then {
     _ui = uiNamespace getVariable ["Life_HUD_nameTags",displayNull];
 };
 
-private _units = (nearestObjects [(visiblePosition player), ["Man"], 20]) select {isNull (attachedTo _x) && _x != player};
+private _units = (nearestObjects [(visiblePosition player), ["Man"], 20]) select {_x != player && !(_x getVariable ["Spectating", false])};
 
 {
     private "_text";

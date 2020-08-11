@@ -60,7 +60,6 @@ class CfgFunctions
 			class adminGiveGear {};
             class adminGiveMoney {};
 			class adminImpound {};
-			class adminSpectate {};
 			class adminStrip {};
 			class adminTeleportPlayer {};
 			class copSpectate {};
@@ -136,6 +135,7 @@ class CfgFunctions
             class bool {};
 			class cleanup {};
 			class clearGround {};
+			class copMoney {};
 			class fetchCfgDetails {};
 			class getCleanString {};
 			class getGroupSideID {};
@@ -169,6 +169,7 @@ class CfgFunctions
             file = "\life_hc\MySQL\Items";
 			class deviceGather {};
 			class giveVirt {};
+			class mediKit {};
 			class processItem {};
 			class removeItem {};
 			class searchUpdate {};

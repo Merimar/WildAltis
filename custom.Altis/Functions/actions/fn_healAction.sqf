@@ -1,5 +1,6 @@
-private _healPlayer = _this select 0;
-private  _anderer = _this select 3;
+private _healPlayer = param [0, objNull, [objNull]];
+private _anderer = param [3, false, [false]];
+if(isNull _healPlayer) then {_healPlayer = player;};
 if(_anderer) then {_healPlayer = cursorObject;};
 if(life_action_inUse) exitWith {};
 if(vehicle player != player) exitWith {};
@@ -18,7 +19,7 @@ if((_healPlayer distance player) > 2 || isNull _healPlayer) exitWith {["Heilen a
 
 private  _exit = false;
 if(!(playerSide isEqualTo independent)) then {
-if(!([false,"firstaidkit",1] call life_fnc_handleInv)) exitWith {["Du hast kein Medikit", true, "slow"] call life_fnc_showNotification;_exit = true;};
+if(!([false,"firstaidkit",1] call life_fnc_handleInv)) exitWith {["Du hast keinen Verbandskasten", true, "slow"] call life_fnc_showNotification;_exit = true;};
 };
 if(_exit) exitWith {};
 if(_healPlayer isEqualTo player) then {[player] remoteExec ["HC_fnc_healPlayer", HC_LIFE];}else {[player, _healPlayer] remoteExec ["HC_fnc_healPlayer", HC_LIFE];};

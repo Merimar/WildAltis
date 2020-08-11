@@ -225,12 +225,12 @@ class CfgFarmRoutes {
 		fields[] = {"Farm_Grape_1"};
 		processors[] = {"Processor_GrapeIllegal_1"};
 		vendors[] = {"Vendor_Wongs_1", "Vendor_Wongs_2", "Vendor_Wongs_3", "Vendor_Wongs_4"};
-		gatherItem = "moonshineP";
+		gatherItem = "traubenU";
 		gatherSkill = "farmGrapes";
 		gatherTool = "";
 		farmZonesize = 30;
 		farmTime = 3;
-		processInput[] = {{"traubenU", 1}};
+		processInput[] = {{"traubenU", 2}};
 		processOutput[] = {{"moonshineP", 1}};
 		processText = "Verarbeite Schwarzgebrannten";
 		processSkill = "processDrugs";
@@ -241,7 +241,7 @@ class CfgFarmRoutes {
 		name = "Knochenroute";
 		fields[] = {"Farm_Relikttempel_1"};
 		processors[] = {"Processor_Relikttempel_1"};
-		vendors[] = {"Vendor_Relikttempel_1", "Vendor_Relikttempel_2"}; // Geistlicher - Vendor 1 Geschäftsmann - Vendor 2
+		vendors[] = {"Vendor_Relikttempel_1", "Vendor_Relikttempel_2"};
 		gatherItem = "relikt";
 		gatherSkill = "farmFossil";
 		gatherTool = "";

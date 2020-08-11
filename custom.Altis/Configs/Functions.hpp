@@ -121,9 +121,11 @@ class CfgFunctions {
 		class Cop {
 			file = "Functions\cop";
 			class bountyReceive {};
+			class copGetMoney {};
 			class copLoadout {};
 			class copMarkers {};
 			class copRemove {};
+			class copRemoveMoney {};
 			class copUnlock {};
 			class licenseCheck {};
 			class removeWeapon {};
@@ -372,6 +374,8 @@ class CfgFunctions {
 			class medicLoadout {};
 			class medicMarkers {};
 			class medicRequest {};
+			class medicVerlasen {};
+			class mediKit {};
 			class onPlayerKilled {};
 			class onPlayerRespawn {};
 			class requestMedic {};

@@ -36,7 +36,6 @@ if(!_hasPremium) exitWith {["Du kannst dir dieses Fahrzeug aufgrund der ausgewä
 if(!_hasSkin) exitWith {["Du kannst dir dieses Fahrzeug aufgrund des ausgewählten Skins nicht kaufen", "Fahrzeugshop"] spawn life_fnc_message;};
 if(_finalPrice <= 0) exitWith {["Das Fahrzeug hat keinen Preis", "Fahrzeugshop"] spawn life_fnc_message;};
 if(CASH < _finalPrice) exitWith {[format ["Du kannst dir dieses Fahrzeug nicht leisten.<br/>Dir fehlen €%1", [_finalPrice - CASH] call life_fnc_numberText], "Fahrzeugshop"] spawn life_fnc_message;closeDialog 0;};
-if(playerSide in [west, independent] && _skinClassname == "-1") exitWith {["Du musst einen Skin auswählen!", "Fahrzeugshop"] spawn life_fnc_message;};
 
 private _action = [
     format["Möchtest du folgendes Fahrzeug: %1 wirklich %2?", _nameVehicle, _buyOrRent],

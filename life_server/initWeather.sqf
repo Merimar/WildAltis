@@ -10,6 +10,8 @@ private _thunderRandom = round (random 100) + 1;
 
 private _isWeather = round (random 100) + 1;
 
+/*
+
 if(_isWeather <= 10) then {
 skipTime -24;
 86400 setFog 0;
@@ -26,3 +28,5 @@ for "_int" from 0 to 1 step 0 do {
 0 setFog 0;
 sleep (15 * 60);
 };
+
+*/
