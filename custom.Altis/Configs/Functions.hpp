@@ -374,7 +374,7 @@ class CfgFunctions {
 			class medicLoadout {};
 			class medicMarkers {};
 			class medicRequest {};
-			class medicVerlasen {};
+			class medicVerlassen {};
 			class mediKit {};
 			class onPlayerKilled {};
 			class onPlayerRespawn {};

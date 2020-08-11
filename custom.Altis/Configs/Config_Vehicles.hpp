@@ -394,8 +394,7 @@ class LifeCfgVehicles {
 		chopPrice = 402100;
 		legal = 1;
 		bankCapacity = 0;
-		class textures {
-		};
+		class textures {};
     };
 	
 	
@@ -405,9 +404,7 @@ class LifeCfgVehicles {
 		chopPrice = 12000;
 		legal = 0;
 		bankCapacity = 0;
-		class textures {
-		class Black {
-		};
+		class textures {};
     };
 	
 	class B_Truck_01_covered_F {
@@ -416,9 +413,7 @@ class LifeCfgVehicles {
 		chopPrice = 1200000;
 		legal = 1;
 		bankCapacity = 0;
-		class textures {
-		class Black {
-		};
+		class textures {};
     };
 	
 	class O_T_LSV_02_unarmed_F {
