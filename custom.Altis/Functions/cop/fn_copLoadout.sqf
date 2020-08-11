@@ -11,8 +11,7 @@ player forceAddUniform "U_Rangemaster";
 player addBackpack "B_Bergen_tna_F";
 
 player addMagazine "30Rnd_9x21_Mag";
-player addWeapon "hgun_P07_F";
-player addHandgunItem "muzzle_snds_L";
+player addWeapon "hgun_P07_snds_F";
 player addMagazine "30Rnd_9x21_Mag";
 player addMagazine "30Rnd_9x21_Mag";
 player addMagazine "30Rnd_9x21_Mag";

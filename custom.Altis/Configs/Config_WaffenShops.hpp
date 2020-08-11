@@ -491,8 +491,8 @@ class CfgItemShop {
 		};
 
 		weapons[] = {
-			{ "hgun_P07_F", "Taser", 1000, "call life_coplevel >= 1"},
-			{ "hgun_P07_khk_F", "Taser", 1000, "call life_coplevel >= 1"},
+			{ "hgun_P07_snds_F", "Taser", 1000, "call life_coplevel >= 1"},
+			{ "hgun_P07_khk_Snds_F", "Taser", 1000, "call life_coplevel >= 1"},
 			{ "30Rnd_9x21_Mag", "Taser Magazin", 10, "call life_coplevel >= 1"},
 			{ "arifle_sdar_F", "", 1000, "call life_coplevel >= 1"},
 			{ "20Rnd_556x45_UW_mag", "", 10, "call life_coplevel >= 1"},
