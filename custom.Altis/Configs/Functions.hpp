@@ -33,6 +33,7 @@ class CfgFunctions {
 			class arrestAction {};
 			class buyLicense {};
 			class captureHideout {};
+			class neutralizeHideout {};
 			class dpFinish {};
 			class escortAction {};
 			class executionAction {};
