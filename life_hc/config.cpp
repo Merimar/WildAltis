@@ -148,6 +148,7 @@ class CfgFunctions
             class mresToArray {};
 			class multiArrayToArray {};
             class numberSafe {};
+			class removeChar {};
 			class reportReceive {};
 			class sperrzone {};
 			class staminaUpdate {};

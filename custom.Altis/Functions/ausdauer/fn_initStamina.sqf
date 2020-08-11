@@ -13,7 +13,7 @@ while {true} do {
 	if(isNull (findDisplay 7300)) then {
 		private _speed = speed player;
 		if(!(isNull objectParent player) || abs _speed <= 10) exitWith {WALK_CURRENT = WALK_CURRENT - 0.5; if(WALK_CURRENT < 0) then {WALK_CURRENT = 0;};};
-		private _add = if(_speed > 15 && !HALO_PROCCESS) then {1.5} else {0};
+		private _add = if(_speed > 10 && !HALO_PROCCESS) then {1.5} else {0};
 		WALK_CURRENT = WALK_CURRENT + _add;
 		if(WALK_CURRENT < _walkSkill) exitWith {};
 		life_thirst = life_thirst - 2;

@@ -5,7 +5,7 @@ private _source = _this select 3;
 private _projectile = _this select 4;
 
 if(!(isNull _unit)) then {
-if((vehicle _source) != _source && _source isKindOf "Man" && (time - life_anfahr_timer) > 2 && _unit != _source) then {
+if((vehicle _source) != _source && _source isKindOf "Man" && (time - life_anfahr_timer) > 2 && _unit != _source && _projectile == "") then {
 [] spawn {player allowDamage false;sleep 2;player allowDamage true;};
 life_anfahr_timer = time;
 [player, "amovppnemstpsraswrfldnon", true] remoteExecCall ["life_fnc_healSync", -2];

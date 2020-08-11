@@ -72,7 +72,6 @@ class CfgRemoteExec {
 		F(life_fnc_jumpFnc,CLIENT)
 		F(life_fnc_say3D,CLIENT)
 		F(life_fnc_setFuel,CLIENT)
-		F(life_fnc_setVariable,CLIENT)
 		F(life_fnc_soundDevice,CLIENT)
 		
 		//Functions

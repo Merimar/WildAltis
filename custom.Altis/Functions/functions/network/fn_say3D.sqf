@@ -6,9 +6,8 @@
 
     Example:   [_veh,"unlock"] remoteExec ["life_fnc_say3D",RANY];
 */
-private["_object","_sound"];
-_object = param [0, objNull, [objNull]];
-_sound = param [1, "", [""]];
+private _object = param [0, objNull, [objNull]];
+private _sound = param [1, "", [""]];
 
 if(isNull _object) exitWith {};
 if(_sound isEqualTo "");

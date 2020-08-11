@@ -71,14 +71,14 @@ class LifeCfgVehicles {
 			
 			class Polizei {
 				name = "Polizei";
-				price = 1.0;
+				price = 0.05;
 				condition = "playerSide in [west]";
 				path[] = {"Images\Polizei\Polizei_Quadbike.jpg"};
 			};
 	    };
     };
 	
-	class C_Offroad_01_F {
+	class C_Offroad_01_F { 
         vItemSpace = 100;
 		price = 56800;
 		chopPrice = 21840;
@@ -147,7 +147,7 @@ class LifeCfgVehicles {
 				name = "Polizei";
 				path[] = {"Images\Polizei\Offroad.jpg"};
 				condition = "playerSide in [west]";
-				price = 1;
+				price = 0.05;
 			};
 		};
 	};
@@ -163,7 +163,7 @@ class LifeCfgVehicles {
 				name = "Polizei";
 				path[] = {"Images\Polizei\Van.jpg"};
 				condition = "playerSide in [west]";
-				price = 1;
+				price = 0.05;
 			};
 		};
 	};
@@ -197,7 +197,7 @@ class LifeCfgVehicles {
 				name = "Polizei";
 				path[] = {"Images\Polizei\SUV.jpg"};
 				condition = "playerSide in [west]";
-				price = 1;
+				price = 0.05;
 			};
 			class Feuerwehr {
 				name = "Feuerwehr";
@@ -255,7 +255,7 @@ class LifeCfgVehicles {
 				name = "Polizei";
 				path[] = {"Images\Polizei\Sportlimo_Polizei.jpg"};
 				condition = "playerSide in [west]";
-				price = 1;
+				price = 0.05;
 			};
 			class Feuerwehr {
 				name = "Feuerwehr";
@@ -313,7 +313,7 @@ class LifeCfgVehicles {
 			name = "Polizei";
 			path[] = {"Images\Polizei\Sportlimo_Polizei.jpg"};
 			condition = "playerSide in [west]";
-			price = 1;
+			price = 0.05;
 			};
         };
     };
@@ -398,13 +398,27 @@ class LifeCfgVehicles {
 		};
     };
 	
+	
+	class O_G_Offroad_01_F {
+		vItemSpace = 100;
+		price = 520000;
+		chopPrice = 12000;
+		legal = 0;
+		bankCapacity = 0;
+		class textures {
+		class Black {
+		};
+    };
+	
 	class B_Truck_01_covered_F {
 		vItemSpace = 800;
 		price = 2750000;
 		chopPrice = 1200000;
 		legal = 1;
 		bankCapacity = 0;
-		class textures {};
+		class textures {
+		class Black {
+		};
     };
 	
 	class O_T_LSV_02_unarmed_F {
@@ -418,7 +432,7 @@ class LifeCfgVehicles {
 				name = "Polizei";
 				path[] = {"Images\Polizei\Q1.jpg","Images\Polizei\Q2.jpg","Images\Polizei\Q3.jpg"};
 				condition = "playerSide in [west]";
-				price = 1;
+				price = 0.05;
 			};
 		};
     };
@@ -476,7 +490,7 @@ class LifeCfgVehicles {
 				name = "Destroyer";
 				path[] = {"Images\Polizei\Hemtt_1.jpg","Images\Polizei\Hemtt_2.jpg","Images\Polizei\Hemtt_3.jpg"};
 				condition = "playerSide in [west]";
-				price = 1;
+				price = 0.05;
 			};
 		};
     };
@@ -510,7 +524,7 @@ class LifeCfgVehicles {
 				name = "Polizei";
 				path[] = {"Images\Polizei\Humming.jpg"};
 				condition = "playerSide in [west]";
-				price = 1;
+				price = 0.05;
 			};
 			class Feuerwehr {
 				name = "Feuerwehr";
@@ -604,13 +618,13 @@ class LifeCfgVehicles {
 				name = "Black";
 				path[] = {"\a3\air_f\Heli_Light_02\Data\heli_light_02_ext_co.paa"};
 				condition = "playerSide in [west]";
-				price = 1;
+				price = 0.05;
 			};
 			class Polizei {
 				name = "Polizei";
 				path[] = {"Images\Polizei\Orca.jpg"};
 				condition = "playerSide in [west]";
-				price = 1;
+				price = 0.05;
 			};
 			class Feuerwehr {
 				name = "Feuerwehr";
@@ -682,7 +696,7 @@ class LifeCfgVehicles {
 				name = "Polizei";
 				path[] = {"Images\Polizei\Cop_Hellcat.jpg"};
 				condition = "playerSide in [west]";
-				price = 1;
+				price = 0.05;
 			};
 			class Feuerwehr {
 				name = "Feuerwehr";
@@ -704,7 +718,7 @@ class LifeCfgVehicles {
 			name = "Polizei";
 			path[] = {"Images\Polizei\Cop_Ghosthawk.jpg","Images\Polizei\Cop_Ghosthawk2.jpg"};
 			condition = "playerSide in [west]";
-			price = 1;
+			price = 0.05;
 			};
 			class Feuerwehr {
 			name = "Feuerwehr";
@@ -744,7 +758,7 @@ class LifeCfgVehicles {
 			name = "Polizei";
 			path[] = {"Images\Polizei\Cop_Blackfish1.jpg","Images\Polizei\Cop_Blackfish2.jpg","Images\Polizei\Cop_Blackfish3.jpg","Images\Polizei\Cop_Blackfish4.jpg"};
 			condition = "playerSide in [west]";
-			price = 1;
+			price = 0.05;
 			};
 			class Feuerwehr {
 			name = "Feuerwehr";
@@ -766,7 +780,7 @@ class LifeCfgVehicles {
 			name = "Polizei";
 			path[] = {"Images\Polizei\Cop_Blackfish1.jpg","Images\Polizei\Cop_Blackfish2.jpg","Images\Polizei\Cop_Blackfish3.jpg","Images\Polizei\Cop_Blackfish4.jpg"};
 			condition = "playerSide in [west]";
-			price = 1;
+			price = 0.05;
 			};
 			class Feuerwehr {
 			name = "Feuerwehr";
@@ -933,13 +947,13 @@ class LifeCfgVehicles {
 				name = "Polizei";
 				path[] = {"Images\Polizei\StriderPolizei.jpg"};
 				condition = "playerSide in [west]";
-				price = 1;
+				price = 0.05;
 			};
 			class Black {
 				name = "Schwarz";
 				path[] = {"#(argb,8,8,3)color(0.05,0.05,0.05,1)"};
 				condition = "playerSide in [west]";
-				price = 1;
+				price = 0.05;
 			};
 			class Feuerwehr {
 				name = "Feuerwehr";
@@ -961,13 +975,13 @@ class LifeCfgVehicles {
 				name = "Polizei";
 				path[] = {"Images\Polizei\Hunter1.jpg","Images\Polizei\Hunter2.jpg"};
 				condition = "playerSide in [west]";
-				price = 1;
+				price = 0.05;
 			};
 			class Black {
 				name = "Schwarz";
 				path[] = {"#(argb,8,8,3)color(0.05,0.05,0.05,1)"};
 				condition = "playerSide in [west]";
-				price = 1;
+				price = 0.05;
 			};
 			class Feuerwehr {
 				name = "Feuerwehr";
@@ -999,13 +1013,13 @@ class LifeCfgVehicles {
 				name = "Schwarz";
 				path[] = {"#(argb,8,8,3)color(0.05,0.05,0.05,1)"};
 				condition = "playerSide in [west]";
-				price = 1;
+				price = 0.05;
 			};
 			class Polizei  {
 				name = "Polizei";
 				path[] = {"Images\Polizei\Cop_Blackfoot.jpg"};
 				condition = "playerSide in [west]";
-				price = 1;
+				price = 0.05;
 			};
 		};
 	};
@@ -1162,14 +1176,14 @@ class LifeCfgVehicles {
 				name = "Polizei";
 				path[] = {"Images\Polizei\Prowler1.jpg","Images\Polizei\Prowler2.jpg","Images\Polizei\Prowler3.jpg","Images\Polizei\Prowler4.jpg"};
 				condition = "playerSide in [west]";
-				price = 1;
+				price = 0.05;
 			};
 			
 			class Black {
 				name = "Schwarz";
 				path[] = {"#(argb,8,8,3)color(0.05,0.05,0.05,1)","#(argb,8,8,3)color(0.05,0.05,0.05,1)"};
 				condition = "playerSide in [west]";
-				price = 1;
+				price = 0.05;
 			};
 		};
 	};
@@ -1185,7 +1199,7 @@ class LifeCfgVehicles {
 				name = "Polizei";
 				path[] = {"Images\Polizei\Hunter1.jpg","Images\Polizei\Hunter2.jpg","Images\Polizei\Turret.jpg"};
 				condition = "playerSide in [west]";
-				price = 1;
+				price = 0.05;
 			};
 		};
 	};
@@ -1390,7 +1404,7 @@ class LifeCfgVehicles {
 				name = "Polizei";
 				path[] = {"Images\Polizei\Zamak1.jpg","Images\Polizei\Zamak2.jpg"};
 				condition = "playerSide in [west]";
-				price = 1;
+				price = 0.05;
 			};
 		};
 	};
@@ -1460,7 +1474,7 @@ class LifeCfgVehicles {
 				name = "Polizei";
 				path[] = {"Images\Polizei\Huron1.jpg","Images\Polizei\Huron2.jpg"};
 				condition = "playerSide in [west]";
-				price = 1;
+				price = 0.05;
 			};
 		};
 	};
@@ -1510,13 +1524,13 @@ class LifeCfgVehicles {
 				name = "Polizei";
 				path[] = {"Images\Polizei\IFRIT1.jpg","Images\Polizei\IFRIT2.jpg"};
 				condition = "playerSide in [west]";
-				price = 1;
+				price = 0.05;
 			};
 			class Black {
 				name = "Schwarz";
 				path[] = {"#(argb,8,8,3)color(0.05,0.05,0.05,1)","#(argb,8,8,3)color(0.05,0.05,0.05,1)"};
 				condition = "playerSide in [west]";
-				price = 1;
+				price = 0.05;
 			};
 		};
 	};

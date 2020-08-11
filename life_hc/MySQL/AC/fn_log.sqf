@@ -1,7 +1,10 @@
 private _sel = _this select 0;
 private _message = _this select 1;
 
-private _query = format ["INSERT INTO server_logs (logtype, message) VALUES ('%1', '%2')", _sel, _message];
+private _newSel = [_sel] call HC_fnc_removeChar;
+private _newMesage = [_message] call HC_fnc_removeChar;
+
+private _query = format ["INSERT INTO server_logs (logtype, message) VALUES ('%1', '%2')", _newSel, _newMesage];
 [_query, 1] call HC_fnc_asyncCall;
 
 /*
