@@ -17,7 +17,7 @@ if(isNull findDisplay 2800) exitWith {};
 private _control = (findDisplay 2800) displayCtrl 2801;
 lbClear _control;
 
-_vehicles sort true;
+_vehicles = [_vehicles, [], {_x select 1}, "ASCEND"] call BIS_fnc_sortBy;
 
 {
 private _id = _x select 0;

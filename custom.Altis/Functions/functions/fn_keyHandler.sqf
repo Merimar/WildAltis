@@ -40,7 +40,7 @@ if(_code in [_getOver, _salute, _sitDown, _throw, _getIn, _getOut, _fire, _reloa
 if(life_action_inUse && !life_interrupted && _code in _interruptionKeys) then {[] spawn {life_interrupted = true; sleep 2; life_interrupted = false;};};
 if(!(count (actionKeys "User10") isEqualTo 0) && {(inputAction "User10" > 0)}) exitWith {if(!life_action_inUse) then {[] call life_fnc_actionKeyHandler;};};
 if(_code in [_getOver] && JAIL_TIME > 0) then {_handled = true;};
-if(_code in [_cV]) then {_handled = true;};
+if(_code == _cV) then {_handled = true;};
 
 if(!_handled) then {
 switch (_code) do {
