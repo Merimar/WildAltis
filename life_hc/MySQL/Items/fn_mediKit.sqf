@@ -1,4 +1,4 @@
-private _unit = param [0, objNullm [objNull]];
+private _unit = param [0, objNull, [objNull]];
 
 private _isHacker = [[], _unit, remoteExecutedOwner, "fn_mediKit"] call HC_fnc_checkSQLBreak;
 if(_isHacker) exitWith {};

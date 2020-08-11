@@ -51,11 +51,11 @@ if (visibleMap) then {
 			private _vehicle = _x select 2;
 			private _prefix = _x select 3;
 			private _crewNameArray = _x select 4;
-			private _unitsNot = _units select {isNull _x || {_x getVariable ["restrained", false] && {_x getVariable ["isDead", false]}}};
+			private _unitsNot = _units select {isNull _x || {_x getVariable ["restrained", false]} && {_x getVariable ["isDead", false]}};
 			private _change = false;
 			private _remove = false;
 			if(count _unitsNot > 0) then {(_markersVehicles select _forEachIndex) set [1, _units - _unitsNot]; _change = true;};
-			if(isNull _vehicle || count (crew _vehicle) isEqualTo 0) then {(_markersVehicles deleteAt _forEachIndex; _remove = true;};
+			if(isNull _vehicle || count (crew _vehicle) isEqualTo 0) then {_markersVehicles deleteAt _forEachIndex; _remove = true;};
 			if(_change) then {
 			_crewNameArray = [];
 			{_crewNameArray pushBack (name _x);}forEach (_units - _unitsNot);
