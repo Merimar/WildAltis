@@ -286,6 +286,8 @@ switch (_code) do {
                     _locked = _vehicle getVariable [format ["bis_disabled_Door_%1", _door], 0];
 					_vehicle setVariable [format ["bis_disabled_Door_%1", _door], [1, 0] select _locked, true];
 					_vehicle animateSource [format ["Door_%1_source", _door], _locked];
+					private _lockMsg = if(_locked isEqualTo 0) then {"abgeschlossen"} else {"aufgeschlossen"};
+					systemChat format ["Haus %1", _lockMsg];
             };
 			
 			if (_canUse && player distance _vehicle < 20 && (time - life_action_delay) >= 1) then {

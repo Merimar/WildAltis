@@ -543,7 +543,7 @@ class CfgItemShop {
 			{ "30Rnd_65x39_caseless_msbs_mag", "", 1000, "call life_coplevel >= 3"},
 			{ "SMG_03_TR_black", "", 1000, "call life_coplevel >= 3"},
 			{ "SMG_03_black", "", 1000, "call life_coplevel >= 3"},
-			{ "30Rnd_580x42_Mag_F", "", 1000, "call life_coplevel >= 3"},
+			{ "50Rnd_570x28_SMG_03", "", 1000, "call life_coplevel >= 3"},
 			{ "arifle_SPAR_03_blk_F", "", 1000, "call life_coplevel >= 3"},
 			{ "20Rnd_762x51_Mag", "", 1000, "call life_coplevel >= 3"},
 			{ "srifle_EBR_F", "", 1000, "call life_coplevel >= 3"},
