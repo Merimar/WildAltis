@@ -194,6 +194,18 @@ class Items {
 		itemInfo = "Mit dem Verbandskasten kannst du dich heilen. Je nach deiner Skillstufe kriegst du nach der Benutzung mehr Lebenspunkte. Das Item ist nach einer Nutzung weg.";
 	};
 	
+	class medikit {
+		name = "Medikit";
+		illegal = false;
+		weight = 8;
+		type = "NORMAL";
+		buyPrice = 7500;
+		sellPrice = 500;
+		edible = -1;
+		icon = "";
+		itemInfo = "Mit dem Meditkit kannst du dich unabhängig von deinem Heillevel voll heilen. Das Meditkit hat im Gegensatz zu dem normalen Verbandskasten allerdings eine längere Benutzungsdauer.";
+	};
+	
 	class adrenalin {
 		name = "Epi-Pen";
 		illegal = false;

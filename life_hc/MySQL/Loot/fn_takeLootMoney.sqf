@@ -5,7 +5,7 @@ private _leiche = param [2, objNull, [objNull]];
 private _leicheUID = param [3, "", [""]];
 
 private _isHacker = [[_leicheUID], _unit, remoteExecutedOwner, "fn_takeLootMoney"] call HC_fnc_checkSQLBreak;
-if(_isHacker || isNull _leiche) exitWith {};
+if(_isHacker) exitWith {};
 
 private _index = MONEY_PICKUP findIf {_x select 0 == _leicheUID};
 
@@ -22,7 +22,7 @@ private _playerName = _informationArray select 1;
 private _playerItems = _informationArray select 2;
 private _playerMoney = _informationArray select 3;
 private _playerSide = _informationArray select 4;
-_nearUnits = (nearestObjects[_unit, ["Man"], 15]) arrayIntersect playableUnits;
+private _nearUnits = (nearestObjects[_unit, ["Man"], 15]) arrayIntersect playableUnits;
 
 if(count _nearUnits > 1) exitWith {
 private _otherPlayer = (_nearUnits select {_x != _unit}) select 0;
@@ -39,7 +39,7 @@ _reason2 = format ["Spieler welcher mit RemoteExecutedOwner rausgefunden wurde: 
 [format["Bei dem Spieler %1 wurde ein MoneyPickup Hack festgestellt", name _unit], false] call HC_fnc_adminMessage;
 };
 
-_leiche setVariable ["Loot_Information", [_playerUID, _playerName, _playerItems, 0, _playerSide], true];
+if(!(isNull _leiche)) then {_leiche setVariable ["Loot_Information", [_playerUID, _playerName, _playerItems, 0, _playerSide], true];};
 (MONEY_PICKUP select _index) set [3, 0];
 
 if(_playerSide isEqualTo west && (side _unit) in [civilian, east]) then {

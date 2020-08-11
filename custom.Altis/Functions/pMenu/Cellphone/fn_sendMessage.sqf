@@ -13,6 +13,7 @@ private _unitData = _listUnits lbData _index;
 private _allowed = toArray ('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz 0123456789ÄäÖöÜüß!#€()[]*+,-./<=>?@:&§^');
 private _msgArray = toArray (_message);
 
+if("call " in _message || "spawn " in _message) exitWith {["", "Du darfst call/spawn nicht in deiner Nachricht verwenden!"] spawn life_fnc_message;};
 if(_messageType != 7 && count _message < 3) exitWith {["", "Die Nachricht muss mind. 3 Zeichen lang sein"] spawn life_fnc_message;};
 if(_messageType isEqualTo 7 && ((group player) getVariable ["gang_name", ""]) == "") exitWith {["Du musst in einer Gang sein!"] spawn life_fnc_message;};
 
@@ -89,8 +90,11 @@ switch (_messageType) do {
 	
 	//Admin an Spieler
 	case 9 : {
-		_target = -2;
-		_targetName = "den Spieler";
+		if(_index isEqualTo -1) exitWith {_exit = true;};
+		private _unit = call compile format ["%1", _unitData];
+		if(isNull _unit) exitWith {_exit = true;};
+		_target = _unit;
+		_targetName = name _unit;
 	};
 
 

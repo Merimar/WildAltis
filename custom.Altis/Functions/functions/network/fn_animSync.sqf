@@ -1,11 +1,3 @@
-/*
-    File: fn_animSync.sqf
-    Author:
-
-    Description:
-
-*/
-private["_unit","_anim"];
-_unit = [_this,0,ObjNull,[objNull]] call BIS_fnc_param;
-_anim = [_this,1,"",[""]] call BIS_fnc_param;
+private _unit = param [0, objNull, [objNull]];
+private _anim = param [1, "", [""]];
 _unit switchMove _anim;

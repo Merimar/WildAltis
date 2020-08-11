@@ -2,6 +2,15 @@ private _uid = _this select 0;
 private _owner = _this select 1;
 private _geheimZahl = _this select 2;
 
+if(remoteExecutedOwner != 2) exitWith {
+private _remInfo = [remoteExecutedOwner] call HC_fnc_getPlayerByID;
+private _remSuccess = _remInfo select 1;
+private _rem = _remInfo select 0;
+diag_log format ["CONNECT HACK: %1 - %2", remoteExecutedOwner, _this];
+if(!_remSuccess) exitWith {};
+diag_log format ["Spieler: %1 (%2 - %3)", name _rem, getPlayerUID _rem, side _rem];
+};
+
 if(_uid in JOIN_IN_PROGRESS) exitWith {DEBUG_ARRAY pushBack format ["Player allready connecting [onPlayerConnected]: %1", _this];};
 JOIN_IN_PROGRESS pushBack _uid;
 

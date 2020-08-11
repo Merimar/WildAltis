@@ -35,7 +35,7 @@ CANCEL_EVENT = false;
 publicVariable "MARKT_ARRAY";
 MARKT_SERVER_ARRAY = + MARKT_ARRAY;
 
-[_messageStart, "Neues Marktevent"] remoteExec ["life_fnc_message", -2];
+[_messageStart, "Neues Marktevent", 30] remoteExec ["life_fnc_message", -2];
 bank_obj setVariable ["MarktEventMessage", _messageStart, true];
 bank_obj setVariable ["MarktEventPercentage", _kursPrefix, true];
 
@@ -48,6 +48,6 @@ CANCEL_EVENT = false;
 publicVariable "MARKT_ARRAY";
 MARKT_SERVER_ARRAY = + MARKT_ARRAY;
 
-[_messageEnd, "Marktevent vorbei"] remoteExec ["life_fnc_message", -2];
+[_messageEnd, "Marktevent vorbei", 30] remoteExec ["life_fnc_message", -2];
 bank_obj setVariable ["MarktEventMessage", nil, true];
 bank_obj setVariable ["MarktEventPercentage", nil, true];

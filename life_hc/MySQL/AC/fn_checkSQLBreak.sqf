@@ -7,7 +7,7 @@ private _checkAdminLevel = param [4, false, [false]];
 if(_remoteExecutedOwner isEqualTo -1) exitWith {true;};
 
 private _found = false;
-{if("'" in (str _x)) exitWith {_found = true;};}forEach _checkStrings;
+{if("'" in (str _x) || "{" in (str _x) || "}" in (str _x) || "toString" in (str _x) || "tostring" in (str _x) || "];" in (str _x)) exitWith {_found = true;};}forEach _checkStrings;
 
 private _remInfo = [_remoteExecutedOwner] call HC_fnc_getPlayerByID;
 private _remSuccess = _remInfo select 1;

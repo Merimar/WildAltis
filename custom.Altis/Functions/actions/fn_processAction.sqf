@@ -76,8 +76,15 @@ if(!_success) exitWith {["", "Du hast dieses Item nicht mehr"] spawn life_fnc_me
 
 private _random = round (random (80)) + 1;
 private _newRandom = round (random (100)) + 1;
-private _relikt = format ["Relikt_%1", floor (_random / 20)];
-if(_newRandom <= 20 && _type == "Relikt") exitWith {["", "Der Knochen ist zerbrochen"] spawn life_fnc_message;};
+private _reliktNr = switch (true) do {
+	case (_random < 40) : {0};
+	case (_random >= 40 && _random < 65) : {1};
+	case (_random >= 65 && _random < 80) : {2};
+	case (_random >= 80 && _random < 95) : {3};
+	case (_random > 95) : {4};
+};
+private _relikt = format ["Relikt_%1", _reliktNr];
+if(_newRandom <= 30 && _type == "Relikt") exitWith {["", "Der Knochen ist zerbrochen"] spawn life_fnc_message;};
 
 if(_type != "Relikt") then {
 {

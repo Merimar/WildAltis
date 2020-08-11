@@ -53,12 +53,13 @@ if(playerSide in [civilian, east]) then {
 [format ["Skorpion Gift verkaufen [%1]", _amount], "closeDialog 0; [CUR_VEHICLE_IDC] spawn life_fnc_zentiSell;", _amount > 0 && _halter && !_restrained && _scorpion] call _createElement;
 };
 
-if(playerSide in [west, independent]) then {
+if(playerSide == independent) then {
 ["Beschlagnahmen", "closeDialog 0; [CUR_VEHICLE_IDC] spawn life_fnc_impoundAction;", _impound] call _createElement;
-if(playerSide isEqualTo west) then {
+["Verlassenes Fahrzeug", "closeDialog 0; [CUR_VEHICLE_IDC] call life_fnc_medicVerlassen;", _impound] call _createElement;
+};
+
+if(playerSide == west) then {
+["Beschlagnahmen", "closeDialog 0; [CUR_VEHICLE_IDC] spawn life_fnc_impoundAction;", _impound] call _createElement;
 ["Durchsuchen", "closeDialog 0; [CUR_VEHICLE_IDC] spawn life_fnc_vehInvSearch;", true] call _createElement;
-if(_butcher) then {
-["Fahrzeug zerstören", "closeDialog 0; [CUR_VEHICLE_IDC] spawn life_fnc_vehicleButcher;", true] call _createElement;
-};
-};
+["Fahrzeug zerstören", "closeDialog 0; [CUR_VEHICLE_IDC] spawn life_fnc_vehicleButcher;", _butcher] call _createElement;
 };

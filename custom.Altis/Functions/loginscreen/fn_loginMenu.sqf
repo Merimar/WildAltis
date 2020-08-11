@@ -151,7 +151,6 @@ _btnJoin ctrlShow true;
 
 UZ = 5;
 
-/*
 [] spawn {
 for "_int" from 0 to 1 step 0 do {
 private _str = format ["%1 = %2", "TZ", "UZ"];
@@ -160,7 +159,6 @@ call compile _str;
 sleep (3 * 60);
 };
 };
-*/
 
 [] spawn {
 while {true} do {
@@ -174,7 +172,7 @@ waituntil {isNull (finddisplay 602)};
 	addMissionEventHandler[ "Draw3D", {
 		_vehList = [];
 		_group = group player;
-		_units = (units _group) select {isNull (attachedTo _x) &&_x != player && !(_x getVariable ["restrained", false]) && alive _x && !(_x getVariable ["isDead", false]) && !((vehicle _x) in _vehList) && _x != AUSWEIS_OBJECT};
+		_units = (units _group) select {_x != player && !(_x getVariable ["restrained", false]) && !(_x getVariable ["Spectating", false]) && alive _x && !(_x getVariable ["isDead", false]) && !((vehicle _x) in _vehList) && _x != AUSWEIS_OBJECT};
 		{
 			_vehicle = vehicle _x;
 			_getPos = visiblePosition _vehicle;

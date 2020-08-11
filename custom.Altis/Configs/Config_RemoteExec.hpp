@@ -12,11 +12,12 @@ class CfgRemoteExec {
         mode = 1;
         jip = 1;
 		
+		/*
 		class BIS_fnc_effectKilledAirDestruction	{ allowedTargets = 0; jip = 0; };
 		class BIS_fnc_effectKilledSecondaries		{ allowedTargets = 0; jip = 0; };
+		*/
 		class BIS_fnc_objectVar						{ allowedTargets = 0; jip = 0; };
 		class BIS_fnc_setCustomSoundController		{ allowedTargets = 0; jip = 0; };
-		class BIS_fnc_debugConsoleExec       		{ allowedTargets = 0; jip = 0; };
 		
 		//--------------------------------------------------------------------------------------------CLIENT----------------------------------------------------------------------------------------
 		
@@ -56,6 +57,7 @@ class CfgRemoteExec {
 		//Cop
 		F(life_fnc_bountyReceive,CLIENT)
 		F(life_fnc_copRemove,CLIENT)
+		F(life_fnc_copRemoveMoney,CLIENT)
 		F(life_fnc_copUnlock,CLIENT)
 		F(life_fnc_licensecheck,CLIENT)
 		F(life_fnc_restrain,CLIENT)
@@ -71,7 +73,6 @@ class CfgRemoteExec {
 		F(life_fnc_jumpFnc,CLIENT)
 		F(life_fnc_say3D,CLIENT)
 		F(life_fnc_setFuel,CLIENT)
-		F(life_fnc_setVariable,CLIENT)
 		F(life_fnc_soundDevice,CLIENT)
 		
 		//Functions
@@ -196,7 +197,6 @@ class CfgRemoteExec {
 		F(HC_fnc_adminGiveGear,HC)
 		F(HC_fnc_adminGiveMoney,HC)
 		F(HC_fnc_adminImpound,HC)
-		F(HC_fnc_adminSpectate,HC)
 		F(HC_fnc_adminStrip,HC)
 		F(HC_fnc_adminTeleportPlayer,HC)
 		F(HC_fnc_copSpectate,HC)
@@ -249,6 +249,7 @@ class CfgRemoteExec {
 		
 		//General
 		F(HC_fnc_clearGround,HC)
+		F(HC_fnc_copMoney,HC)
 		F(HC_fnc_haloJump,HC)
 		F(HC_fnc_healPlayer,HC)
 		F(HC_fnc_reportReceive,HC)
@@ -266,6 +267,7 @@ class CfgRemoteExec {
 		//Items
 		F(HC_fnc_deviceGather,HC)
 		F(HC_fnc_giveVirt,HC)
+		F(HC_fnc_mediKit,HC)
 		F(HC_fnc_processItem,HC)
 		F(HC_fnc_removeItem,HC)
 		F(HC_fnc_searchUpdate,HC)
@@ -374,6 +376,9 @@ class CfgRemoteExec {
 		F(HC_fnc_chargeZenti,HC)
 		F(HC_fnc_sellZenti,HC)
 		
+		//Virtus
+		F(HC_fnc_vituscrate,HC)
+		
 		//Transaktionen
 		F(HC_fnc_removeItemInteraction,HC)
 		
@@ -381,7 +386,6 @@ class CfgRemoteExec {
 		
 		//AC
         F(TON_fnc_adminInvisible,SERVER)
-		F(TON_fnc_localEH,SERVER)
     };
 	
 	class Commands {

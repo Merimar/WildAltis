@@ -37,7 +37,7 @@ _unit setDamage 0.95;
 
 deleteVehicle _corpse;
 
-["ReviveLog", format ["Der Spieler %1 (%2 - %3) hat eine Adrenalinspritze benutzt", name _unit, getPlayerUID _unit, side _unit]] call HC_fnc_log;
+["ReviveLog", format ["Der Spieler %1 (%2 - %3) hat eine EpiPen benutzt", name _unit, getPlayerUID _unit, side _unit]] call HC_fnc_log;
 
 [getPlayerUID _unit, side _unit, "cash", _playerMoney, true] call HC_fnc_handleMoney;
 [getPlayerUID _unit, side _unit, true] call HC_fnc_handleAlive;

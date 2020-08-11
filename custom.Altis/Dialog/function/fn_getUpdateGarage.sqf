@@ -17,6 +17,8 @@ if(isNull findDisplay 2800) exitWith {};
 private _control = (findDisplay 2800) displayCtrl 2801;
 lbClear _control;
 
+_vehicles sort true;
+
 {
 private _id = _x select 0;
 private _classname = _x select 1;

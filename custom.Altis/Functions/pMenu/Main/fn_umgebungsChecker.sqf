@@ -5,7 +5,7 @@ private _display = findDisplay 4350;
 private _playerCombo = _display displayCtrl 4353;
 lbClear _playerCombo;
 
-private _nearUnits = playableUnits select {(player distance _x) < 15 && _x != player && alive _x && !(_x getVariable ["invisible", false])};
+private _nearUnits = playableUnits select {(player distance _x) < 15 && _x != player && alive _x && !(_x getVariable ["invisible", false]) && !(_x getVariable ["Spectating", false])};
 
 {
 _playerCombo lbAdd (name _x);

@@ -4,17 +4,28 @@ private _action = if(param [2, false, [false]]) then {1} else {0};
 
 if(isNull _vehicle) exitWith {};
 private _dbInfo = _vehicle getVariable["dbInfo", []];
+private _rent = _vehicle getVariable ["rent", false];
 
-private _isHacker = [[_dbInfo param [0, ""], _dbInfo param [1, ""], _dbInfo param [2, ""]], _unit, remoteExecutedOwner, "fn_abschleppVehicle"] call HC_fnc_checkSQLBreak;
+private _info = if(_rent) then {[]} else {[_dbInfo param [0, ""], _dbInfo param [1, ""], _dbInfo param [2, ""]]};
+
+private _isHacker = [_info, _unit, remoteExecutedOwner, "fn_abschleppVehicle"] call HC_fnc_checkSQLBreak;
 if(_isHacker) exitWith {};
 
-if(count _dbInfo isEqualTo 0) exitWith {
+if(count _dbInfo isEqualTo 0 && !_rent) exitWith {
 ["Dieses Fahrzeug besitzt keine Datenbank Informationen, wende dich an den Support", "Keine ID"] remoteExec ["life_fnc_message", _unit];
 deleteVehicle _vehicle;
 _reason1 = "Das Fahrzeug hatte keine Datenbank Info";
 _reason2 = format ["Spieler welcher mit RemoteExecutedOwner rausgefunden wurde: %1 (%2)", name _unit, getPlayerUID _unit];
 [_unit, "Abschlepp Hack", [_reason1,_reason2], false] call HC_fnc_reportHacker;
 [format["Bei dem Spieler %1 wurde ein Abschlepp Hack festgestellt", name _unit], false] call HC_fnc_adminMessage;
+};
+
+if(_rent) exitWith {
+private _vOtherInfo = _vehicle getVariable ["vehicle_info_owners", []];
+deleteVehicle _vehicle;
+[getPlayerUID _unit, side _unit, "impound"] call HC_fnc_addSkill;
+_msg = format ["Der Spieler %1 (%2 - %3) hat ein gemietetes Fahrzeug des Spielers %4 (%5) abgeschlept", name _unit, getPlayerUID _unit, side _unit, _vOtherInfo param [0, []] param [1, "Kein Name"], _vOtherInfo param [0, []] param [0, "Keine PID"]];
+["VehicleImpoundLog", _msg] call HC_fnc_Log;
 };
 
 private _pID = _dbInfo select 0;

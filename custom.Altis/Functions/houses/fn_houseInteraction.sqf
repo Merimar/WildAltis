@@ -41,6 +41,12 @@ _btn8 ctrlShow false;
 private _houseType = if("Garage" in typeOf _target) then {"Garage"} else {"Haus"};
 
 if(_houseBought) then {
+if(!_leader) exitWith {
+_btn1 ctrlShow true;
+_btn1 ctrlSetText "Haus ist bereits gekauft";
+_btn1 ctrlEnable false;
+};
+
 if((_houseInfo select 1) == "") then {
 _btn1 ctrlShow true;
 _btn1 ctrlSetText format ["%1 verkaufen", _houseType];
