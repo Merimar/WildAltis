@@ -16,9 +16,11 @@ life_save_gear = [life_corpse] call life_fnc_fetchDeadGear;
 [life_save_gear] spawn life_fnc_loadDeadGear;
 
 if(!_isDefi) then {
-if(BANK >= _reviveCost) then {BANK = BANK - _reviveCost;};
-[format["%1 hat dich wiederbelebt und dafür eine Gebühr von €%2 von deinem Bankkonto eingezogen", name _medic, [_reviveCost] call life_fnc_numberText], "Du wurdest wiederbelebt"] spawn life_fnc_message;
-}else {
+	if(!(playerSide isEqualTo independent)) then {
+		if(BANK >= _reviveCost) then {BANK = BANK - _reviveCost;};
+		[format["%1 hat dich wiederbelebt und dafür eine Gebühr von €%2 von deinem Bankkonto eingezogen", name _medic, [_reviveCost] call life_fnc_numberText], "Du wurdest wiederbelebt"] spawn life_fnc_message;
+	};
+} else {
 [] spawn life_fnc_reviveEffect;
 };
 

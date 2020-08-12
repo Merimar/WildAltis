@@ -49,8 +49,12 @@ _target setVariable ["Reviving", nil, true];
 
 if(_cP < 1) exitWith {};
 
-BANK = BANK + (_reviveCost * 5);
-["revive"] call life_fnc_addSkill;
+if(!((side _target) isEqualTo independent)) then {
+    BANK = BANK + (_reviveCost * 5);
+    ["revive"] call life_fnc_addSkill;
+    [format ["Du hast den Spieler %1 wiederbelebt. Du bekommst €%2", _targetName, (_reviveCost * 5)], "Spieler wiederbelebt"] spawn life_fnc_message;
+} else {
+    [format ["Du hast den Spieler %1 wiederbelebt.", _targetName], "Spieler wiederbelebt"] spawn life_fnc_message;
+};
 
 [player] remoteExecCall ["life_fnc_revived", _target];
-[format ["Du hast den Spieler %1 wiederbelebt. Du bekommst €%2", _targetName, (_reviveCost * 5)], "Spieler wiederbelebt"] spawn life_fnc_message;
