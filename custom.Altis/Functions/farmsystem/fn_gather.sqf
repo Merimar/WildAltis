@@ -28,7 +28,7 @@ private _random = round(random(100)) + 1;
 private _amount = if(!(configName _route in ["Pakete", "Briefe", "Relikt", "Helium", "Dunkle", "Stone"])) then {(_amountArray findIf {_x >= _random}) + 1} else {1};
 private _farmToolAmount = [_farmTool] call life_fnc_getItemValue;
 private _farmToolName = getText (missionConfigFile >> "Items" >> _farmTool >> "name");
-if(_amount < 0) then {_amount = 1;};
+if(_amount <= 0) then {_amount = 1;};
 
 if(_farmToolAmount isEqualTo 0 && _farmTool != "") exitWith {[format ["Du brauchst ein Farmtool zum Farmen von %1<br/><br/>Farmtool: %2", _farmName, _farmToolName], "Kein Farmtool"] spawn life_fnc_message;};
 

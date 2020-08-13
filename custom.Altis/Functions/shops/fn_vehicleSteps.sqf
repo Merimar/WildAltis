@@ -45,7 +45,7 @@ _progress progressSetPosition 0.2;
 _progressText ctrlSetText "Fahrzeug aussuchen (1/5) ...";
 _back buttonSetAction "closeDialog 0;";
 _next buttonSetAction "[2] call life_fnc_vehicleSteps;";
-_back ctrlSetText "Schließen";
+_back ctrlSetText localize "STR_Schliessen";
 _next ctrlSetText "Weiter";
 
 life_veh_sel set [1, ["", 0]];
@@ -90,7 +90,7 @@ _progress progressSetPosition 0.4;
 _progressText ctrlSetText "Skin aussuchen (2/5) ...";
 _back buttonSetAction "[1] call life_fnc_vehicleSteps;";
 _next buttonSetAction "[3] call life_fnc_vehicleSteps;";
-_back ctrlSetText "Zurück";
+_back ctrlSetText localize "STR_Zurueck";
 _next ctrlSetText "Weiter";
 
 _control lbSetCurSel (_step2_skin select 1);
@@ -135,7 +135,7 @@ _progress progressSetPosition 0.6;
 _progressText ctrlSetText "Folie aussuchen (3/5) ...";
 _back buttonSetAction "[2] call life_fnc_vehicleSteps;";
 _next buttonSetAction "[4] call life_fnc_vehicleSteps;";
-_back ctrlSetText "Zurück";
+_back ctrlSetText localize "STR_Zurueck";
 _next ctrlSetText "Weiter";
 
 _control lbSetCurSel (_step3_material select 1);
@@ -158,7 +158,7 @@ _progress progressSetPosition 0.8;
 _progressText ctrlSetText "Versicherung aussuchen (4/5) ...";
 _back buttonSetAction "[3] call life_fnc_vehicleSteps;";
 _next buttonSetAction "[5] call life_fnc_vehicleSteps;";
-_back ctrlSetText "Zurück";
+_back ctrlSetText localize "STR_Zurueck";
 _next ctrlSetText "Weiter";
 
 _control lbSetCurSel (_step4_insurance select 1);
@@ -172,14 +172,14 @@ life_veh_shop set [4, 5];
 _control lbAdd _x;
 _control lbSetColor[(lbSize _control)-1, [0.55, 1, 0.6, 1]];
 _control lbSetData [(lbSize _control)-1, _x];
-}forEach ["Mieten", "Kaufen"];
+}forEach ["Kaufen", "Mieten"];
 
 _progress progressSetPosition 1;
 _progressText ctrlSetText "Mieten oder kaufen (5/5) ...";
 _back buttonSetAction "[4] call life_fnc_vehicleSteps;";
 _next buttonSetAction "[] spawn life_fnc_vehicleShopBuy;";
-_back ctrlSetText "Zurück";
-_next ctrlSetText "Bestätigen";
+_back ctrlSetText localize "STR_Zurueck";
+_next ctrlSetText localize "STR_Bestaetigen";
 _control lbSetCurSel (_step5_buyType select 1);
 };
 };

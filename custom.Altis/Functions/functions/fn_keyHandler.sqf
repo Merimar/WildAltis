@@ -206,8 +206,8 @@ switch (_code) do {
 		private _targetVehicle = if(isNull objectParent player) then {cursorObject} else {vehicle player};
 		if(isNull _targetVehicle || {(!(_targetVehicle isKindOf "LandVehicle") && !(_targetVehicle isKindOf "Air") && !(_targetVehicle isKindOf "Ship")) || !(alive _targetVehicle) || !(_targetVehicle in life_vehicles) || {_targetVehicle getVariable ["event_vehicle", false]} || player distance _targetVehicle > 7 || life_is_processing}) exitWith {};
 		if(!(isNull objectParent player) && (currentWeapon player) == "Rangefinder") exitWith {};
-		if(time - life_action_delay < 3) exitWith {["", "Du kannst nur alle 3 Sekunden das Inventar öffnen"] spawn life_fnc_message;};
-		life_action_delay = time;
+		if(time - life_trunk_delay < 3) exitWith {["", "Du kannst nur alle 3 Sekunden das Inventar öffnen"] spawn life_fnc_message;};
+		life_trunk_delay = time;
 		[_targetVehicle] spawn life_fnc_openInventory;
 		_handled = true;
     };
