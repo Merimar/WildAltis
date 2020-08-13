@@ -15,19 +15,19 @@ sounds[] = {};
 	
     class cop_siren_call {
        name = "cop_siren_call";
-       sound[] = {"\Sounds\cop_siren_call.ogg", 20, 1};
+       sound[] = {"\Sounds\cop_siren_call.ogg", 25, 1};
        titles[] = {};
     };	
 	
     class cop_siren_normal {
         name = "cop_siren_normal";
-        sound[] = {"\Sounds\cop_siren_normal.ogg", 20, 1};
+        sound[] = {"\Sounds\cop_siren_normal.ogg", 25, 1};
         titles[] = {};
     };
 	
 	class cop_siren_yelp {
         name = "cop_siren_yelp";
-        sound[] = {"\Sounds\cop_siren_yelp.ogg", 20, 1};
+        sound[] = {"\Sounds\cop_siren_yelp.ogg", 25, 1};
         titles[] = {};
     };
 	
@@ -69,7 +69,7 @@ sounds[] = {};
 	
     class medic_siren_normal {
         name = "medic_siren_normal";
-        sound[] = {"\Sounds\medic_siren_normal.ogg", 5, 1};
+        sound[] = {"\Sounds\medic_siren_normal.ogg", 25, 1};
         titles[] = {};
     };
 	
