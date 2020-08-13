@@ -45,6 +45,7 @@ for "_i" from 0 to 1 step 0 do {
     if(_cP >= 1) exitWith {_exit = false;};
     if(player distance _vehicle > 10) exitWith {};
     if(player getVariable ["isDead", false]) exitWith {};
+    if(!(isNull objectParent player)) exitWith {};
 };
 
 5 cutText ["","PLAIN"];
