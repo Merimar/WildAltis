@@ -45,7 +45,7 @@ private _fish = _fishArray select 0;
 [_fish] spawn life_fnc_gatherFish;
 };
 
-if(!life_action_gathering && !(CUR_PLAYER_IDC isKindOf "AllVehicles")) exitWith {
+if(!life_action_gathering) exitWith {
 	private _handle = [] spawn life_fnc_gather;
 	life_action_gathering = true;
 	waitUntil {scriptDone _handle};

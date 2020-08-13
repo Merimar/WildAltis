@@ -93,7 +93,7 @@ CURRENT_WARNING = [];
 HACKING_STATE = false;
 SAVE_MODE = true;
 DATABASE_MODE = true;
-SAVE_STATE_INDEX = 4;
+SAVE_STATE_INDEX = 5;
 
 [] call HC_fnc_playerConfig;
 
