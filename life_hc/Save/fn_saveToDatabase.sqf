@@ -20,7 +20,7 @@ private _aliveInfo = if((_saveStatus param [8, []]) param [0, true]) then {1} el
 private _moneyInfo = _saveStatus param [10, []];
 private _gearInfo = [_saveStatus param [11, []]] call HC_fnc_mresArray;
 private _virtInfo = _saveStatus param [12, []];
-private _lockerInfo = _saveStatus param [13, []]
+private _lockerInfo = _saveStatus param [13, []];
 private _loadoutInfo = [_saveStatus param [14, []]] call HC_fnc_mresArray;
 
 /** LICENSE **/

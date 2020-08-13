@@ -3,8 +3,8 @@ for "_int" from 0 to 1 step 0 do {
 {
 private _pID = getPlayerUID _x;
 private _pSide = side _x;
-private _copLevel = [_pID, _pSide, "cop"] call HC_fnc_getSpecialLevel;
-private _medicLevel = [_pID, _pSide, "medic"] call HC_fnc_getSpecialLevel;
+private _copLevel = [_pID, "cop"] call HC_fnc_getSpecialLevel;
+private _medicLevel = [_pID, "medic"] call HC_fnc_getSpecialLevel;
 
 switch (side _x) do {
 

@@ -29,12 +29,12 @@ private _alive = alive CUR_PLAYER_IDC;
 private _escorting = (CUR_PLAYER_IDC getVariable ["Escorting", false]);
 private _restrained = (CUR_PLAYER_IDC getVariable ["restrained", false]);
 private _savezone = [CUR_PLAYER_IDC] call life_fnc_getSavezone;
-private _lockPick = ((["lockpick"] call life_fnc_getItemValue) > 0) || (playerSide isEqualTo west || (playerSide isEqualTo independent && call life_mediclevel >= 3));
-private _alcohol = ((["bier"] call life_fnc_getItemValue) > 0) || ((["wodka"] call life_fnc_getItemValue) > 0);
-private _drugs = ((["kokainP"] call life_fnc_getItemValue) > 0) || ((["heroinP"] call life_fnc_getItemValue) > 0) || (["marihuanaP"] call life_fnc_getItemValue) > 0);
+private _lockPick = ((["lockpick"] call life_fnc_getItemValue) > 0 || (playerSide isEqualTo west || (playerSide isEqualTo independent && call life_mediclevel >= 3)));
+private _alcohol = ((["bier"] call life_fnc_getItemValue) > 0 || (["wodka"] call life_fnc_getItemValue) > 0);
+private _drugs = ((["kokainP"] call life_fnc_getItemValue) > 0 || (["heroinP"] call life_fnc_getItemValue) > 0 || (["marihuanaP"] call life_fnc_getItemValue) > 0);
 private _jailLocations = getArray (missionConfigFile >> "Life_Settings" >> "jail_locations");
 private _jail = ({(markerPos _x) distance player < 100} count _jailLocations) > 0;
-private _kabelbinder = ((["kabelbinder"] call life_fnc_getItemValue) > 0) || (playerSide isEqualTo west || (playerSide isEqualTo independent && call life_mediclevel >= 3));
+private _kabelbinder = ((["kabelbinder"] call life_fnc_getItemValue) > 0 || (playerSide isEqualTo west || (playerSide isEqualTo independent && call life_mediclevel >= 3)));
 private _revive = (!_alive && !(CUR_PLAYER_IDC getVariable["Revive", false]));
 private _hinsetzName = if(CUR_PLAYER_IDC getVariable ["execution", false]) then {"Aufstehen"} else {"Hinsetzen"};
 

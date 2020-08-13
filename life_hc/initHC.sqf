@@ -93,7 +93,7 @@ CURRENT_WARNING = [];
 HACKING_STATE = false;
 SAVE_MODE = true;
 DATABASE_MODE = true;
-SAVE_STATE_INDEX = 3;
+SAVE_STATE_INDEX = 4;
 
 [] call HC_fnc_playerConfig;
 
@@ -107,7 +107,6 @@ diag_log format ["A3Log Loaded. Version: %1",("A3Log" callExtension "version")];
 [] spawn HC_fnc_initFarmEvent;
 [] spawn HC_fnc_initVirtuszone;
 [] call HC_fnc_initHouses;
-//[] spawn HC_fnc_initHouses;
 [] execVM "\life_hc\initVehicleExplosion.sqf";
 [] execVM "\life_hc\initTimeModule.sqf";
 [] execVM "\life_hc\initGangeroberung.sqf";

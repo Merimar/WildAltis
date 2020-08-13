@@ -5,7 +5,7 @@ private _pID = getPlayerUID _unit;
 private _pSide = side _unit;
 private _pName = name _unit;
 
-private _saveState = [_uid] call HC_fnc_getSave;
+private _saveState = [_pID] call HC_fnc_getSave;
 
 waitUntil {count (_saveState select SAVE_STATE_INDEX) > 0};
 

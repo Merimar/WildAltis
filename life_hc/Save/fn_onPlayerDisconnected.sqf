@@ -33,7 +33,7 @@ deleteVehicle _x;
 };
 }forEach allDeadMen;
 
-private _saveState = [_uid] call HC_fnc_getSave;
+private _saveState = [_pID] call HC_fnc_getSave;
 if(count _saveState isEqualTo 0) exitWith {};
 if(count (_saveState select SAVE_STATE_INDEX) isEqualTo 0) exitWith {};
 
