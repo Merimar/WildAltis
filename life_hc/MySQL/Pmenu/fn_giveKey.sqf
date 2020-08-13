@@ -20,15 +20,15 @@ if(_giveGang && count _nearUnits isEqualTo 0) exitWith {};
 
 if(_giveGang) then {
 {
-[_unit, _vehicle, [getPlayerUID _x, side _x] call HC_fnc_getGeheimzahl] remoteExec ["life_fnc_getKey", _x];
+[_unit, _vehicle, [getPlayerUID _x] call HC_fnc_getGeheimzahl] remoteExec ["life_fnc_getKey", _x];
 [getPlayerUID _x, side _x, _vehicle, 1] call HC_fnc_keyManagement;
 _owners pushBack [getPlayerUID _x, name _x];
 }forEach _nearUnits;
 
 _vehicle setVariable ["vehicle_info_owners", _owners, true];
 }else {
-[_unit, _vehicle, [getPlayerUID _keyPlayer, side _keyPlayer] call HC_fnc_getGeheimzahl] remoteExec ["life_fnc_getKey", _keyPlayer];
-[getPlayerUID _keyPlayer, side _keyPlayer, _vehicle, 1] call HC_fnc_keyManagement;
+[_unit, _vehicle, [getPlayerUID _keyPlayer] call HC_fnc_getGeheimzahl] remoteExec ["life_fnc_getKey", _keyPlayer];
+[getPlayerUID _keyPlayer, _vehicle, 1] call HC_fnc_keyManagement;
 _owners pushBack [getPlayerUID _keyPlayer, name _keyPlayer];
 
 _vehicle setVariable ["vehicle_info_owners", _owners, true];

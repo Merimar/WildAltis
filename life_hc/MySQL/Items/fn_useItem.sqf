@@ -9,12 +9,12 @@ if(_isHacker) exitWith {};
 private _displayName = getText (missionConfigFile >> "Items" >> _item >> "name");
 
 if(_item == "spikeStrip" && count _extraInfo > 0) exitWith {
-[getPlayerUID _unit, side _unit, _item, 1, true] call HC_fnc_handleVirt;
+[getPlayerUID _unit, _item, 1, true] call HC_fnc_handleVirt;
 _msg = format ["Der Spieler %1 (%2 - %3) hat ein Item aufgehoben (%4)", name _unit, getPlayerUID _unit, side _unit, _displayName];
 ["UseLog", _msg] call HC_fnc_Log;
 };
 
-private _pItems = [getPlayerUID _unit, side _unit, _item] call HC_fnc_countVirt;
+private _pItems = [getPlayerUID _unit, _item] call HC_fnc_countVirt;
 
 if(_pItems < 1) exitWith {
 _reason1 = format ["Der Spieler %1 (%2 - %3) wollte ein Item (%4) benutzen, hat aber nicht genug Items (%5 < 1)", name _unit, getPlayerUID _unit, side _unit, _displayName, [_pItems] call HC_fnc_numberSafe];
@@ -29,10 +29,10 @@ private _success = _extraInfo select 1;
 private _objSide = (_obj getVariable ["dbInfo", ["", sideUnknown, 0]]) select 1;
 _msg = format ["Der Spieler %1 (%2 - %3) hat einen Dietrich benutzt (OBJEKT: %4 GESCHAFFT: %5)", name _unit, getPlayerUID _unit, side _unit, typeOf _obj, _success];
 ["UseLog", _msg] call HC_fnc_Log;
-[getPlayerUID _unit, side _unit, "lockpick"] call HC_fnc_addSkill;
+[getPlayerUID _unit, "lockpick"] call HC_fnc_addSkill;
 if((_obj isKindOf "LandVehicle" || _obj isKindOf "Ship" || _obj isKindOf "Air") && _success) then {[getPlayerUID _unit, side _unit, _obj, 1] call HC_fnc_keyManagement;};
 if((side _unit) isEqualTo independent) exitWith {};
-[getPlayerUID _unit, side _unit, _item, 1, false] call HC_fnc_handleVirt;
+[getPlayerUID _unit, _item, 1, false] call HC_fnc_handleVirt;
 if(_success) then {
 if(_objSide isEqualTo west) then {
 [_unit, "VEHICLE_STEAL_COP"] call HC_fnc_fahndungHandle;
@@ -48,15 +48,15 @@ if(_objSide isEqualTo west) then {
 };
 };
 
-[getPlayerUID _unit, side _unit, _item, 1, false] call HC_fnc_handleVirt;
+[getPlayerUID _unit, _item, 1, false] call HC_fnc_handleVirt;
 
 if(_item == "fuelEmpty") then {
-[getPlayerUID _unit, side _unit, "fuelFull", 1, true] call HC_fnc_handleVirt;
-[getPlayerUID _unit, side _unit, "cash", 10000, false] call HC_fnc_handleMoney;
+[getPlayerUID _unit, "fuelFull", 1, true] call HC_fnc_handleVirt;
+[getPlayerUID _unit, "cash", 10000, false] call HC_fnc_handleMoney;
 };
 
 if(_item == "fuelFull") then {
-[getPlayerUID _unit, side _unit, "fuelEmpty", 1, true] call HC_fnc_handleVirt;
+[getPlayerUID _unit, "fuelEmpty", 1, true] call HC_fnc_handleVirt;
 };
 
 if(_item == "schloss") then {

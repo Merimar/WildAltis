@@ -7,7 +7,7 @@ private _isHacker = [[], _unit, remoteExecutedOwner, "fn_dpFinish"] call HC_fnc_
 if(_isHacker || isNull _missionStart || isNull _missionEnd || _playerPrice isEqualTo -1) exitWith {};
 
 private _price = round(5.0 * (_missionStart distance _missionEnd));
-private _extraMoney = ([getPlayerUID _unit, side _unit, "farmPost"] call HC_fnc_getSkillAdvantage) * 1000;
+private _extraMoney = ([getPlayerUID _unit, "farmPost"] call HC_fnc_getSkillAdvantage) * 1000;
 private _price = _extraMoney + _price;
 
 if(!(_price isEqualTo _playerPrice)) exitWith {
@@ -17,8 +17,8 @@ _reason2 = format ["Spieler welcher mit RemoteExecutedOwner rausgefunden wurde: 
 [format["Bei dem Spieler %1 wurde ein dpFinish Hack festgestellt", name _unit], false] call HC_fnc_adminMessage;
 };
 
-[getPlayerUID _unit, side _unit, "cash", _price, true] call HC_fnc_handleMoney;
-[getPlayerUID _unit, side _unit, "farmPost", floor ((_missionStart distance _missionEnd) / 625)] call HC_fnc_addSkill;
+[getPlayerUID _unit, "cash", _price, true] call HC_fnc_handleMoney;
+[getPlayerUID _unit, "farmPost", floor ((_missionStart distance _missionEnd) / 625)] call HC_fnc_addSkill;
 
 private _msg = format ["Der Spieler %1 (%2 - %3) hat $%4 durch eine DP mission gemacht (VON: %5 NACH: %6)", name _unit, getPlayerUID _unit, side _unit, [_price] call HC_fnc_numberSafe, toUpper(str _missionStart), toUpper(str _missionEnd)];
 ["DPLog", _msg] call HC_fnc_Log;

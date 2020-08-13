@@ -26,8 +26,8 @@ switch (_outcome) do {
 	};
 	
 	case "NORMAL" : {
-		[getPlayerUID _unit, side _unit, "rebel", false] call HC_fnc_handleLicenses;
-		[getPlayerUID _unit, side _unit, 0] call HC_fnc_handleArrested;
+		[getPlayerUID _unit, "rebel", false] call HC_fnc_handleLicenses;
+		[getPlayerUID _unit, 0] call HC_fnc_handleArrested;
 		private _query = format ["UPDATE player_jail SET deleted_at = now() WHERE prisoner_id = '%1' AND side_id = '%2'", getPlayerUID _unit, _sideID];
 		[_query, 1] call HC_fnc_asyncCall;
 		private _msg = format ["Der Spieler %1 (%2 - %3) hat seine Zeit im Gefängnis abgesessen", name _unit, getPlayerUID _unit, side _unit];

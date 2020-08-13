@@ -1,7 +1,7 @@
-private _target = _this select 0;
-private _arg = _this select 1;
-private _value = _this select 2;
-private _side = _this select 3;
+private _target = param [0, objNull, [objNull]];
+private _arg = param [1, "", [""]];
+private _value = param [2, 0];
+private _side = param [3, sideUnknown, [sideUnknown]];
 
 if(!(playerSide isEqualTo _side)) exitWith {};
 

@@ -6,8 +6,8 @@ private _money = param [2, 0, [0]];
 private _isHacker = [[], _unit, remoteExecutedOwner, "fn_giveMoney"] call HC_fnc_checkSQLBreak;
 if(_isHacker) exitWith {};
 
-private _handMoney = [getPlayerUID _unit, side _unit, "cash"] call HC_fnc_getMoney;
-private _geheimZahl = [getPlayerUID _moneyPlayer, side _moneyPlayer] call HC_fnc_getGeheimzahl;
+private _handMoney = [getPlayerUID _unit, "cash"] call HC_fnc_getMoney;
+private _geheimZahl = [getPlayerUID _moneyPlayer] call HC_fnc_getGeheimzahl;
 
 if(_handMoney < _money) exitWith {
 _reason1 = format ["Der Spieler %1 (%2 - %3) wollte dem Spieler %4 (%5 - %6) Geld geben, hat allerdings nicht genuegend Geld auf der Hand (%6 < %7)", name _unit, getPlayerUID _unit, side _unit, name _moneyPlayer, getPlayerUID _moneyPlayer, side _moneyPlayer, [_handMoney] call HC_fnc_numberSafe, [_money] call HC_fnc_numberSafe];
@@ -17,7 +17,7 @@ _reason2 = format ["Spieler welcher mit RemoteExecutedOwner rausgefunden wurde: 
 };
 
 [getPlayerUID _unit, side _unit, "cash", _money, false] call HC_fnc_handleMoney;
-[getPlayerUID _moneyPlayer, side _moneyPlayer, "cash", _money, true] call HC_fnc_handleMoney;
+[getPlayerUID _moneyPlayer, "cash", _money, true] call HC_fnc_handleMoney;
 [_moneyPlayer,_money,_unit,false,false,_geheimZahl] remoteExec ["life_fnc_receiveMoney", _moneyPlayer];
 
 private _msg = format ["Der Spieler %1 (%2 - %3) hat dem Spieler %4 (%5 - %6) %7 gegeben", name _unit, getPlayerUID _unit, side _unit, name _moneyPlayer, getPlayerUID _moneyPlayer, side _moneyPlayer, [_money] call HC_fnc_numberSafe];

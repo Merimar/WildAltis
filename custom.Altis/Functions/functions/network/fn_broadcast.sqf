@@ -5,10 +5,9 @@
     Description:
     Broadcast system used in the life mission for multi-notification purposes.
 */
-private["_type","_message"];
-_type = [_this,0,0,[[],0]] call BIS_fnc_param;
-_message = [_this,1,"",[""]] call BIS_fnc_param;
-_localize = [_this,2,false,[false]] call BIS_fnc_param;
+private _type = param [0, 0, [0, []]];
+private _message = param [1, "", [""]];
+_localize = param [2, false, [false]];
 if (_message isEqualTo "") exitWith {};
 
 if (_localize) exitWith {

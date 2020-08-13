@@ -26,14 +26,14 @@ _reason2 = format ["Spieler welcher mit RemoteExecutedOwner rausgefunden wurde: 
 [format["Bei dem Spieler %1 wurde ein Ticket Hack festgestellt", name _unit], false] call HC_fnc_adminMessage;
 };
 
-private _money = [getPlayerUID _criminal, side _criminal, "bank"] call HC_fnc_getMoney;
+private _money = [getPlayerUID _criminal, "bank"] call HC_fnc_getMoney;
 if(_type == "Prozent") then {_amount = floor (_money * (_amount / 100));};
 if(_force && _amount > _money) then {_amount = _money;};
 
 [_unit, _type, _amount, _crimes, _force] remoteExec ["life_fnc_ticketReceive", _criminal];
 
 if(_force) then {
-[getPlayerUID _criminal, side _criminal, "bank", _amount, false] call HC_fnc_handleMoney;
+[getPlayerUID _criminal, "bank", _amount, false] call HC_fnc_handleMoney;
 CURRENT_TICKET_LIST = CURRENT_TICKET_LIST - [_criminal];
 [_criminal, "", false, true] call HC_fnc_fahndungHandle;
 [0, format ["Der Spieler %1 hat ein Ticket im Wert von %2 bezahlt", name _criminal, [_amount] call HC_fnc_numberSafe]] remoteExec ["life_fnc_broadcast", -2];
