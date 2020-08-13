@@ -94,7 +94,7 @@ switch (true) do {
 	
 	case (_item isEqualTo "firstaidkit") : {
 		closeDialog 0;
-		if((player getHitPointDamage "hitLegs") > 0 || (damage player) > (["heal"] call life_fnc_getSkillAdvantage)) then {
+		if((player getHitPointDamage "hitLegs") >= 0.5 || (damage player) > (["heal"] call life_fnc_getSkillAdvantage)) then {
 			[] spawn life_fnc_healAction;
 		}else {
 			["", "Du bist schon gesund!"] spawn life_fnc_message;
