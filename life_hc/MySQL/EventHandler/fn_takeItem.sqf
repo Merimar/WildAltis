@@ -25,7 +25,7 @@ if(_newAmount isEqualTo 0) then {
 };
 
 private _playerGear = [_unit] call HC_fnc_getPlayerGear;
-[getPlayerUID _unit, side _unit, _playerGear] call HC_fnc_handleInv;
+[getPlayerUID _unit, _playerGear] call HC_fnc_handleInv;
 
 private _details = [_item] call HC_fnc_fetchCfgDetails;
 private _name = _details param [1, "Kein Name"];

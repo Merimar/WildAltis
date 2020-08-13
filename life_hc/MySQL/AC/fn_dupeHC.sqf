@@ -5,7 +5,7 @@ private _isHacker = [[_item], _unit, remoteExecutedOwner, "fn_dupeHC"] call HC_f
 if(_isHacker) exitWith {};
 
 private _gear = [_unit] call HC_fnc_getPlayerGear;
-[getPlayerUID _unit, side _unit, _gear] call HC_fnc_handleInv;
+[getPlayerUID _unit, _gear] call HC_fnc_handleInv;
 
 _msg = format ["Der Spieler %1 (%2 - %3) hat ein Item gedupet: %4", name _unit, getPlayerUID _unit, side _unit, _item];
 ["DupeLog", _msg] call HC_fnc_Log;

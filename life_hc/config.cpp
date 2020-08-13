@@ -42,7 +42,6 @@ class CfgFunctions
 			class dupeHC {};
             class getAdmins {};
 			class getGeheimzahl {};
-			class getName {};
 			class getOwnerID {};
             class getPlayerByID {};
             class getPlayerByUID {};
@@ -51,7 +50,6 @@ class CfgFunctions
 			class logKey {};
 			class playerInit {};
             class reportHacker {};
-            class searchArray {};
 			class sendMessage {};
         };
 		
@@ -392,6 +390,7 @@ class CfgFunctions
 			class getLoadouts {};
 			class getMoney {};
 			class getPlayerGear {};
+			class getSave {};
 			class getSkill {};
 			class getSkillAdvantage {};
 			class getSkillLevel {};

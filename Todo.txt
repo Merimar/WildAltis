@@ -1,11 +1,8 @@
 Im Schliesfach sind 2 Dinger vertauscht von den Aufsätzen
 Zeus Tempel Schild
 In den Logs immer Bank und Cash angeben
-Medic air hq schild keine Textur
-Hexagons im Helikopter buggen (fliegen hoch und runter)
-Hexagons Meteranzahl hinzufügen
+Hexagons
 Ausweis
-zelle_5 gibt es nicht
 Beim joinen 400x Speck (steht aber nicht in der DB) -> bei Fatum
-Haus mit Infosign drinne net kaufen
-Hexagons im Fahrzeug
+Admin Spectate
+Leiche Local -> Auf dem HC deswegen null -> bei EpiPen

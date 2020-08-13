@@ -10,6 +10,8 @@ private _drinkList = ["waterBottle", "coffee"];
 private _drugsList = ["kokainP", "heroinP", "marihuanaP", "medmarihuana"];
 private _alcoholList = ["wodka", "bier", "traubenP"];
 
+if(lifeState player == "INCAPACITATED") exitWith {};
+
 switch (true) do {
     case(_item in _drinkList): {
         if(!([false, _item, 1] call life_fnc_handleInv)) exitWith {};
@@ -94,7 +96,7 @@ switch (true) do {
 	
 	case (_item isEqualTo "firstaidkit") : {
 		closeDialog 0;
-		if((player getHitPointDamage "hitLegs") > 0 || (damage player) > (["heal"] call life_fnc_getSkillAdvantage)) then {
+		if((player getHitPointDamage "hitLegs") > 0.4 || (damage player) > (["heal"] call life_fnc_getSkillAdvantage)) then {
 			[] spawn life_fnc_healAction;
 		}else {
 			["", "Du bist schon gesund!"] spawn life_fnc_message;

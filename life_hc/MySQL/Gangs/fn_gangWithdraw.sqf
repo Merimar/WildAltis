@@ -27,7 +27,7 @@ _reason2 = format ["Spieler welcher mit RemoteExecutedOwner rausgefunden wurde: 
 [format["Bei dem Spieler %1 wurde ein GangWithdraw Hack festgestellt", name _unit], false] call HC_fnc_adminMessage;
 };
 
-[getPlayerUID _unit, side _unit, "bank", _amount, true] call HC_fnc_handleMoney;
+[getPlayerUID _unit, "bank", _amount, true] call HC_fnc_handleMoney;
 private _newAmount = _gangBank - _amount;
 
 _group setVariable ["gang_bank", _newAmount, true];

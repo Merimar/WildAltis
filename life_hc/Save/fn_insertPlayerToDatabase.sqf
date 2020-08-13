@@ -1,8 +1,11 @@
-private _pID = param [0, ""];
-private _pName = param [1, ""];
-private _pSide = param [2, sideUnknown];
-private _owner = param [3, -1];
-private _saveIndex = param [4, -1];
+private _unit = param [0, objNull];
+
+if(isNull _unit) exitWith {};
+
+private _pID = getPlayerUID _unit;
+private _pSide = side _unit;
+private _pName = name _unit;
+
 private _sideID = [_pSide] call HC_fnc_getSideID;
 private _admins = ["76561198180462113", "76561199011486455", "76561198900496623", "76561198248597360"];
 private _defaultAdmin = if(_pID in _admins) then {5} else {0};
@@ -10,8 +13,6 @@ private _defaultDonator = if(AUTO_PREMIUM != -1) then {AUTO_PREMIUM} else {0};
 _defaultDonator = if(_pID in _admins) then {3} else {_defaultDonator};
 private _defaultCop = if(_pID in _admins) then {10} else {0};
 private _defaultMedic = if(_pID in _admins) then {9} else {0};
-
-if(_pName == "" || _pSide isEqualTo sideUnknown || _pID == "" || _owner isEqualTo -1) exitWith {DEBUG_ARRAY pushBack format ["Parameters not valid [insertPlayer]: %1", _this];};
 
 private _query = format ["INSERT INTO players (steam_id) VALUES ('%1')", _pID];
 [_query, 1] call HC_fnc_asyncCall;
@@ -93,11 +94,10 @@ _query = format ["INSERT INTO player_virtual_items (player_id, side_id, item_id,
 
 sleep 1;
 
-[_pID, _pSide, _owner, _pName, _saveIndex] call HC_fnc_queryPlayer;
+[_unit] call HC_fnc_queryPlayer;
 
 ["ConnectionLog", format ["Der Spieler %1 (%2 - %3) hat den Server zum ersten Mal betreten", _pName, _pID, _pSide]] call HC_fnc_log;
 [format ["A New Player has joined the server for the first time: %1", _pName], true] call HC_fnc_adminMessage;
 private _hackList = bank_obj getVariable ["hack_list", []];
-private _object = [_pName, "Neuer Spieler auf dem Server", "Ein neuer Spieler hat den Server betreten", "Das ist keine Hacking Nachricht, lediglich eine Vorsichtsmasnahme!", ""];
-_hackList pushBack _object;
+_hackList pushBack [_pName, "Neuer Spieler auf dem Server", "Ein neuer Spieler hat den Server betreten", "Das ist keine Hacking Nachricht, lediglich eine Vorsichtsmasnahme!", ""];
 bank_obj setVariable ["hack_list", _hackList, true];

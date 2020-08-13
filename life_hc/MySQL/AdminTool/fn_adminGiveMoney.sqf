@@ -5,8 +5,8 @@ private _unit = param [2, objNull, [objNull]];
 private _isHacker = [[], _unit, remoteExecutedOwner, "fn_adminGiveMoney", true] call HC_fnc_checkSQLBreak;
 if(_isHacker) exitWith {};
 
-private _geheimZahl = [getPlayerUID _player, side _player] call HC_fnc_getGeheimzahl;
-[getPlayerUID _player, side _player, "bank", _money, true] call HC_fnc_handleMoney;
+private _geheimZahl = [getPlayerUID _player] call HC_fnc_getGeheimzahl;
+[getPlayerUID _player, "bank", _money, true] call HC_fnc_handleMoney;
 [_player, _money, _unit, true, false, _geheimZahl] remoteExec ["life_fnc_receiveMoney",_player];
 
 [format ["%1 hat %2 $%3 gegeben!", name _unit, name _player, [_money] call HC_fnc_numberSafe], true] call HC_fnc_adminMessage;

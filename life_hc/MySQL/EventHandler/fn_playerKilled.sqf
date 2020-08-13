@@ -10,12 +10,12 @@ private _pSide = side _newPlayer;
 
 _newPlayer setVariable ["Bank_geschafft", false, true];
 
-private _cash = [_pID, _pSide, "cash"] call HC_fnc_getMoney;
+private _cash = [_pID, "cash"] call HC_fnc_getMoney;
 private _cashLog = [_cash] call HC_fnc_numberSafe;
-private _itemList = [_pID, _pSide] call HC_fnc_getVirt;
+private _itemList = [_pID] call HC_fnc_getVirt;
 private _itemArray = [];{if((_x select 1) > 0) then {_itemArray pushBack format ["%1x %2", _x select 1, _x select 0];};}forEach _itemList;
 private _itemString = _itemArray joinString ", ";
-private _gear = [_pID, _pSide] call HC_fnc_getGear;
+private _gear = [_pID] call HC_fnc_getGear;
 _primaryWeapon = if(!(isNull _killer)) then {primaryWeapon _killer} else {"Keine Waffe"};
 
 private _unitVehicle = "Kein Fahrzeug";
@@ -72,10 +72,10 @@ private _informationList = [_pID, _pName, _itemList, _cash, _pSide];
 private _index = MONEY_PICKUP findIf {_x select 0 == _pID};
 if(_index isEqualTo -1) then {MONEY_PICKUP pushBackUnique _informationList;}else {MONEY_PICKUP set [_index, _informationList];};
 
-[_pID, _pSide, false] call HC_fnc_handleAlive;
-[_pID, _pSide, "", 1, false, true] call HC_fnc_handleVirt;
-[_pID, _pSide, []] call HC_fnc_handleInv;
-[_pID, _pSide, "cash", _cash, false] call HC_fnc_handleMoney;
+[_pID, false] call HC_fnc_handleAlive;
+[_pID, "", 1, false, true] call HC_fnc_handleVirt;
+[_pID, []] call HC_fnc_handleInv;
+[_pID, "cash", _cash, false] call HC_fnc_handleMoney;
 ["DeathLog", _deathMessage] call HC_fnc_Log;
 if(isNull _killer || _killer == _unit || {!(_killer inArea "VirtusZone")}) exitWith {};
 private _groupName = (group _killer) getVariable ["gang_name", ""];

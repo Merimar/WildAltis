@@ -1,7 +1,6 @@
 private _pID = param [0, ""];
-private _pSide = param [1, sideUnknown];
-private _pSkill = param [2, ""];
-private _pPoints = [_pID, _pSide, _pSkill] call HC_fnc_getSkill;
+private _pSkill = param [1, ""];
+private _pPoints = [_pID, _pSkill] call HC_fnc_getSkill;
 private _pLevel = [_pSkill, _pPoints] call HC_fnc_getSkillLevel;
 
 private _skillGroup = switch (true) do {
@@ -45,6 +44,10 @@ case "crafting" : {
 _advantage = SKILL_CRAFTING_TIME select _pLevel;
 };
 };
+
+private _saveState = [_pID] call HC_fnc_getSave;
+if(count (_saveState select SAVE_STATE_INDEX) isEqualTo 0) exitWith {0};
+private _pSide = _saveState select 2;
 
 if(_pSkill == "heal" && _pSide isEqualTo independent) then {_advantage = 0;};
 

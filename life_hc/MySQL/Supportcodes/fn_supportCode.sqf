@@ -4,8 +4,6 @@ private _code = param [1, "0", [""]];
 private _isHacker = [[_code], _unit, remoteExecutedOwner, "fn_supportCode"] call HC_fnc_checkSQLBreak;
 if(_isHacker) exitWith {};
 
-_code = parseNumber _code;
-
 private _query = format ["SELECT id, receiver_id, side_id, amount FROM support_codes WHERE code = '%1' AND deleted_at IS NULL", _code];
 private _result = [_query, 2] call HC_fnc_asyncCall;
 

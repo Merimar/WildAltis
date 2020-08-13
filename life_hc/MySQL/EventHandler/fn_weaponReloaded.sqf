@@ -7,4 +7,4 @@ if(_isHacker) exitWith {};
 sleep 0.3;
 
 private _playerGear = [_unit] call HC_fnc_getPlayerGear;
-[getPlayerUID _unit, side _unit, _playerGear] call HC_fnc_handleInv;
+[getPlayerUID _unit, _playerGear] call HC_fnc_handleInv;

@@ -9,6 +9,6 @@ private _msg = format ["Der Spieler %1 (%2 - %3) hat die %4 Taste gedrueckt", na
 ["KeyLog", _msg] call HC_fnc_Log;
 
 if(_key == "INSERT") then {
-_adminList = playableUnits select {([getPlayerUID _x, side _x, "admin"] call HC_fnc_getSpecialLevel) > 4};
+_adminList = playableUnits select {([getPlayerUID _x, "admin"] call HC_fnc_getSpecialLevel) > 4};
 [format ["Der Spieler %1 hat die INSERT Taste gedrückt", name _unit], false, "slow"] remoteExec ["life_fnc_notification_system", _adminList];
 };

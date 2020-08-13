@@ -1,5 +1,5 @@
-private _unit = _this select 0;
-private _pID = _this select 1;
+private _unit = param [0, objNull];
+private _pID = getPlayerUID _unit;
 
 private _handle = [_unit] spawn HC_fnc_paycheck;
 private _index = PAYCHECK_HANDLE findIf {_x select 0 == _pID};

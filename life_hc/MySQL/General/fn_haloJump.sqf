@@ -6,7 +6,7 @@ private _haloJumpHeight = getNumber (missionConfigFile >> "Life_Settings" >> "ha
 private _isHacker = [[], _unit, remoteExecutedOwner, "fn_haloJump"] call HC_fnc_checkSQLBreak;
 if(_isHacker) exitWith {};
 
-private _money = [getPlayerUID _unit, side _unit, "bank"] call HC_fnc_getMoney;
+private _money = [getPlayerUID _unit, "bank"] call HC_fnc_getMoney;
 
 if(_money < _haloPrice) exitWith {
 private _reason1 = format ["Der Spieler %1 (%2 - %3) wollte halojumpen hat aber keine $100.000", name _unit, getPlayerUID _unit, side _unit];
@@ -17,7 +17,7 @@ private _reason2 = format ["Spieler welcher mit RemoteExecutedOwner rausgefunden
 
 _pos set [2, _haloJumpHeight];
 
-[getPlayerUID _unit, side _unit, "bank", _haloPrice, false] call HC_fnc_handleMoney;
+[getPlayerUID _unit, "bank", _haloPrice, false] call HC_fnc_handleMoney;
 
 private _msg = format ["Der Spieler %1 (%2 - %3) hat einen Halojump nach: %4 gemacht", name _unit, getPlayerUID _unit, side _unit, _pos];
 ["HaloLog", _msg] call HC_fnc_Log;

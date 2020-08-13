@@ -40,7 +40,7 @@ if(count _members > 0) then {
 [_vault, _unit] remoteExec ["life_fnc_bankTimerDisplay", _members];
 };
 
-_geheimZahl = [getPlayerUID _unit, side _unit] call HC_fnc_getGeheimzahl;
+_geheimZahl = [getPlayerUID _unit] call HC_fnc_getGeheimzahl;
 
 waitUntil {scriptDone _handle};
 deleteMarker _marker;
@@ -62,7 +62,7 @@ private _pSide = _this select 5;
 sleep (15 * 60);
 if(!(isNull _unit) && {_unit getVariable ["Bank_geschafft", false]}) then {
 _unit setVariable ["Bank_geschafft", false, true];
-[_pID, _pSide, "cash", _money, true] call HC_fnc_handleMoney;
+[_pID, "cash", _money, true] call HC_fnc_handleMoney;
 _msg = format ["Der Spieler %1 (%2 - %3) hat eine Bank erfolgreich ausgeraubt und %4 bekommen (GANG: %5)", _pName, _pID, _pSide, [_money] call HC_fnc_numberSafe, _group getVariable ["gang_name", "Keine Gang"]];
 ["BankLog", _msg] call HC_fnc_Log;
 }else {

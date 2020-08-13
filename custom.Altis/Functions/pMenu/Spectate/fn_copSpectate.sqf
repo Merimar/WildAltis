@@ -10,6 +10,7 @@ if(_index isEqualTo -1) exitWith {["Du hast keinen Spieler ausgewählt!", "Keine
 private _unit = call compile (_playerList lbData _index);
 
 if(isNil "_unit" || {isNull _unit}) exitWith {["Der Spieler ist offline gegangen", "Spieler offline"] spawn life_fnc_message;};
+if(_unit == player) exitWith {};
 
 _unit switchCamera "EXTERNAL";
 [player, _unit, true] remoteExec ["HC_fnc_copSpectate", HC_LIFE];

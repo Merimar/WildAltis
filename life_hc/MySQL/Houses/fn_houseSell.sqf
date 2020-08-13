@@ -7,7 +7,7 @@ if(_isHacker || isNull _house) exitWith {};
 
 private _pID = getPlayerUID _unit;
 private _pSide = side _unit;
-private _geheimZahl = [_pID, _pSide] call HC_fnc_getGeheimzahl;
+private _geheimZahl = [_pID] call HC_fnc_getGeheimzahl;
 private _housePositionReal = getPos _house;
 private _houseClassnameReal = typeOf _house;
 private _houseName = getText (configFile >> "CfgVehicles" >> _houseClassnameReal >> "displayName");

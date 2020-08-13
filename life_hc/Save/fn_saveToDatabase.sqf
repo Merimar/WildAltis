@@ -1,24 +1,27 @@
-private _index = param [0,-1,[-1]];
-private _saveAll = param [1,false,[false]];
+private _pID = param [0, "", [""]];
+private _saveAll = param [1, false, [false]];
 
-private _start = if(_saveAll) then {0} else {_index};
-private _end = if(_saveAll) then {(count SAVE_ARRAY) -1} else {_index};
+private _target = if(_saveAll) then {playableUnits} else {_pID};
 
-for "_int" from _start to _end step 1 do {
-private _cur = SAVE_ARRAY select _int;
-private _pID = _cur select 0;
-private _pSide = [_cur select 1] call HC_fnc_getSideID;
-private _groupSide = [_cur select 1] call HC_fnc_getGroupSideID;
-private _saveStatus = _cur select SAVE_STATE_INDEX;
+{
+private _curTarget = _x;
+private _pID = if(_curTarget isEqualType "") then {_curTarget} else {getPlayerUID _x};
+private _saveState = [_uid] call HC_fnc_getSave;
 
-private _licenseInfo = _saveStatus select 5;
-private _skillInfo = _saveStatus select 6;
-private _aliveInfo = if(_saveStatus select 8 select 0) then {1} else {0};
-private _moneyInfo = _saveStatus select 10;
-private _gearInfo = [_saveStatus select 11] call HC_fnc_mresArray;
-private _virtInfo = _saveStatus select 12;
-private _lockerInfo = _saveStatus select 13;
-private _loadoutInfo = [_saveStatus select 14] call HC_fnc_mresArray;
+private _pSide = [_saveState select 2] call HC_fnc_getSideID;
+private _groupSide = [_saveState select 2] call HC_fnc_getGroupSideID;
+private _saveStatus = _saveState select SAVE_STATE_INDEX;
+
+if(count _saveStatus > 0) then {
+
+private _licenseInfo = _saveStatus param [5, []];
+private _skillInfo = _saveStatus param [6, []];
+private _aliveInfo = if((_saveStatus param [8, []]) param [0, true]) then {1} else {0};
+private _moneyInfo = _saveStatus param [10, []];
+private _gearInfo = [_saveStatus param [11, []]] call HC_fnc_mresArray;
+private _virtInfo = _saveStatus param [12, []];
+private _lockerInfo = _saveStatus param [13, []]
+private _loadoutInfo = [_saveStatus param [14, []]] call HC_fnc_mresArray;
 
 /** LICENSE **/
 [_pID, _licenseInfo] spawn {
@@ -122,4 +125,7 @@ sleep 0.01;
 /** LOADOUT **/
 _query = format ["UPDATE player_loadouts SET loadout = '%1' WHERE player_id = '%2' AND side_id = '%3'", _loadoutInfo, _pID, _pSide];
 [_query,1] call HC_fnc_asyncCall;
+}else {
+diag_log format ["Savestatus empty: %1", _cur];
 };
+}forEach _target;
