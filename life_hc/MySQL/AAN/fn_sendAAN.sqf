@@ -14,7 +14,7 @@ _reason2 = format ["Spieler welcher mit RemoteExecutedOwner rausgefunden wurde: 
 };
 
 if(AAN_NEWS) exitWith {};
-[getPlayerUID _unit, side _unit, "cash", 100000, false] call HC_fnc_handleMoney;
+[getPlayerUID _unit, "cash", 100000, false] call HC_fnc_handleMoney;
 [name _unit, _message, _header] remoteExec ["life_fnc_receiveAAN", -2];
 
 private _msg = format ["Der Spieler %1 (%2 - %3) hat eine AAN News Nachricht geschrieben: %4 - %5", name _unit, getPlayerUID _unit, side _unit, _message, _header];

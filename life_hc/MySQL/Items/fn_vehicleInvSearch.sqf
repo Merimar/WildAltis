@@ -5,7 +5,7 @@ private _isHacker = [[], _unit, remoteExecutedOwner, "fn_vehicleInvSearch"] call
 if(_isHacker || isNull _vehicle) exitWith {};
 
 private _index = [_vehicle] call HC_fnc_getVehicleIndex;
-private _searchSkill = [getPlayerUID _unit, side _unit, "search"] call HC_fnc_getSkillAdvantage;
+private _searchSkill = [getPlayerUID _unit, "search"] call HC_fnc_getSkillAdvantage;
 if(_index isEqualTo -1) exitWith {["", "Es wurden keine illegalen Items gefunden"] remoteExec ["life_fnc_message", _unit]};
 
 private _data = VEHICLE_INV_ARRAY select _index;

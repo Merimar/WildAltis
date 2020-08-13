@@ -1,7 +1,4 @@
-/*
-    File: fn_setFuel.sqf
-    Author: Bryan "Tonic" Boardwine
+private _obj = param [0, objNull, [objNull]];
+private _fuel = param [1, 0, [0]];
 
-    Description: Used to set fuel levels in vehicles. (Ex. Service Chopper)
-*/
-(_this select 0) setFuel (_this select 1);
+_obj setFuel _fuel;

@@ -52,16 +52,16 @@ private _msg = format ["Der Spieler %1 (%2 - %3) hat einen Buff aktiviert (BUFF:
 ["GangLog", _msg] call HC_fnc_Log;
 
 if(_buff == "dealer") then {
-["Der Gangdealer hat die Insel betreten. Ihr könnt dort eure Drogen für einen höheren Preis verkaufen!", "Gangdealer"] remoteExec ["life_fnc_message", -2];
+["Der Schwarzmarkt öffnet seine Pforten. Ihr könnt dort eure Drogen für einen höheren Preis verkaufen. Aber denkt dran, der Schwarzmarkt ist zeitlich begrenzt!", "Schwarzmarkt"] remoteExec ["life_fnc_message", -2];
 GANG_DEALER = true;
 private _randomPos = selectRandom GANG_DEALER_POSITIONS;
 private _marker = createMarker ["GangDealer", _randomPos];
-_marker setMarkerText "Gangdealer";
+_marker setMarkerText "Schwarzmarkt";
 _marker setMarkerType "mil_dot";
 _marker setMarkerColor "ColorRed";
 private _sleep = getNumber(missionConfigFile >> "CfgBuffs" >> "dealer" >> "duration");
 sleep _sleep;
 deleteMarker _marker;
 GANG_DEALER = false;
-["Der Gangdealer hat die Insel wieder verlassen.", "Gangdealer"] remoteExec ["life_fnc_message", -2];
+["Der Schwarzmarkt schließt seine Türen wieder!", "Schwarzmarkt"] remoteExec ["life_fnc_message", -2];
 };

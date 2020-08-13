@@ -1,5 +1,5 @@
-private _sel = _this select 0;
-private _message = _this select 1;
+private _sel = param [0, "NoLog"];
+private _message = param [1, "NoMessage"];
 
 private _newSel = [_sel] call HC_fnc_removeChar;
 private _newMesage = [_message] call HC_fnc_removeChar;

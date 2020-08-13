@@ -25,7 +25,7 @@ private _query = [];
 private _pName = name _unit;
 private _pID = getPlayerUID _unit;
 private _pSide = side _unit;
-private _geheimZahl = [_pID, _pSide] call HC_fnc_getGeheimzahl;
+private _geheimZahl = [_pID] call HC_fnc_getGeheimzahl;
 
 private _msg = format ["Bei dem Spieler %1 wurden modifizierte Arma 3 Dateien gefunden (", _pName];
 

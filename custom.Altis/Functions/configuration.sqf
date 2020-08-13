@@ -49,6 +49,7 @@ LAST_GATHER_TIMER = 0;
 life_anfahr_timer = time;
 life_query_time = time;
 life_action_delay = time;
+life_vehicle_delay = time;
 life_trunk_vehicle = objNull;
 life_garage_store = false;
 life_session_tries = 0;

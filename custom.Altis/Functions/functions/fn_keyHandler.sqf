@@ -14,7 +14,7 @@ private _interactionKey = if(count (actionKeys "User10") isEqualTo 0) then {219}
 private _redgullKey = if((actionKeys "User11") isEqualTo[]) then {221} else {(actionKeys "User11") select 0};
 private _mapKey = (actionKeys "ShowMap" select 0);
 private _speakKey = (actionKeys "pushToTalk" select 0);
-private _cV = (actionKeys "TacticalView" select 0);
+private _cV = actionKeys "TacticalView";
 private _invKey = (actionKeys "gear" select 0);
 private _diaryKey = (actionKeys "diary" select 0);
 private _getOver = (actionKeys "GetOver" select 0);
@@ -40,7 +40,7 @@ if(_code in [_getOver, _salute, _sitDown, _throw, _getIn, _getOut, _fire, _reloa
 if(life_action_inUse && !life_interrupted && _code in _interruptionKeys) then {[] spawn {life_interrupted = true; sleep 2; life_interrupted = false;};};
 if(!(count (actionKeys "User10") isEqualTo 0) && {(inputAction "User10" > 0)}) exitWith {if(!life_action_inUse) then {[] call life_fnc_actionKeyHandler;};};
 if(_code in [_getOver] && JAIL_TIME > 0) then {_handled = true;};
-if(_code == _cV) then {_handled = true;};
+if(_code in _cV) then {_handled = true;};
 
 if(!_handled) then {
 switch (_code) do {
@@ -188,7 +188,7 @@ switch (_code) do {
         _handled = true;
 		if(playerSide isEqualTo west || (playerSide isEqualTo independent && call life_mediclevel >= 3)) exitWith {[] call life_fnc_restrainAction;};
 		if(ITEM_VALUE("kabelbinder") < 1) exitWith {["Du benötigst Kabelbinder um Leute festzunehmen", "Kein Kabelbinder"] spawn life_fnc_message;};
-		[false,"kabelbinder",1] call life_fnc_handleInv;
+		[false, "kabelbinder", 1] call life_fnc_handleInv;
 		[] call life_fnc_restrainAction;
     };
 
@@ -239,7 +239,7 @@ switch (_code) do {
     };
 	
 	case 184: {
-		if(REDGULL_TIMER || REDGULL) exitWith {};
+		if(REDGULL_TIMER || REDGULL || lifeState player == "INCAPACITATED") exitWith {};
 			if ([false, "redgull", 1] call life_fnc_handleInv) then {
 				titleText ["Du kannst nun für 5 Minuten sprinten", "PLAIN"];
 				REDGULL = true;

@@ -8,7 +8,7 @@ if(_isHacker) exitWith {};
 
 private _realPrice = getNumber (missionConfigFile >> "Licenses" >> _license >> "price");
 private _name = localize getText (missionConfigFile >> "Licenses" >> _license >> "displayName");
-private _handMoney = [getPlayerUID _unit, side _unit, "cash"] call HC_fnc_getMoney;
+private _handMoney = [getPlayerUID _unit, "cash"] call HC_fnc_getMoney;
 
 if(_realPrice != _money) exitWith {
 _reason1 = format ["Der Spieler %1 (%2 - %3) wollte eine %4 Lizenz kaufen, der Kaufpreis ist aber nicht richtig (%5 != %6)", name _unit, getPlayerUID _unit, side _unit, _license, [_money] call HC_fnc_numberSafe, [_realPrice] call HC_fnc_numberSafe];
@@ -24,8 +24,8 @@ _reason2 = format ["Spieler welcher mit RemoteExecutedOwner rausgefunden wurde: 
 [format["Bei dem Spieler %1 wurde ein License Hack festgestellt", name _unit], false] call HC_fnc_adminMessage;
 };
 
-[getPlayerUID _unit, side _unit, "cash", _money, false] call HC_fnc_handleMoney;
-[getPlayerUID _unit, side _unit, _license, true] call HC_fnc_handleLicenses;
+[getPlayerUID _unit, "cash", _money, false] call HC_fnc_handleMoney;
+[getPlayerUID _unit, _license, true] call HC_fnc_handleLicenses;
 
 _msg = format ["Der Spieler %1 (%2 - %3) hat eine %4 Lizenz im Preis von $%5 gekauft", name _unit, getPlayerUID _unit, side _unit, _name, [_money] call HC_fnc_numberSafe];
 ["LicenseLog", _msg] call HC_fnc_Log;

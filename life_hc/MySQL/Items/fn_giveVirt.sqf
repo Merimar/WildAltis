@@ -12,7 +12,7 @@ if(_isHacker || isNull _givePlayer || _item == "") exitWith {};
 private _displayName = getText (missionConfigFile >> "Items" >> _item >> "name");
 
 if(_action) then {
-private _pItems = [getPlayerUID _unit, side _unit, _item] call HC_fnc_countVirt;
+private _pItems = [getPlayerUID _unit, _item] call HC_fnc_countVirt;
 
 if(_pItems < _amount) exitWith {
 _reason1 = format ["Der Spieler %1 (%2 - %3) wollte dem Spieler %4 (%5 - %6) %7 %8 geben, hat aber nicht genug Items (%9 < %7)", name _unit, getPlayerUID _unit, side _unit, name _givePlayer, getPlayerUID _givePlayer, side _givePlayer, _amount, _displayName, [_pItems] call HC_fnc_numberSafe];
@@ -21,8 +21,8 @@ _reason2 = format ["Spieler welcher mit RemoteExecutedOwner rausgefunden wurde: 
 [format["Bei dem Spieler %1 wurde ein Item Give Hack festgestellt", name _unit], false] call HC_fnc_adminMessage;
 };
 
-[getPlayerUID _unit, side _unit, _item, _amount, false] call HC_fnc_handleVirt;
-_geheimZahl = [getPlayerUID _givePlayer, side _givePlayer] call HC_fnc_getGeheimzahl;
+[getPlayerUID _unit, _item, _amount, false] call HC_fnc_handleVirt;
+_geheimZahl = [getPlayerUID _givePlayer] call HC_fnc_getGeheimzahl;
 private _random = 0;
 
 for "_int" from 0 to 1 step 0 do {
@@ -86,11 +86,11 @@ _reason2 = format ["Spieler welcher mit RemoteExecutedOwner rausgefunden wurde: 
 };
 
 missionNamespace setVariable [_str, []];
-[getPlayerUID _unit, side _unit, _item, _amount, true] call HC_fnc_handleVirt;
+[getPlayerUID _unit, _item, _amount, true] call HC_fnc_handleVirt;
 
 if(_finalAmount > 0) then {
-[getPlayerUID _givePlayer, side _givePlayer, _item, _finalAmount, true] call HC_fnc_handleVirt;
-_geheimZahl = [getPlayerUID _givePlayer, side _givePlayer] call HC_fnc_getGeheimzahl;
+[getPlayerUID _givePlayer, _item, _finalAmount, true] call HC_fnc_handleVirt;
+_geheimZahl = [getPlayerUID _givePlayer] call HC_fnc_getGeheimzahl;
 [_unit, _givePlayer, _item, _finalAmount, _geheimZahl, _clientRandom, false] remoteExecCall ["life_fnc_receiveItem",_givePlayer];
 _msg = format ["Der Spieler %1 (%2 - %3) hat dem Spieler %4 (%5 - %6) %7 %8 zurueck gegeben da er nicht genug Platz im Inventar hatte", name _unit, getPlayerUID _unit, side _unit, name _givePlayer, getPlayerUID _givePlayer, side _givePlayer, _finalAmount, _displayName];
 ["GiveLog", _msg] call HC_fnc_Log;

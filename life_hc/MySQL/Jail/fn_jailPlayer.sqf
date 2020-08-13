@@ -19,10 +19,10 @@ _reason2 = format ["Spieler welcher mit RemoteExecutedOwner rausgefunden wurde: 
 [format["Bei dem Spieler %1 wurde ein Jail Hack festgestellt", name _unit], false] call HC_fnc_adminMessage;
 };
 
-private _geheimZahl = [getPlayerUID _criminal, side _criminal] call HC_fnc_getGeheimzahl;
+private _geheimZahl = [getPlayerUID _criminal] call HC_fnc_getGeheimzahl;
 
 [_unit, _time, _geheimZahl] remoteExec ["life_fnc_jailMe", _criminal];
-[getPlayerUID _criminal, side _criminal, _time] call HC_fnc_handleArrested;
+[getPlayerUID _criminal, _time] call HC_fnc_handleArrested;
 [_criminal, _unit] call HC_fnc_fahndungBounty;
 private _jailPos = markerPos "jail_marker";
 _jailPos set [2, 1];
@@ -75,4 +75,4 @@ if(_itemType in [10, 8, 5, 9]) then {_add pushBack [_item, _amount];};
 _criminal setUnitLoadout _gear;
 sleep 1;
 private _newGear = [_criminal] call HC_fnc_getPlayerGear;
-[getPlayerUID _criminal, side _criminal, _newGear] call HC_fnc_handleInv;
+[getPlayerUID _criminal, _newGear] call HC_fnc_handleInv;

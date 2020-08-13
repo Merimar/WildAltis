@@ -12,7 +12,7 @@ private _processInput = getArray (_config >> "processInput");
 private _processOutput = getArray (_config >> "processOutput");
 private _processText = getText (_config >> "processText");
 private _processSkill = getText (_config >> "processSkill"); 
-private _hasLicense = if(isClass (missionConfigFile >> "Licenses" >> _type)) then {[getPlayerUID _unit, side _unit, _type] call HC_fnc_hasLicense} else {true};
+private _hasLicense = if(isClass (missionConfigFile >> "Licenses" >> _type)) then {[getPlayerUID _unit, _type] call HC_fnc_hasLicense} else {true};
 private _licenseCost = if(!_hasLicense) then {getNumber (missionConfigFile >> "Licenses" >> _type >> "noLicenseCost")} else {0};
 private _processAmount = 0;
 private _distance = _vendor distance _unit;
@@ -24,7 +24,7 @@ _reason2 = format ["Spieler welcher mit RemoteExecutedOwner rausgefunden wurde: 
 [format["Bei dem Spieler %1 wurde ein Process Item Hack festgestellt", name _unit], false] call HC_fnc_adminMessage;
 };
 
-private _playerCash = [getPlayerUID _unit, side _unit, "cash"] call HC_fnc_getMoney;
+private _playerCash = [getPlayerUID _unit, "cash"] call HC_fnc_getMoney;
 
 if(_playerCash < _licenseCost) exitWith {
 _reason1 = format ["Der Spieler %1 (%2 - %3) wollte ein Item ohne Lizenz verarbeiten, hat aber nicht genug Geld um die Verarbeitungskosten zu zahlen ($%4 < $%5)", name _unit, getPlayerUID _unit, side _unit, [_playerCash] call HC_fnc_numberText, [_licenseCost] call HC_fnc_numberText];
@@ -36,7 +36,7 @@ _reason2 = format ["Spieler welcher mit RemoteExecutedOwner rausgefunden wurde: 
 {
 private _inputItem = _x select 0;
 private _inputAmount = _x select 1;
-private _unitAmount = [getPlayerUID _unit, side _unit, _inputItem] call HC_fnc_countVirt;
+private _unitAmount = [getPlayerUID _unit, _inputItem] call HC_fnc_countVirt;
 private _couldAmount = floor (_unitAmount / _inputAmount);
 
 if(_couldAmount < _processAmount || _forEachIndex <= 0) then {_processAmount = _couldAmount;};
@@ -54,19 +54,19 @@ private _itemArrayInput = [];
 private _itemArrayOutput = [];
 
 {
-[getPlayerUID _unit, side _unit, _x select 0, (_x select 1) * _processAmount, false] call HC_fnc_handleVirt;
+[getPlayerUID _unit, _x select 0, (_x select 1) * _processAmount, false] call HC_fnc_handleVirt;
 private _displayName = getText (missionConfigFile >> "Items" >> _x select 0 >> "name");
 _itemArrayInput pushBack (format ["%1 %2", (_x select 1) * _processAmount, _displayName]);
 }forEach _processInput;
 
 if(_type != "Relikt") then {
 {
-[getPlayerUID _unit, side _unit, _x select 0, (_x select 1) * _processAmount, true] call HC_fnc_handleVirt;
+[getPlayerUID _unit, _x select 0, (_x select 1) * _processAmount, true] call HC_fnc_handleVirt;
 private _displayName = getText (missionConfigFile >> "Items" >> _x select 0 >> "name");
 _itemArrayOutput pushBack (format ["%1 %2", (_x select 1) * _processAmount, _displayName]);
 }forEach _processOutput;
 }else {
-[getPlayerUID _unit, side _unit, _relikt, 1, true] call HC_fnc_handleVirt;
+[getPlayerUID _unit, _relikt, 1, true] call HC_fnc_handleVirt;
 private _displayName = getText (missionConfigFile >> "Items" >> _relikt >> "name");
 _itemArrayOutput pushBack (format ["%1 %2", 1, _displayName]);
 };
@@ -75,4 +75,4 @@ private _msg = format ["Der Spieler %1 (%2 - %3) hat Items verarbeitet (%4 zu %5
 ["ProcessLog", _msg] call HC_fnc_log;
 
 if(_type in ["Helium", "Dunkle", "Relikt"]) exitWith {};
-[getPlayerUID _unit, side _unit, _processSkill] call HC_fnc_addSkill;
+[getPlayerUID _unit, _processSkill] call HC_fnc_addSkill;

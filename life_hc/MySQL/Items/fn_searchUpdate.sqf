@@ -4,8 +4,8 @@ private _removePlayer = param [1, objNull, [objNull]];
 private _isHacker = [[], _cop, remoteExecutedOwner, "fn_searchUpdate"] call HC_fnc_checkSQLBreak;
 if(_isHacker || isNull _removePlayer) exitWith {};
 
-private _items = [getPlayerUID _removePlayer, side _removePlayer] call HC_fnc_getVirt;
-private _searchSkill = [getPlayerUID _cop, side _cop, "search"] call HC_fnc_getSkillAdvantage;
+private _items = [getPlayerUID _removePlayer] call HC_fnc_getVirt;
+private _searchSkill = [getPlayerUID _cop, "search"] call HC_fnc_getSkillAdvantage;
 private _nameArray = [];
 private _removeArray = [];
 
@@ -21,7 +21,7 @@ private _random = round(random(100)) + 1;
 if(_random < _searchSkill && _isIllegal isEqualTo 1) then {
 _nameArray pushBack (format ["%1 %2", _amount, _displayName]);
 _removeArray pushBack _item;
-[getPlayerUID _removePlayer, side _removePlayer, _item, _amount, false] call HC_fnc_handleVirt;
+[getPlayerUID _removePlayer, _item, _amount, false] call HC_fnc_handleVirt;
 };
 };
 }forEach _items;

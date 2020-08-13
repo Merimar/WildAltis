@@ -5,7 +5,7 @@ private _position = param [2, [], [[]]];
 private _isHacker = [[_spawnName], _unit, remoteExecutedOwner, "fn_spawned"] call HC_fnc_checkSQLBreak;
 if(_isHacker) exitWith {};
 
-private _jailTime = [getPlayerUID _unit, side _unit] call HC_fnc_getArrested;
+private _jailTime = [getPlayerUID _unit] call HC_fnc_getArrested;
 if(_jailTime > 0) then {_position = markerPos "jail_marker"; _spawnName = "Gefängnis";};
 
 _msg = format ["Der Spieler %1 (%2 - %3) ist gespawnt (SPAWNPUNKT: %4)", name _unit, getPlayerUID _unit, side _unit, _spawnName];

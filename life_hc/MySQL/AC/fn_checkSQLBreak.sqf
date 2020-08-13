@@ -37,7 +37,7 @@ _reason2 = format ["Spieler welcher mit RemoteExecutedOwner rausgefunden wurde: 
 true;
 };
 
-private _adminLevel = [_uID, _uSide, "admin"] call HC_fnc_getSpecialLevel;
+private _adminLevel = [_uID, "admin"] call HC_fnc_getSpecialLevel;
 
 if(_adminLevel < 1 && _checkAdminLevel) exitWith {
 _reason1 = format ["Der Spieler %1 (%2 - %3) hat folgende Datei ausgeführt: %4 hat aber kein Admin Level", _rName, _rID, _rSide, _file, _uName, _uID, _uSide];

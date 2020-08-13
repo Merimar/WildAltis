@@ -46,7 +46,7 @@ _reason2 = format ["Spieler welcher mit RemoteExecutedOwner rausgefunden wurde: 
 
 (_playerItems select _index) set [1, _checkValue - _value];
 _leiche setVariable ["Loot_Information", [_playerUID, _playerName, _playerItems, _playerMoney], true];
-[getPlayerUID _unit, side _unit, _data, _value, true] call HC_fnc_handleVirt;
+[getPlayerUID _unit, _data, _value, true] call HC_fnc_handleVirt;
 
 if(_playerSide isEqualTo west && (side _unit) in [civilian, east]) then {
 _msg = format ["Der Polizist %1 (%2 - %3) ist mit Items auf der Hand gestorben (ITEM: %4 AMOUNT: %5) und wurde von einem Zivilisten %6 (%7 - %8) gelootet", _playerName, _playerUID, _playerSide, _itemName, _value, name _unit, getPlayerUID _unit, side _unit];

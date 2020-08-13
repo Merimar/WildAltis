@@ -4,6 +4,7 @@ private _container = param [2, objNull, [objNull]];
 
 private _isHacker = [[_item], _unit, remoteExecutedOwner, "fn_putItem"] call HC_fnc_checkSQLBreak;
 if(_isHacker) exitWith {};
+
 private _itemType = [_item] call HC_fnc_getItemType;
 private _event = _container getVariable ["eventContainer", false];
 
@@ -20,7 +21,7 @@ _container setVariable ["itemList", _itemList];
 };
 
 private _playerGear = [_unit] call HC_fnc_getPlayerGear;
-[getPlayerUID _unit, side _unit, _playerGear] call HC_fnc_handleInv;
+[getPlayerUID _unit, _playerGear] call HC_fnc_handleInv;
 
 private _details = [_item] call HC_fnc_fetchCfgDetails;
 private _name = _details param [1, "Kein Name"];

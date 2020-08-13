@@ -13,7 +13,7 @@ if(_isHacker) exitWith {};
 
 private _pID = getPlayerUID _unit;
 private _pSide = side _unit;
-private _unitOwner = [_pID, _pSide] call HC_fnc_getOwnerID;
+private _unitOwner = [_pID] call HC_fnc_getOwnerID;
 private _vehiclePrice = getNumber (missionConfigFile >> "LifeCfgVehicles" >> _vehicleClassname >> "price");
 private _skinPrice = if(_skinClassname != "-1") then {getNumber(missionConfigFile >> "LifeCfgVehicles" >> _vehicleClassname >> "textures" >> _skinClassname >> "price")} else {1};
 private _materialPrice = if(_materialClassname != "-1") then {getNumber(missionConfigFile >> "LifeCfgMaterials" >> _materialClassname >> "price")} else {1};
@@ -34,7 +34,7 @@ vehicle_money = false;
 _unitOwner publicVariableClient "vehicle_money";
 };
 
-private _cash = [_pID, _pSide, "cash"] call HC_fnc_getMoney;
+private _cash = [_pID, "cash"] call HC_fnc_getMoney;
 
 if(_price > _cash) exitWith {
 _reason1 = format["Der Spieler %1 (%2 - %3) wollte ein Fahrzeug kaufen, hat aber nicht genug Geld (%4 < %5)", name _unit, getPlayerUID _unit, side _unit, [_cash] call HC_fnc_numberSafe, [_price] call HC_fnc_numberSafe];
@@ -94,7 +94,7 @@ VEHICLE_INV_ARRAY pushBack _info;
 VEHICLE_LIST pushBack _vehicle;
 
 [_vehicle] remoteExecCall ["life_fnc_addVehicle2Chain", _unitOwner];
-[getPlayerUID _unit, side _unit, "cash", _price, false] call HC_fnc_handleMoney;
+[getPlayerUID _unit, "cash", _price, false] call HC_fnc_handleMoney;
 vehicle_money = true;
 _unitOwner publicVariableClient "vehicle_money";
 

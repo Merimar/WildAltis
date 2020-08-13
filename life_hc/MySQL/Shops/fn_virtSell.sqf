@@ -21,7 +21,7 @@ _reason2 = format ["Spieler welcher mit RemoteExecutedOwner rausgefunden wurde: 
 [format["Bei dem Spieler %1 wurde ein VirtSell Hack festgestellt", name _unit], false] call HC_fnc_adminMessage;
 };
 
-private _pItems = [getPlayerUID _unit, side _unit, _item] call HC_fnc_countVirt;
+private _pItems = [getPlayerUID _unit, _item] call HC_fnc_countVirt;
 
 if(_pItems < _amount) exitWith {
 _reason1 = format ["Der Spieler %1 (%2 - %3) wollte ein Item (%4) verkaufen, hat aber nicht genug Items (%5 < %6)", name _unit, getPlayerUID _unit, side _unit, _displayName, [_pItems] call HC_fnc_numberSafe, [_amount] call HC_fnc_numberSafe];
@@ -39,8 +39,8 @@ _reason2 = format ["Spieler welcher mit RemoteExecutedOwner rausgefunden wurde: 
 };
 */
 
-[getPlayerUID _unit, side _unit, "cash", _finalPrice, true] call HC_fnc_handleMoney;
-[getPlayerUID _unit, side _unit, _item, _amount, false] call HC_fnc_handleVirt;
+[getPlayerUID _unit, "cash", _finalPrice, true] call HC_fnc_handleMoney;
+[getPlayerUID _unit, _item, _amount, false] call HC_fnc_handleVirt;
 
 private _msg = format ["Der Spieler %1 (%2 - %3) hat ein Item verkauft (ITEM: %4 AMOUNT: %5 PRICE: %6)", name _unit, getPlayerUID _unit, side _unit, _displayName, _amount, [_finalPrice] call HC_fnc_numberSafe];
 ["SellLog", _msg] call HC_fnc_Log;

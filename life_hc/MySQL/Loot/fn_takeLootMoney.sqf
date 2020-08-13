@@ -47,6 +47,6 @@ _msg = format ["Der Spieler %1 (%2 - %3) ist mit %4 auf der Hand gestorben und w
 ["CopLog", _msg] call HC_fnc_Log;
 };
 
-[getPlayerUID _unit, side _unit, "cash", _money, true] call HC_fnc_handleMoney;
+[getPlayerUID _unit, "cash", _money, true] call HC_fnc_handleMoney;
 _msg = format ["Der Spieler %1 (%2 - %3) hat die Leiche des Spielers %4 (%5 - %6) gelootet und %7 bekommen", name _unit, getPlayerUID _unit, side _unit, _playerName, _playerUID, _playerSide, [_playerMoney] call HC_fnc_numberSafe];
 ["LootLog", _msg] call HC_fnc_Log;

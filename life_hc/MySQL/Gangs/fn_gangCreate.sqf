@@ -1,7 +1,7 @@
 private _unit = param [0, objNull, [objNull]];
 private _name = param [1, "", [""]];
 private _group = group _unit;
-private _unitOwner = [getPlayerUID _unit, side _unit] call HC_fnc_getOwnerID;
+private _unitOwner = [getPlayerUID _unit] call HC_fnc_getOwnerID;
 
 private _isHacker = [[_name], _unit, remoteExecutedOwner, "fn_gangCreate"] call HC_fnc_checkSQLBreak;
 if(_isHacker) exitWith {};
@@ -10,7 +10,7 @@ if(_name == "") exitWith {gang_money = false; _unitOwner publicVariableClient "g
 private _gangIndex = PLAYER_GANG_ARRAY findIf {_x select 1 == _name};
 if(_gangIndex != -1) exitWith {[format["Eine Gang mit dem Namen %1 existiert bereits auf dem Server. Bitte wähle einen anderen Namen", _name], "Gang existiert schon"] remoteExec ["life_fnc_message", _unit];gang_money = false;_unitOwner publicVariableClient "gang_money";};
 
-private _bank = [getPlayerUID _unit, side _unit, "bank"] call HC_fnc_getMoney;
+private _bank = [getPlayerUID _unit, "bank"] call HC_fnc_getMoney;
 if(_bank < 100000) exitWith {
 _reason1 = format ["Der Spieler %1 (%2 - %3) wollte eine Gang erstellen, hat aber nicht genug Geld (%4 < %5)", name _unit, getPlayerUID _unit, side _unit, [_bank] call HC_fnc_numberSafe, [100000] call HC_fnc_numberSafe];
 _reason2 = format ["Spieler welcher mit RemoteExecutedOwner rausgefunden wurde: %1", name _unit];
@@ -42,7 +42,7 @@ _group setVariable ["gang_ownerName", name _unit, true];
 _group setVariable ["gang_buffs", [], true];
 _group setVariable ["gang_id", _id, true];
 _group setVariable ["gang_members", [getPlayerUID player], true];
-[getPlayerUID _unit, side _unit, "bank", 100000, false] call HC_fnc_handleMoney;
+[getPlayerUID _unit, "bank", 100000, false] call HC_fnc_handleMoney;
 gang_money = true;
 _unitOwner publicVariableClient "gang_money";
 

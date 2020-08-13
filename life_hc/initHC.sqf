@@ -89,7 +89,6 @@ diag_log "----------------------------------------------------------------------
 
 [] spawn HC_fnc_cleanup;
 
-SAVE_ARRAY = [];
 CURRENT_WARNING = [];
 HACKING_STATE = false;
 SAVE_MODE = true;

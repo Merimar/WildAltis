@@ -1,11 +1,10 @@
 private _pID = param [0, ""];
-private _pSide = param [1, sideUnknown];
-private _jailTime = param [2, 0];
+private _jailTime = param [1, 0];
 private _resultIndex = 9;
 
-if(_pID == "" || _pSide isEqualTo sideUnknown) exitWith {};
+if(_pID == "") exitWith {};
 
-private _index = [_pID, _pSide] call HC_fnc_searchArray;
-if(_index isEqualTo -1) exitWith {};
+private _saveState = [_pID] call HC_fnc_getSave;
+if(count (_saveState select SAVE_STATE_INDEX) isEqualTo 0) exitWith {};
 
-(SAVE_ARRAY select _index select SAVE_STATE_INDEX) set [_resultIndex, [_jailTime]];
+(_saveState select SAVE_STATE_INDEX) set [_resultIndex, [_jailTime]];

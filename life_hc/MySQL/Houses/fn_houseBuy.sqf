@@ -13,7 +13,7 @@ private _houseName = getText (configFile >> "CfgVehicles" >> _houseClassname >> 
 private _pName = name _unit;
 private _pID = getPlayerUID _unit;
 private _pSide = side _unit;
-private _geheimZahl = [_pID, _pSide] call HC_fnc_getGeheimzahl;
+private _geheimZahl = [_pID] call HC_fnc_getGeheimzahl;
 
 if(_house getVariable ["Virtus_Object", false]) exitWith {[_geheimZahl, _buyType, 0] remoteExec ["life_fnc_houseRemote", _unit];};
 
@@ -92,7 +92,7 @@ private _houses = bank_obj getVariable ["gang_houses", []];
 _houses pushBack _house;
 bank_obj setVariable ["gang_houses", _houses, true];
 }else {
-private _playerBank = [getPlayerUID _unit, side _unit, "bank"] call HC_fnc_getMoney;
+private _playerBank = [getPlayerUID _unit, "bank"] call HC_fnc_getMoney;
 if(_playerBank < _buyPrice) exitWith {
 _reason1 = format ["Der Spieler %1 (%2 - %3) wollte sich ein Haus kaufen, hat aber nicht genug Geld", name _unit, getPlayerUID _unit, side _unit];
 _reason2 = format ["Spieler welcher mit RemoteExecutedOwner rausgefunden wurde: %1", name _unit];
@@ -138,7 +138,7 @@ if(!(isNull _unit)) then {
 [_houseClassname, _housePosition] remoteExec ["life_fnc_houseMarker", _unit];
 };
 
-[_pID, _pSide, "bank", _buyPrice, false] call HC_fnc_handleMoney;
+[_pID, "bank", _buyPrice, false] call HC_fnc_handleMoney;
 
 private _msg = format ["Der Spieler %1 (%2 - %3) hat ein Haus gekauft (ID: %4)", _pName, _pID, _pSide, _houseID];
 ["HouseLog", _msg] call HC_fnc_Log;

@@ -25,4 +25,4 @@ private _query = format ["UPDATE vehicles SET deleted_at = now(), insurance = '0
 private _msg = format ["Der Spieler %1 (%2 - %3) hat ein Fahrzeug verkauft (FAHRZEUG: %4 PREIS: $%5)", name _unit, _pID, _pSide, _classname, [_sellPrice] call HC_fnc_numberSafe];
 ["VehicleSellLog", _msg] call HC_fnc_Log;
 
-[_pID, _pSide, "bank", _sellPrice, true] call HC_fnc_handleMoney;
+[_pID, "bank", _sellPrice, true] call HC_fnc_handleMoney;

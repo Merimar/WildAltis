@@ -23,7 +23,7 @@ _reason2 = format ["Spieler welcher mit RemoteExecutedOwner rausgefunden wurde: 
 [format["Bei dem Spieler %1 wurde ein Versicherung Hack festgestellt", name _unit], false] call HC_fnc_adminMessage;
 };
 
-private _bankMoney = [_pID, _pSide, "bank"] call HC_fnc_getMoney;
+private _bankMoney = [_pID, "bank"] call HC_fnc_getMoney;
 
 if(_bankMoney < _pPrice) exitWith {
 _reason1 = format ["Der Spieler %1 (%2 - %3) wollte ein Fahrzeug versichern, hat aber nicht genug Geld (%4 < %5)", name _unit, getPlayerUID _unit, side _unit, [_bankMoney] call HC_fnc_numberSafe, [_pPrice] call HC_fnc_numberSafe];
@@ -32,7 +32,7 @@ _reason2 = format ["Spieler welcher mit RemoteExecutedOwner rausgefunden wurde: 
 [format["Bei dem Spieler %1 wurde ein Versicherung Hack festgestellt", name _unit], false] call HC_fnc_adminMessage;
 };
 
-[_pID, _pSide, "bank", _finalPrice, false] call HC_fnc_handleMoney;
+[_pID, "bank", _finalPrice, false] call HC_fnc_handleMoney;
 
 private _msg = format ["Der Spieler %1 (%2 - %3) hat ein Fahrzeug versichert (FAHRZEUG: %4 PREIS: %5)", name _unit, getPlayerUID _unit, _classname, [_finalPrice] call HC_fnc_numberSafe];
 ["VersicherungLog", _msg] call HC_fnc_Log;

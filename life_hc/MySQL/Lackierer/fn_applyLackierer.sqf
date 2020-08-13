@@ -15,7 +15,7 @@ private _typeColumn = if(_skinMaterial isEqualTo 0) then {"color_id"} else {"mat
 private _typeTable = if(_skinMaterial isEqualTo 0) then {"life_vehicle_colors"} else {"life_vehicle_materials"};
 private _typeName = if(_skinMaterial isEqualTo 0) then {"color"} else {"material"};
 private _vehicleName = getText (configFile >> "CfgVehicles" >> _className >> "displayName");
-private _bankMoney = [getPlayerUID _unit, side _unit, "bank"] call HC_fnc_getMoney;
+private _bankMoney = [getPlayerUID _unit, "bank"] call HC_fnc_getMoney;
 
 if(_apply == "-1") exitWith {
 private _msg = format ["Der Spieler %1 (%2 - %3) hat ein Fahrzeug umlackiert (FAHRZEUG: %4 %5: Entfernt PREIS: $0)", name _unit, getPlayerUID _unit, side _unit, _vehicleName, _lackiererType];
@@ -43,7 +43,7 @@ _reason2 = format ["Spieler welcher mit RemoteExecutedOwner rausgefunden wurde: 
 [format["Bei dem Spieler %1 wurde ein Lackier Hack festgestellt", name _unit], false] call HC_fnc_adminMessage;
 };
 
-[getPlayerUID _unit, side _unit, "bank", _price, false] call HC_fnc_handleMoney;
+[getPlayerUID _unit, "bank", _price, false] call HC_fnc_handleMoney;
 
 _msg = format ["Der Spieler %1 (%2 - %3) hat ein Fahrzeug umlackiert (FAHRZEUG: %4 %5: %6 PREIS: %7)", name _unit, getPlayerUID _unit, side _unit, _vehicleName, _lackiererType, _apply, [_price] call HC_fnc_numberSafe];
 ["LackiererLog", _msg] call HC_fnc_Log;

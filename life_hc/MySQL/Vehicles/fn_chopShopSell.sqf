@@ -59,5 +59,5 @@ private _query = if(_insurance isEqualTo 1) then {format["UPDATE vehicles SET in
 private _msg = format ["Der Spieler %1 (%2 - %3) hat ein Fahrzeug verchopt (FAHRZEUG: %4 PREIS: %5)", name _unit, getPlayerUID _unit, side _unit, typeOf _vehicle, [_chopPrice] call HC_fnc_numberSafe];
 ["ChopLog", _msg] call HC_fnc_Log;
 
-[getPlayerUID _unit, side _unit, "cash", _chopPrice, true] call HC_fnc_handleMoney;
+[getPlayerUID _unit, "cash", _chopPrice, true] call HC_fnc_handleMoney;
 deleteVehicle _vehicle;

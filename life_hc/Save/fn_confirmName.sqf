@@ -13,5 +13,4 @@ CURRENT_AUSWEIS_CREATE = CURRENT_AUSWEIS_CREATE - [getPlayerUID _unit];
 
 sleep 1;
 
-_index = [getPlayerUID _unit, side _unit] call HC_fnc_searchArray;
-[getPlayerUID _unit, side _unit, remoteExecutedOwner, name _unit, _index] call HC_fnc_queryPlayer;
+[_unit] call HC_fnc_queryPlayer;

@@ -5,7 +5,7 @@ if(_isHacker) exitWith {};
 
 sleep 0.5;
 private _gear = [_unit] call HC_fnc_getPlayerGear;
-[getPlayerUID _unit, side _unit, _gear] call HC_fnc_handleInv;
+[getPlayerUID _unit, _gear] call HC_fnc_handleInv;
 
 _unit setVariable ["uniformContainer", (uniformContainer _unit)];
 _unit setVariable ["vestContainer", (vestContainer _unit)];

@@ -7,7 +7,7 @@ private _finished = (param [4, 0, [0]]) isEqualTo 31;
 private _isHacker = [[], _unit, remoteExecutedOwner, "fn_ubahn"] call HC_fnc_checkSQLBreak;
 if(_isHacker) exitWith {};
 
-private _handMoney = [getPlayerUID _unit, side _unit, "cash"] call HC_fnc_getMoney;
+private _handMoney = [getPlayerUID _unit, "cash"] call HC_fnc_getMoney;
 
 if(!(_price isEqualTo 10000)) then {
 _reason1 = format ["Der Spieler %1 (%2 - %3) wollte die Ubahn nach %4 benutzen, hat allerdings einen anderen Preis angegeben (%5)", name _unit, getPlayerUID _unit, side _unit, _location, _price];
@@ -16,7 +16,7 @@ _reason2 = format ["Spieler welcher mit RemoteExecutedOwner rausgefunden wurde: 
 [format["Bei dem Spieler %1 wurde ein Ubahn Hack festgestellt", name _unit], false] call HC_fnc_adminMessage;
 };
 
-[getPlayerUID _unit, side _unit, "cash", _price, false] call HC_fnc_handleMoney;
+[getPlayerUID _unit, "cash", _price, false] call HC_fnc_handleMoney;
 
 if(_finished) exitWith {
 player setDamage 1;

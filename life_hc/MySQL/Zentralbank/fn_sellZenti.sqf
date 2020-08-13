@@ -17,4 +17,4 @@ private _msg = format ["Der Spieler %1 (%2 - %3) hat Zenti Inhalt verkauft (%4)"
 ["BankLog", _msg] call HC_fnc_Log;
 
 private _moneyGive = _fuel * 1000000;
-[getPlayerUID _unit, side _unit, "cash", _moneyGive, true] call HC_fnc_handleMoney;
+[getPlayerUID _unit, "cash", _moneyGive, true] call HC_fnc_handleMoney;

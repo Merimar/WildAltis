@@ -24,7 +24,7 @@ if(_impounded isEqualTo 1) exitWith {};
 
 private _storageFee = [_classname, side _unit] call HC_fnc_getStorageFee;
 private _setUp = [_color, _material, _insuranceName];
-private _pMoney = [_pID, _pSide, "bank"] call HC_fnc_getMoney;
+private _pMoney = [_pID, "bank"] call HC_fnc_getMoney;
 
 if(_pMoney < _storageFee) exitWith {
 _reason1 = format ["Der Spieler %1 (%2 - %3) wollte ein Fahrzeug ausparken, kann sich die Ausparkkosten aber nicht leisten (%4 < %5)", name _unit, getPlayerUID _unit, side _unit, [_pMoney] call HC_fnc_numberSafe, [_storageFee] call HC_fnc_numberSafe];
@@ -109,8 +109,8 @@ VEHICLE_INV_ARRAY pushBack _info;
 VEHICLE_LIST pushBack _vehicle;
 
 [_vehicle] remoteExecCall ["life_fnc_addVehicle2Chain", _unit];
-[_pID, _pSide, "bank", _storageFee, false] call HC_fnc_handleMoney;
-private _geheimZahl = [getPlayerUID _unit, side _unit] call HC_fnc_getGeheimzahl;
+[_pID, "bank", _storageFee, false] call HC_fnc_handleMoney;
+private _geheimZahl = [getPlayerUID _unit] call HC_fnc_getGeheimzahl;
 [_storageFee, _geheimZahl] remoteExec ["life_fnc_unimpoundMoney", _unit];
 
 private _displayName = getText (configFile >> "CfgVehicles" >> typeOf _vehicle >> "displayName");

@@ -33,7 +33,7 @@ player playActionNow "stop";
 life_action_inUse = false;
 
 if(_cP < 1) exitWith {};
-if([false, "medikit", 1] call life_fnc_handleInv) exitWith {["Das Medikit mit dem du dich geheilt hast ist verschwunden!", "Medikit"] spawn life_fnc_message;};
+if(!([false, "medikit", 1] call life_fnc_handleInv)) exitWith {["Das Medikit mit dem du dich geheilt hast ist verschwunden!", "Medikit"] spawn life_fnc_message;};
 
 ["Du hast dich vollständig geheilt.", "Medikit"] spawn life_fnc_message;
 [player] remoteExec ["HC_fnc_mediKit", HC_LIFE];

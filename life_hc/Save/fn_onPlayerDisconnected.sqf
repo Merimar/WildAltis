@@ -12,7 +12,7 @@ diag_log format ["Spieler: %1 (%2 - %3)", name _rem, getPlayerUID _rem, side _re
 };
 
 ["ConnectionLog", format ["Der Spieler %1 (%2 - %3) hat sich ausgeloggt", _pName, _pID, _pSide]] call HC_fnc_log;
-[_pID, _pSide, false] call HC_fnc_savePlaytime;
+[_pID, _pSide] call HC_fnc_savePlaytime;
 
 private _index = PAYCHECK_HANDLE findIf {_x select 0 == _pID};
 if(_index >= 0) then {terminate (PAYCHECK_HANDLE select _index select 1);};
@@ -33,16 +33,16 @@ deleteVehicle _x;
 };
 }forEach allDeadMen;
 
-private _saveArrayIndex = [_pID, _pSide] call HC_fnc_searchArray;
-if(_saveArrayIndex isEqualTo -1) exitWith {DEBUG_ARRAY pushBack format ["Not in SAVE_ARRAY [onPlayerDisconnected]: %1", _this];};
-if(count (SAVE_ARRAY select _saveArrayIndex select SAVE_STATE_INDEX) isEqualTo 0) exitWith {DEBUG_ARRAY pushBack format ["Count is zero [onPlayerDisconnected]: %1", _this];};
+private _saveState = [_uid] call HC_fnc_getSave;
+if(count _saveState isEqualTo 0) exitWith {};
+if(count (_saveState select SAVE_STATE_INDEX) isEqualTo 0) exitWith {};
 
-private _pItems = [_pID, _pSide] call HC_fnc_getVirt;
+private _pItems = [_pID] call HC_fnc_getVirt;
 
 {
 _item = _x select 0;
 _amount = _x select 1;
-if(getText (missionConfigFile >> "Items" >> _item >> "type") in ["FARM", "MARKT"]) then {[_pID, _pSide, _item, _amount, false] call HC_fnc_handleVirt;};
+if(getText (missionConfigFile >> "Items" >> _item >> "type") in ["FARM", "MARKT"]) then {[_pID, _item, _amount, false] call HC_fnc_handleVirt;};
 }forEach _pItems;
 
-[_saveArrayIndex] call HC_fnc_saveToDatabase;
+[_pID] call HC_fnc_saveToDatabase;

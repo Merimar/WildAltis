@@ -1,7 +1,5 @@
-private _pID = _this select 0;
-private _pSide = _this select 1;
+private _pID = param [0, ""];
 
-private _index = [_pID, _pSide] call HC_fnc_searchArray;
-if(_index isEqualTo -1) exitWith {};
-private _return = SAVE_ARRAY select _index select (SAVE_STATE_INDEX + 1);
+private _saveState = [_pID] call HC_fnc_getSave;
+private _return = _saveState param [4, -1];
 _return;

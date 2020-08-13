@@ -5,7 +5,7 @@ private _corpse = param [1, objNull, [objNull]];
 private _isHacker = [[], _unit, remoteExecutedOwner, "fn_playerAdrenalin"] call HC_fnc_checkSQLBreak;
 if(_isHacker || isNull _corpse) exitWith {};
 
-private _alive = [getPlayerUID _unit, side _unit, "alive"] call HC_fnc_getSpecialLevel;
+private _alive = [getPlayerUID _unit, "alive"] call HC_fnc_getSpecialLevel;
 if(_alive) then {
 _reason1 = format ["Der Spieler %1 (%2 - %3) hat eine Adrenalinspritze benutzt, lebt aber laut server noch", name _unit, getPlayerUID _unit, side _unit];
 _reason2 = format ["Spieler welcher mit RemoteExecutedOwner rausgefunden wurde: %1 (%2 - %3)", name _unit, getPlayerUID _unit, side _unit];
@@ -39,12 +39,12 @@ deleteVehicle _corpse;
 
 ["ReviveLog", format ["Der Spieler %1 (%2 - %3) hat eine EpiPen benutzt", name _unit, getPlayerUID _unit, side _unit]] call HC_fnc_log;
 
-[getPlayerUID _unit, side _unit, "cash", _playerMoney, true] call HC_fnc_handleMoney;
-[getPlayerUID _unit, side _unit, true] call HC_fnc_handleAlive;
-{[getPlayerUID _unit, side _unit, (_x select 0), (_x select 1), true] call HC_fnc_handleVirt;}forEach _playerItems;
-[getPlayerUID _unit, side _unit, "adrenalin", 1, false] call HC_fnc_handleVirt;
+[getPlayerUID _unit, "cash", _playerMoney, true] call HC_fnc_handleMoney;
+[getPlayerUID _unit, true] call HC_fnc_handleAlive;
+{[getPlayerUID _unit, (_x select 0), (_x select 1), true] call HC_fnc_handleVirt;}forEach _playerItems;
+[getPlayerUID _unit, "adrenalin", 1, false] call HC_fnc_handleVirt;
 
 sleep 1;
 
 private _gear = [_unit] call HC_fnc_getPlayerGear;
-[getPlayerUID _unit, side _unit, _gear] call HC_fnc_handleInv;
+[getPlayerUID _unit, _gear] call HC_fnc_handleInv;

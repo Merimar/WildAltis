@@ -12,7 +12,7 @@ case 1 : {format ["Der Spieler %1 (%2 - %3) hat den Spieler %4 (%5 - %6) gekillt
 case 2 : {format ["Der Spieler %1 (%2 - %3) hat ein Fahrzeug repariert", name _unit, getPlayerUID _unit, side _unit]};
 };
 
-private _alive = if(_cause != 2) then {[getPlayerUID _damageObj, side _damageObj, "alive"] call HC_fnc_getSpecialLevel} else {true};
+private _alive = if(_cause != 2) then {[getPlayerUID _damageObj, "alive"] call HC_fnc_getSpecialLevel} else {true};
 if(_amount >= 1 && !_alive) exitWith {};
 
 _damageObj setDamage _amount;

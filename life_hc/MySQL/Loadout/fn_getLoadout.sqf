@@ -7,11 +7,11 @@ if(_isHacker) exitWith {};
 
 private _pID = getPlayerUID _unit;
 private _pSide = side _unit;
-private _loadout = ([_pID, _pSide, _curSel] call HC_fnc_getLoadouts) select 0;
+private _loadout = ([_pID, _curSel] call HC_fnc_getLoadouts) select 0;
 if(count _loadout isEqualTo 0) exitWith {};
 private _checkPrice = [_loadout, _pSide] call life_fnc_getLoadoutPrice;
-private _bankMoney = [_pID, _pSide, "bank"] call HC_fnc_getMoney;
-private _geheimZahl = [_pID, _pSide] call HC_fnc_getGeheimzahl;
+private _bankMoney = [_pID, "bank"] call HC_fnc_getMoney;
+private _geheimZahl = [_pID] call HC_fnc_getGeheimzahl;
 
 if(_playerPrice != _checkPrice) exitWith {
 _reason1 = format ["Der Spieler %1 (%2 - %3) hat versucht ein Loadout billig zu laden (%4 < %5)", name _unit, getPlayerUID _unit, side _unit, [_checkPrice] call HC_fnc_numberSafe, [_playerPrice] call HC_fnc_numberSafe];
@@ -27,7 +27,7 @@ _reason2 = format ["Spieler welcher mit RemoteExecutedOwner rausgefunden wurde: 
 [format["Bei dem Spieler %1 wurde ein LoadoutGet Hack festgestellt", name _unit], false] call HC_fnc_adminMessage;
 };
 
-[_pID, _pSide, "bank", _checkPrice, false] call HC_fnc_handleMoney;
+[_pID, "bank", _checkPrice, false] call HC_fnc_handleMoney;
 [_loadout, _curSel, _geheimZahl, _checkPrice] remoteExec ["life_fnc_loadLoadout", _unit];
 
 private _msg = format ["Der Spieler %1 (%2 - %3) hat ein Loadout geladen (POSITION: %4 PREIS: %5 LOADOUT: %6)", name _unit, getPlayerUID _unit, side _unit, mapGridPosition _unit, [_playerPrice] call HC_fnc_numberSafe, _loadout];
@@ -35,4 +35,4 @@ private _msg = format ["Der Spieler %1 (%2 - %3) hat ein Loadout geladen (POSITI
 
 sleep 2;
 private _gear = [_unit] call HC_fnc_getPlayerGear;
-[_pID, _pSide, _gear] call HC_fnc_handleInv;
+[_pID, _gear] call HC_fnc_handleInv;

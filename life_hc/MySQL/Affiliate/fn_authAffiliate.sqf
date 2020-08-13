@@ -38,8 +38,8 @@ private _codeOwner = playableUnits select {getPlayerUID _x == _ownerID};
 if(count _codeOwner > 0) then {
 _codeOwner = _codeOwner select 0;
 _codeName = name _codeOwner;
-private _geheimZahl = [getPlayerUID _codeOwner, side _codeOwner] call HC_fnc_getGeheimzahl;
-[getPlayerUID _codeOwner, side _codeOwner, "bank", 100000, true] call HC_fnc_handleMoney;
+private _geheimZahl = [getPlayerUID _codeOwner] call HC_fnc_getGeheimzahl;
+[getPlayerUID _codeOwner, "bank", 100000, true] call HC_fnc_handleMoney;
 [format ["%1 hat deinen Affiliate Code eingegeben. Als Belohnung bekommst du $100.000", _pName], _geheimZahl] remoteExec ["life_fnc_receiveAffiliate", _codeOwner];
 }else {
 _query = format ["UPDATE player_money SET amount = ((SELECT amount FROM player_money WHERE player_id = '%1' AND type = 'BANK' AND side_id = '3') + 100000) WHERE  player_id = '%1' AND type = 'BANK' AND side_id = '3'", _ownerID];

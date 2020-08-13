@@ -48,4 +48,6 @@ if (_itm != "") then {
 	-1;
 };
 
+if(isNil "_indexLocker") then {_indexLocker = -1;};
+
 _indexLocker;

@@ -10,6 +10,8 @@ private _drinkList = ["waterBottle", "coffee"];
 private _drugsList = ["kokainP", "heroinP", "marihuanaP", "medmarihuana"];
 private _alcoholList = ["wodka", "bier", "traubenP"];
 
+if(lifeState player == "INCAPACITATED") exitWith {};
+
 switch (true) do {
     case(_item in _drinkList): {
         if(!([false, _item, 1] call life_fnc_handleInv)) exitWith {};
