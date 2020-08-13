@@ -8,7 +8,7 @@ if(_usedPlayer != player) exitWith {closeDialog 0;};
 if(_index isEqualTo -1) exitWith {["", "Du musst etwas auswählen"] spawn life_fnc_message;};
 
 private _className = lbData [3502, _index];
-private _itemAmount = ITEM_VALUE(_className);
+private _itemAmount = [_className] call life_fnc_getItemValue;
 private _amount = if(_storeAll) then {_itemAmount} else {parseNumber (ctrlText 3503)};
 if(_amount > _itemAmount) then {_amount = _itemAmount;};
 if(_amount <= 0) exitWith {["", "Du hast nicht genug Items"] spawn life_fnc_message;};

@@ -4,7 +4,7 @@ private _speed = ["repair"] call life_fnc_getSkillAdvantage;
 private _title = "Fülle Fahrzeug auf";
 life_interrupted = false;
 
-if(isNull _vehicle || !(_vehicle isKindOf "LandVehicle" || _vehicle isKindOf "Air" || _vehicle isKindOf "Ship") || player distance _vehicle > 7.5 || ITEM_VALUE("fuelFull") <= 0 || {player getVariable ["restrained", false]} || {player getVariable ["playerSurrender", false]}) exitWith {};
+if(isNull _vehicle || !(_vehicle isKindOf "LandVehicle" || _vehicle isKindOf "Air" || _vehicle isKindOf "Ship") || player distance _vehicle > 7.5 || (["fuelFull"] call life_fnc_getItemValue) <= 0 || {player getVariable ["restrained", false]} || {player getVariable ["playerSurrender", false]}) exitWith {};
 if(!([false, "fuelFull", 1] call life_fnc_handleInv)) exitWith {};
 
 [true, "fuelEmpty", 1] call life_fnc_handleInv;

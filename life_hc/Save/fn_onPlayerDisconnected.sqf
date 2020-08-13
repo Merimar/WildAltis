@@ -1,6 +1,6 @@
-private _pID = _this select 0;
-private _pName = _this select 1;
-private _pSide = _this select 2;
+private _pID = param [0, "", [""]];
+private _pName = param [1, "", [""]];
+private _pSide = param [2, sideUnknown, [sideUnknown]];
 
 if(remoteExecutedOwner != 2) exitWith {
 private _remInfo = [remoteExecutedOwner] call HC_fnc_getPlayerByID;

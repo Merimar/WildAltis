@@ -3,7 +3,7 @@ private _unit = param [0, objNull];
 
 if(isNull _unit) exitWith {};
 
-private _item = switch (true) do {case (ITEM_VALUE("kokainP") > 0) : {"kokainP"};case (ITEM_VALUE("heroinP") > 0) : {"heroinP"};case (ITEM_VALUE("marihuanaP") > 0) : {"marihuanaP"};default {""};};
+private _item = switch (true) do {case ((["kokainP"] call life_fnc_getItemValue) > 0) : {"kokainP"};case ((["heroinP"] call life_fnc_getItemValue) > 0) : {"heroinP"};case ((["marihuanaP"] call life_fnc_getItemValue) > 0) : {"marihuanaP"};default {""};};
 if(_item == "") exitWith {["", "Du hast keine Drogen"] spawn life_fnc_message;};
 
 [false, _item, 1] call life_fnc_handleInv;

@@ -23,7 +23,7 @@ if(CASH < _licenseCost) exitWith {[format ["Du kannst deine Rohstoffe hier nicht
 {
 private _inputItem = _x select 0;
 private _inputAmount = _x select 1;
-private _unitAmount = ITEM_VALUE(_inputItem);
+private _unitAmount = [_inputItem] call life_fnc_getItemValue;
 private _couldAmount = floor (_unitAmount / _inputAmount);
 
 if(_couldAmount < _processAmount || _forEachIndex <= 0) then {_processAmount = _couldAmount;};

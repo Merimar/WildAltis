@@ -1,6 +1,6 @@
-private _uid = _this select 0;
-private _owner = _this select 1;
-private _geheimZahl = _this select 2;
+private _uid = param [0, "", [""]];
+private _owner = param [1, 0, [0]];
+private _geheimZahl = param [2, 0, [0]];
 
 //Secure
 if(remoteExecutedOwner != 2) exitWith {

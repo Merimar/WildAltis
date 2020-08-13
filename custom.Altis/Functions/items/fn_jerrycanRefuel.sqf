@@ -2,7 +2,7 @@
 disableSerialization;
 life_interrupted = false;
 private _fuelStations = nearestObjects [player, ["Land_FuelStation_Feed_F","Land_fs_feed_F"], 4];
-if(ITEM_VALUE("fuelEmpty") <= 0 || life_action_inUse || !isNull objectParent player || {player getVariable ["restrained", false]} || {player getVariable ["playerSurrender", false]} || count _fuelStations isEqualTo 0) exitWith {};
+if((["fuelEmpty"] call life_fnc_getItemValue) <= 0 || life_action_inUse || !isNull objectParent player || {player getVariable ["restrained", false]} || {player getVariable ["playerSurrender", false]} || count _fuelStations isEqualTo 0) exitWith {};
 if(CASH < 10000) exitWith {["", "Du hast keine €10.000"] spawn life_fnc_message;};
 
 private _action = ["Benzinkanister auffüllen","Möchtest du den Benzinkanister auffüllen. Es kostet dich €10.000","Ja", "Nein"] call BIS_fnc_guiMessage;

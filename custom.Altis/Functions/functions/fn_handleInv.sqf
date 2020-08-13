@@ -5,7 +5,7 @@ private _amount = param [2, 0];
 
 if(_item == "" || _amount <= 0) exitWith {true;}; 
 
-private _curAmount = ITEM_VALUE(_item);
+private _curAmount = [_item] call life_fnc_getItemValue;
 private _itemWeight = [_item] call life_fnc_itemWeight;
 private _freeSpace = life_maxWeight - life_carryWeight;
 private _itemIndex = life_virt_gear findIf {_x select 0 == _item};

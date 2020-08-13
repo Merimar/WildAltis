@@ -187,7 +187,7 @@ switch (_code) do {
 		if(!_shift || isNull cursorTarget || {!(isPlayer cursorTarget) || !(alive cursorObject) || cursorObject distance player > 4 || {cursorObject getVariable ["Escorting", false]} || {cursorObject getVariable ["restrained", false]} || life_knockout || life_istazed}) exitWith {};
         _handled = true;
 		if(playerSide isEqualTo west || (playerSide isEqualTo independent && call life_mediclevel >= 3)) exitWith {[] call life_fnc_restrainAction;};
-		if(ITEM_VALUE("kabelbinder") < 1) exitWith {["Du benötigst Kabelbinder um Leute festzunehmen", "Kein Kabelbinder"] spawn life_fnc_message;};
+		if((["kabelbinder"] call life_fnc_getItemValue) < 1) exitWith {["Du benötigst Kabelbinder um Leute festzunehmen", "Kein Kabelbinder"] spawn life_fnc_message;};
 		[false, "kabelbinder", 1] call life_fnc_handleInv;
 		[] call life_fnc_restrainAction;
     };

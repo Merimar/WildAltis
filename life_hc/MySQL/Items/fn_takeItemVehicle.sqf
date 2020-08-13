@@ -22,4 +22,3 @@ _reason2 = format ["Spieler welcher mit RemoteExecutedOwner rausgefunden wurde: 
 
 private _msg = format ["Der Spieler %1 (%2 - %3) hat ein Item aus einem Fahrzeug genommen (ITEM: %4 AMOUNT: %5 FAHRZEUG: %6)", name _unit, getPlayerUID _unit, side _unit, _displayName, _amount, typeOf _vehicle];
 ["VehicleTakeLog", _msg] call HC_fnc_Log;
-

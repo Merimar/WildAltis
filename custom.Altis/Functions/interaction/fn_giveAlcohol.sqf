@@ -3,7 +3,7 @@ private _unit = param [0, objNull];
 
 if(isNull _unit) exitWith {};
 
-private _item = switch (true) do {case (ITEM_VALUE("bier") > 0) : {"bier"};case (ITEM_VALUE("wodka") > 0) : {"wodka"};default {""};};
+private _item = switch (true) do {case ((["bier"] call life_fnc_getItemValue) > 0) : {"bier"};case ((["wodka"] call life_fnc_getItemValue) > 0) : {"wodka"};default {""};};
 if(_item == "") exitWith {["", "Du hast keinen Alkohol"] spawn life_fnc_message;};
 
 [false, _item, 1] call life_fnc_handleInv;

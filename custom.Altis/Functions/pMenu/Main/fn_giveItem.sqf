@@ -9,7 +9,7 @@ if(_curSelItem isEqualTo -1 || _curSelPlayer isEqualTo -1 || _amount <= 0) exitW
 private _item = lbData [4351, _curSelItem];
 private _unit = call compile format["%1", lbData [4353, _curSelPlayer]];
 
-if(ITEM_VALUE(_item) < _amount) exitWith {["", "Soviele Items besitzt du nicht"] spawn life_fnc_message;};
+if(([_item] call life_fnc_getItemValue) < _amount) exitWith {["", "Soviele Items besitzt du nicht"] spawn life_fnc_message;};
 if(isNull _unit) exitWith {["", "Der Spieler ist nicht mehr auf der Insel"] spawn life_fnc_message;};
 if(player distance _unit > 15) exitWith {["", "Der Spieler ist auserhalb deiner Reichweite"] spawn life_fnc_message;};
 if(itemGive_TIMER) exitWith {["", "Du kannst nur alle 5 Sekunden Items geben"] spawn life_fnc_message;};
