@@ -1,12 +1,12 @@
 private _pID = param [0, "", [""]];
 private _saveAll = param [1, false, [false]];
 
-private _target = if(_saveAll) then {playableUnits} else {_pID};
+private _target = if(_saveAll) then {playableUnits} else {[_pID]};
 
 {
 private _curTarget = _x;
 private _pID = if(_curTarget isEqualType "") then {_curTarget} else {getPlayerUID _x};
-private _saveState = [_uid] call HC_fnc_getSave;
+private _saveState = [_pID] call HC_fnc_getSave;
 
 private _pSide = [_saveState select 2] call HC_fnc_getSideID;
 private _groupSide = [_saveState select 2] call HC_fnc_getGroupSideID;

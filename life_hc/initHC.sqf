@@ -113,6 +113,16 @@ diag_log format ["A3Log Loaded. Version: %1",("A3Log" callExtension "version")];
 [] execVM "\life_hc\initDatabase.sqf";
 [] execVM "\life_hc\initPlayerSkins.sqf";
 
+[] spawn {
+sleep 20;
+for "_int" from 0 to 1 step 0 do {
+private _save = ["76561198180462113"] call HC_fnc_getSave;
+private _gear = _save select SAVE_STATE_INDEX param [11, []];
+diag_log format ["Gear: %1", _gear];
+sleep 5;
+};
+};
+
 if(DEBUG) then {
 [] spawn {
 for "_int" from 0 to 1 step 0 do {

@@ -3,7 +3,7 @@ private _unit = param [0, objNull, [objNull]];
 private _isHacker = [[], _unit, remoteExecutedOwner, "fn_saveArsenal", true] call HC_fnc_checkSQLBreak;
 if(_isHacker) exitWith {};
 
-sleep 0.5;
+sleep 1;
 private _gear = [_unit] call HC_fnc_getPlayerGear;
 [getPlayerUID _unit, _gear] call HC_fnc_handleInv;
 

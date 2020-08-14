@@ -10768,11 +10768,14 @@
 			<Original>Westen Lizenz</Original>
 		</Key>
 		
-		
+		<Key ID="STR_HOUSES">
+			<Original>Häuser</Original>
+		</Key>
 		
 		<Key ID="STR_pMenu_Key">
 			<Original>Schlüsselbund</Original>
 		</Key>
+		
 		<Key ID="STR_pMenu_Nahe">
 			<Original>Spieler in der Nähe</Original>
 		</Key>
@@ -11251,6 +11254,14 @@
 		
 		<Key ID="STR_CELL_AdminMSGAll">
 			<Original>Adminnachricht an alle Spieler</Original>
+		</Key>
+		
+		<Key ID="STR_Monitor1">
+			<Original>Informationen über die Serverperformance:</Original>
+		</Key>
+		
+		<Key ID="STR_Monitor2">
+			<Original>Informationen über das Spieler Save Array:</Original>
 		</Key>
     </Package>
 </Project>

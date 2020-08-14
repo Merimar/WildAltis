@@ -10,6 +10,10 @@ player setUnitRecoilCoefficient 1;
 
 publicVariable "life_fnc_clearWeather";
 
+life_fnc_resetUpdateTimer = compileFinal "_infoArray = [];";
+
+publicVariable "life_fnc_resetUpdateTimer";
+
 life_fnc_copyAction = compileFinal "
 if((_this select 1) != 210) exitWith {};
 if(isNil 'COPY_KEY_PRESS') then {COPY_KEY_PRESS = false;};

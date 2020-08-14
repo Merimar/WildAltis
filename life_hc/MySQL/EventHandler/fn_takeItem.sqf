@@ -24,11 +24,13 @@ if(_newAmount isEqualTo 0) then {
 };
 };
 
-private _playerGear = [_unit] call HC_fnc_getPlayerGear;
-[getPlayerUID _unit, _playerGear] call HC_fnc_handleInv;
-
 private _details = [_item] call HC_fnc_fetchCfgDetails;
 private _name = _details param [1, "Kein Name"];
 
 private _msg = format ["Der Spieler %1 (%2 - %3) hat ein Item aufgenommen (ITEM: %4)", name _unit, getPlayerUID _unit, side _unit, _name];
 ["TakeLog", _msg] call HC_fnc_Log;
+
+sleep 0.5;
+
+private _playerGear = [_unit] call HC_fnc_getPlayerGear;
+[getPlayerUID _unit, _playerGear] call HC_fnc_handleInv;

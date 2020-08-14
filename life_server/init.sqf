@@ -8,12 +8,14 @@ life_HC_isActive = false;
 life_LogHC_isActive = false;
 HC_Life = false;
 HC_Log = false;
+UPTIME_TIME = time;
 
 publicVariable "life_server_isReady";
 publicVariable "life_HC_isActive";
 publicVariable "life_LogHC_isActive";
 publicVariable "HC_Life";
 publicVariable "HC_Log";
+publicVariable "UPTIME_TIME";
 
 [] execVM "\life_server\initHC.sqf";
 

@@ -49,7 +49,7 @@ _reason2 = format ["Spieler welcher mit RemoteExecutedOwner rausgefunden wurde: 
 };
 
 [getPlayerUID _unit, "cash", _truePrice, false] call HC_fnc_handleMoney;
-_gear = [_unit] call HC_fnc_getPlayerGear;
+private _gear = [_unit] call HC_fnc_getPlayerGear;
 [getPlayerUID _unit, _gear] call HC_fnc_handleInv;
 
 _msg = format ["Der Spieler %1 (%2 - %3) hat ein Item gekauft (ITEM: %4 AMOUNT: %5 PRICE: %6)", name _unit, getPlayerUID _unit, side _unit, _itemName, _amount, [_truePrice] call HC_fnc_numberSafe];

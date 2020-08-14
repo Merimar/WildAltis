@@ -552,7 +552,7 @@ class Items {
 		weight = 2;
 		type = "MARKT";
 		buyPrice = -1;
-		sellPrice = 4850;
+		sellPrice = 3900;
 		edible = -1;
 		icon = "";
 		itemInfo = "";

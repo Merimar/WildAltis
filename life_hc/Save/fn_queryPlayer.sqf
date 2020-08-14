@@ -104,7 +104,6 @@ private _gangBuffsQuery = [];
 private _gangHouseQuery = [];
 private _newGangHouse = [];
 private _gangHouseUpgradeQuery = [];
-private _ownerName = "";
 
 if(_gangID != -1) then {
 /** GANG PERMISSIONS **/
@@ -131,10 +130,10 @@ _newGangHouse = [_houseID, _classname, _position, _garagePosition, _battery];
 /** GANG HOUSE UPGRADES **/
 _query = format["SELECT upgrade, amount FROM house_upgrades WHERE house_id = '%1'", _houseID];
 _gangHouseUpgradeQuery = [_query, 2, true] call HC_fnc_asyncCall;
-
-_ownerName = [_gangInfoQuery, _gangPermissionsQuery, _gangBuffsQuery, _newGangHouse, _gangHouseUpgradeQuery, []] call HC_fnc_initGangHC;
-if(_ownerName != "") then {_gangInfoQuery pushBack _ownerName;};
 };
+
+private _ownerName = [_gangInfoQuery, _gangPermissionsQuery, _gangBuffsQuery, _newGangHouse, _gangHouseUpgradeQuery, []] call HC_fnc_initGangHC;
+if(_ownerName != "") then {_gangInfoQuery pushBack _ownerName;};
 
 /** SCHLÜSSEL **/
 private _keyArray = missionNamespace getVariable [format ["%1_KEYS_%2", _pID, _pSide], []];

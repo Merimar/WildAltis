@@ -21,7 +21,7 @@ class Life_Settings {
 	
 	jail_locations[] = {"SpawnCop_Athira", "SpawnCop_KavalaHQ", "SpawnCop_HWP", "SpawnCop_Pyrgos", "SpawnCop_Sagonisi", "SpawnCop_Syrta ", "SpawnCop_TelosHQ,", "SpawnCop_Jail"};
 	
-	gang_max_size = 15;
+	gang_max_size = 12;
 	
 	halo_jump_max = 5;
 	halo_jump_price = 100000;
