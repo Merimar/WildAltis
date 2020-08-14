@@ -133,7 +133,7 @@ _gangHouseUpgradeQuery = [_query, 2, true] call HC_fnc_asyncCall;
 };
 
 private _ownerName = [_gangInfoQuery, _gangPermissionsQuery, _gangBuffsQuery, _newGangHouse, _gangHouseUpgradeQuery, []] call HC_fnc_initGangHC;
-if(_ownerName != "") then {_gangInfoQuery pushBack _ownerName;};
+_gangInfoQuery pushBack _ownerName;
 
 /** SCHLÜSSEL **/
 private _keyArray = missionNamespace getVariable [format ["%1_KEYS_%2", _pID, _pSide], []];
