@@ -97,6 +97,7 @@ _progressText ctrlSetStructuredText parseText "Lege Spielerseite fest ...";
 [] spawn life_fnc_checkAllDisplays;
 [] spawn life_fnc_menuCheck;
 [] spawn life_fnc_escInterupt;
+[] call life_fnc_clearRain;
 
 NIGHT_LIGHT = "#lightpoint" createVehicleLocal [0,0,0]; 
 NIGHT_LIGHT setLightBrightness 1.5; 

@@ -187,6 +187,7 @@ class CfgRemoteExec {
 		
 		//AC
 		F(HC_fnc_bluforSavezone,HC)
+		F(HC_fnc_checkSign,HC)
 		F(HC_fnc_dupeHC,HC)
 		F(HC_fnc_logHackData,HC)
 		F(HC_fnc_logKey,HC)
