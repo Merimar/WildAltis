@@ -62,3 +62,4 @@ _query = format ["UPDATE player_gang SET level = '%1' WHERE player_id = '%2' AND
 };
 
 _group setVariable ["gang_permissions", _permissions, true];
+diag_log format ["_group setVariable ['gang_permissions', %1, true]", _permissions];
