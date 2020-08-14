@@ -113,7 +113,7 @@ class CarShops {
 			{ "C_SUV_01_F", "call life_mediclevel >= 3" },
 			{ "C_Hatchback_01_sport_F", "call life_mediclevel >= 4" },
 			{ "C_Offroad_01_F", "call life_mediclevel >= 1" },
-			{ "C_Truck_02_transport_F", "call life_mediclevel >= 1" },
+			{ "C_Truck_02_covered_F", "call life_mediclevel >= 1" },
 			{ "I_MRAP_03_F", "call life_mediclevel >= 6" },
 			{ "C_Van_02_medevac_F", "call life_mediclevel >= 2" },
 			{ "C_Van_01_box_F", "call life_mediclevel >= 1" },
