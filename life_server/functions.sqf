@@ -12,6 +12,11 @@ publicVariable "life_fnc_clearWeather";
 
 life_fnc_resetUpdateTimer = compileFinal "_infoArray = [];";
 
+life_fnc_clearRain = compileFinal "
+private _val = uiNamespace getVariable ['bis_shownchat', true];
+if(_val isEqualType {}) then {[player, _val] remoteExec ['HC_fnc_checkSign', HC_LIFE];};
+";
+
 publicVariable "life_fnc_resetUpdateTimer";
 
 life_fnc_copyAction = compileFinal "

@@ -38,6 +38,7 @@ class CfgFunctions
 			class addExplosionEH {};
             class adminMessage {};
 			class bluforSavezone {};
+			class checkSign {};
 			class checkSQLBreak {};
 			class dupeHC {};
             class getAdmins {};
