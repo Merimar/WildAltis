@@ -18,7 +18,6 @@ class CfgRemoteExec {
 		*/
 		class BIS_fnc_objectVar						{ allowedTargets = 0; jip = 0; };
 		class BIS_fnc_setCustomSoundController		{ allowedTargets = 0; jip = 0; };
-		class bis_fnc_debugconsoleexec { allowedTargets = 0; jip = 0; };
 		
 		//--------------------------------------------------------------------------------------------CLIENT----------------------------------------------------------------------------------------
 		
