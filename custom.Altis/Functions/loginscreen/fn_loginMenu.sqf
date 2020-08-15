@@ -183,12 +183,14 @@ waituntil {isNull (finddisplay 602)};
 			_modelToWorld = (_x modelToWorld [0, 0, 0]) select 2;
 			_posZ = _modelToWorld + ((_vehicle selectionPosition "pelvis") select 2);
 			_name = if(HEXAGON_NAME) then {name _x} else {""};
-			if(_vehicle != _x) then {
+			if(_vehicle != _x && !(_vehicle in _vehList)) then {
 			_vehList pushBack _vehicle;
 			if(!(isNull driver _vehicle) && HEXAGON_NAME) then {_name = name (driver _vehicle)};
 			_posZ = _modelToWorld;
 			};
-			drawIcon3D["\A3\ui_f\data\igui\cfg\cursors\select_ca.paa", [HEXAGON_R / 100, HEXAGON_G / 100, HEXAGON_B / 100, 1], [_posX, _posY, _posZ], HEXAGON_D, HEXAGON_D, 45, _name, 0, 0.02, "TahomaB", "center", true];
+			if(_vehicle == _x || (_vehicle != _x && ((driver _vehicle) == _x))) then {
+		 		drawIcon3D["\A3\ui_f\data\igui\cfg\cursors\select_ca.paa", [HEXAGON_R / 100, HEXAGON_G / 100, HEXAGON_B / 100, 1], [_posX, _posY, _posZ], HEXAGON_D, HEXAGON_D, 45, _name, 0, 0.02, "TahomaB", "center", true];
+			};
 		}forEach _units;
 	}];
 };

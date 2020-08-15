@@ -253,22 +253,25 @@ switch (_code) do {
     //U Key
     case 22: {
 			if(_shift) exitWith {
-				playSound "earplug";
-				if(soundVolume isEqualTo 1) exitWith {
-					1 fadeSound 0.05;
-					titleText ["Sound um 95% reduziert", "PLAIN"];
-				};
-				if(soundVolume isEqualTo 0.05) exitWith {
-					1 fadeSound 0.4;
-					titleText ["Sound um 60% reduziert", "PLAIN"];
-				};
-				if(soundVolume isEqualTo 0.4) exitWith {
-					1 fadeSound 0.7;
-					titleText ["Sound um 30% reduziert", "PLAIN"];
-				};
-				if(soundVolume isEqualTo 0.7) exitWith {
-					1 fadeSound 1;
-					titleText ["Ohrstöpsel raus", "PLAIN"];
+				if((time - life_action_delay) >= 1) then {
+					life_action_delay = time;
+					playSound "earplug";
+					if(soundVolume isEqualTo 1) exitWith {
+						1 fadeSound 0.05;
+						titleText ["Sound um 95% reduziert", "PLAIN"];
+					};
+					if(soundVolume isEqualTo 0.05) exitWith {
+						1 fadeSound 0.4;
+						titleText ["Sound um 60% reduziert", "PLAIN"];
+					};
+					if(soundVolume isEqualTo 0.4) exitWith {
+						1 fadeSound 0.7;
+						titleText ["Sound um 30% reduziert", "PLAIN"];
+					};
+					if(soundVolume isEqualTo 0.7) exitWith {
+						1 fadeSound 1;
+						titleText ["Ohrstöpsel raus", "PLAIN"];
+					};
 				};
 			};
 		

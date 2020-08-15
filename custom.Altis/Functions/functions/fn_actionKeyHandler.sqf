@@ -32,8 +32,7 @@ if(CUR_PLAYER_IDC isKindOf "Man" && isPlayer CUR_PLAYER_IDC && alive CUR_PLAYER_
 	[CUR_PLAYER_IDC] call life_fnc_interactionMenu;
 };
 
-private _howMuch = if(CUR_PLAYER_IDC isKindOf "Air") then {10} else {4};
-if(CUR_PLAYER_IDC isKindOf "LandVehicle" || CUR_PLAYER_IDC isKindOf "Ship" || CUR_PLAYER_IDC isKindOf "Air" && player distance CUR_PLAYER_IDC < ((boundingBox CUR_PLAYER_IDC select 1) select 0) + _howMuch) exitWith {
+if(CUR_PLAYER_IDC isKindOf "LandVehicle" || CUR_PLAYER_IDC isKindOf "Ship" || CUR_PLAYER_IDC isKindOf "Air" && player distance CUR_PLAYER_IDC < ((boundingBox CUR_PLAYER_IDC select 1) select 0) + 2) exitWith {
 	CUR_VEHICLE_IDC = CUR_PLAYER_IDC;
 	[CUR_VEHICLE_IDC] call life_fnc_vehicleInteractionMenu;
 };
