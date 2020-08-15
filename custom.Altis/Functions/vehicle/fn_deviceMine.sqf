@@ -30,7 +30,7 @@ if((configName _route) in ["Helium", "Dunkle", "Relikt"]) exitWith {};
 private _farmItem = getText (_route >> "gatherItem");
 
 _vehicle setVariable ["mining", true, true];
-_vehicle remoteExec ["life_fnc_soundDevice", -2];
+[_vehicle] remoteExec ["life_fnc_soundDevice", -2];
 
 for "_i" from 0 to 1 step 0 do {
     if(isNull _vehicle || {!alive _vehicle}) exitWith {};

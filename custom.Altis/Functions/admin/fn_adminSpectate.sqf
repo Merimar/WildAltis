@@ -7,7 +7,7 @@ private _unit = call compile format ["%1", lbData [3801, _index]];
 if(isNull _unit || {_unit isEqualTo player}) exitWith {};
 
 _unit switchCamera "EXTERNAL";
-[player, _unit, true, true] remoteExec ["HC_fnc_copSepctate", HC_LIFE];
+[player, _unit, true, true] remoteExec ["HC_fnc_copSpectate", HC_LIFE];
 
 if(player getVariable ["Spectating", false]) exitWith {};
 

@@ -147,6 +147,7 @@ class CfgFunctions {
 			class gather {};
 			class gatherFish {};
 			class getItemPrice {};
+			class getRandomFarm {};
 		};
 		
 		class Network {

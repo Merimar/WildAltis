@@ -126,6 +126,6 @@ sleep 0.01;
 _query = format ["UPDATE player_loadouts SET loadout = '%1' WHERE player_id = '%2' AND side_id = '%3'", _loadoutInfo, _pID, _pSide];
 [_query,1] call HC_fnc_asyncCall;
 }else {
-diag_log format ["Savestatus empty: %1", _cur];
+diag_log format ["Savestatus empty: %1", _saveStatus];
 };
 }forEach _target;

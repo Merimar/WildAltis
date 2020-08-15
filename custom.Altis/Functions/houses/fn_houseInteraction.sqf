@@ -55,10 +55,13 @@ _btn1 buttonSetAction "[false] spawn life_fnc_houseSell;";
 if(_houseType == "Garage") then {
 _btn2 ctrlShow true;
 _btn3 ctrlShow true;
+_btn4 ctrlShow true;
 _btn2 ctrlSetText "Garage öffnen";
-_btn3 ctrlSetText "Garage setzen";
+_btn3 ctrlSetText "Fahrzeuge Einparken";
+_btn4 ctrlSetText "Garage setzen";
 _btn2 buttonSetAction "[""Car"", ""HOUSE"", civilian] call life_fnc_openGarage;";
-_btn3 buttonSetAction "[false] spawn life_fnc_houseGarageSet;";
+_btn3 buttonSetAction "[] call life_fnc_storeVehicle;";
+_btn4 buttonSetAction "[false] spawn life_fnc_houseGarageSet;";
 };
 
 }else {

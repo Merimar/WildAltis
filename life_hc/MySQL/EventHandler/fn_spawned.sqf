@@ -6,7 +6,7 @@ private _isHacker = [[_spawnName], _unit, remoteExecutedOwner, "fn_spawned"] cal
 if(_isHacker) exitWith {};
 
 private _jailTime = [getPlayerUID _unit] call HC_fnc_getArrested;
-if(_jailTime > 0) then {_position = markerPos "jail_marker"; _spawnName = "Gefängnis";};
+if(_jailTime isEqualType 0 && {_jailTime > 0}) then {_position = markerPos "jail_marker"; _spawnName = "Gefängnis";};
 
 _msg = format ["Der Spieler %1 (%2 - %3) ist gespawnt (SPAWNPUNKT: %4)", name _unit, getPlayerUID _unit, side _unit, _spawnName];
 ["SpawnLog", _msg] call HC_fnc_Log;

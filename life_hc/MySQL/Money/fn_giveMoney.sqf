@@ -16,7 +16,7 @@ _reason2 = format ["Spieler welcher mit RemoteExecutedOwner rausgefunden wurde: 
 [format["Bei dem Spieler %1 wurde ein MoneyGive Hack festgestellt", name _unit], false] call HC_fnc_adminMessage;
 };
 
-[getPlayerUID _unit, side _unit, "cash", _money, false] call HC_fnc_handleMoney;
+[getPlayerUID _unit, "cash", _money, false] call HC_fnc_handleMoney;
 [getPlayerUID _moneyPlayer, "cash", _money, true] call HC_fnc_handleMoney;
 [_moneyPlayer,_money,_unit,false,false,_geheimZahl] remoteExec ["life_fnc_receiveMoney", _moneyPlayer];
 
