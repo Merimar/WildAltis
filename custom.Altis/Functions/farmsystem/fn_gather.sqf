@@ -23,9 +23,9 @@ private _displayName = getText (missionConfigFile >> "Items" >> _farmItem >> "na
 private _farmName = getText (_route >> "name");
 private _farmSkill = getText (_route >> "gatherSkill");
 private _farmTool = getText (_route >> "gatherTool");
-private _amountArray = [_farmSkill] call life_fnc_getSkillAdvantage;
+private _amountArray = [_farmSkill] call life_fnc_getRandomFarm;
 private _random = round(random(100)) + 1;
-private _amount = if(!(configName _route in ["Pakete", "Briefe", "Relikt", "Helium", "Dunkle", "Stone"])) then {(_amountArray findIf {_x >= _random}) + 1} else {1};
+private _amount = if(!(configName _route in ["Pakete", "Briefe", "Relikt", "Helium", "Dunkle", "Stone"])) then {_amountArray} else {1};
 private _farmToolAmount = [_farmTool] call life_fnc_getItemValue;
 private _farmToolName = getText (missionConfigFile >> "Items" >> _farmTool >> "name");
 if(_amount <= 0) then {_amount = 1;};

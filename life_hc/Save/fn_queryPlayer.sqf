@@ -57,7 +57,7 @@ _newHouses pushBack [_houseID, _classname, _position, _garagePosition];
 /** ALIVE **/
 _query = format["SELECT status FROM player_alive WHERE player_id = '%1' AND side_id = '%2'", _pID, _sideID];
 private _aliveQuery = [_query, 2] call HC_fnc_asyncCall;
-_aliveQuery = if((_aliveQuery select 0) isEqualTo 0) then {[false]} else {[true]};
+_aliveQuery = if((_aliveQuery param [0, 1]) isEqualTo 0) then {[false]} else {[true]};
 
 /** JAIL **/
 _query = format["SELECT duration FROM player_jail WHERE prisoner_id = '%1' AND side_id = '%2' AND deleted_at IS NULL", _pID, _sideID];
@@ -139,7 +139,7 @@ if(_ownerName != "") then {_gangInfoQuery pushBack _ownerName;};
 private _keyArray = missionNamespace getVariable [format ["%1_KEYS_%2", _pID, _pSide], []];
 private _queryResult = [[_keyArray], _infoQuery, _passportQuery, _levelQuery, _playtimeQuery, _licenseQuery, _skillsQuery, _newHouses, _aliveQuery, _jailQuery, _moneyQuery, _gearQuery, _virtQuery, _lockerQuery, _loadoutQuery, _affiliateQuery, _affiliatePlayersQuery, _gangInfoQuery, _gangPermissionsQuery, _gangBuffsQuery, _newGangHouse, _gangHouseUpgradeQuery, []];
 
-private _saveState = [_uid] call HC_fnc_getSave;
+private _saveState = [_pID] call HC_fnc_getSave;
 private _geheimZahl = [_pID] call HC_fnc_getGeheimzahl;
 _saveState set [SAVE_STATE_INDEX, _queryResult];
 

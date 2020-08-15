@@ -6,7 +6,7 @@ if (_pID isEqualTo "" || _pSide isEqualTo sideUnknown) exitWith {};
 
 switch (_mode) do {
     case 0: {
-		private _input = param [2, []];
+		private _input = param [2, objNull];
 		private _keyArray = _input select {!isNull _x && {!(_x isKindOf "House")}};
         missionNamespace setVariable [format ["%1_KEYS_%2", _pID, _pSide], _keyArray];
     };

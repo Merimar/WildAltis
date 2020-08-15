@@ -10,10 +10,10 @@ class Life_Settings {
     vehicle_purchase_multiplier_OPFOR = 1; // -- NOT IN USE -- Simply left in for east support.
 
     /* Vehicle Rental Prices */
-    vehicle_rental_multiplier_CIVILIAN = .4; //Civilian Vehicle Rental Price = Config_Vehicle price * multiplier
+    vehicle_rental_multiplier_CIVILIAN = .6; //Civilian Vehicle Rental Price = Config_Vehicle price * multiplier
     vehicle_rental_multiplier_COP = .1; //Cop Vehicle Rental Price = Config_Vehicle price * multiplier
     vehicle_rental_multiplier_MEDIC = .05; //Medic Vehicle Rental Price = Config_Vehicle price * multiplier
-    vehicle_rental_multiplier_OPFOR = .4; // -- NOT IN USE -- Simply left in for east support.
+    vehicle_rental_multiplier_OPFOR = .6; // -- NOT IN USE -- Simply left in for east support.
 	
 	vehicle_storage_fee_multiplier = .02; //Pull from garage cost --> Cost takes the playersides Buy Price * multiplier
 	

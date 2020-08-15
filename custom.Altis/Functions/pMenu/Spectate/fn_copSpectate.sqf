@@ -1,6 +1,5 @@
 disableSerialization;
 private _display = findDisplay 1350;
-private _display = findDisplay 1350;
 private _playerList = _display displayCtrl 1351;
 private _index = lbCurSel _playerList;
 
@@ -8,7 +7,6 @@ if(call life_coplevel < 8) exitWith {["Du kannst Polizisten erst beobachten wenn
 if(_index isEqualTo -1) exitWith {["Du hast keinen Spieler ausgewählt!", "Keine Auswahl"] spawn life_fnc_message;};
 
 private _unit = call compile (_playerList lbData _index);
-
 if(isNil "_unit" || {isNull _unit}) exitWith {["Der Spieler ist offline gegangen", "Spieler offline"] spawn life_fnc_message;};
 if(_unit == player) exitWith {};
 

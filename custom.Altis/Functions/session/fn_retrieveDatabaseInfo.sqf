@@ -123,6 +123,8 @@ sleep 7;
 ["NotRebel",true,false] spawn BIS_fnc_endMission;
 };
 
+player setVariable ["player_playtime", life_playtime, true];
+
 private _gear = if(life_isDead) then {[]} else {_gearInfo};
 [_gear] call life_fnc_loadGear;
 [] call life_fnc_initGang;

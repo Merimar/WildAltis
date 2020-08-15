@@ -5,14 +5,14 @@ private _source = _this select 3;
 private _projectile = _this select 4;
 
 if(!(isNull _unit)) then {
-if((vehicle _source) != _source && _source isKindOf "Man" && (time - life_anfahr_timer) > 2 && _unit != _source && _projectile == "") then {
+if((vehicle _source) != _source && _source isKindOf "Man" && (time - life_anfahr_timer) > 2 && _unit != _source && _projectile == "" && isNull objectParent _unit) then {
 [] spawn {player allowDamage false;sleep 2;player allowDamage true;};
 life_anfahr_timer = time;
 [player, "amovppnemstpsraswrfldnon", true] remoteExecCall ["life_fnc_healSync", -2];
 ["", format["Du wurdest von %1 angefahren", name _source]] spawn life_fnc_message;
 };
 
-if((vehicle _source) != _source && _source isKindOf "Man" && _unit != _source) then {_damage = 0.95;};
+if((vehicle _source) != _source && _source isKindOf "Man" && _unit != _source && _projectile == "" && isNull objectParent _unit) then {_damage = 0.95;};
 
 if(!(isNull _source)) then {
 private _curWep = currentWeapon _source;

@@ -86,6 +86,6 @@ private _virtusIndex = VIRTUS_KILL_ARRAY findIf {_x select 0 == _groupName};
 if(_virtusIndex isEqualTo -1) then {
 VIRTUS_KILL_ARRAY pushBack [_groupName, 15];
 }else {
-private _old = VIRTUS_KILL_ARRAY select _index select 1;
+private _old = VIRTUS_KILL_ARRAY param [_index, [_groupName, 0]] select 1;
 (VIRTUS_KILL_ARRAY select _index) set [1, _old + 15];
 };
