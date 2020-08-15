@@ -2,6 +2,7 @@ private _handle = [] spawn life_fnc_stripDownPlayer;
 waitUntil {scriptDone _handle};
 
 player forceAddUniform "U_I_CombatUniform";
+player addVest "V_Safety_yellow_F";
 player addBackpack "B_Bergen_tna_F";
 player addItem "ToolKit";
 player addItem "ToolKit";

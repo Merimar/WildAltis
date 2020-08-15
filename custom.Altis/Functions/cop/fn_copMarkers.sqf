@@ -1,103 +1,54 @@
-private _markerplyobjects = [];
-private _markervehobjects = [];
-
-sleep 0.2;
-if (visibleMap) then {
-    while {visibleMap} do {
-		private _cops = playableUnits select {isNull (attachedTo _x) && (side _x) isEqualTo west && !(_x getVariable ["restrained", false]) && !(_x getVariable ["isDead", false]) && (isNull objectParent _x) && (alive _x)};
-		private _copsVehicle = vehicles select {alive _x && !(isNull (driver _x)) && (side (driver _x)) isEqualTo west && ((count (crew _x)) > 0)};
-
-		{
-			private _remove = false;
-			if(isNull(_x)) then {
-				_remove = true;
+_markers = [];
+_text = "";
+_inVehicle = [];
+_crew = "";
+uiSleep 0.3;
+if(visibleMap) then {
+	{
+		if(!(_x getVariable["restrained",false]) && (alive _x) && !(_x in _inVehicle)) then {
+			_vehicle = vehicle _x;
+			if(_vehicle != _x && {!(_vehicle isKindOf "ParachuteBase")}) then {
+				_count = count(crew _vehicle);
+				{
+					if(alive _x && _x != (driver _vehicle) && _x in units(group player) && !(_x in _inVehicle)) then {
+						_crew = _crew + format ["%1%2", name _x, if(_forEachIndex == _count-1) then {""} else {", "}];
+						_inVehicle pushBack _x;
+					};
+				} forEach (crew _vehicle);
+				_text = format["[%1]%2 %3",getText(configFile>>"CfgVehicles">>typeOf _vehicle>>"DisplayName"),
+					if(!isNull (driver _vehicle) && {((driver _vehicle) in units(group player))} && {!((driver _vehicle) in _inVehicle)} ) then {
+						_inVehicle pushBack (driver _vehicle);
+						format["%1 %2%3",if((driver _vehicle) getVariable ["squad",""] isEqualTo "") then {"[Nicht eingeloggt]"}else{"[" + ((driver _vehicle) getVariable "squad") + "]"},
+						name (driver _vehicle),
+						if(_crew isEqualTo "") then {""}else{","}]
+					} else {""},
+					_crew];
+				_crew = "";
 			} else {
-				if(!(alive _x)) then {
-					_remove = true;
-				};
-				if(!(isNull objectParent _x)) then {
-					_remove = true;
-				};
+				_text = format["%1 %2",if(_x getVariable ["squad",""] isEqualTo "") then {"[Nicht eingeloggt]"}else{"[" + (_x getVariable "squad") + "]"},name _x];
 			};
-			if(_remove) then {
-				_markerplyobjects = _markerplyobjects - [_x];
-				deleteMarkerLocal format ["marker_%1", _x];
-			};
-		} forEach _markerplyobjects;
-
+			_marker = createMarkerLocal [format["%1_marker",_x],visiblePosition _x];
+			_marker setMarkerColorLocal "ColorBlue";
+			_marker setMarkerTypeLocal "Mil_dot";
+			_marker setMarkerTextLocal format["%1", _text];
+			_markers pushBack [_marker,_x];
+			_text = "";
+		};
+	} forEach units(group player);
+	while {visibleMap} do {
 		{
-			private _remove = false;
-			if(isNull(_x)) then {
-				_remove = true;
-			} else {
-				if(!(alive _x)) then {
-					_remove = true;
-				};
-				if((count (crew _x)) <= 0) then {
-					_remove = true;
+			_marker = _x select 0;
+			_unit = _x select 1;
+			if(!isNil "_unit") then {
+				if(!isNull _unit) then {
+					_marker setMarkerPosLocal (visiblePosition _unit);
 				};
 			};
-			if(_remove) then {
-				_markervehobjects = _markervehobjects - [_x];
-				deleteMarkerLocal format ["marker_%1", _x];
-			};
-		} forEach _markervehobjects;
-
-		{
-			if(!(_x in _markerplyobjects)) then {
-				_markerplyobjects pushBack _x;
-				private _prefix = _x getVariable ["squad", "Nicht eingeloggt"];
-				private _marker = createMarkerLocal [format ["marker_%1", _x], visiblePosition _x];
-				_marker setMarkerColorLocal "colorBLUFOR";
-				_marker setMarkerTypeLocal "mil_dot";
-				_marker setMarkerTextLocal format["[%1] %2", _prefix, name _x];
-				_marker setMarkerDirLocal (getDir _x);
-			};
-		} forEach _cops;
-
-		{
-			if(!(_x in _markervehobjects)) then {
-				_markervehobjects pushBack _x;
-				private _crewList = (crew _x) select {side _x == west && !(_x getVariable ["restrained", false]) && !(_x getVariable ["isDead", false])};
-				private _crewNameArray = [];
-				{_crewNameArray pushBack (name _x);}forEach _crewList;
-				private _prefix = getText (configFile >> "CfgVehicles" >> typeOf _x >> "displayName");
-				private _marker = createMarkerLocal [format ["marker_%1", _x], visiblePosition _x];
-				private _squad = (_crewList param [0, objNull]) getVariable ["squad", "Nicht eingeloggt"];
-				_marker setMarkerColorLocal "colorBLUFOR";
-				_marker setMarkerTypeLocal "mil_dot";
-				_marker setMarkerTextLocal format["[%3] [%1] %2", _prefix, _crewNameArray joinString ", ", _squad];
-				_marker setMarkerDirLocal (getDir _x);
-			};
-		} forEach _copsVehicle;
-
-		{
-			private _markername = format ["marker_%1", _x];
-			if(markerText _markername != "") then {
-				private _prefix = _x getVariable ["squad", "Nicht eingeloggt"];
-				_markername setMarkerTextLocal format["[%1] %2", _prefix, name _x];
-				_markername setMarkerPosLocal (visiblePosition _x);
-				_markername setMarkerDirLocal (getDir _x);
-			};
-		} forEach _markerplyobjects;
-
-		{
-			private _markername = format ["marker_%1", _x];
-			if(markerText _markername != "") then {
-				private _crewList = (crew _x) select {side _x == west && !(_x getVariable ["restrained", false]) && !(_x getVariable ["isDead", false])};
-				private _crewNameArray = [];
-				{_crewNameArray pushBack (name _x);}forEach _crewList;
-				private _prefix = getText (configFile >> "CfgVehicles" >> typeOf _x >> "displayName");
-				private _squad = (_crewList param [0, objNull]) getVariable ["squad", "Nicht eingeloggt"];
-				_markername setMarkerTextLocal format["[%3] [%1] %2", _prefix, _crewNameArray joinString ", ", _squad];
-				_markername setMarkerPosLocal (visiblePosition _x);
-				_markername setMarkerDirLocal (getDir _x);
-			};
-		} forEach _markervehobjects;
-
-        if(!visibleMap) exitWith {};
-        sleep 0.02;
-    };
-	
-
+		} forEach _markers;
+		if(!visibleMap) exitWith {};
+		uiSleep 0.02;
+	};
+	{deleteMarkerLocal (_x select 0);} forEach _markers;
+	_markers = [];
+	_inVehicle = [];
 };
