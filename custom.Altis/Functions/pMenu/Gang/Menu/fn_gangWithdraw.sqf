@@ -7,9 +7,9 @@ private _groupName = _group getVariable ["gang_name", ""];
 _value = parseNumber(_value);
 
 if(_groupName == "") exitWith {};
-if (_value < 100) exitWith {};
-if (_value > _money) exitWith {["Dafür hat deine Gang nicht genügend Geld", "Kein Geld"] spawn life_fnc_message;};
-if ((time - life_action_delay) < 5) exitWith {["Du kannst nur alle 5 Sekunden etwas einzahlen", "Nur alle 5 Sekunden"] spawn life_fnc_message;};
+if(_value <= 0) exitWith {};
+if(_value > _money) exitWith {["Dafür hat deine Gang nicht genügend Geld", "Kein Geld"] spawn life_fnc_message;};
+if((time - life_action_delay) < 5) exitWith {["Du kannst nur alle 5 Sekunden etwas einzahlen", "Nur alle 5 Sekunden"] spawn life_fnc_message;};
 life_action_delay = time;
 
 BANK = BANK + _value;

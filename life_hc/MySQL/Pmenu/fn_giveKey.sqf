@@ -28,7 +28,7 @@ _owners pushBack [getPlayerUID _x, name _x];
 _vehicle setVariable ["vehicle_info_owners", _owners, true];
 }else {
 [_unit, _vehicle, [getPlayerUID _keyPlayer] call HC_fnc_getGeheimzahl] remoteExec ["life_fnc_getKey", _keyPlayer];
-[getPlayerUID _keyPlayer, _vehicle, 1] call HC_fnc_keyManagement;
+[getPlayerUID _keyPlayer, side _keyPlayer, _vehicle, 1] call HC_fnc_keyManagement;
 _owners pushBack [getPlayerUID _keyPlayer, name _keyPlayer];
 
 _vehicle setVariable ["vehicle_info_owners", _owners, true];
