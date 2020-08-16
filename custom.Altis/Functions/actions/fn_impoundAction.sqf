@@ -14,9 +14,11 @@ private _rent = _vehicle getVariable ["rent", false];
 if((count _vehicleData isEqualTo 0 || count _dbInfo isEqualTo 0) && !_rent) exitWith {};
 private _vehSide = _dbInfo select 1;
 
-private _notification = if(playerSide isEqualTo west) then {"Polizei"}  else {"Feuerwehr"};
-private _message = format ["%1 dein Fahrzeug wird von der %2 beschlagnahmt", _vehicleData select 0 select 1, _notification];
-[0, _message] remoteExecCall ["life_fnc_broadcast", -2];
+if(alive _vehicle) then {
+    private _notification = if(playerSide isEqualTo west) then {"Polizei"}  else {"Feuerwehr"};
+    private _message = format ["%1 dein Fahrzeug wird von der %2 beschlagnahmt", _vehicleData select 0 select 1, _notification];
+    [0, _message] remoteExecCall ["life_fnc_broadcast", -2];
+};
 
 life_action_inUse = true;
 
@@ -57,7 +59,10 @@ if((count crew _vehicle) > 0) exitWith {["Es befinden sich noch Spieler im Fahrz
 private _action = if(playerSide isEqualTo west && _vehSide in [civilian, east]) then {["Möchtest du das Fahrzeug auf den Abstellhof oder in die Garage stellen?", "Fahrzeug abschleppen", "Abstellhof", "Garage"] call BIS_fnc_guiMessage} else {false};
 
 [_vehicle, player, _action] remoteExec ["HC_fnc_abschleppVehicle",HC_LIFE];
+
 ["impound"] call life_fnc_addSkill;
-    
-_message = format ["%1 dein Fahrzeug wurde von der %2 beschlagnahmt", _vehicleData select 0 select 1, _notification];
-[0, _message] remoteExecCall ["life_fnc_broadcast", -2];
+
+if(alive _vehicle) then {
+    _message = format ["%1 dein Fahrzeug wurde von der %2 beschlagnahmt", _vehicleData select 0 select 1, _notification];
+    [0, _message] remoteExecCall ["life_fnc_broadcast", -2];
+};
