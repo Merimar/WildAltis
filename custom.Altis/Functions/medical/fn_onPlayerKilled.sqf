@@ -1,8 +1,8 @@
 #include "..\script_macros.hpp"
 disableSerialization;
 closeDialog 0;
-private _unit = param [0, objNull];
-private _killer = param [1, objNull];
+private _unit = param [0, objNull, [objNull]];
+private _killer = param [1, objNull, [objNull]];
 private _adminLvl = call life_adminlevel;
 
 if(playerSide isEqualTo west) then {COP_SAVE_GEAR = [getUnitLoadout _unit] call life_fnc_fetchDeadCopGear;};

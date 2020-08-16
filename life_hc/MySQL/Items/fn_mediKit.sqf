@@ -13,6 +13,7 @@ private _reason2 = format ["Spieler welcher mit RemoteExecutedOwner rausgefunden
 };
 
 [getPlayerUID _unit, "medikit", 1, false] call HC_fnc_handleVirt;
+[getPlayerUID _unit, "heal"] call HC_fnc_addSkill;
 _unit setDammage 0;
 
 private _msg = format ["Der Spieler %1 (%2 - %3) hat sich mit einem MediKit geheilt", name _unit, getPlayerUID _unit, side _unit];

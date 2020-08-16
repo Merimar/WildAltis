@@ -400,7 +400,7 @@ class LifeCfgVehicles {
 	
 	class O_G_Offroad_01_F {
 		vItemSpace = 100;
-		price = 520000;
+		price = 67500;
 		chopPrice = 12000;
 		legal = 0;
 		bankCapacity = 0;

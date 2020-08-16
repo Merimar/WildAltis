@@ -12,9 +12,11 @@ for "_i" from 0 to 1 step 0 do {
 };
 
 if(_hasStarted) exitWith {
+if(player distance SCHILD_DEALER < 300) then {
 life_curWep_h = currentWeapon player;
 GE_VORBEI = true;
 player action ["SwitchWeapon", player, player, 100];
+};
 private _winner = SCHILD_DEALER getVariable["Zone_Dealer_Winner", ""];
 ["Vorbei", "\a3\ui_f\data\IGUI\RscTitles\MPProgress\timer_ca.paa"] spawn life_fnc_sideMessage;
 if(_winner == ((group player) getVariable ["gang_name", ""])) then {
@@ -38,8 +40,10 @@ for "_i" from 0 to 1 step 0 do {
 GE_VORBEI = true;
 
 private _winner = SCHILD_DEALER getVariable["Zone_Dealer_Winner", ""];
+if(player distance SCHILD_DEALER < 300) then {
 life_curWep_h = currentWeapon player;
 player action ["SwitchWeapon", player, player, 100];
+};
 if(_winner == (group player) getVariable ["gang_name", ""]) then {
 ["Deine Gang hat den Gangfight gewonnen! Die Kampfhandlungen sind einzustellen!", "Gangfight"] spawn life_fnc_message;
 titleText ["Deine Gang hat den Kampf um die Gangeroberung gewonnen!","PLAIN"];

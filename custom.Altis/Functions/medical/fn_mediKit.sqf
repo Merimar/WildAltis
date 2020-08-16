@@ -37,3 +37,4 @@ if(!([false, "medikit", 1] call life_fnc_handleInv)) exitWith {["Das Medikit mit
 
 ["Du hast dich vollständig geheilt.", "Medikit"] spawn life_fnc_message;
 [player] remoteExec ["HC_fnc_mediKit", HC_LIFE];
+["heal"] call life_fnc_addSkill;

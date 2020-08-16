@@ -25,6 +25,7 @@ waitUntil {
 	}forEach (playableUnits - [player]);
 	
 	private _notruf = player getVariable ["notruf_medic", ""];
+	if(_notruf isEqualType {}) exitWith {_notruf = "Wenn du diese Meldung siehst -> Zum Admin sonst ban";};
 	private _auftrag = if(_notruf == "") then {"Nein"} else {_notruf};
 	_nearestMedic = if(isNull _nearestMedic) then {"Kein Medic online"} else {format["%1 (%2m)",name _nearestMedic, round (_nearestMedic distance life_corpse)]};
 	

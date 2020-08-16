@@ -12,7 +12,7 @@ _reason2 = format ["Spieler welcher mit RemoteExecutedOwner rausgefunden wurde: 
 [format["Bei dem Spieler %1 wurde ein Jail Hack festgestellt", name _unit], false] call HC_fnc_adminMessage;
 };
 
-if(_unit distance _criminal > 20) exitWith {
+if(_unit distance _criminal > 100) exitWith {
 _reason1 = format ["Der Spieler %1 (%2 - %3) wollte den Spieler %4 (%5 - %6) ins Gefängnis stecken, ist aber zu weit entfernt", name _unit, getPlayerUID _unit, side _unit, name _criminal, getPlayerUID _criminal, side _criminal];
 _reason2 = format ["Spieler welcher mit RemoteExecutedOwner rausgefunden wurde: %1", name _unit];
 [_unit, "Jail Hack", [_reason1,_reason2], true] call HC_fnc_reportHacker;

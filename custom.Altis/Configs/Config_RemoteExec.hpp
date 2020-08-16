@@ -394,3 +394,7 @@ class CfgRemoteExec {
         jip = 0;
     };
 };
+
+class CfgCommands {
+	allowedHTMLLoadURIs[] = {};
+};

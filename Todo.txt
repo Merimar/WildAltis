@@ -1,8 +1,48 @@
-Im Schliesfach sind 2 Dinger vertauscht von den Aufsätzen
-Zeus Tempel Schild
-In den Logs immer Bank und Cash angeben
-Hexagons
-Ausweis
-Beim joinen 400x Speck (steht aber nicht in der DB) -> bei Fatum
-Admin Spectate
-Leiche Local -> Auf dem HC deswegen null -> bei EpiPen
+Neuer Schliesfach Dialog
+Markevent Fix
+Schöneren Ausweis
+GE Timer fixen
+Fahrzeug Inv Speichersystem
+Admin Spectaten
+der Gokart kleidungsladen fehlt
+Pyrgos normale Kirche immernoch in der gemappten Kirche
+ATM in den Knast mit Markt
+Flugzeugträger ausparken
+Ubahn in Rebausenposten
+Todesspeicherung neu schreiben
+Nach epipen Benutzung Spawnt ab und zu auf spawn Insel 
+Rebausenposten Lizenz 960k
+Fahrzeug cops verkaufen falscher multiplier
+Bei tot buggen AssignesItems weg
+Medic Beschlagnahmt zu Abgeschleppt Nachricht ändern
+Tactical Ping raus
+Möglichkeit Hexagon Namen am Rand des Bildschirms auszuschalten
+Nebel aus
+Ausparkkosten bei GE Ausparkschild
+Auf das Ganghaus kann nur der Leader zugreiffen. (WindowsTaste) Verschiedene Ränge funktionieren nicht.
+es ist als gefesselter moeglich wenn man in ein fahrzeug gesetzt wird auf das eigene sowie das Fahrzeug inventar zuzugreifen
+FW Report: man kann keine zerstörten Fahrzeuge abschleppen dh wir können die Leute die in wracks sitzen solange nicht wiederbeleben, bis das Fahrzeug ausgebrannt ist. Wenn möglich bitte die Windows Reichweite erhöhen bitte bitte ^^ (sebi hat gesagt soll es noch mal schicken falls es schon im bugtracker war)
+Ingame als Donator gekennzeichnet mit einem Diamanten neben deinem Namen und Premium Slots
+Wenn man das t inventar hintereinander zu oft öffnet schließt sich das Game und es  steht woosh woosh huso
+Wenn man Öl zu Raffiniertem Öl verarbeitet und vertig ist wird zwar angezeigt das man des zu Raffiniertem Öl verarbeitet hat jedoch ist es nicht im Z Inventar wenn man es in seinen LKW laden will
+Über Z Erstehilfe-Kasten benutzen kann man unendlich heilen und leveln. Egal wie viel hp kann man healen
+Pyrgos HQ kein Halo jump Cops
+Es ist für Medics ncht erkennbar wann der Gangfight endet. also denke für alle gruppierungen
+FW wenn man als medic stirbt bleibt die markierung nach der wiederbelebung auf der karte (nicht immer)
+Die Drohnen, also der Name der nebenan  gezeigt wird is absolut weird, solche spielernamen sind nichtmal aufm server, denke das sind irgendwelche a3 charaktere, achso und die karte buggt immernoch a.f
+gekauften Garagen immernoch verbuggt, einpark funktion geht nicht und spawnpunkt buggt immernoch weg.
+Heligarage am airfield als cop nicht verfügbar
+Wenn Fahrzeuge von medic oder cop abgeschlept werden bis zu restart nicht in der Garage
+Als Cop kann man in die Weste gefühlt undendliczh zeiug reub nacgheb. Hab da Toolkit und 40 Mags 762 drin nach Loadout kaufen
+Die verlassenes Fahrezug nachricht ist super schnell wieder weg, kann man kaum lesen. Bei der xian steht dan auch da "dein/e wurde ..." also wird nichts angezeigt, ka ob das nur bei der xian ist oder bei anderen auch
+Nach neu einloggen mit ner Katiba 1er weste und ungefähr 10 smokes gespawnt + 10 First aid packs 
+Gearfixen funktioniert nicht
+Wenn man in ein Haus geht, die Windowstaste drückt und keine Hauseigentümerlizenz besitzt, ist das Wort "Hauseigentümerlizenz" falsch geschrieben. Bekomme ich einen Finderlohn? :3
+Nach den Knast Aufenthalt werden die Haeftlinge nicht freigelassen -ODWYN
+hey der knast ist komplett verbugt und man kann sich überall durch die wäne bugen zudem kann man keine steine sammeln um raus zu kommen und man wird nach ablauf seiner zeit nicht aus dem knast raus telepotiert. Zudem fände ich es sehr schön wenn im knast ein atm und ein markt wären damit man bei langen zeiten nicht verdurstet
+Hallo konnte den Cop nicht fesseln.   https://www.youtube.com/watch?v=N-7C-ypeHAk fesseln waren danach weg und polizist nicht gefesselt. tschau kakao
+Meddl Leude, die Blackfisch hat kein Windows Menu, laut Reissack Lore die Mohawk auch nicht. Kuss geht raus
+Biogashändler heist noch Erdgashändler im Händleremenü oben
+
+Nestea:
+Gibt es die möglichkeit eine übersicht der Lizenzpreise der Verarbeiter zu bekommen?
