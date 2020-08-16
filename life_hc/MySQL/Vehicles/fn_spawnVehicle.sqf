@@ -26,6 +26,10 @@ private _storageFee = [_classname, side _unit] call HC_fnc_getStorageFee;
 private _setUp = [_color, _material, _insuranceName];
 private _pMoney = [_pID, "bank"] call HC_fnc_getMoney;
 
+if(_sp == "Spawn_GE_CarGar_1") then {
+	_storageFee = 0;
+};
+
 if(_pMoney < _storageFee) exitWith {
 _reason1 = format ["Der Spieler %1 (%2 - %3) wollte ein Fahrzeug ausparken, kann sich die Ausparkkosten aber nicht leisten (%4 < %5)", name _unit, getPlayerUID _unit, side _unit, [_pMoney] call HC_fnc_numberSafe, [_storageFee] call HC_fnc_numberSafe];
 _reason2 = format ["Spieler welcher mit RemoteExecutedOwner rausgefunden wurde: %1", name _unit];
