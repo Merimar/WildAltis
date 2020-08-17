@@ -115,7 +115,7 @@ class Settings {
 			h = 0.044 * safezoneH;
 		};
 
-		class Checkbox_Rand: RscCheckbox {
+		class Checkbox_Rand: Trans_Checkbox {
 			idc = 4023;
 			onCheckedChanged = "['rand', _this select 1] call life_fnc_settingsCheckbox;";
 			x = 0.742344 * safezoneW + safezoneX;

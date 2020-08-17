@@ -65,7 +65,7 @@ if(count _sp isEqualTo 0) exitWith {};
 private _markerPos = markerPos (_sp select 0);
 private _markerDir = markerDir (_sp select 0);
 if((_sp select 0) == "Spawn_Air_FW_2") then {_markerPos set [2, 20];};
-if((_sp select 0) == "Spawn_Aircraft") then {_notPos = true;};
+if((_sp select 0) == "Spawn_Aircraft") then {_markerPos set [2, 24];_notPos = true;};
 _spInformation = [_markerPos, _markerDir];
 };
 
@@ -82,9 +82,7 @@ private _aiDrones = getArray (missionConfigFile >> "Life_Settings" >> "drones");
 if(_classname in _aiDrones) then {createVehicleCrew _vehicle;};
 
 _vehicle allowDamage false;
-if(!_notPos) then {
-_vehicle setPos _spawnPoint;
-};
+if(_notPos) then {_vehicle setPosASL _spawnPoint;} else {_vehicle setPos _spawnPoint;};
 _vehicle setVectorUp (surfaceNormal _spawnPoint);
 _vehicle setDir _spawnDir;
 _vehicle lock 2;

@@ -2519,8 +2519,6 @@ class CfgItemShop {
 			{ "B_Carryall_oucamo", "", 32500, "true"}
 		};
 		
-		headgear[] = {};
-		
 		weapons[] = {
 			{ "arifle_SDAR_F", "", 61500, "true"}, //SDAR
 			{ "20Rnd_556x45_UW_mag", "", 750, "true"},

@@ -55,9 +55,10 @@ _unitOwner publicVariableClient "vehicle_money";
 };
 
 private _spawnPoint = getMarkerPos (_sp select 0);
+private _notPos = false;
 
 if((_sp select 0) == "Spawn_Air_FW_2") then {_spawnPoint set [2, 20];};
-if((_sp select 0) == "Spawn_Aircraft") then {_spawnPoint set [2, 23];};
+if((_sp select 0) == "Spawn_Aircraft") then {_spawnPoint set [2, 24]; _notPos = true;};
 
 private _vehicle = createVehicle [_vehicleClassname, _spawnPoint, [], 0, "NONE"];
 waitUntil {!isNull _vehicle};
@@ -66,7 +67,7 @@ private _aiDrones = getArray (missionConfigFile >> "Life_Settings" >> "drones");
 if(_vehicleClassname in _aiDrones) then {createVehicleCrew _vehicle;};
 
 _vehicle allowDamage false;
-_vehicle setPos _spawnPoint;
+if(_notPos) then {_vehicle setPosASL _spawnPoint;} else {_vehicle setPos _spawnPoint;};
 _vehicle setVectorUp (surfaceNormal _spawnPoint);
 _vehicle setDir (markerDir (_sp select 0));
 _vehicle lock 2;

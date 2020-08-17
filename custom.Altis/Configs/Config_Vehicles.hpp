@@ -257,6 +257,14 @@ class LifeCfgVehicles {
 				condition = "playerSide in [west]";
 				price = 0.05;
 			};
+			
+			class Black {
+				name = "Schwarz";
+				path[] = {"#(argb,8,8,3)color(0.05,0.05,0.05,1)"};
+				condition = "playerSide in [west]";
+				price = 0.05;
+			};
+			
 			class Feuerwehr {
 				name = "Feuerwehr";
 				path[] = {"Images\Medic\fw_limo.jpg"};
@@ -407,6 +415,24 @@ class LifeCfgVehicles {
 		class textures {};
     };
 	
+	class B_Truck_01_ammo_F {
+		vItemSpace = 100;
+		price = 167500;
+		chopPrice = 12000;
+		legal = 0;
+		bankCapacity = 0;
+		class textures {
+		
+		class Polizei {
+				name = "Destroyer";
+				path[] = {"Images\Polizei\Hemtt_1.jpg","Images\Polizei\Hemtt_2.jpg","Images\Polizei\Hemtt_3.jpg"};
+				condition = "playerSide in [west]";
+				price = 1;
+			};
+		};
+    };
+	
+	
 	class B_Truck_01_covered_F {
 		vItemSpace = 800;
 		price = 2750000;
@@ -426,6 +452,13 @@ class LifeCfgVehicles {
 			class Polizei {
 				name = "Polizei";
 				path[] = {"Images\Polizei\Q1.jpg","Images\Polizei\Q2.jpg","Images\Polizei\Q3.jpg"};
+				condition = "playerSide in [west]";
+				price = 0.05;
+			};
+			
+			class Black {
+				name = "Schwarz";
+				path[] = {"#(argb,8,8,3)color(0.05,0.05,0.05,1)","#(argb,8,8,3)color(0.05,0.05,0.05,1)","#(argb,8,8,3)color(0.05,0.05,0.05,1)"};
 				condition = "playerSide in [west]";
 				price = 0.05;
 			};
@@ -974,7 +1007,7 @@ class LifeCfgVehicles {
 			};
 			class Black {
 				name = "Schwarz";
-				path[] = {"#(argb,8,8,3)color(0.05,0.05,0.05,1)"};
+				path[] = {"#(argb,8,8,3)color(0.05,0.05,0.05,1)","#(argb,8,8,3)color(0.05,0.05,0.05,1)"};
 				condition = "playerSide in [west]";
 				price = 0.05;
 			};
@@ -1176,7 +1209,7 @@ class LifeCfgVehicles {
 			
 			class Black {
 				name = "Schwarz";
-				path[] = {"#(argb,8,8,3)color(0.05,0.05,0.05,1)","#(argb,8,8,3)color(0.05,0.05,0.05,1)"};
+				path[] = {"#(argb,8,8,3)color(0.05,0.05,0.05,1)","#(argb,8,8,3)color(0.05,0.05,0.05,1)","#(argb,8,8,3)color(0.05,0.05,0.05,1)","#(argb,8,8,3)color(0.05,0.05,0.05,1)"};
 				condition = "playerSide in [west]";
 				price = 0.05;
 			};

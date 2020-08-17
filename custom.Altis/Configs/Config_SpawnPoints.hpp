@@ -3,7 +3,7 @@ class CfgSpawnPoints {
 		displayName = "Gangeroberung";
 		spawnMarker = "gang_spawn";
 		icon = "\a3\ui_f\data\map\MapControl\bunker_CA.paa";
-		condition = "playerSide isEqualTo east && (SCHILD_DEALER getVariable ['Zone_Dealer_Winner', '']) == ((group player) getVariable ['gang_name', '-1'])";
+		condition = "(SCHILD_DEALER getVariable ['Zone_Dealer_Winner', '']) == ((group player) getVariable ['gang_name', '-1'])";
 	};
 
 	class Kavala {

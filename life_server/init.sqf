@@ -17,6 +17,8 @@ publicVariable "HC_Life";
 publicVariable "HC_Log";
 publicVariable "UPTIME_TIME";
 
+estimatedTimeLeft 36000;
+
 [] execVM "\life_server\initHC.sqf";
 
 if (isNil {uiNamespace getVariable "life_sql_id"}) then {

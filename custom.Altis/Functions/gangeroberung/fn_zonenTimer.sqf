@@ -6,8 +6,8 @@ ZONEN_TIMER_THREAD = true;
 if(_time isEqualTo -1) exitWith {};
 
 for "_i" from 0 to 1 step 0 do {
-    [format ["%1<t font = 'RobotoCondensed' color = '#D3E81E'><br/>                       %2</t>", [(_time - time),"MM:SS.MS"] call BIS_fnc_secondsToString, "Zeit bis es los geht"], "\a3\ui_f\data\IGUI\RscTitles\MPProgress\timer_ca.paa"] spawn life_fnc_sideMessage;
-    if(round(_time - time) < 1) exitWith {};
+    [format ["%1<t font = 'RobotoCondensed' color = '#D3E81E'><br/>                       %2</t>", [(_time - servertime),"MM:SS.MS"] call BIS_fnc_secondsToString, "Zeit bis es los geht"], "\a3\ui_f\data\IGUI\RscTitles\MPProgress\timer_ca.paa"] spawn life_fnc_sideMessage;
+    if(round(_time - servertime) < 1) exitWith {};
     sleep 0.08;
 };
 
@@ -27,12 +27,12 @@ titleText ["Deine Gang hat den Gangfight gewonnen!","PLAIN"];
 titleText ["Deine Gang hat den Gangfight verloren!","PLAIN"];
 };
 };
-private _time = time + (10 * 60);
+private _time = servertime + (10 * 60);
 titleText["Der Kampf beginnt","PLAIN"];
 
 for "_i" from 0 to 1 step 0 do {
-    [format ["%1<t font = 'RobotoCondensed' color = '#D3E81E'><br/>                              %2</t>", [(_time - time),"MM:SS.MS"] call BIS_fnc_secondsToString, "Kampfphase"], "\a3\ui_f\data\IGUI\RscTitles\MPProgress\timer_ca.paa"] spawn life_fnc_sideMessage;
-    if(round(_time - time) < 1) exitWith {};
+    [format ["%1<t font = 'RobotoCondensed' color = '#D3E81E'><br/>                              %2</t>", [(_time - servertime),"MM:SS.MS"] call BIS_fnc_secondsToString, "Kampfphase"], "\a3\ui_f\data\IGUI\RscTitles\MPProgress\timer_ca.paa"] spawn life_fnc_sideMessage;
+    if(round(_time - servertime) < 1) exitWith {};
     sleep 0.08;
 };
 

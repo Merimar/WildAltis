@@ -10,7 +10,7 @@ if(_vUID isEqualTo -1 || _item == "" || isNull _vehicle) exitWith {};
 private _vehInvID = format ["VEHICLE_INV_%1", _vUID];
 private _data = missionNamespace getVariable [_vehInvID, [[], 0]];
 private _itemArray = _data select 0;
-private _weight = _data select 0;
+private _weight = _data select 1;
 
 private _itemIndex = _itemArray findIf {_x select 0 == _item};
 

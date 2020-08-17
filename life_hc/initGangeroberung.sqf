@@ -17,7 +17,7 @@ sleep (10 * 60);
 GE_ACTIVE = true;
 ANMELDEN = true;
 publicVariable "ANMELDEN";
-SCHILD_DEALER setVariable["Zone_Dealer_Time", time + (10 * 60), true];
+SCHILD_DEALER setVariable["Zone_Dealer_Time", servertime + (10 * 60), true];
 
 sleep (10 * 60);
 
@@ -25,7 +25,7 @@ ANMELDEN = false;
 publicVariable "ANMELDEN";
 _member = playableUnits select {(group _x) in ANMELDUNGEN};
 if(count _member isEqualTo 0) exitWith {};
-SCHILD_DEALER setVariable["Zone_Dealer_Time", time + (10 * 60), true];
+SCHILD_DEALER setVariable["Zone_Dealer_Time", servertime + (10 * 60), true];
 SCHILD_DEALER setVariable["Zone_Dealer_Start", true, true];
 
 _gangList = [];

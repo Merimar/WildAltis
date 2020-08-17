@@ -253,7 +253,7 @@ switch (_code) do {
     //U Key
     case 22: {
 			if(_shift) exitWith {
-				if((time - life_action_delay) >= 1) then {
+				if((time - life_action_delay) >= 0.5) then {
 					life_action_delay = time;
 					playSound "earplug";
 					if(soundVolume isEqualTo 1) exitWith {

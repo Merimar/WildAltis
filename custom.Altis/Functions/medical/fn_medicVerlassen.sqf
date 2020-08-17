@@ -17,4 +17,4 @@ if(isNull _owner) exitWith {["Der Besitzer dieses Fahrzeuges befindet sich aktue
 private _vehicleName = [getText (configFile >> "CfgVehicles" >> typeOf _vehicle >> "displayName")] call life_fnc_removeChar;
 
 ["Der Besitzer des Fahrzeugs hat eine Meldung über sein Fahrzeug bekommen. Sollte der Spieler innerhalb von 1 Minute nicht antworten kannst du sein Fahrzeug beschlagnahmen!", "Verlassenes Fahrzeug", 5] spawn life_fnc_message;
-[format ["Wir haben dein/en %1 an der Position %2 gefunden. Da Sie gerade nicht in der Nähe waren, wollten wir fragen ob wir Ihr Fahrzeug abschleppen dürfen!", _vehicleName], "Feuerwehr Nachricht", 10] remoteExec ["life_fnc_message", _owner];
+[format ["Wir haben dein/en %1 an der Position %2 gefunden. Da Sie gerade nicht in der Nähe waren, wollten wir fragen ob wir Ihr Fahrzeug abschleppen dürfen!", _vehicleName, mapGridPosition _vehicle], "Feuerwehr Nachricht", 10] remoteExec ["life_fnc_message", _owner];

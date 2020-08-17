@@ -1,5 +1,5 @@
 private _unit = cursorObject;
-if(isNull _unit || {player distance _unit > 3 || {_unit getVariable ["restrained", false]} || side _unit isEqualTo west && (playerSide isEqualTo west || playerSide isEqualTo east) || !isPlayer _unit}) exitWith {};
+if(isNull _unit || {player distance _unit > 3 || {_unit getVariable ["restrained", false]} || (side _unit isEqualTo west && playerSide isEqualTo west) || !isPlayer _unit}) exitWith {};
 
 _unit setVariable ["restrained", true, true];
 _unit setVariable ["execution", false, true];

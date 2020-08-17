@@ -41,7 +41,7 @@ _unit spawn {
 
 private _canAdrenalin = (life_virt_gear findIf {(_x select 0) == "adrenalin" && (_x select 1) > 0}) != -1;
 private _valid = _canAdrenalin && (isNull _killer || {_killer == _unit});
-if(!("adrenalin" in LICENSES) && playerSide isEqualTo west) then {_valid = false;};
+if(!("adrenalin" in LICENSES) && playerSide in [civilian, east]) then {_valid = false;};
 [_valid] spawn life_fnc_deathScreen;
 if(!isNil "REDGULL_THREAD") then {terminate REDGULL_THREAD;};
 REDGULL = false;

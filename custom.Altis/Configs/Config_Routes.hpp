@@ -7,7 +7,7 @@ class CfgFarmRoutes {
 		gatherItem = "oilU";
 		gatherSkill = "farmFossil";
 		gatherTool = "pickaxe";
-		farmZonesize = 30;
+		farmZonesize = 100;
 		farmTime = 3;
 		processInput[] = {{"oilU", 1}};
 		processOutput[] = {{"oilP", 1}};

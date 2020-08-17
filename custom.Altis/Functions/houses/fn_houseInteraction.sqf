@@ -11,7 +11,7 @@ private _houseInfo = _target getVariable ["house_information", []];
 private _houseUpgrades = _target getVariable ["house_upgrades", []];
 private _group = group player;
 private _leader = ((_houseInfo param [2, ""]) == getPlayerUID player);
-private _canGarage = ([player, group player] call life_fnc_getGangRank) >= 4;
+private _canGarage = ([player, group player] call life_fnc_getGangRank) >= 4 || _leader;
 
 if(!("haus" in LICENSES) && !_houseBought) exitWith {["", "Du brauchst eine Hauseigentümerlizenz"] spawn life_fnc_message;};
 

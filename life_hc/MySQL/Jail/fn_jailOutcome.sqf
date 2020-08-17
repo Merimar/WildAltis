@@ -6,6 +6,12 @@ if(_isHacker) exitWith {};
 
 private _sideID = [side _unit] call HC_fnc_getSideID;
 
+private _vehicleName = if(isNull objectParent _unit) then {"Kein Fahrzeug"} else {getText (configFile >> "CfgVehicles" >> typeOf objectParent _unit >> "displayName")};
+private _nearPlayers = _unit nearEntities ["Man", 20];
+private _friends = [];
+{_friends pushback (format ["%1 (%2 - %3)", name _x, getPlayerUID _x, side _x]);}forEach _nearPlayers;
+private _friends = if(count _nearPlayers isEqualTo 0) then {"NIEMAND"} else {_friends joinString ", "};
+
 switch (_outcome) do {
 	case "DEAD" : {};
 	
@@ -20,7 +26,7 @@ switch (_outcome) do {
 		[getPlayerUID _unit, side _unit, 0] call HC_fnc_handleArrested;
 		private _query = format ["UPDATE player_jail SET deleted_at = now() WHERE prisoner_id = '%1' AND side_id = '%2'", getPlayerUID _unit, _sideID];
 		[_query, 1] call HC_fnc_asyncCall;
-		private _msg = format ["Der Spieler %1 (%2 - %3) ist aus dem Gefängnis ausgebrochen", name _unit, getPlayerUID _unit, side _unit];
+		private _msg = format ["Der Spieler %1 (%2 - %3) ist aus dem Gefängnis ausgebrochen (FAHRZEUG: %4 FREUNDE: %5)", name _unit, getPlayerUID _unit, side _unit, _vehicleName, _friends];
 		["JailLog", _msg] call HC_fnc_Log;
 		[0, format ["%1 ist aus dem Gefängnis ausgebrochen", name _unit]] remoteExec ["life_fnc_broadcast", -2];
 	};
