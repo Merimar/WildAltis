@@ -26,3 +26,6 @@ _position = selectRandom _bPos;
 };
 
 if(_spawnName == "Flugzeugträger") then {_position set [2, 23]; _unit setPos _position;} else {_unit setPosAtl _position;};
+
+private _query = format ["UPDATE player_alive SET status = '1' WHERE player_id = '%1' AND side_id = '%2'", getPlayerUID _unit, [side _unit] call HC_fnc_getSideID];
+[_query, 1] call HC_fnc_asyncCall;
