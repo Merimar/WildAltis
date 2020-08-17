@@ -751,7 +751,7 @@ class Items {
 	};
 
 	class Relikt_4 {
-		name = "Dinosaurerknochen";
+		name = "Dinosaurierknochen";
 		illegal = true;
 		weight = 80;
 		type = "MARKT";

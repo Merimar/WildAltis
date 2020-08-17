@@ -10,7 +10,7 @@ if(!isNull _capturePlayer) exitWith {titleText["Die Fahne wird gerade eingenomme
 SCHILD_DEALER setVariable ["Zone_Dealer_CapturePlayer", player, true];
 
 disableSerialization;
-private _title = "Bleibe in einem Radius von 15m";
+private _title = "Bleibe in einem Radius von 12m";
 5 cutRsc ["life_progress","PLAIN"];
 private _ui = uiNamespace getVariable "life_progress";
 private _progressBar = _ui displayCtrl 38201;

@@ -18,10 +18,11 @@ _unit setVariable ["oldPos", getPos _unit];
 
 if(!_start) exitWith {
 _unit setVariable ["Spectating", false, true];
-[_unit, _start] remoteExec ["TON_fnc_adminInvisible", 2];
 detach _unit;
 sleep 0.5;
 _unit setPos _oldPos;
+sleep 0.5;
+[_unit, _start] remoteExec ["TON_fnc_adminInvisible", 2];
 };
 
 if(isNull _spectateUnit) exitWith {};

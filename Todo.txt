@@ -1,20 +1,18 @@
+Gefixt:
++--------FW Report: man kann keine zerstörten Fahrzeuge abschleppen dh wir können die Leute die in wracks sitzen solange nicht wiederbeleben, bis das Fahrzeug ausgebrannt ist. Wenn möglich bitte die Windows Reichweite erhöhen bitte bitte ^^ (sebi hat gesagt soll es noch mal schicken falls es schon im bugtracker war)
++--------Meddl Leude, die Blackfisch hat kein Windows Menu, laut Reissack Lore die Mohawk auch nicht. Kuss geht raus
++--------Wenn Fahrzeuge von medic oder cop abgeschlept werden bis zu restart nicht in der Garage
++--------Hallo konnte den Cop nicht fesseln. https://www.youtube.com/watch?v=N-7C-ypeHAk fesseln waren danach weg und polizist nicht gefesselt. tschau kakao
++--------Ausparkkosten bei GE Ausparkschild
++--------Die Drohnen, also der Name der nebenan  gezeigt wird is absolut weird, solche spielernamen sind nichtmal aufm server, denke das sind irgendwelche a3 charaktere, achso und die karte buggt immernoch a.f
++--------Flugzeugträger ausparken
+--------GE Timer fixen
+
+GEHT NICHT:
 es ist als gefesselter moeglich wenn man in ein fahrzeug gesetzt wird auf das eigene sowie das Fahrzeug inventar zuzugreifen
 FW wenn man als medic stirbt bleibt die markierung nach der wiederbelebung auf der karte (nicht immer)
 Als Cop kann man in die Weste gefühlt undendliczh zeiug reub nacgheb. Hab da Toolkit und 40 Mags 762 drin nach Loadout kaufen
-Nach neu einloggen mit ner Katiba 1er weste und ungefähr 10 smokes gespawnt + 10 First aid packs
-
-Gefixt:
---------FW Report: man kann keine zerstörten Fahrzeuge abschleppen dh wir können die Leute die in wracks sitzen solange nicht wiederbeleben, bis das Fahrzeug ausgebrannt ist. Wenn möglich bitte die Windows Reichweite erhöhen bitte bitte ^^ (sebi hat gesagt soll es noch mal schicken falls es schon im bugtracker war)
---------Meddl Leude, die Blackfisch hat kein Windows Menu, laut Reissack Lore die Mohawk auch nicht. Kuss geht raus
---------Wenn Fahrzeuge von medic oder cop abgeschlept werden bis zu restart nicht in der Garage
---------Bei tot buggen AssignesItems weg
---------Wenn man das t inventar hintereinander zu oft öffnet schließt sich das Game und es  steht woosh woosh huso
---------Hallo konnte den Cop nicht fesseln. https://www.youtube.com/watch?v=N-7C-ypeHAk fesseln waren danach weg und polizist nicht gefesselt. tschau kakao
---------Wenn man Öl zu Raffiniertem Öl verarbeitet und vertig ist wird zwar angezeigt das man des zu Raffiniertem Öl verarbeitet hat jedoch ist es nicht im Z Inventar wenn man es in seinen LKW laden will
---------Ausparkkosten bei GE Ausparkschild
---------Die Drohnen, also der Name der nebenan  gezeigt wird is absolut weird, solche spielernamen sind nichtmal aufm server, denke das sind irgendwelche a3 charaktere, achso und die karte buggt immernoch a.f
---------Flugzeugträger ausparken
---------GE Timer fixen
+Bei tot buggen AssignesItems weg (MEDIC REVIVE)
 
 Nestea:
 Gibt es die möglichkeit eine übersicht der Lizenzpreise der Verarbeiter zu bekommen?
@@ -23,30 +21,30 @@ ANKÜNDIGEN IM FORUM DASS AUS DEM GEFÄNGNIS BUGGEN BESTRAFT WIRD
 DIAMANT VON NESTEA
 
 Gefixt:
---------Nebel aus /Merimar
-Admin Spectaten /Merimar
++--------Nebel aus /Merimar
+--------Admin Spectaten /Merimar
 --------Tactical Ping raus /Merimar
---------Rebausenposten Lizenz 960k /Merimar
---------Pyrgos normale Kirche immernoch in der gemappten Kirche /Merimar
---------der Gokart kleidungsladen fehlt /Merimar
++--------Rebausenposten Lizenz 960k /Merimar
++--------Pyrgos normale Kirche immernoch in der gemappten Kirche /Merimar
++--------der Gokart kleidungsladen fehlt /Merimar
 --------Medic Beschlagnahmt zu Abgeschleppt Nachricht ändern /Merimar
---------ATM in den Knast mit Markt /Merimar
---------Es ist für Medics nicht erkennbar wann der Gangfight endet. also denke für alle gruppierungen /Merimar
++--------ATM in den Knast mit Markt /Merimar
++--------Es ist für Medics nicht erkennbar wann der Gangfight endet. also denke für alle gruppierungen /Merimar
 --------Gearfixen funktioniert nicht /Merimar
---------Biogashändler heist noch Erdgashändler im Händleremenü oben /Merimar
++--------Biogashändler heist noch Erdgashändler im Händleremenü oben /Merimar
 --------Die verlassenes Fahrezug nachricht ist super schnell wieder weg, kann man kaum lesen. Bei der xian steht dan auch da "dein/e wurde ..." also wird nichts angezeigt, ka ob das nur bei der xian ist oder bei anderen auch /Merimar
---------Pyrgos HQ kein Halo jump Cops /Merimar
++--------Pyrgos HQ kein Halo jump Cops /Merimar
 --------Auf das Ganghaus kann nur der Leader zugreiffen. (WindowsTaste) Verschiedene Ränge funktionieren nicht. /Merimar
 --------Wenn man in ein Haus geht, die Windowstaste drückt und keine Hauseigentümerlizenz besitzt, ist das Wort "Hauseigentümerlizenz" falsch geschrieben. Bekomme ich einen Finderlohn? :3 /Merimar
---------Heligarage am airfield als cop nicht verfügbar /Merimar
++--------Heligarage am airfield als cop nicht verfügbar /Merimar
 --------Über Z Erstehilfe-Kasten benutzen kann man unendlich heilen und leveln. Egal wie viel hp kann man healen /Merimar
 --------Fahrzeug cops verkaufen falscher multiplier /Merimar
 --------Nach den Knast Aufenthalt werden die Haeftlinge nicht freigelassen -ODWYN /Merimar
 --------hey der knast ist komplett verbugt und man kann sich überall durch die wäne bugen zudem kann man keine steine sammeln um raus zu kommen und man wird nach ablauf seiner zeit nicht aus dem knast raus telepotiert. /Merimar
---------gekauften Garagen immernoch verbuggt, einpark funktion geht nicht und spawnpunkt buggt immernoch weg. /Merimar
-Ingame als Donator gekennzeichnet mit einem Diamanten neben deinem Namen und Premium Slots /Merimar
++--------gekauften Garagen immernoch verbuggt, einpark funktion geht nicht und spawnpunkt buggt immernoch weg. /Merimar
++--------Ingame als Donator gekennzeichnet mit einem Diamanten neben deinem Namen und Premium Slots /Merimar
 --------Markevent Fix /Merimar
---------Möglichkeit Hexagon Namen am Rand des Bildschirms auszuschalten /Merimar
++--------Möglichkeit Hexagon Namen am Rand des Bildschirms auszuschalten /Merimar
 --------Todesspeicherung neu schreiben /Merimar
 --------Nach epipen Benutzung Spawnt ab und zu auf spawn Insel /Merimar
 --------Fahrzeug Inv Speichersystem /Merimar
