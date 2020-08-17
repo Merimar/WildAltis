@@ -16,8 +16,9 @@ private _extraInfo = if(playerSide isEqualTo independent) then {"abgeschleppt"} 
 if((count _vehicleData isEqualTo 0 || count _dbInfo isEqualTo 0) && !_rent) exitWith {};
 private _vehSide = _dbInfo select 1;
 
+private _notification = if(playerSide isEqualTo west) then {"Polizei"}  else {"Feuerwehr"};
+
 if(alive _vehicle) then {
-    private _notification = if(playerSide isEqualTo west) then {"Polizei"}  else {"Feuerwehr"};
     private _message = format ["%1 dein Fahrzeug wird von der %2 %3", _vehicleData select 0 select 1, _notification, _extraInfo];
     [0, _message] remoteExecCall ["life_fnc_broadcast", -2];
 };
