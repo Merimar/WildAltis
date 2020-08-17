@@ -45,4 +45,12 @@ _amount = _x select 1;
 if(getText (missionConfigFile >> "Items" >> _item >> "type") in ["FARM", "MARKT"]) then {[_pID, _item, _amount, false] call HC_fnc_handleVirt;};
 }forEach _pItems;
 
+private _informationArray = bank_obj getVariable ["Emergency_Calls", []];
+{
+	if((_x select 0) == _pName) exitWith {
+		_x set [5, true];
+	};
+} forEach _informationArray;
+bank_obj setVariable ["Emergency_Calls", _informationArray, true];
+
 [_pID] call HC_fnc_saveToDatabase;
