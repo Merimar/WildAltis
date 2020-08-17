@@ -9,16 +9,13 @@ Gefixt:
 +--------GE Timer fixen
 
 GEHT NICHT:
-es ist als gefesselter moeglich wenn man in ein fahrzeug gesetzt wird auf das eigene sowie das Fahrzeug inventar zuzugreifen
++--------es ist als gefesselter moeglich wenn man in ein fahrzeug gesetzt wird auf das eigene sowie das Fahrzeug inventar zuzugreifen
 FW wenn man als medic stirbt bleibt die markierung nach der wiederbelebung auf der karte (nicht immer)
-Als Cop kann man in die Weste gefühlt undendliczh zeiug reub nacgheb. Hab da Toolkit und 40 Mags 762 drin nach Loadout kaufen
-Bei tot buggen AssignesItems weg (MEDIC REVIVE)
++--------Als Cop kann man in die Weste gefühlt undendliczh zeiug reub nacgheb. Hab da Toolkit und 40 Mags 762 drin nach Loadout kaufen
++--------Bei tot buggen AssignesItems weg (MEDIC REVIVE)
 
 Nestea:
 Gibt es die möglichkeit eine übersicht der Lizenzpreise der Verarbeiter zu bekommen?
-
-ANKÜNDIGEN IM FORUM DASS AUS DEM GEFÄNGNIS BUGGEN BESTRAFT WIRD
-DIAMANT VON NESTEA
 
 Gefixt:
 +--------Nebel aus /Merimar
