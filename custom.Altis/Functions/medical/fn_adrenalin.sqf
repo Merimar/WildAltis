@@ -33,3 +33,11 @@ ppEffectDestroy colorCorrection;
 [] call life_fnc_fixSpace;
 
 if(JAIL_TIME > 0) then {[objNull, JAIL_TIME, life_geheimZahl] spawn life_fnc_jailMe;};
+
+private _informationArray = bank_obj getVariable ["Emergency_Calls", []];
+{
+	if((_x select 0) == (name player)) exitWith {
+		_x set [5, true];
+	};
+} forEach _informationArray;
+bank_obj setVariable ["Emergency_Calls", _informationArray, true];

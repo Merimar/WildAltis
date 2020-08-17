@@ -53,6 +53,14 @@ if(!((side _target) isEqualTo independent)) then {
     BANK = BANK + (_reviveCost * 5);
     ["revive"] call life_fnc_addSkill;
     [format ["Du hast den Spieler %1 wiederbelebt. Du bekommst €%2", _targetName, (_reviveCost * 5)], "Spieler wiederbelebt"] spawn life_fnc_message;
+
+    private _informationArray = bank_obj getVariable ["Emergency_Calls", []];
+    {
+        if((_x select 0) == _targetName) exitWith {
+            _x set [5, true];
+        };
+    } forEach _informationArray;
+    bank_obj setVariable ["Emergency_Calls", _informationArray, true];
 } else {
     [format ["Du hast den Spieler %1 wiederbelebt.", _targetName], "Spieler wiederbelebt"] spawn life_fnc_message;
 };
