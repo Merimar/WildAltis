@@ -4,7 +4,7 @@ private _value = param [1, -1, [0]];
 private _message = param [2, "", [""]];
 private _faction = param [3, sideUnknown, [sideUnknown]];
 private _pos = param [4, "Unbekannt", [""]];
-private _deadPosition = param [5, [0,0,0]], [[]]];
+private _deadPosition = param [5, [0,0,0], [[]]];
 
 private _time = bank_obj getVariable ["time", []];
 private _minuten = (_time select 4);

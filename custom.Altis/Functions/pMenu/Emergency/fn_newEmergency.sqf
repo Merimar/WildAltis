@@ -1,5 +1,5 @@
 private _message = param [0, "", [""]];
-private _factionNew = param [1, sideunknown, [sideunknown]];
+private _factionNew = param [1, sideUnknown, [sideUnknown]];
 private _pos = param [2, "", [""]];
 private _deadPos = param [3, [0,0,0], [[]]];
 private _informationArray = bank_obj getVariable ["Emergency_Calls", []];
