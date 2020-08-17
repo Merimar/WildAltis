@@ -10,7 +10,7 @@ private _oldPrice = getNumber (missionConfigFile >> "Items" >> _item >> "sellPri
 private _index = MARKT_ARRAY findIf {(_x select 0) == _item};
 if(_index isEqualTo -1) exitWith {};
 
-private _newPerc = round (_newPrice / _oldPrice);
+private _newPerc = _newPrice / _oldPrice;
 (MARKT_ARRAY select _index) set [4, _newPerc];
 publicVariable "MARKT_ARRAY";
 MARKT_SERVER_ARRAY = +MARKT_ARRAY;

@@ -4,6 +4,7 @@ if(isNull findDisplay 4000) then {createDialog "Settings";};
 private _display = findDisplay 4000;
 private _boxGras = _display displayCtrl 4001;
 private _boxName = _display displayCtrl 4002;
+private _boxRand = _display displayCtrl 4023;
 private _combo = _display displayCtrl 4003;
 private _textColor = _display displayCtrl 4004;
 private _pictureHats = _display displayCtrl 4005;
@@ -48,6 +49,7 @@ _settings set [5, 100];
 _settings set [6, 3];
 _settings set [7, false];
 _settings set [8, true];
+_settings set [9, true];
 };
 
 private _distanceCar = _settings select 0;
@@ -59,6 +61,7 @@ private _hexagonBlau = _settings select 5;
 private _thickness = _settings select 6;
 private _nameTag = _settings select 7;
 private _gras = _settings select 8;
+private _rand = _settings select 9;
 
 profileNamespace setVariable ["WildAltis_Settings", _settings];
 saveProfileNamespace;
@@ -79,6 +82,7 @@ _editBlau ctrlSetText str(_hexagonBlau);
 
 _boxName cbSetChecked _nameTag;
 _boxGras cbSetChecked _gras;
+_boxRand cbSetChecked _rand;
 
 _textColor ctrlSetBackgroundColor [HEXAGON_R / 100, HEXAGON_G / 100, HEXAGON_B / 100, 1];
 

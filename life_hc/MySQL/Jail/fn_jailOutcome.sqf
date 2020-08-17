@@ -32,7 +32,7 @@ switch (_outcome) do {
 		[_query, 1] call HC_fnc_asyncCall;
 		private _msg = format ["Der Spieler %1 (%2 - %3) hat seine Zeit im Gefängnis abgesessen", name _unit, getPlayerUID _unit, side _unit];
 		["JailLog", _msg] call HC_fnc_Log;
-		private _housePositions = nearestObjects [markerPos "Kavala", ["Land_i_Shop_01_V1_F","Land_i_Shop_01_V2_F","Land_i_Shop_01_V3_F","Land_i_Shop_02_V1_F","Land_i_Shop_02_V2_F","Land_i_Shop_02_V3_F","Land_House_Small_01_F"], 500];
+		private _housePositions = nearestObjects [markerPos "Spawn_Kavala", ["Land_i_Shop_01_V1_F","Land_i_Shop_01_V2_F","Land_i_Shop_01_V3_F","Land_i_Shop_02_V1_F","Land_i_Shop_02_V2_F","Land_i_Shop_02_V3_F","Land_House_Small_01_F"], 500];
 		private _house = selectRandom _housePositions;
 		private _bPos = [_house] call life_fnc_getBuildingPositions;
 		{_bPos = _bPos - [(_house buildingPos _x)];}forEach (_house getVariable ["slots",[]]);

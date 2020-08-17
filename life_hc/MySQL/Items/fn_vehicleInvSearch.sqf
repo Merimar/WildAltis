@@ -4,12 +4,13 @@ private _vehicle = param [1, objNull, [objNull]];
 private _isHacker = [[], _unit, remoteExecutedOwner, "fn_vehicleInvSearch"] call HC_fnc_checkSQLBreak;
 if(_isHacker || isNull _vehicle) exitWith {};
 
-private _index = [_vehicle] call HC_fnc_getVehicleIndex;
 private _searchSkill = [getPlayerUID _unit, "search"] call HC_fnc_getSkillAdvantage;
-if(_index isEqualTo -1) exitWith {["", "Es wurden keine illegalen Items gefunden"] remoteExec ["life_fnc_message", _unit]};
+private _vUID = (_vehicle getVariable ["dbInfo", []]) param [2, -1];
+if(_vUID isEqualTo -1) exitWith {["", "Es wurden keine illegalen Items gefunden"] remoteExec ["life_fnc_message", _unit]};
 
-private _data = VEHICLE_INV_ARRAY select _index;
-private _itemArray = _data select 1;
+private _vehInvID = format ["VEHICLE_INV_%1", _vUID];
+private _data = missionNamespace getVariable [_vehInvID, [[], 0]];
+private _itemArray = _data select 0;
 private _nameArray = [];
 
 {

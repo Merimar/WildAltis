@@ -17,7 +17,7 @@ private _speakKey = (actionKeys "pushToTalk" select 0);
 private _cV = actionKeys "TacticalView";
 private _invKey = (actionKeys "gear" select 0);
 private _diaryKey = (actionKeys "diary" select 0);
-private _getOver = (actionKeys "GetOver" select 0);
+private _getOver = actionKeys "GetOver";
 private _salute = (actionKeys "salute" select 0);
 private _sitDown = (actionKeys "SitDown" select 0);
 private _throw = (actionKeys "Throw" select 0);
@@ -36,10 +36,10 @@ private _moveRight = actionKeys "MoveRight" select 0;
 private _interruptionKeys = [_moveForward, _moveFastForward, _moveSlowForward, _moveBack, _turnLeft, _turnRight, _moveLeft, _moveRight];
 private _notMove = (player getVariable ["restrained", false] || {player getVariable ["playerSurrender", false]} || {player getVariable ["execution",false]} || life_isknocked || life_istazed);
 
-if(_code in [_getOver, _salute, _sitDown, _throw, _getIn, _getOut, _fire, _reloadMagazine, 16, 18] && _notMove) then {_handled = true;};
+if(_code in ([_salute, _sitDown, _throw, _getIn, _getOut, _fire, _reloadMagazine, 16, 18] + _getOver) && _notMove) then {_handled = true;};
 if(life_action_inUse && !life_interrupted && _code in _interruptionKeys) then {[] spawn {life_interrupted = true; sleep 2; life_interrupted = false;};};
 if(!(count (actionKeys "User10") isEqualTo 0) && {(inputAction "User10" > 0)}) exitWith {if(!life_action_inUse) then {[] call life_fnc_actionKeyHandler;};};
-if(_code in [_getOver] && JAIL_TIME > 0) then {_handled = true;};
+if(_code in _getOver && JAIL_TIME > 0) then {_handled = true;};
 if(_code in _cV) then {_handled = true;};
 
 if(!_handled) then {

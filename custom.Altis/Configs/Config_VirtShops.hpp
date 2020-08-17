@@ -28,6 +28,12 @@ class VirtualShops {
 		condition = "true";
 		items[] = { "bacon", "waterBottle", "apple", "steak", "lockpick", "pickaxe", "fuelFull", "boltcutter", "redgull", "kabelbinder", "blastingcharge", "defibrilator", "firstaidkit", "medikit", "adrenalin"};
 	};
+	
+	class jail_market {
+		name = "Gefängnis Markt";
+		condition = "true";
+		items[] = { "bacon", "waterBottle", "apple", "steak", "firstaidkit", "medikit"};
+	};
 
 	class cop {
 		name = "Polizei Laden";

@@ -444,6 +444,7 @@ class CfgItemShop {
 			{ "H_PilotHelmetHeli_I", "", 2500, "call life_coplevel >= 2"},
 			{ "H_CrewHelmetHeli_O", "", 2500, "call life_coplevel >= 2"},
 			{ "H_CrewHelmetHeli_I", "", 2500, "call life_coplevel >= 2"},
+			{ "H_CrewHelmetHeli_B", "", 2500, "call life_coplevel >= 2"},
 			{ "H_PASGT_basic_blue_F", "", 2500, "call life_coplevel >= 2"},
 			{ "H_HelmetB_TI_tna_F", "", 2500, "call life_coplevel >= 2"}
 		};
@@ -466,6 +467,13 @@ class CfgItemShop {
 			{ "G_Lady_Blue", "", 590, "call life_coplevel >= 1"},
 			{ "G_Tactical_Black", "", 590, "call life_coplevel >= 1"},
 			{ "G_Tactical_Clear", "", 590, "call life_coplevel >= 1"},
+			{ "G_Bandanna_tan", "", 590, "call life_coplevel >= 6"},
+			{ "G_Bandanna_oli", "", 590, "call life_coplevel >= 6"},
+			{ "G_Bandanna_blk", "", 590, "call life_coplevel >= 6"},
+			{ "G_Bandanna_beast", "", 590, "call life_coplevel >= 6"},
+			{ "G_Bandanna_shades", "", 590, "call life_coplevel >= 6"},
+			{ "G_Bandanna_sport", "", 590, "call life_coplevel >= 6"},
+			{ "G_Bandanna_aviator", "", 590, "call life_coplevel >= 6"},
 			{ "G_Lowprofile", "", 590, "call life_coplevel >= 1"},
 			{ "G_Combat", "", 590, "call life_coplevel >= 1"},
 			{ "G_Diving", "", 590, "call life_coplevel >= 1"}
@@ -493,7 +501,7 @@ class CfgItemShop {
 		weapons[] = {
 			{ "hgun_P07_snds_F", "Taser", 1000, "call life_coplevel >= 1"},
 			{ "hgun_P07_khk_Snds_F", "Taser", 1000, "call life_coplevel >= 1"},
-			{ "30Rnd_9x21_Mag", "Taser Magazin", 10, "call life_coplevel >= 1"},
+			{ "30Rnd_9x21_Mag", "Taser Magazin", 1000, "call life_coplevel >= 1"},
 			{ "arifle_sdar_F", "", 1000, "call life_coplevel >= 1"},
 			{ "20Rnd_556x45_UW_mag", "", 10, "call life_coplevel >= 1"},
 			{ "hgun_ACPC2_F", "", 1000, "call life_coplevel >= 6"},
@@ -517,7 +525,7 @@ class CfgItemShop {
 			{ "30Rnd_65x39_caseless_green", "", 1000, "call life_coplevel >= 1"},
 			{ "arifle_MXC_Black_F", "", 1000, "call life_coplevel >= 1"},
 			{ "arifle_MX_Black_F", "", 1000, "call life_coplevel >= 1"},
-			{ "30Rnd_65x39_caseless_mag", "", 1000, "call life_coplevel >= 1"},
+			{ "30Rnd_65x39_caseless_black_mag", "", 1000, "call life_coplevel >= 1"},
 			{ "arifle_SPAR_02_blk_F", "", 1000, "call life_coplevel >= 2"},
 			{ "150Rnd_556x45_Drum_Mag_Tracer_F", "", 1000, "call life_coplevel >= 2"},
 			{ "LMG_03_F", "", 1000, "call life_coplevel >= 2"},
@@ -527,7 +535,7 @@ class CfgItemShop {
 			{ "arifle_CTAR_blk_F", "", 1000, "call life_coplevel >= 2"},
 			{ "30Rnd_580x42_Mag_F", "", 1000, "call life_coplevel >= 2"},
 			{ "arifle_MXM_Black_F", "", 1000, "call life_coplevel >= 2"},
-			{ "30Rnd_65x39_caseless_mag", "", 1000, "call life_coplevel >= 1"},
+			{ "30Rnd_65x39_caseless_black_mag", "", 1000, "call life_coplevel >= 1"},
 			{ "arifle_MX_SW_Black_F", "", 1000, "call life_coplevel >= 2"},
 			{ "100Rnd_65x39_caseless_black_mag_tracer", "", 1000, "call life_coplevel >= 2"},
 			{ "srifle_DMR_06_camo_F", "", 1000, "call life_coplevel >= 2"},
@@ -548,7 +556,7 @@ class CfgItemShop {
 			{ "20Rnd_762x51_Mag", "", 1000, "call life_coplevel >= 3"},
 			{ "srifle_EBR_F", "", 1000, "call life_coplevel >= 3"},
 			{ "srifle_DMR_03_F", "", 1000, "call life_coplevel >= 4"},
-			{ "20Rnd_762x51_Mag", "", 1000, "call life_coplevel >= 4"},
+			{ "20Rnd_762x51_Mag", "", 1000, "call life_coplevel >= 4"},					
 			{ "arifle_AK12_F", "", 1000, "call life_coplevel >= 4"},
 			{ "30Rnd_762x39_Mag_F", "", 1000, "call life_coplevel >= 4"},
 			{ "arifle_AK12U_F", "", 1000, "call life_coplevel >= 4"},
@@ -601,6 +609,7 @@ class CfgItemShop {
 			{ "muzzle_snds_L", "", 250, "true"},
 			{ "muzzle_snds_acp", "", 250, "call life_coplevel >= 1"},
 			{ "muzzle_snds_65_TI_blk_F", "", 300, "call life_coplevel >= 2"},
+			{ "muzzle_snds_H", "", 300, "call life_coplevel >= 2"},
 			{ "muzzle_snds_H_MG", "", 750, "call life_coplevel >= 2"},
 			{ "muzzle_snds_B", "", 750, "call life_coplevel >= 2"},
 			{ "muzzle_snds_m", "", 800, "call life_coplevel >= 1"},
@@ -2273,7 +2282,8 @@ class CfgItemShop {
 		uniform[] = {};	
 		goggles[] = {};
 		vest[] = {};
-		backpack[] = {};	
+		backpack[] = {};
+		headgear[] = {};
 		weapons[] = {};
 		items[] = {
 			{ "ItemWatch", "", 450, "true"},
@@ -2284,6 +2294,40 @@ class CfgItemShop {
 			{ "Binocular", "", 1525, "true"},
 			{ "Rangefinder", "", 10000, "true"}
 		};
+	};
+	
+	class kart {
+		uniform[] = {
+			{ "U_C_Driver_1", "", 25000, "true"},
+			{ "U_C_Driver_2", "", 25000, "true"},
+			{ "U_C_Driver_3", "", 25000, "true"},
+			{ "U_C_Driver_4", "", 25000, "true"},
+			{ "U_C_Driver_1_black", "", 35000, "true"},
+			{ "U_C_Driver_1_blue", "", 35000, "true"},
+			{ "U_C_Driver_1_green", "", 35000, "true"},
+			{ "U_C_Driver_1_red", "", 35000, "true"},
+			{ "U_C_Driver_1_white", "", 35000, "true"},
+			{ "U_C_Driver_1_yellow", "", 35000, "true"},
+			{ "U_C_Driver_1_orange", "", 35000, "true"}
+		};
+		goggles[] = {};
+		vest[] = {};
+		backpack[] = {};
+		headgear[] = {
+			{ "H_RacingHelmet_1_F", "", 15000, "true"},
+			{ "H_RacingHelmet_2_F", "", 15000, "true"},
+			{ "H_RacingHelmet_3_F", "", 15000, "true"},
+			{ "H_RacingHelmet_4_F", "", 15000, "true"},
+			{ "H_RacingHelmet_1_black_F", "", 25000, "true"},
+			{ "H_RacingHelmet_1_blue_F", "", 25000, "true"},
+			{ "H_RacingHelmet_1_green_F", "", 25000, "true"},
+			{ "H_RacingHelmet_1_red_F", "", 25000, "true"},
+			{ "H_RacingHelmet_1_white_F", "", 25000, "true"},
+			{ "H_RacingHelmet_1_yellow_F", "", 25000, "true"},
+			{ "H_RacingHelmet_1_orange_F", "", 25000, "true"}
+		};
+		weapons[] = {};
+		items[] = {};
 	};
 
 	class gang {
@@ -2475,6 +2519,8 @@ class CfgItemShop {
 			{ "B_Carryall_oucamo", "", 32500, "true"}
 		};
 		
+		headgear[] = {};
+		
 		weapons[] = {
 			{ "arifle_SDAR_F", "", 61500, "true"}, //SDAR
 			{ "20Rnd_556x45_UW_mag", "", 750, "true"},
@@ -2539,6 +2585,7 @@ class CfgItemShop {
 		uniform[] = {};
 		goggles[] = {};
 		backpack[] = {};
+		headgear[] = {};
 		vest[] = {
 			{ "V_Rangemaster_belt", "", 7500, "true"},
 		};

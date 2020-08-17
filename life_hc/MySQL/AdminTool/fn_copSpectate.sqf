@@ -20,16 +20,17 @@ if(!_start) exitWith {
 _unit setVariable ["Spectating", false, true];
 [_unit, _start] remoteExec ["TON_fnc_adminInvisible", 2];
 detach _unit;
+sleep 0.5;
 _unit setPos _oldPos;
 };
 
 if(isNull _spectateUnit) exitWith {};
 
-_msg = format ["Der Spieler %1 (%2 - %3) spectatet den Spieler %4 (%5 - %6)", name _unit, getPlayerUID _unit, side _unit, name _spectateUnit, getPlayerUID _spectateUnit, side _spectateUnit];
+private _msg = format ["Der Spieler %1 (%2 - %3) spectatet den Spieler %4 (%5 - %6)", name _unit, getPlayerUID _unit, side _unit, name _spectateUnit, getPlayerUID _spectateUnit, side _spectateUnit];
 [_logType, _msg] call HC_fnc_Log;
 
 if(!_isSpectating && _start) then {
-sleep 2;
+sleep 0.5;
 _unit attachTo [_spectateUnit, [0, 0, 1]];
 }else {
 _unit attachTo [_spectateUnit, [0, 0, 1]];

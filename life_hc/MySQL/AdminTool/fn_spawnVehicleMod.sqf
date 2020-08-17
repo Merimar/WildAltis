@@ -14,9 +14,6 @@ clearMagazineCargo _veh;
 [_veh] call HC_fnc_clearVehicleAmmo;
 _veh setVariable ["event_vehicle", true, true];
 
-private _info = [_veh, [], 0];
-VEHICLE_INV_ARRAY pushBack _info;
-
 _veh addEventHandler ["Killed", "_veh = _this select 0; if(!(isNull _veh)) then {deleteVehicle _veh;};"];
 
 private _msg = format ["Der Spieler %1 (%2 - %3) hat ein Fahrzeug gespawnt: %4", name _unit, getPlayerUID _unit, side _unit, _classname];

@@ -27,7 +27,7 @@ private _query = format ["UPDATE gang_houses SET position_garage = '%1' WHERE ga
 }else {
 _house setVariable ["house_garage", _spawnPos, true];
 
-private _houseID = _group getVariable ["house_id", -1];
+private _houseID = _house getVariable ["house_id", -1];
 private _query = format ["UPDATE player_houses SET garage_position = '%1' WHERE id = '%2'", [_spawnPos] call HC_fnc_mresArray, _houseID];
 [_query, 1] call HC_fnc_asyncCall;
 };

@@ -116,6 +116,18 @@ private _query = format ["DELETE FROM player_locker WHERE player_id = '%1' AND s
 sleep 0.1;
 
 {
+private _item = _x select 0;
+private _amount = _x select 1;
+
+_query = format ["SELECT id FROM life_classnames WHERE classname = '%1'", _item];
+private _result = [_query, 2, true] call HC_fnc_asyncCall;
+
+if(count _result isEqualTo 0) then {
+private _slug = ([_item] call HC_fnc_fetchCfgDetails) param [1, "Kein Slug"];
+_query = format ["INSERT INTO life_classnames (classname, type_id, slug) VALUES ('%1', '4', '%2')", _item, _slug];
+[_query,1] call HC_fnc_asyncCall;
+};
+
 _query = format ["INSERT INTO player_locker (player_id, side_id, classname_id, amount) VALUES ('%1', '%2', (SELECT id FROM life_classnames WHERE classname = '%3'), '%4')", _pID, _pSide, _x select 0, _x select 1];
 [_query,1] call HC_fnc_asyncCall;
 sleep 0.01;

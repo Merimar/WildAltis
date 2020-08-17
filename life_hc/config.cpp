@@ -396,7 +396,6 @@ class CfgFunctions
 			class getSkillAdvantage {};
 			class getSkillLevel {};
 			class getSpecialLevel {};
-			class getVehicleIndex {};
 			class getVehicleItems {};
 			class getVirt {};
 			class handleAlive {};
@@ -410,8 +409,6 @@ class CfgFunctions
 			class hasLicense {};
 			class removeItemInteraction {};
 			class setSpecialLevel {};
-			class vehicleIndex {};
-			class getVehicleItemIndex {};
         };
     };
 };

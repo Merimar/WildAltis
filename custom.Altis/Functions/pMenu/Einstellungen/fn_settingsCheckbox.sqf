@@ -29,6 +29,17 @@ switch (_option) do {
         };
 		_index = 8;
     };
+	
+	case "rand": {
+        if (_state isEqualTo 1) then {
+            HEXAGON_RAND = true;
+			_value = true;
+        } else {
+            HEXAGON_RAND = false;
+			_value = false;
+        };
+		_index = 9;
+    };
 };
 
 _settings set [_index, _value];

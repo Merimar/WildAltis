@@ -6,7 +6,13 @@ private _isDefi = param [3, false, [false]];
 private _fee = 10000;
 
 private _isHacker = [[], _unit, remoteExecutedOwner, "fn_playerRevived"] call HC_fnc_checkSQLBreak;
-if(_isHacker || isNull _corpse || isNull _medic) exitWith {};
+if(_isHacker || isNull _medic) exitWith {};
+
+private _deathIndex = DEATH_ARRAY findIf {_x select 0 == (getPlayerUID _unit)};
+if(_deathIndex isEqualTo -1) exitWith {};
+private _deathArray = DEATH_ARRAY select _deathIndex;
+
+private _realCorpse = if(isNull _corpse) then {_deathArray select 3} else {_corpse};
 
 private _alive = [getPlayerUID _unit, "alive"] call HC_fnc_getSpecialLevel;
 if(_alive) then {
@@ -37,11 +43,14 @@ _information set [5, true];
 bank_obj setVariable ["Emergency_Calls", _informationArray, true];
 };
 
-_unit setDir (getDir _corpse);
-_unit setPosASL (visiblePositionASL _corpse);
+private _deadPos = if(isNull _realCorpse) then {_deathArray select 4} else {visiblePositionASL _realCorpse};
+private _deadDir = if(isNull _realCorpse) then {_deathArray select 5} else {getDir _realCorpse};
+
+_unit setDir _deadDir;
+_unit setPosASL _deadPos;
 _unit setDamage 0.99;
 
-deleteVehicle _corpse;
+deleteVehicle _realCorpse;
 
 [getPlayerUID _medic, "revive"] call HC_fnc_addSkill;
 [getPlayerUID _unit, "cash", _playerMoney, true] call HC_fnc_handleMoney;

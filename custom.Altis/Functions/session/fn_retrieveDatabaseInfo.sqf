@@ -124,6 +124,7 @@ sleep 7;
 };
 
 player setVariable ["player_playtime", life_playtime, true];
+player setVariable ["player_premium", _donoLevel > 0, true];
 
 private _gear = if(life_isDead) then {[]} else {_gearInfo};
 [_gear] call life_fnc_loadGear;

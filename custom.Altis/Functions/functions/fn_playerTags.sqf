@@ -29,6 +29,7 @@ private _units = (nearestObjects [(visiblePosition player), ["Man"], 20]) select
         _pos = [visiblePosition _x select 0, visiblePosition _x select 1, ((_x modelToWorld (_x selectionPosition "head")) select 2)+.5];
         _sPos = worldToScreen _pos;
         _distance = _pos distance player;
+		private _isPremium = _x getVariable ["player_premium", false];
 
             if (count _sPos > 1 && {_distance < 15}) then {
 				_name = name _x;
@@ -40,6 +41,9 @@ private _units = (nearestObjects [(visiblePosition player), ["Man"], 20]) select
 					}else {
 						_text = _name;
 					};
+					
+					if(_isPremium) then {_text = format ["%1 <img image='Images\Dialog\Diamond.paa' size='1'></img>", _text];};
+					
 					_groupName = (group _x) getVariable ["gang_name", "-1"];
 					_neuling = (_x getVariable ["player_playtime", 0]) < 180;
 					if(_neuling) then {_text = format ["<t color = '#DAF7A6'>Neuling</t><br/>%1", _text];};
@@ -56,13 +60,22 @@ private _units = (nearestObjects [(visiblePosition player), ["Man"], 20]) select
 					if(_streife in ["ZIV 1", "ZIV 2"]) then {
 						_text = _name;
 					}else {
-						_text = format["<img image='%1' size='1'></img> <t size='1.2' color='#0054A4'>%2<br/></t>%3", _icon, _rank, _name];
+						if(_isPremium) then {
+							_text = format["<img image='%1' size='1'></img> <t size='1.2' color='#0054A4'>%2<br/></t>%3 <img image='Images\Dialog\Diamond.paa' size='1'></img>", _icon, _rank, _name];
+						}else {
+							_text = format["<img image='%1' size='1'></img> <t size='1.2' color='#0054A4'>%2<br/></t>%3", _icon, _rank, _name];
+						};
 					};
 				};
 				
 				if((side _x) isEqualTo independent) then {
 					_rank = _x getVariable ["medic_rank", "-1"];
-					_text = format["<t color='#FF0000'><img image='a3\ui_f\data\map\MapControl\hospital_ca.paa' size='1.5'></img></t><t size='0.8' color='#EDF5F5'>%1</t><br/>%2", _rank, _name];
+					if(_isPremium) then {
+						_text = format["<t color='#FF0000'><img image='a3\ui_f\data\map\MapControl\hospital_ca.paa' size='1.5'></img></t><t size='0.8' color='#EDF5F5'>%1</t><br/>%2 <img image='Images\Dialog\Diamond.paa' size='1'></img>", _rank, _name];
+					}else {
+						_text = format["<t color='#FF0000'><img image='a3\ui_f\data\map\MapControl\hospital_ca.paa' size='1.5'></img></t><t size='0.8' color='#EDF5F5'>%1</t><br/>%2", _rank, _name];
+					};
+					
 				};
 				
 				if(_x getVariable ["event_join", false]) then {

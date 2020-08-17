@@ -236,6 +236,7 @@ class CfgFunctions {
 			class pushObject {};
 			class receiveItem {};
 			class receiveMoney {};
+			class removeChar {};
 			class reviveEffect {};
 			class searchFunction {};
 			class stripDownPlayer {};

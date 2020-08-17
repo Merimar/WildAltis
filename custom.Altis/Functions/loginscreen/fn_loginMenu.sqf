@@ -115,7 +115,7 @@ _display displaySetEventHandler ["keyDown", "_this call life_fnc_displayHandler"
 _progressText ctrlSetStructuredText parseText "Lege Texturen fest ...";
 //INIT SIMPLE COMMANDS
 (findDisplay 46) displayAddEventHandler ["KeyDown", "_this call life_fnc_keyHandler"];
-(findDisplay 12) displayAddEventHandler ["KeyDown", "_this call life_fnc_keyHandler"];
+(findDisplay 12) displayAddEventHandler ["KeyDown", {((_this select 1) in (actionKeys "GetOver") && JAIL_TIME > 0)}];
 ["LIFE_PlayerTags","onEachFrame","life_fnc_playerTags"] call BIS_fnc_addStackedEventHandler;
 SCHILD_DEALER addAction["<t color='#FF0000'>Gang Eroberung</t>",life_fnc_gangeroberung,"",0,false,false,"",'playerSide in [civilian, east] && isNull objectParent player && !life_action_inUse && SCHILD_DEALER getVariable["Zone_Dealer_Start",false]', 20];
 inGameUISetEventHandler ["Action", "_name = _this select 3; _return = false; if((_name in [""getOut"", ""getInDriver"", ""getInCargo"", ""getInTurret""] && player getVariable [""restrained"", false]) || _name == ""Rearm"" || _name == ""TakeDropWeapon"" || _name == ""Takemagazine"" || _name == ""OpenBag"" || _name == ""MoveToTurret"" || _name == ""MoveToDriver"" || _name == ""MoveToCargo"" || _name == ""TakeItem"" || ((_name in [""GetInPilot"", ""GetInTurret""]) && JAIL_TIME > 0) || _name == ""TakeWeapon"" || (_name == ""TouchOffMines"" && !(playerSide isEqualTo west)) || (_name == ""UAVTerminalOpen"" && !(playerSide isEqualTo west))) then {["""", ""Diese Aktion ist auf dem Server deaktiviert""] spawn life_fnc_message; _return = true};if((_name == ""GetInDriver"" || _name == ""GetInCargo"" || _name == ""GetInTurret"") && life_healing) then {["""", ""Du kannst nicht einsteigen wenn du dich heilst""] spawn life_fnc_message; _return = true;};_return;"];
@@ -189,7 +189,7 @@ waituntil {isNull (finddisplay 602)};
 				_posZ = _modelToWorld;
 			};
 			if(_vehicle == _x || (_vehicle != _x && ((driver _vehicle) == _x))) then {
-		 		drawIcon3D ["\A3\ui_f\data\igui\cfg\cursors\select_ca.paa", [HEXAGON_R / 100, HEXAGON_G / 100, HEXAGON_B / 100, 1], [_posX, _posY, _posZ], HEXAGON_D, HEXAGON_D, 45, _name, 0, 0.02, "TahomaB", "center", true];
+		 		drawIcon3D ["\A3\ui_f\data\igui\cfg\cursors\select_ca.paa", [HEXAGON_R / 100, HEXAGON_G / 100, HEXAGON_B / 100, 1], [_posX, _posY, _posZ], HEXAGON_D, HEXAGON_D, 45, _name, 0, 0.02, "TahomaB", "center", HEXAGON_RAND];
 			};
 		}forEach _units;
 	}];

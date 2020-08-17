@@ -1,17 +1,15 @@
-private _vehicle = _this select 0;
-private _item = _this select 1;
-private _amount = 0;
+private _vehicle = param [0, objNull, [objNull]];
+private _item = param [1, "", [""]];
 
-private _index = [_vehicle] call HC_fnc_getVehicleIndex;
-if(_index isEqualTo -1) exitWith {_amount;};
+private _vUID = (_vehicle getVariable ["dbInfo", []]) param [2, -1];
+if(_vUID isEqualTo -1 || _item == "" || isNull _vehicle) exitWith {0};
 
-private _data = VEHICLE_INV_ARRAY select _index;
-private _itemArray = _data select 1;
+private _vehInvID = format ["VEHICLE_INV_%1", _vUID];
+private _data = missionNamespace getVariable [_vehInvID, [[], 0]];
+private _itemArray = _data select 0;
 
-private _itemIndex = [_itemArray, _item] call HC_fnc_getVehicleItemIndex;
-if(_itemIndex isEqualTo -1) then {
-_itemIndex = _itemArray pushBack [_item, 0];
-};
-private _itemData = _itemArray select _itemIndex;
-_amount = _itemData select 1;
+private _itemIndex = _itemArray findIf {_x select 0 == _item};
+if(_itemIndex isEqualTo -1) then {_itemIndex = _itemArray pushBack [_item, 0];};
+
+private _amount = _itemArray select _itemIndex select 1;
 _amount;

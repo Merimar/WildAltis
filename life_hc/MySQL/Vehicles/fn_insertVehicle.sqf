@@ -13,3 +13,6 @@ private _query = format ["INSERT INTO vehicles (vuid, owner_id, side_id, classna
 [_query,1] call HC_fnc_asyncCall;
 
 _vehicle setVariable ["dbInfo", [_pID, _pSide, _vUID], true];
+
+private _vehInvID = format ["VEHICLE_INV_%1", _vUID];
+missionNamespace setVariable [_vehInvID, [[], 0]];

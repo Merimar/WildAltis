@@ -3,7 +3,13 @@ private _unit = param [0, objNull, [objNull]];
 private _corpse = param [1, objNull, [objNull]];
 
 private _isHacker = [[], _unit, remoteExecutedOwner, "fn_playerAdrenalin"] call HC_fnc_checkSQLBreak;
-if(_isHacker || isNull _corpse) exitWith {};
+if(_isHacker) exitWith {};
+
+private _deathIndex = DEATH_ARRAY findIf {_x select 0 == (getPlayerUID _unit)};
+if(_deathIndex isEqualTo -1) exitWith {};
+private _deathArray = DEATH_ARRAY select _deathIndex;
+
+private _realCorpse = if(isNull _corpse) then {_deathArray select 3} else {_corpse};
 
 private _alive = [getPlayerUID _unit, "alive"] call HC_fnc_getSpecialLevel;
 if(_alive) then {
@@ -31,11 +37,14 @@ _information set [5, true];
 bank_obj setVariable ["Emergency_Calls", _informationArray, true];
 };
 
-_unit setDir (getDir _corpse);
-_unit setPosASL (visiblePositionASL _corpse);
+private _deadPos = if(isNull _realCorpse) then {_deathArray select 4} else {visiblePositionASL _realCorpse};
+private _deadDir = if(isNull _realCorpse) then {_deathArray select 5} else {getDir _realCorpse};
+
+_unit setDir _deadDir;
+_unit setPosASL _deadPos;
 _unit setDamage 0.95;
 
-deleteVehicle _corpse;
+deleteVehicle _realCorpse;
 
 ["ReviveLog", format ["Der Spieler %1 (%2 - %3) hat eine EpiPen benutzt", name _unit, getPlayerUID _unit, side _unit]] call HC_fnc_log;
 

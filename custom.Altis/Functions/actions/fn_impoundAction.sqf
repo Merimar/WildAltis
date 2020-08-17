@@ -10,12 +10,13 @@ private _vehicleName = FETCH_CONFIG2(getText,"CfgVehicles",(typeOf _vehicle),"di
 private _dbInfo = _vehicle getVariable ["dbInfo", []];
 
 private _rent = _vehicle getVariable ["rent", false];
+private _extraInfo = if(playerSide isEqualTo independent) then {"abgeschleppt"} else {"beschlagnahmt"};
 
 if((count _vehicleData isEqualTo 0 || count _dbInfo isEqualTo 0) && !_rent) exitWith {};
 private _vehSide = _dbInfo select 1;
 
 private _notification = if(playerSide isEqualTo west) then {"Polizei"}  else {"Feuerwehr"};
-private _message = format ["%1 dein Fahrzeug wird von der %2 beschlagnahmt", _vehicleData select 0 select 1, _notification];
+private _message = format ["%1 dein Fahrzeug wird von der %2 %3", _vehicleData select 0 select 1, _notification, _extraInfo];
 [0, _message] remoteExecCall ["life_fnc_broadcast", -2];
 
 life_action_inUse = true;
@@ -58,6 +59,8 @@ private _action = if(playerSide isEqualTo west && _vehSide in [civilian, east]) 
 
 [_vehicle, player, _action] remoteExec ["HC_fnc_abschleppVehicle",HC_LIFE];
 ["impound"] call life_fnc_addSkill;
-    
-_message = format ["%1 dein Fahrzeug wurde von der %2 beschlagnahmt", _vehicleData select 0 select 1, _notification];
+
+
+_message = format ["%1 dein Fahrzeug wurde von der %2 %3", _vehicleData select 0 select 1, _notification, _extraInfo];
+
 [0, _message] remoteExecCall ["life_fnc_broadcast", -2];

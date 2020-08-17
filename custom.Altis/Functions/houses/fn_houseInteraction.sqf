@@ -11,8 +11,9 @@ private _houseInfo = _target getVariable ["house_information", []];
 private _houseUpgrades = _target getVariable ["house_upgrades", []];
 private _group = group player;
 private _leader = ((_houseInfo param [2, ""]) == getPlayerUID player);
+private _canGarage = ([player, group player] call life_fnc_getGangRank) >= 4;
 
-if(!("haus" in LICENSES) && !_houseBought) exitWith {["", "Du brauchst eine Hauseintümerlizenz"] spawn life_fnc_message;};
+if(!("haus" in LICENSES) && !_houseBought) exitWith {["", "Du brauchst eine Hauseigentümerlizenz"] spawn life_fnc_message;};
 
 CURRENT_HOUSE_TARGET = _target;
 GARAGE_SETTING = false;
@@ -41,16 +42,16 @@ _btn8 ctrlShow false;
 private _houseType = if("Garage" in typeOf _target) then {"Garage"} else {"Haus"};
 
 if(_houseBought) then {
+if((_houseInfo select 1) == "") then {
 if(!_leader) exitWith {
 _btn1 ctrlShow true;
 _btn1 ctrlSetText "Haus ist bereits gekauft";
 _btn1 ctrlEnable false;
 };
 
-if((_houseInfo select 1) == "") then {
 _btn1 ctrlShow true;
 _btn1 ctrlSetText format ["%1 verkaufen", _houseType];
-_btn1 buttonSetAction "[false] spawn life_fnc_houseSell;";
+_btn1 buttonSetAction "closeDialog 0; [false] spawn life_fnc_houseSell;";
 
 if(_houseType == "Garage") then {
 _btn2 ctrlShow true;
@@ -59,11 +60,10 @@ _btn4 ctrlShow true;
 _btn2 ctrlSetText "Garage öffnen";
 _btn3 ctrlSetText "Fahrzeuge Einparken";
 _btn4 ctrlSetText "Garage setzen";
-_btn2 buttonSetAction "[""Car"", ""HOUSE"", civilian] call life_fnc_openGarage;";
-_btn3 buttonSetAction "[] call life_fnc_storeVehicle;";
-_btn4 buttonSetAction "[false] spawn life_fnc_houseGarageSet;";
+_btn2 buttonSetAction "closeDialog 0; [""Car"", ""HOUSE"", civilian] call life_fnc_openGarage;";
+_btn3 buttonSetAction "closeDialog 0; [] call life_fnc_storeVehicle;";
+_btn4 buttonSetAction "closeDialog 0; [false] spawn life_fnc_houseGarageSet;";
 };
-
 }else {
 _btn1 ctrlShow true;
 _btn2 ctrlShow true;
@@ -81,18 +81,18 @@ _btn5 ctrlSetText "Generalstore";
 _btn6 ctrlSetText "Garage setzen";
 _btn7 ctrlSetText "Medizinische Hilfe";
 
-_btn1 buttonSetAction "[true] spawn life_fnc_houseSell;";
-_btn2 buttonSetAction "[""reb"", objNull] call life_fnc_virt_menu;";
-_btn3 buttonSetAction "[] call life_fnc_atmMenu;";
-_btn4 buttonSetAction "[""Car"", ""GANG"", civilian] call life_fnc_openGarage;";
-_btn5 buttonSetAction "[""Gang Shop"", ""generalstore"", sideUnknown] call life_fnc_weaponShopMenu;";
-_btn6 buttonSetAction "[true] spawn life_fnc_houseGarageSet;";
-_btn7 buttonSetAction "[] spawn life_fnc_medHilfe;";
+_btn1 buttonSetAction "closeDialog 0; [true] spawn life_fnc_houseSell;";
+_btn2 buttonSetAction "closeDialog 0; [""reb"", objNull] call life_fnc_virt_menu;";
+_btn3 buttonSetAction "closeDialog 0; [] call life_fnc_atmMenu;";
+_btn4 buttonSetAction "closeDialog 0; [""Car"", ""GANG"", civilian] call life_fnc_openGarage;";
+_btn5 buttonSetAction "closeDialog 0; [""Gang Shop"", ""generalstore"", sideUnknown] call life_fnc_weaponShopMenu;";
+_btn6 buttonSetAction "closeDialog 0; [true] spawn life_fnc_houseGarageSet;";
+_btn7 buttonSetAction "closeDialog 0; [] spawn life_fnc_medHilfe;";
 
-if(_houseInfo select 1 == (_group getVariable ["gang_name", ""])) then {
+if((_houseInfo select 1) == (_group getVariable ["gang_name", ""])) then {
 _btn7 ctrlEnable true;
 _btn1 ctrlEnable _leader;
-_btn6 ctrlEnable _leader;
+_btn6 ctrlEnable _canGarage;
 
 {
 private _upgrade = _x select 0;
@@ -121,7 +121,7 @@ _btn3 ctrlShow true;
 _btn1 ctrlSetText "Haus kaufen (Gang)";
 _btn2 ctrlSetText "Haus kaufen (Spieler)";
 _btn3 ctrlSetText "Haus Preis anschauen";
-_btn1 buttonSetAction "[true] spawn life_fnc_houseBuy;";
-_btn2 buttonSetAction "[false] spawn life_fnc_houseBuy;";
-_btn3 buttonSetAction "[] call life_fnc_houseInfo;";
+_btn1 buttonSetAction "closeDialog 0; [true] spawn life_fnc_houseBuy;";
+_btn2 buttonSetAction "closeDialog 0; [false] spawn life_fnc_houseBuy;";
+_btn3 buttonSetAction "closeDialog 0; [] call life_fnc_houseInfo;";
 };

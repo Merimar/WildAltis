@@ -14,7 +14,6 @@ publicVariable "life_HC_server_isReady";
 life_HC_server_extDB_notLoaded = "";
 PLAYTIME = [];
 PAYCHECK_HANDLE = [];
-VEHICLE_INV_ARRAY = [];
 VEHICLE_LIST = [];
 PLAYER_GANG_ARRAY = [];
 ACTIVE_BUFFS = [];
@@ -27,6 +26,7 @@ CURRENT_AUSWEIS_CREATE = [];
 AAN_NEWS = false;
 JOIN_IN_PROGRESS = [];
 DEBUG_ARRAY = [];
+DEATH_ARRAY = [];
 DEBUG = false;
 publicVariable "AAN_NEWS";
 

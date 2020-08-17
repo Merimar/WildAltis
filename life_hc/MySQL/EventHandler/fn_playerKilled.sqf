@@ -72,6 +72,14 @@ private _informationList = [_pID, _pName, _itemList, _cash, _pSide];
 private _index = MONEY_PICKUP findIf {_x select 0 == _pID};
 if(_index isEqualTo -1) then {MONEY_PICKUP pushBackUnique _informationList;}else {MONEY_PICKUP set [_index, _informationList];};
 
+private _deathIndex = DEATH_ARRAY findIf {_x select 0 == _pID};
+if(_deathIndex isEqualTo -1) then {
+DEATH_ARRAY pushBack [_pID, _pName, _pSide, _unit, getPosASL _unit, getDir _unit];
+}else {
+DEATH_ARRAY set [_deathIndex, [_pID, _pName, _pSide, _unit, getPosASL _unit, getDir _unit]];
+};
+
+
 [_pID, false] call HC_fnc_handleAlive;
 [_pID, "", 1, false, true] call HC_fnc_handleVirt;
 [_pID, []] call HC_fnc_handleInv;

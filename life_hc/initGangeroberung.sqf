@@ -40,6 +40,7 @@ GE_ACTIVE = false;
 SCHILD_DEALER setVariable["Zone_Dealer_Start", false, true];
 _member = playableUnits select {(group _x) in ANMELDUNGEN};
 _currentCaptured = SCHILD_DEALER getVariable ["Zone_Dealer_Winner", ""];
+["Der Gangfight ist vorbei, ihr dürft euch nun dem Gebiet nähern!", "Gangfight vorbei"] remoteExec ["life_fnc_message", independent];
 if(_currentCaptured == "" || "'" in _currentCaptured) exitWith {
 ["EroberungLog", "Der Gangfight wurde von keiner Gang eingenommen"] call HC_fnc_Log;
 ["Der Gangfight wurde von keiner Gang eingenommen", "Gangfight"] remoteExec ["life_fnc_message", _member];

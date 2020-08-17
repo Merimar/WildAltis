@@ -4,7 +4,7 @@ class CfgHouses {
 	};
 	
 	class Land_i_House_Small_02_V1_F {
-		price = 10000000;
+		price = 5000000;
 	};
 
 	class Land_i_Garage_V1_F {

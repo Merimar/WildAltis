@@ -73,7 +73,7 @@ class Settings {
 			text = "Spielernamen unterm Hexagon anstellen";
 			x = 0.226719 * safezoneW + safezoneX;
 			y = 0.775 * safezoneH + safezoneY;
-			w = 0.19 * safezoneW;
+			w = 0.180469 * safezoneW;
 			h = 0.044 * safezoneH;
 		};
 
@@ -82,7 +82,16 @@ class Settings {
 			text = "Hexagon Größe";
 			x = 0.448438 * safezoneW + safezoneX;
 			y = 0.775 * safezoneH + safezoneY;
-			w = 0.0928125 * safezoneW;
+			w = 0.0825 * safezoneW;
+			h = 0.044 * safezoneH;
+		};
+
+		class Text_Info10: Trans_Text {
+			idc = -1;
+			text = "Spielernamen am Bildschirmrand";
+			x = 0.597968 * safezoneW + safezoneX;
+			y = 0.775 * safezoneH + safezoneY;
+			w = 0.139219 * safezoneW;
 			h = 0.044 * safezoneH;
 		};
 	};
@@ -106,12 +115,21 @@ class Settings {
 			h = 0.044 * safezoneH;
 		};
 
+		class Checkbox_Rand: RscCheckbox {
+			idc = 4023;
+			onCheckedChanged = "['rand', _this select 1] call life_fnc_settingsCheckbox;";
+			x = 0.742344 * safezoneW + safezoneX;
+			y = 0.775 * safezoneH + safezoneY;
+			w = 0.0257812 * safezoneW;
+			h = 0.044 * safezoneH;
+		};
+
 		class Combo_Size: Trans_Combo {
 			idc = 4003;
 			onLBSelChanged = "[] call life_fnc_settingsCombo;";
-			x = 0.546406 * safezoneW + safezoneX;
+			x = 0.536094 * safezoneW + safezoneX;
 			y = 0.775 * safezoneH + safezoneY;
-			w = 0.139219 * safezoneW;
+			w = 0.0567187 * safezoneW;
 			h = 0.044 * safezoneH;
 		};
 		
@@ -293,7 +311,7 @@ class Settings {
 		class Btn_Fix: Trans_Button {
 			idc = 4022;
 			text = "Gear fixxen";
-			onButtonClick = "[] call life_fnc_settingsGearFix;";
+			onButtonClick = "[] spawn life_fnc_settingsGearFix;";
 			x = 0.355625 * safezoneW + safezoneX;
 			y = 0.478 * safezoneH + safezoneY;
 			w = 0.165 * safezoneW;

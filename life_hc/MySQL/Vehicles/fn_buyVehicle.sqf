@@ -89,8 +89,6 @@ _vehicle animate ["showslathull", 1];
 [_vehicle, _skinClassname, _materialClassname] call HC_fnc_colorVehicle;
 [_vehicle, _pSide isEqualTo independent] call HC_fnc_clearVehicleAmmo;
 
-_info = [_vehicle, [], 0];
-VEHICLE_INV_ARRAY pushBack _info;
 VEHICLE_LIST pushBack _vehicle;
 
 [_vehicle] remoteExecCall ["life_fnc_addVehicle2Chain", _unitOwner];

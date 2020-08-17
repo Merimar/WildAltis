@@ -1,23 +1,23 @@
 #include "\life_hc\hc_macros.hpp"
-private _vehicle = _this select 0;
-private _item = _this select 1;
-private _amount = _this select 2;
-private _action = _this select 3;
+private _vehicle = param [0, objNull, [objNull]];
+private _item = param [1, "", [""]];
+private _amount = param [2, 0, [0]];
+private _action = param [3, false, [false]];
 
-private _index = [_vehicle] call HC_fnc_getVehicleIndex;
-if(_index isEqualTo -1) exitWith {};
+private _vUID = (_vehicle getVariable ["dbInfo", []]) param [2, -1];
+if(_vUID isEqualTo -1 || _item == "" || isNull _vehicle) exitWith {};
 
-private _data = VEHICLE_INV_ARRAY select _index;
-private _inv = _data select 1;
-private _weight = _data select 2;
+private _vehInvID = format ["VEHICLE_INV_%1", _vUID];
+private _data = missionNamespace getVariable [_vehInvID, [[], 0]];
+private _itemArray = _data select 0;
+private _weight = _data select 0;
 
-private _itemIndex = [_inv, _item] call HC_fnc_getVehicleItemIndex;
+private _itemIndex = _itemArray findIf {_x select 0 == _item};
+
 if(_itemIndex isEqualTo -1 && !_action) exitWith {};
-if(_itemIndex isEqualTo -1) then {_itemIndex = _inv pushBack [_item, 0];};
+if(_itemIndex isEqualTo -1) then {_itemIndex = _itemArray pushBack [_item, 0];};
 
-private _itemData = _inv select _itemIndex;
-private _curAmount = _itemData select 1;
-
+private _curAmount = _itemArray select _itemIndex select 1;
 private _itemWeight = (getNumber (missionConfigFile >> "Items" >> _item >> "weight")) * _amount;
 
 if(_action) then {
@@ -29,6 +29,5 @@ _weight = _weight - _itemWeight;
 if(_curAmount <= 0) then {_curAmount = 0;_weight = 0;};
 };
 
-_itemData set [1, _curAmount];
+(_itemArray select _itemIndex) set [1, _curAmount];
 _data set [2, _weight];
-
