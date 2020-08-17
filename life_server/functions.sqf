@@ -2,7 +2,6 @@
 
 life_fnc_clearWeather = compileFinal "
 player setUnitRecoilCoefficient 0.9;
-0 setFog 0;
 if((unitRecoilCoefficient player) != 0.9) then {
 [player, [['Recoil Hack', 'Recoil gibt immer 1 zurück', format ['Recoil des Spielers: %1', unitRecoilCoefficient player], '', '']]] remoteExec ['HC_fnc_logHackData', HC_LIFE];
 };
