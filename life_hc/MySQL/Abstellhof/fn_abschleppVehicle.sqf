@@ -20,6 +20,7 @@ _reason2 = format ["Spieler welcher mit RemoteExecutedOwner rausgefunden wurde: 
 [format["Bei dem Spieler %1 wurde ein Abschlepp Hack festgestellt", name _unit], false] call HC_fnc_adminMessage;
 };
 
+if(alive _vehicle) then {
 if(_rent) exitWith {
 private _vOtherInfo = _vehicle getVariable ["vehicle_info_owners", []];
 deleteVehicle _vehicle;
@@ -46,5 +47,6 @@ if(_playerIndex > 0) then {[format["Dein Fahrzeug wurde von %1 %2", name _unit, 
 
 _msg = format ["Der Spieler %1 (%2 - %3) hat das Fahrzeug des Spielers mit der PID: %4 - %5 (VUID: %6 FAHRZEUG: %7 POSITION: %8)", name _unit, getPlayerUID _unit, side _unit, _pID, _pSide, _vUID, typeOf _vehicle, getPos _unit];
 ["VehicleImpoundLog", _msg] call HC_fnc_Log;
+};
 
 if (!isNull _vehicle) then {deleteVehicle _vehicle;};

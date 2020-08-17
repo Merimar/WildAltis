@@ -33,6 +33,13 @@ private _tank = _vehicleInfo select 12;
 
 if(_sellPrice <= 500) then {_sellPrice = 500;};
 if(_storageFee <= 500) then {_storageFee = 500;};
+
+if(!(isNil "VEHICLE_SPAWNPOINT")) then {
+	if(VEHICLE_SPAWNPOINT == "Spawn_GE_CarGar_1") then {
+		_storageFee = 0;
+	};
+};
+
 private _insuranceName = if(_insurance isEqualTo 1) then {"Versichert"} else {format ["€%1", [_insurancePrice] call life_fnc_numberText]};
 
 private _vehicleText = [[localize "STR_Garage1", format ["€%1", [_storageFee] call life_fnc_numberText], true], ["Verkaufspreis", format ["€%1", [_sellPrice] call life_fnc_numberText], true], ["Farbe", _skinName, false], ["Folie", _materialName, false], ["Versicherung", _insuranceName, true], ["Max. Speed", _maxSpeed, false], [localize "STR_Garage2", _horsePower, false], [localize "STR_Garage3", _passengerSeats, false], [localize "STR_Garage4", _capacity, false], [localize "STR_Garage5", _tank, false]] call life_fnc_getVehicleDescription;
