@@ -10,7 +10,7 @@ Gefixt:
 
 GEHT NICHT:
 +--------es ist als gefesselter moeglich wenn man in ein fahrzeug gesetzt wird auf das eigene sowie das Fahrzeug inventar zuzugreifen
-FW wenn man als medic stirbt bleibt die markierung nach der wiederbelebung auf der karte (nicht immer)
++--------FW wenn man als medic stirbt bleibt die markierung nach der wiederbelebung auf der karte (nicht immer)
 +--------Als Cop kann man in die Weste gefühlt undendliczh zeiug reub nacgheb. Hab da Toolkit und 40 Mags 762 drin nach Loadout kaufen
 +--------Bei tot buggen AssignesItems weg (MEDIC REVIVE)
 

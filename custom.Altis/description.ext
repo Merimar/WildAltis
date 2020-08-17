@@ -31,8 +31,6 @@ corpseRemovalMinTime = 999;
 corpseRemovalMaxTime = 9999;
 unsafeCVL = 1;
 
-enableDebugConsole[] = {"76561198180462113"};
-
 #include "Configs\Config_Master.hpp"
 #include "Dialog\MasterHandler.hpp"
 #include "Dialog\titles\Config_RscTitles.hpp"
