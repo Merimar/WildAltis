@@ -1,11 +1,14 @@
-_markers = [];
-_text = "";
-_inVehicle = [];
-_crew = "";
-uiSleep 0.3;
-if(visibleMap) then {
+private _markers = [];
+private _text = "";
+private _inVehicle = [];
+private _crew = "";
 
-	private _deademergency = (bank_obj getVariable ["Emergency_Calls", []]) select {_x select 8 && !(_x select 5)};
+uiSleep 0.3;
+
+if(visibleMap) then {
+	
+	private _emergencyArray = bank_obj getVariable ["Emergency_Calls", []];
+	private _deademergency =  _emergencyArray select {_x select 8};
 	{
 		if(!(_x getVariable["restrained",false]) && (alive _x) && !(_x in _inVehicle)) then {
 			_vehicle = vehicle _x;
@@ -17,8 +20,8 @@ if(visibleMap) then {
 						_inVehicle pushBack _x;
 					};
 				} forEach (crew _vehicle);
-				_text = format["[%1] %2 %3",getText(configFile>>"CfgVehicles">>typeOf _vehicle>>"DisplayName"),
-					if(!isNull (driver _vehicle) && {(driver _vehicle in units(group player))}) then {
+				_text = format["[%1] %2 %3",getText(configFile >> "CfgVehicles" >> typeOf _vehicle >> "DisplayName"),
+					if(!isNull (driver _vehicle) && {(driver _vehicle in units (group player))}) then {
 						if(_count == 1) then {
 							format["%1",name (driver _vehicle)]
 						}else{
@@ -36,28 +39,28 @@ if(visibleMap) then {
 			_markers pushBack [_marker,_x];
 			_text = "";
 		};
-	} forEach units(group player);
+	}forEach units (group player);
+	
 	{
-		_marker = createMarkerLocal [format["%1_dead_marker",_x select 0], _x select 7];
+		_marker = createMarkerLocal [format["%1_dead_marker", _x select 0], _x select 7];
 		_marker setMarkerColorLocal "ColorBlack";
 		_marker setMarkerTypeLocal "loc_Hospital";
 		_marker setMarkerTextLocal format ["%1", _x select 0];
 		_markers pushBack [_marker, objNull];
-	} forEach _deademergency;
+	}forEach _deademergency;
+	
 	while {visibleMap} do {
 		{
-			_marker = _x select 0;
-			_unit = _x select 1;
-			if(!isNil "_unit") then {
-				if(!isNull _unit) then {
-					_marker setMarkerPosLocal (visiblePosition _unit);
-				};
-			};
-		} forEach _markers;
+			private _marker = _x select 0;
+			private _unit = _x select 1;
+			if(!isNull _unit) then {_marker setMarkerPosLocal (visiblePosition _unit);};
+		}forEach _markers;
+		
 		if(!visibleMap) exitWith {};
 		uiSleep 0.02;
 	};
-	{deleteMarkerLocal (_x select 0);} forEach _markers;
+	
+	{deleteMarkerLocal (_x select 0);}forEach _markers;
 	_markers = [];
 	_inVehicle = [];
 };

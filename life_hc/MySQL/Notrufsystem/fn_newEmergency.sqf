@@ -14,10 +14,11 @@ private _informationArray = bank_obj getVariable ["Emergency_Calls", []];
 private _indexe = [];
 
 private _realPos = if(_pos != "Unbekannt") then {getPos _unit} else {[0, 0, 0]};
-if(_deadPosition isEqualTo [0,0,0]) then {_realPos = _deadPosition;};
+private _isDead = ((_deadPosition select 0) != 0 && (_deadPosition select 1) != 0);
+if(_isDead) then {_realPos = _deadPosition;};
 
 if(_value isEqualTo -1) exitWith {
-_array = [name _unit, [[_message, _time, false]], _time, _pos, "-1", false, _faction, _realPos];
+_array = [name _unit, [[_message, _time, false]], _time, _pos, "-1", false, _faction, _realPos, _isDead];
 {
 if((_x select 0) == (name _unit)) then {
 _indexe pushBack _forEachIndex;

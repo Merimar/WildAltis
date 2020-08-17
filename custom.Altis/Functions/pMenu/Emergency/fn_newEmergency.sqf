@@ -1,14 +1,14 @@
-_message = _this select 0;
-_factionNew = _this select 1;
-_pos = _this select 2;
-_deademergency = param [3, false, [false]];
-_informationArray = bank_obj getVariable ["Emergency_Calls", []];
+private _message = param [0, "", [""]];
+private _factionNew = param [1, sideunknown, [sideunknown]];
+private _pos = param [2, "", [""]];
+private _deadPos = param [3, [0,0,0], [[]]];
+private _informationArray = bank_obj getVariable ["Emergency_Calls", []];
 
-_time = bank_obj getVariable ["time", []];
-_minuten = (_time select 4);
-_stunden = (_time select 3);
+private _time = bank_obj getVariable ["time", []];
+private _minuten = (_time select 4);
+private _stunden = (_time select 3);
 
-_lastNotrufIndex = -1;
+private _lastNotrufIndex = -1;
 
 {
 _name = _x select 0;
@@ -37,4 +37,4 @@ _lastNotrufIndex = _forEachIndex;
 };
 }forEach _informationArray;
 
-[player, _lastNotrufIndex, _message, _factionNew, _pos, getPos life_corpse] remoteExec ["HC_fnc_newEmergency", HC_LIFE];
+[player, _lastNotrufIndex, _message, _factionNew, _pos, _deadPos] remoteExec ["HC_fnc_newEmergency", HC_LIFE];
