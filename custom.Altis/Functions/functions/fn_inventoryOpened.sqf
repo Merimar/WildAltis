@@ -2,7 +2,7 @@ private _unit = _this select 0;
 private _container = _this select 1;
 private _return = false;
 
-if((player getVariable ["restrained", false])) then {
+if(!(player getVariable ["restrained", false])) then {
 	if(!(_container isKindOf "Groundweaponholder") && !(_container isKindOf "AllVehicles")) then {
 		_return = true;
 		if(typeOf _container == "B_CargoNet_01_ammo_F") then {
@@ -28,6 +28,20 @@ if((player getVariable ["restrained", false])) then {
 					_return = !(player inArea "VirtusZone");
 				};
 			};
+		};
+	};	
+} else {
+	_return = true;
+};
+
+if(_return) then {
+	[] spawn {
+		for "_i" from 1 to 10 do {
+			closeDialog 0;
+			sleep 0.1;
+		};
+		if(!isNull (findDisplay 602)) then {
+			closeDialog 0;
 		};
 	};
 };

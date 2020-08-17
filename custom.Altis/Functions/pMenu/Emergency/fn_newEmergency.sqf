@@ -1,6 +1,7 @@
 _message = _this select 0;
 _factionNew = _this select 1;
 _pos = _this select 2;
+_deademergency = param [3, false, [false]];
 _informationArray = bank_obj getVariable ["Emergency_Calls", []];
 
 _time = bank_obj getVariable ["time", []];
@@ -36,4 +37,4 @@ _lastNotrufIndex = _forEachIndex;
 };
 }forEach _informationArray;
 
-[player, _lastNotrufIndex, _message, _factionNew, _pos] remoteExec ["HC_fnc_newEmergency", HC_LIFE];
+[player, _lastNotrufIndex, _message, _factionNew, _pos, getPos life_corpse] remoteExec ["HC_fnc_newEmergency", HC_LIFE];

@@ -7,12 +7,12 @@ Gefixt:
 +--------Die Drohnen, also der Name der nebenan  gezeigt wird is absolut weird, solche spielernamen sind nichtmal aufm server, denke das sind irgendwelche a3 charaktere, achso und die karte buggt immernoch a.f
 +--------Flugzeugträger ausparken
 --------GE Timer fixen
+--------Bei tot buggen AssignesItems weg (MEDIC REVIVE)
+--------Als Cop kann man in die Weste gefühlt undendliczh zeiug reub nacgheb. Hab da Toolkit und 40 Mags 762 drin nach Loadout kaufen
+--------es ist als gefesselter moeglich wenn man in ein fahrzeug gesetzt wird auf das eigene sowie das Fahrzeug inventar zuzugreifen
 
 GEHT NICHT:
-es ist als gefesselter moeglich wenn man in ein fahrzeug gesetzt wird auf das eigene sowie das Fahrzeug inventar zuzugreifen
 FW wenn man als medic stirbt bleibt die markierung nach der wiederbelebung auf der karte (nicht immer)
-Als Cop kann man in die Weste gefühlt undendliczh zeiug reub nacgheb. Hab da Toolkit und 40 Mags 762 drin nach Loadout kaufen
-Bei tot buggen AssignesItems weg (MEDIC REVIVE)
 
 Nestea:
 Gibt es die möglichkeit eine übersicht der Lizenzpreise der Verarbeiter zu bekommen?

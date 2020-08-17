@@ -48,12 +48,12 @@ if (!(_uniform isEqualTo "")) then {_handle = [_uniform,true,false,false,false] 
 if (!(_vest isEqualTo "")) then {_handle = [_vest,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
 if (!(_backpack isEqualTo "")) then {_handle = [_backpack,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
 
-{player addItemToUniform _x;} forEach (_uItems);
-{(uniformContainer player) addItemCargoGlobal [_x,1];} forEach (_uMags);
-{player addItemToVest _x;} forEach (_vItems);
-{(vestContainer player) addItemCargoGlobal [_x,1];} forEach (_vMags);
-{player addItemToBackpack _x;} forEach (_bItems);
-{(backpackContainer player) addItemCargoGlobal [_x,1];} forEach (_bMags);
+{if(player canAddItemToUniform _x) then {player addItemToUniform _x;};} forEach (_uItems);
+{if(player canAddItemToUniform _x) then {(uniformContainer player) addItemCargoGlobal [_x,1];};} forEach (_uMags);
+{if(player canAddItemToVest _x) then {player addItemToVest _x;};} forEach (_vItems);
+{if(player canAddItemToVest _x) then {(vestContainer player) addItemCargoGlobal [_x,1];};} forEach (_vMags);
+{if(player canAddItemToBackpack _x) then {player addItemToBackpack _x;};} forEach (_bItems);
+{if(player canAddItemToBackpack _x) then {(backpackContainer player) addItemCargoGlobal [_x,1];};} forEach (_bMags);
 
 //Primary & Secondary (Handgun) should be added last as magazines do not automatically load into the gun.
 if(!_haupt) then {

@@ -5,7 +5,7 @@ _crew = "";
 uiSleep 0.3;
 if(visibleMap) then {
 
-	private _units = allDeadMen select {!(_x getVariable ["Revive", false])};
+	private _deademergency = (bank_obj getVariable ["Emergency_Calls", []]) select {_x select 8 && !(_x select 5)};
 	{
 		if(!(_x getVariable["restrained",false]) && (alive _x) && !(_x in _inVehicle)) then {
 			_vehicle = vehicle _x;
@@ -37,16 +37,13 @@ if(visibleMap) then {
 			_text = "";
 		};
 	} forEach units(group player);
-  {
-  		private _lootInformation = _x getVariable ["Loot_Information", []];
-      if(count _lootInformation > 0) then {
-          _marker = createMarkerLocal [format["%1_dead_marker",_x], visiblePosition _x];
-          _marker setMarkerColorLocal "ColorBlack";
-          _marker setMarkerTypeLocal "loc_Hospital";
-          _marker setMarkerTextLocal format ["%1", _lootInformation param [1, "Unbekannt"]];
-          _markers pushBack [_marker, _x];
-      };
-  } forEach _units;
+	{
+		_marker = createMarkerLocal [format["%1_dead_marker",_x select 0], _x select 7];
+		_marker setMarkerColorLocal "ColorBlack";
+		_marker setMarkerTypeLocal "loc_Hospital";
+		_marker setMarkerTextLocal format ["%1", _x select 0];
+		_markers pushBack [_marker, objNull];
+	} forEach _deademergency;
 	while {visibleMap} do {
 		{
 			_marker = _x select 0;
