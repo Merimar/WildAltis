@@ -8,7 +8,7 @@ uiSleep 0.3;
 if(visibleMap) then {
 	
 	private _emergencyArray = bank_obj getVariable ["Emergency_Calls", []];
-	private _deademergency =  _emergencyArray select {_x select 8};
+	private _deademergency =  _emergencyArray select {_x select 8 && !(_x select 5)};
 	{
 		if(!(_x getVariable["restrained",false]) && (alive _x) && !(_x in _inVehicle)) then {
 			_vehicle = vehicle _x;
