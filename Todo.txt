@@ -6,7 +6,7 @@ Gefixt:
 +--------Ausparkkosten bei GE Ausparkschild
 +--------Die Drohnen, also der Name der nebenan  gezeigt wird is absolut weird, solche spielernamen sind nichtmal aufm server, denke das sind irgendwelche a3 charaktere, achso und die karte buggt immernoch a.f
 +--------Flugzeugträger ausparken
---------GE Timer fixen
++--------GE Timer fixen
 
 GEHT NICHT:
 es ist als gefesselter moeglich wenn man in ein fahrzeug gesetzt wird auf das eigene sowie das Fahrzeug inventar zuzugreifen
@@ -22,33 +22,33 @@ DIAMANT VON NESTEA
 
 Gefixt:
 +--------Nebel aus /Merimar
---------Admin Spectaten /Merimar
---------Tactical Ping raus /Merimar
++--------Admin Spectaten /Merimar
++--------Tactical Ping raus /Merimar
 +--------Rebausenposten Lizenz 960k /Merimar
 +--------Pyrgos normale Kirche immernoch in der gemappten Kirche /Merimar
 +--------der Gokart kleidungsladen fehlt /Merimar
---------Medic Beschlagnahmt zu Abgeschleppt Nachricht ändern /Merimar
++--------Medic Beschlagnahmt zu Abgeschleppt Nachricht ändern /Merimar
 +--------ATM in den Knast mit Markt /Merimar
 +--------Es ist für Medics nicht erkennbar wann der Gangfight endet. also denke für alle gruppierungen /Merimar
---------Gearfixen funktioniert nicht /Merimar
++--------Gearfixen funktioniert nicht /Merimar
 +--------Biogashändler heist noch Erdgashändler im Händleremenü oben /Merimar
---------Die verlassenes Fahrezug nachricht ist super schnell wieder weg, kann man kaum lesen. Bei der xian steht dan auch da "dein/e wurde ..." also wird nichts angezeigt, ka ob das nur bei der xian ist oder bei anderen auch /Merimar
++--------Die verlassenes Fahrezug nachricht ist super schnell wieder weg, kann man kaum lesen. Bei der xian steht dan auch da "dein/e wurde ..." also wird nichts angezeigt, ka ob das nur bei der xian ist oder bei anderen auch /Merimar
 +--------Pyrgos HQ kein Halo jump Cops /Merimar
---------Auf das Ganghaus kann nur der Leader zugreiffen. (WindowsTaste) Verschiedene Ränge funktionieren nicht. /Merimar
---------Wenn man in ein Haus geht, die Windowstaste drückt und keine Hauseigentümerlizenz besitzt, ist das Wort "Hauseigentümerlizenz" falsch geschrieben. Bekomme ich einen Finderlohn? :3 /Merimar
++--------Auf das Ganghaus kann nur der Leader zugreiffen. (WindowsTaste) Verschiedene Ränge funktionieren nicht. /Merimar
++--------Wenn man in ein Haus geht, die Windowstaste drückt und keine Hauseigentümerlizenz besitzt, ist das Wort "Hauseigentümerlizenz" falsch geschrieben. Bekomme ich einen Finderlohn? :3 /Merimar
 +--------Heligarage am airfield als cop nicht verfügbar /Merimar
---------Über Z Erstehilfe-Kasten benutzen kann man unendlich heilen und leveln. Egal wie viel hp kann man healen /Merimar
---------Fahrzeug cops verkaufen falscher multiplier /Merimar
---------Nach den Knast Aufenthalt werden die Haeftlinge nicht freigelassen -ODWYN /Merimar
---------hey der knast ist komplett verbugt und man kann sich überall durch die wäne bugen zudem kann man keine steine sammeln um raus zu kommen und man wird nach ablauf seiner zeit nicht aus dem knast raus telepotiert. /Merimar
++--------Über Z Erstehilfe-Kasten benutzen kann man unendlich heilen und leveln. Egal wie viel hp kann man healen /Merimar
++--------Fahrzeug cops verkaufen falscher multiplier /Merimar
++--------Nach den Knast Aufenthalt werden die Haeftlinge nicht freigelassen -ODWYN /Merimar
++--------hey der knast ist komplett verbugt und man kann sich überall durch die wäne bugen zudem kann man keine steine sammeln um raus zu kommen und man wird nach ablauf seiner zeit nicht aus dem knast raus telepotiert. /Merimar
 +--------gekauften Garagen immernoch verbuggt, einpark funktion geht nicht und spawnpunkt buggt immernoch weg. /Merimar
 +--------Ingame als Donator gekennzeichnet mit einem Diamanten neben deinem Namen und Premium Slots /Merimar
---------Markevent Fix /Merimar
++--------Markevent Fix /Merimar
 +--------Möglichkeit Hexagon Namen am Rand des Bildschirms auszuschalten /Merimar
---------Todesspeicherung neu schreiben /Merimar
---------Nach epipen Benutzung Spawnt ab und zu auf spawn Insel /Merimar
---------Fahrzeug Inv Speichersystem /Merimar
---------Rebellen Offroad Preis runter /Merimar
---------Gangpromote geht jetzt /Merimar
---------Gangfight Schild Distanz kleiner /Merimar
---------Medikit gibt jetzt Skillpunkte /Merimar
++--------Todesspeicherung neu schreiben /Merimar
++--------Nach epipen Benutzung Spawnt ab und zu auf spawn Insel /Merimar
++--------Fahrzeug Inv Speichersystem /Merimar
++--------Rebellen Offroad Preis runter /Merimar
++--------Gangpromote geht jetzt /Merimar
++--------Gangfight Schild Distanz kleiner /Merimar
++--------Medikit gibt jetzt Skillpunkte /Merimar

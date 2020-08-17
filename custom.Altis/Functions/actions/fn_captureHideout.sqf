@@ -36,7 +36,7 @@ for "_i" from 0 to 1 step 0 do {
     _progressBar progressSetPosition _cP;
     _titleText ctrlSetText format["%3 (%1%2)...", round(_cP * 100), "%", _title];
     _hideout setVariable ["inCapture", true, true];
-    if (_cP >= 1 || life_isDead || life_istazed || life_isknocked || life_interrupted || {player getVariable ["restrained", false]}) exitWith {};
+    if (_cP >= 1 || life_isDead || life_istazed || life_isknocked || life_interrupted || {player getVariable ["restrained", false]} || player distance _hideout > 30) exitWith {};
 };
 
 5 cutText ["","PLAIN"];
