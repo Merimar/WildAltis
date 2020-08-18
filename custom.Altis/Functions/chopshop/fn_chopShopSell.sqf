@@ -31,6 +31,8 @@ if(_vehicleOwner in _currentMembers) exitWith {_isInGang = true;};
 };
 }forEach allGroups;
 
+if(!NIGHT) exitWith {["Der Chop Shop ist aktuell tagsüber deaktiviert", "Chop Shop"] spawn life_fnc_message;};
+
 if(_isInGang && !NIGHT) exitWith {["Die Gang des Spielers hat die Gangeroberung gewonnen. Du kannst sein Fahrzeug nicht verkaufen!", "ChopShop"] spawn life_fnc_message;};
 _vehicle setVariable ["chopShop", player, true];
 life_action_inUse = true;

@@ -9,6 +9,7 @@
 #include "Config_ModItems.hpp"
 #include "Config_Notifications.hpp"
 #include "Config_RemoteExec.hpp"
+#include "Config_Rewards.hpp"
 #include "Config_Routes.hpp"
 #include "Config_Server.hpp"
 #include "Config_Settings.hpp"

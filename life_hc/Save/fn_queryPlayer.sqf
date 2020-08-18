@@ -94,6 +94,10 @@ private _affiliateQuery = [_query, 2] call HC_fnc_asyncCall;
 _query = format["SELECT player_names.name, player_affiliate_referrals.referrer_id FROM player_affiliate_referrals LEFT JOIN player_names ON player_names.player_id = player_affiliate_referrals.referrer_id WHERE player_affiliate_referrals.owner_id = '%1' AND player_names.side_id = '3'", _pID];
 private _affiliatePlayersQuery = [_query, 2, true] call HC_fnc_asyncCall;
 
+/** REWARDS **/
+//private _rewardQuery = [_pID] call HC_fnc_rewardQuery;
+_rewardQuery = [[], 0];
+
 /** GANG **/
 _query = format["SELECT gangs.name, gangs.owner_id, gangs.max_members, gangs.bank_balance, gangs.uid FROM player_gang LEFT JOIN gangs ON player_gang.gang_id = gangs.uid WHERE player_gang.player_id = '%1' AND player_gang.side_id = '%2' AND gangs.deleted_at IS NULL", _pID, _sideID];
 private _gangInfoQuery = [_query, 2] call HC_fnc_asyncCall;
@@ -137,7 +141,7 @@ _gangInfoQuery pushBack _ownerName;
 
 /** SCHLÜSSEL **/
 private _keyArray = missionNamespace getVariable [format ["%1_KEYS_%2", _pID, _pSide], []];
-private _queryResult = [[_keyArray], _infoQuery, _passportQuery, _levelQuery, _playtimeQuery, _licenseQuery, _skillsQuery, _newHouses, _aliveQuery, _jailQuery, _moneyQuery, _gearQuery, _virtQuery, _lockerQuery, _loadoutQuery, _affiliateQuery, _affiliatePlayersQuery, _gangInfoQuery, _gangPermissionsQuery, _gangBuffsQuery, _newGangHouse, _gangHouseUpgradeQuery, []];
+private _queryResult = [[_keyArray], _infoQuery, _passportQuery, _levelQuery, _playtimeQuery, _licenseQuery, _skillsQuery, _newHouses, _aliveQuery, _jailQuery, _moneyQuery, _gearQuery, _virtQuery, _lockerQuery, _loadoutQuery, _affiliateQuery, _affiliatePlayersQuery, _gangInfoQuery, _gangPermissionsQuery, _gangBuffsQuery, _newGangHouse, _gangHouseUpgradeQuery, [], _rewardQuery];
 
 private _saveState = [_pID] call HC_fnc_getSave;
 private _geheimZahl = [_pID] call HC_fnc_getGeheimzahl;

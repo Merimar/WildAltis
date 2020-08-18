@@ -293,6 +293,7 @@ class CfgFunctions {
 		
 		class Items {
 			file = "Functions\items";
+			class adrenalinShot {};
 			class checkMask {};
 			class defi {};
 			class defuseKit {};

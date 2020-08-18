@@ -23,8 +23,8 @@ class Life_Settings {
 	
 	gang_max_size = 12;
 	
-	halo_jump_max = 5;
-	halo_jump_price = 100000;
+	halo_jump_max = 1;
+	halo_jump_price = 200000;
 	halo_jump_auto_parachute = 150;
 	halo_jump_height = 3000;
 	

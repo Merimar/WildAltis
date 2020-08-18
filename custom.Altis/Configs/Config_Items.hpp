@@ -10,6 +10,18 @@ class Items {
 		icon = "";
 		itemInfo = "Mit der Spitzhacke kannst du Gesteine abbauen";
 	};
+	
+	class adrenalinshot{
+		name = "Adrenalinshot";
+		illegal = false;
+		weight = 2;
+		type = "NORMAL";
+		buyPrice = 1500;
+		sellPrice = 750;
+		edible = -1;
+		icon = "";
+		itemInfo = "Mit dem Adrenalinshot könnt ihr kleinere Verletzungen während der Autofahrt behandeln";
+	};
 
 
 	class defibrilator {
@@ -298,7 +310,7 @@ class Items {
 		weight = 3;
 		type = "MARKT";
 		buyPrice = -1;
-		sellPrice = 3690;
+		sellPrice = 4120;
 		edible = -1;
 		icon = "";
 		itemInfo = "";
@@ -487,7 +499,7 @@ class Items {
 	class marihuanaU {
 		name = "Cannabis";
 		illegal = true;
-		weight = 4;
+		weight = 5;
 		type = "FARM";
 		buyPrice = -1;
 		sellPrice = -1;
@@ -523,7 +535,7 @@ class Items {
 	class oilU {
 		name = "Öl";
 		illegal = false;
-		weight = 2;
+		weight = 4;
 		type = "";
 		buyPrice = 10;
 		sellPrice = 5;

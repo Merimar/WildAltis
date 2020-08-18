@@ -267,6 +267,7 @@ class CfgRemoteExec {
 		F(HC_fnc_houseSell,HC)
 		
 		//Items
+		F(HC_fnc_adrenalinShot,HC)
 		F(HC_fnc_deviceGather,HC)
 		F(HC_fnc_giveVirt,HC)
 		F(HC_fnc_mediKit,HC)

@@ -13,11 +13,13 @@ life_anfahr_timer = time;
 };
 
 if((vehicle _source) != _source && _source isKindOf "Man" && _unit != _source && _projectile == "" && isNull objectParent _unit) then {_damage = 0.95;};
+if(_projectile != "" && _unit != _source) then {LAST_DAMAGE_BULLET_TIMER = time;};
 
 if(!(isNull _source)) then {
 private _curWep = currentWeapon _source;
 if(!(isNull objectParent _source)) exitWith {};
 if(!(_curWep in ["hgun_P07_F", "hgun_P07_khk_F", "hgun_P07_snds_F", "hgun_P07_khk_Snds_F"])) exitWith {};
+if(!(_projectile in ["B_9x21_Ball"])) exitWith {};
 _damage = getDammage _unit;
 
 if(life_istazed || life_isknocked || _unit distance _source > 35 || ((side _unit) == west && (side _source) == west)) exitWith {};

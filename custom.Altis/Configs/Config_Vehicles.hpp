@@ -415,24 +415,6 @@ class LifeCfgVehicles {
 		class textures {};
     };
 	
-	class B_Truck_01_ammo_F {
-		vItemSpace = 100;
-		price = 167500;
-		chopPrice = 12000;
-		legal = 0;
-		bankCapacity = 0;
-		class textures {
-		
-		class Polizei {
-				name = "Destroyer";
-				path[] = {"Images\Polizei\Hemtt_1.jpg","Images\Polizei\Hemtt_2.jpg","Images\Polizei\Hemtt_3.jpg"};
-				condition = "playerSide in [west]";
-				price = 1;
-			};
-		};
-    };
-	
-	
 	class B_Truck_01_covered_F {
 		vItemSpace = 800;
 		price = 2750000;
@@ -768,7 +750,7 @@ class LifeCfgVehicles {
 	
 	class I_Plane_Fighter_03_AA_F {
 		vItemSpace = 1800;
-		price = 11594000;
+		price = 10100000;
 		chopPrice = 0;
 		legal = 1;
 		bankCapacity = 0;
@@ -798,8 +780,8 @@ class LifeCfgVehicles {
     };
 	
 	class B_T_VTOL_01_vehicle_F {
-		vItemSpace = 700;
-		price = 30627000;
+		vItemSpace = 800;
+		price = 28627000;
 		chopPrice = 0;
 		legal = 1;
 		bankCapacity = 0;
@@ -1141,7 +1123,7 @@ class LifeCfgVehicles {
 	
 	class B_Plane_Fighter_01_F {
 		vItemSpace = 4500;
-		price = 36010000;
+		price = 32010000;
 		chopPrice = 0;
 		legal = 0;
 		bankCapacity = 0;
@@ -1151,7 +1133,7 @@ class LifeCfgVehicles {
 	
 	class O_Plane_Fighter_02_F {
 		vItemSpace = 4000;
-		price = 30100000;
+		price = 27100000;
 		chopPrice = 0;
 		legal = 0;
 		bankCapacity = 0;
@@ -1169,7 +1151,7 @@ class LifeCfgVehicles {
 	
 	class O_Plane_CAS_02_F {
 		vItemSpace = 2000;
-		price = 13133700;
+		price = 11633700;
 		chopPrice = 0;
 		legal = 1;
 		bankCapacity = 0;
@@ -1179,7 +1161,7 @@ class LifeCfgVehicles {
 
 	class I_Plane_Fighter_04_F {
 		vItemSpace = 3300;
-		price = 24920000;
+		price = 22920000;
 		chopPrice = 0;
 		legal = 0;
 		bankCapacity = 0;

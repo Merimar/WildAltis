@@ -2296,6 +2296,20 @@ class CfgItemShop {
 		};
 	};
 	
+	class zeus {
+		uniform[] = {
+			{ "U_B_Protagonist_VR", "", 500000, "true"},
+			{ "U_O_Protagonist_VR", "", 500000, "true"},
+			{ "U_I_Protagonist_VR", "", 500000, "true"}
+		};	
+		goggles[] = {};
+		vest[] = {};
+		backpack[] = {};
+		headgear[] = {};
+		weapons[] = {};
+		items[] = {};
+	};
+	
 	class kart {
 		uniform[] = {
 			{ "U_C_Driver_1", "", 25000, "true"},

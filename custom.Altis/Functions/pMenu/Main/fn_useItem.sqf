@@ -69,6 +69,11 @@ switch (true) do {
 			closeDialog 0;
     };
 	
+	 case (_item isEqualTo "adrenalinshot"): {
+			[] call life_fnc_adrenalinShot;
+			closeDialog 0;
+    };
+	
 	case (_item isEqualTo "schloss"): {
 		if(typeOf cursorObject != "Land_BackAlley_01_l_gate_F") exitWith {["Du kannst dieses Schloss nur dafür benutzen um Zellentüren abzuschliesen.", "Z Inv"] spawn life_fnc_message;};
         if(playerSide != west) exitWith {["Nur Polizisten können Zellentüren wieder abschliesen.", "Z Inv"] spawn life_fnc_message;};

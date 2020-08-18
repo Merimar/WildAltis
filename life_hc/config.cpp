@@ -166,6 +166,7 @@ class CfgFunctions
 		
 		class Items {
             file = "\life_hc\MySQL\Items";
+			class adrenalinShot {};
 			class deviceGather {};
 			class giveVirt {};
 			class mediKit {};

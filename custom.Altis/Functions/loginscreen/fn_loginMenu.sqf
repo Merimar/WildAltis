@@ -43,7 +43,7 @@ _btnJoin ctrlShow false;
 _playerCount = count playableUnits;
 _teamspeak = "ts.Wild-Altis.de";
 _forum = "Wild-Altis.de";
-_news = "<t color = '#FFFFFF' font = 'RobotoCondensedBold'><br/><br/><br/>Willkommen auf Wild-Altis 2.0<br/>Erst einmal heißen wir euch herzlich Willkommen auf unserem Server und freuen uns, dass Ihr uns gefunden habt. Aktuell sind sehr viele externe Programme im Umlauf, welche den Spielspaß<br/>bedeutend verringern. Sollten wir Cheater oder Duper in Clans finden, wird nicht nur die Person bestraft, sondern alle anderen Clanmitglieder (egal ob sie es wussten, oder nicht) mitbestraft! Solltet ihr Cheater in eure Clans aufnehmen und es im Nachhinein bemerken, meldet uns die einzelnen Leute und es wird nichts passieren. Finden wir allerdings heraus, dass sich Cheater in einem Clan befinden und nicht gemeldet worden sind, werden alle Spielstände der Clanmitglieder gelöscht! Wir werden bei dieser Regel keine Ausnahmen machen, egal wieviel Geld ihr bereits habt! Wir legen die Verantwortung hier in eure eigenen Hände! Ansonsten wünschen wir Euch eine schöne Zeit beim Spielen.</t>";
+_news = "<t color = '#FFFFFF' font = 'RobotoCondensedBold'><br/><br/><br/>Willkommen auf Wild-Altis 2.0<br/>Es gibt wieder ein paar Neuigkeiten:<br/><br/>- Der Chop Shop wurde tagsüber deaktiviert<br/>- Verbugte Damage Werte gefixt<br/>- Schwarzgebrannter wurde teurer gemacht<br/>- Jets wurden billiger gemacht<br/>- Man kann nur nur noch 1x pro Serverperiode Halojumpen<br/>- Halojump kostet nun €200.000<br/>- Blackfish (Vehicle) ist nun günstiger und hat mehr Lagerplatz</t>";
 
 _teamspeakCtrl ctrlSetStructuredText parseText _teamspeak;
 _forumCtrl ctrlSetStructuredText parseText _forum;

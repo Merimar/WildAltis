@@ -10,6 +10,10 @@ private _thunderRandom = round (random 100) + 1;
 
 private _isWeather = round (random 100) + 1;
 
+0 setFog 0;
+ forceWeatherChange; // change is immediate
+999999 setFog 0;
+
 /*
 
 if(_isWeather <= 10) then {

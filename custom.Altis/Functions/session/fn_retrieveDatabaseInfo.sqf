@@ -27,6 +27,7 @@ private _gangBuffInfo = _saveStatus select 19;
 private _gangHouse = _saveStatus select 20;
 private _gangUpgradeInfo = _saveStatus select 21;
 private _gangCryptoInfo = _saveStatus select 22;
+private _rewardStreak = _saveStatus select 23;
 
 /** PLAYER **/
 life_uid = _playerInfo select 0;
@@ -36,6 +37,10 @@ life_first_join_date = _playerInfo select 2;
 /** AUSWEIS **/
 AUSWEIS = _passportInfo;
 PLAYER_NAME = _passportInfo select 0;
+
+//Daily Reward
+DAILY_REWARD_LIST = _rewardStreak select 0;
+DAILY_REWARD_COUNTER = _rewardStreak select 1;
 
 private _adminLevel = _levelInfo select (_levelInfo findIf {_x select 0 == "admin"}) select 1;
 private _medicLevel = _levelInfo select (_levelInfo findIf {_x select 0 == "medic"}) select 1;
@@ -124,7 +129,7 @@ sleep 7;
 };
 
 player setVariable ["player_playtime", life_playtime, true];
-player setVariable ["player_premium", _donoLevel > 0, true];
+player setVariable ["player_premium", _donoLevel > 2, true];
 
 private _gear = if(life_isDead) then {[]} else {_gearInfo};
 [_gear] call life_fnc_loadGear;
