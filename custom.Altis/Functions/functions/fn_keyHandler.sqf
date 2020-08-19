@@ -62,7 +62,7 @@ switch (_code) do {
 		[] call life_fnc_simpleCheck;
 	};
 	
-    //Surrender (Shift + B)
+    //Surrender (Shift + J)
     case 36: {
         if(_shift) then {
             if(player getVariable ["playerSurrender", false]) then {

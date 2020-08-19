@@ -1,5 +1,5 @@
 class Items {
-	class pickaxe{
+	class pickaxe {
 		name = "Spitzhacke";
 		illegal = false;
 		weight = 5;
@@ -11,7 +11,7 @@ class Items {
 		itemInfo = "Mit der Spitzhacke kannst du Gesteine abbauen";
 	};
 	
-	class adrenalinshot{
+	class adrenalinshot {
 		name = "Adrenalinshot";
 		illegal = false;
 		weight = 2;
@@ -364,6 +364,18 @@ class Items {
 		itemInfo = "";
 	};
 	
+	class titanU {
+		name = "Titanerz";
+		illegal = false;
+		weight = 4;
+		type = "FARM";
+		buyPrice = -1;
+		sellPrice = -1;
+		edible = -1;
+		icon = "";
+		itemInfo = "";
+	};
+	
 	class diamantenU {
 		name = "Ungeschliffene Diamanten";
 		illegal = false;
@@ -601,6 +613,18 @@ class Items {
 		type = "MARKT";
 		buyPrice = 29000;
 		sellPrice = 8610;
+		edible = -1;
+		icon = "";
+		itemInfo = "";
+	};
+	
+	class titanP {
+		name = "Titanbarren";
+		illegal = false;
+		weight = 2;
+		type = "MARKT";
+		buyPrice = -1;
+		sellPrice = 6300;
 		edible = -1;
 		icon = "";
 		itemInfo = "";

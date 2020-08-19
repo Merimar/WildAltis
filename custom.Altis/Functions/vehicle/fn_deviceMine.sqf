@@ -74,14 +74,7 @@ for "_i" from 0 to 1 step 0 do {
 
     if (_sum < 1) exitWith {
         titleText ["Das Fahrzeug ist voll", "PLAIN"];
-        _vehicle setVariable["mining", false, true];
-    };
-
-    if (_itemIndex isEqualTo -1) then {
-        _inv pushBack [_farmItem, _sum];
-    } else {
-        _val = (_inv select _itemIndex) select 1;
-        (_inv select _itemIndex) set [1, _val + _sum];
+        _vehicle setVariable ["mining", false, true];
     };
 
     if (fuel _vehicle < 0.1) exitWith {titleText ["Das Fahrzeug wurde gestartet - sammeln beendet.", "PLAIN"];};
@@ -97,18 +90,25 @@ for "_i" from 0 to 1 step 0 do {
         _vehicle setVariable["mining", false, true];
     };
 	
+	if (_itemIndex isEqualTo -1) then {
+        _inv pushBack [_farmItem, _sum];
+    } else {
+        _val = (_inv select _itemIndex) select 1;
+        (_inv select _itemIndex) set [1, _val + _sum];
+    };
+	
 	[player, _vehicle, _farmItem, _sum] remoteExec ["HC_fnc_deviceGather", HC_LIFE];
 
     private _itemName = getText (missionConfigFile >> "Items" >> _farmItem >> "name");
 	private _itemWeight = ([_farmItem] call life_fnc_itemWeight) * _sum;
     titleText [format["Sammeln beendet, das Gerät hat %1 %2 gesammelt", _sum, _itemName], "PLAIN"];
     
-    _vehicle setVariable["Trunk", [_inv, _space + _itemWeight], true];
+    _vehicle setVariable ["Trunk", [_inv, _space + _itemWeight], true];
     _weight = [_vehicle] call life_fnc_vehicleWeight;
     _sum = [_farmItem, 15, _weight select 1, _weight select 0] call life_fnc_calWeightDiff;
 
     if (_sum < 1) exitWith {
-        _vehicle setVariable["mining", false, true];
+        _vehicle setVariable ["mining", false, true];
         titleText ["Das Fahrzeug ist voll", "PLAIN"];
     };
 

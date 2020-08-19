@@ -76,6 +76,12 @@ class VirtualShops {
 		condition = "true";
 		items[] = { "ziegelP"};
 	};
+	
+	class titan {
+		name = "Titanhändler";
+		condition = "true";
+		items[] = { "titanP"};
+	};
 
 	class danger_sell {
 		name = "Fabrik";

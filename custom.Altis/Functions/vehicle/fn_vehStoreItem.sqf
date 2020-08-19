@@ -8,6 +8,7 @@ if(_usedPlayer != player) exitWith {closeDialog 0;};
 if(_index isEqualTo -1) exitWith {["", "Du musst etwas auswählen"] spawn life_fnc_message;};
 
 private _className = lbData [3502, _index];
+if(_className in ["titanU", "titanP"] && life_trunk_vehicle isKindOf "Air") exitWith {["Titan ist eine wöchentliche Farmroute und kann nur mit Landfahrzeugen gefarmt werden.", "Wöchentliche Farmroute"] spawn life_fnc_message;};
 private _itemAmount = [_className] call life_fnc_getItemValue;
 private _amount = if(_storeAll) then {_itemAmount} else {parseNumber (ctrlText 3503)};
 if(_amount > _itemAmount) then {_amount = _itemAmount;};

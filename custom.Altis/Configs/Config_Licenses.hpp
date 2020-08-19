@@ -32,6 +32,7 @@ class Licenses {
 	LICENSE(air,"STR_License_Pilot",35000,false,"civ",10000)
 	LICENSE(haus,"STR_License_Haus",600000,false,"civ",10000)
 	LICENSE(rebel,"STR_License_Rebel",1160000,true,"civ",10000)
+	LICENSE(titan,"STR_License_Titan",50000,false,"civ",10000)
 	LICENSE(defi,"STR_License_defi",400000,false,"civ",10000)
 	LICENSE(adrenalin,"STR_License_Adrenalin",550000,false,"civ",10000)
 	LICENSE(zivil,"STR_License_ZivCops",5000,false,"west",10000)

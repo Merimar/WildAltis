@@ -118,6 +118,23 @@ class CfgFarmRoutes {
 		infoText = "";
 	};
 	
+	class Titan {
+		name = "Titanroute [Wochenroute]";
+		fields[] = {"Farm_Titan_1"};
+		processors[] = {"Processor_Titan_1"};
+		vendors[] = {"Vendor_Titan_1"};
+		gatherItem = "titanU";
+		gatherSkill = "farmOre";
+		gatherTool = "pickaxe";
+		farmZonesize = 30;
+		farmTime = 3;
+		processInput[] = {{"titanU", 1}};
+		processOutput[] = {{"titanP", 1}};
+		processText = "Verarbeite Titan";
+		processSkill = "processOre";
+		infoText = "";
+	};
+	
 	class Kupfer {
 		name = "Kupferroute";
 		fields[] = {"Farm_Copper_1", "Farm_Copper_2"};
