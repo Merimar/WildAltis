@@ -35,7 +35,7 @@ if(_sellPrice <= 500) then {_sellPrice = 500;};
 if(_storageFee <= 500) then {_storageFee = 500;};
 
 if(!(isNil "VEHICLE_SPAWNPOINT")) then {
-	if(VEHICLE_SPAWNPOINT == "Spawn_GE_CarGar_1") then {
+	if(VEHICLE_SPAWNPOINT in ["Spawn_GE_CarGar_1", "gang_capture"]) then {
 		_storageFee = 0;
 	};
 };

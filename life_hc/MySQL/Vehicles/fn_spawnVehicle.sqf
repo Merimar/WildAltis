@@ -26,7 +26,7 @@ private _storageFee = [_classname, side _unit] call HC_fnc_getStorageFee;
 private _setUp = [_color, _material, _insuranceName];
 private _pMoney = [_pID, "bank"] call HC_fnc_getMoney;
 
-if(_sp == "Spawn_GE_CarGar_1") then {
+if(_sp in ["Spawn_GE_CarGar_1", "gang_capture"]) then {
 	_storageFee = 0;
 };
 
