@@ -25,7 +25,7 @@ if(_rent) exitWith {
 private _vOtherInfo = _vehicle getVariable ["vehicle_info_owners", []];
 deleteVehicle _vehicle;
 [getPlayerUID _unit, "impound"] call HC_fnc_addSkill;
-_msg = format ["Der Spieler %1 (%2 - %3) hat ein gemietetes Fahrzeug des Spielers %4 (%5) abgeschlept", name _unit, getPlayerUID _unit, side _unit, _vOtherInfo param [0, []] param [1, "Kein Name"], _vOtherInfo param [0, []] param [0, "Keine PID"]];
+_msg = format ["Der Spieler %1 (%2 - %3) hat ein gemietetes Fahrzeug des Spielers %4 (%5) abgeschleppt", name _unit, getPlayerUID _unit, side _unit, _vOtherInfo param [0, []] param [1, "Kein Name"], _vOtherInfo param [0, []] param [0, "Keine PID"]];
 ["VehicleImpoundLog", _msg] call HC_fnc_Log;
 };
 
@@ -38,7 +38,7 @@ private _query = format["UPDATE vehicles SET active = '0', impounded = '%4' WHER
 [_query,1] call HC_fnc_asyncCall;
 
 private _playerIndex = playableUnits findIf {getPlayerUID _x == _pID};
-private _msg = if(_action isEqualTo 0) then {"abgeschlept"} else {"beschlagnahmt"};
+private _msg = if(_action isEqualTo 0) then {"abgeschleppt"} else {"beschlagnahmt"};
 
 if(_playerIndex > 0) then {[format["Dein Fahrzeug wurde von %1 %2", name _unit, _msg], format["Fahrzeug %1", _msg]] remoteExec ["life_fnc_message", playableUnits select _playerIndex];};
 
