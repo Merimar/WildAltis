@@ -94,6 +94,9 @@ _vehicle enableRopeAttach false;
 clearWeaponCargo _vehicle;
 clearMagazineCargo _vehicle;
 
+private _tiVehicles = getArray (missionConfigFile >> "Life_Settings" >> "tiVehicles");
+if(!(_classname in _tiVehicles)) then {_vehicle disableTIEquipment true;};
+
 if(_classname in _aiDrones) then {_vehicle lock 0;};
 
 if(_classname == "O_APC_Wheeled_02_rcws_F" && _pSide isEqualTo west) then {

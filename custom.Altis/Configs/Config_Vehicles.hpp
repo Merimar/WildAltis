@@ -426,8 +426,8 @@ class LifeCfgVehicles {
 	
 	class O_T_LSV_02_unarmed_F {
 		vItemSpace = 120;
-		price = 2056000;
-		chopPrice = 600000;
+		price = 1706000;
+		chopPrice = 500000;
 		legal = 0;
 		bankCapacity = 0;
 		class textures {
@@ -948,8 +948,8 @@ class LifeCfgVehicles {
 
 		class I_MRAP_03_F {
 		vItemSpace = 100;
-		price = 10000000;
-		chopPrice = 1000000;
+		price = 6500000;
+		chopPrice = 2000000;
 		legal = 0;
 		bankCapacity = 0;
 		class textures {
@@ -976,7 +976,7 @@ class LifeCfgVehicles {
 	
 	class B_MRAP_01_F {
 		vItemSpace = 60;
-		price = 6121000;
+		price = 5121000;
 		chopPrice = 1500000;
 		legal = 0;
 		bankCapacity = 0;
@@ -1170,8 +1170,8 @@ class LifeCfgVehicles {
 
 	class B_T_LSV_01_unarmed_F {
 		vItemSpace = 80;
-		price = 1350000;
-		chopPrice = 370000;
+		price = 1150000;
+		chopPrice = 320000;
 		legal = 0;
 		bankCapacity = 0;
         class textures {
@@ -1491,8 +1491,8 @@ class LifeCfgVehicles {
 	
 	class O_APC_Wheeled_02_rcws_F {
 		vItemSpace = 4100;
-		price = 50000000;
-		chopPrice = 8000000;
+		price = 25000000;
+		chopPrice = 4000000;
 		legal = 0;
 		bankCapacity = 0;
         class textures {
@@ -1525,8 +1525,8 @@ class LifeCfgVehicles {
 	
 	class O_MRAP_02_F {
 		vItemSpace = 150;
-		price = 15000000;
-		chopPrice = 2000000;
+		price = 8500000;
+		chopPrice = 2500000;
 		legal = 0;
 		bankCapacity = 0;
         class textures {

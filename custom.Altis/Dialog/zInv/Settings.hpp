@@ -16,7 +16,7 @@ class Settings {
 
 		class Text_Info2: Trans_TextHeader {
 			idc = -1;
-			text = "Hier kannst du das Gras austellen und dein Gear fixxen:";
+			text = "Hier kannst du das Gras austellen und dein Gear fixen:";
 			x = 0.226719 * safezoneW + safezoneX;
 			y = 0.434 * safezoneH + safezoneY;
 			w = 0.546562 * safezoneW;
@@ -310,7 +310,7 @@ class Settings {
 
 		class Btn_Fix: Trans_Button {
 			idc = 4022;
-			text = "Gear fixxen";
+			text = "Gear fixen";
 			onButtonClick = "[] spawn life_fnc_settingsGearFix;";
 			x = 0.355625 * safezoneW + safezoneX;
 			y = 0.478 * safezoneH + safezoneY;

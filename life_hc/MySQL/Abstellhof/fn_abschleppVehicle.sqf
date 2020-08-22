@@ -43,10 +43,12 @@ private _msg = if(_action isEqualTo 0) then {"abgeschlept"} else {"beschlagnahmt
 if(_playerIndex > 0) then {[format["Dein Fahrzeug wurde von %1 %2", name _unit, _msg], format["Fahrzeug %1", _msg]] remoteExec ["life_fnc_message", playableUnits select _playerIndex];};
 
 [format["Du hast ein Fahrzeug %1", _msg], format["Fahrzeug %1", _msg]] remoteExec ["life_fnc_message", _unit];
-[getPlayerUID _unit, "impound"] call HC_fnc_addSkill;
 
-_msg = format ["Der Spieler %1 (%2 - %3) hat das Fahrzeug des Spielers mit der PID: %4 - %5 (VUID: %6 FAHRZEUG: %7 POSITION: %8)", name _unit, getPlayerUID _unit, side _unit, _pID, _pSide, _vUID, typeOf _vehicle, getPos _unit];
+_msg = format ["Der Spieler %1 (%2 - %3) hat das Fahrzeug des Spielers mit der PID: %4 - %5 (VUID: %6 FAHRZEUG: %7 POSITION: %8) %9", name _unit, getPlayerUID _unit, side _unit, _pID, _pSide, _vUID, typeOf _vehicle, getPos _unit, _msg];
 ["VehicleImpoundLog", _msg] call HC_fnc_Log;
 };
+
+[getPlayerUID _unit, "impound"] call HC_fnc_addSkill;
+[getPlayerUID _unit, "bank", 3500, true] call HC_fnc_handleMoney;
 
 if (!isNull _vehicle) then {deleteVehicle _vehicle;};

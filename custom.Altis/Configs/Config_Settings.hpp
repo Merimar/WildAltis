@@ -35,4 +35,5 @@ class Life_Settings {
 	random_spawn_locations[] = {"Kavala", "Athira", "Syrta", "Sofia", "Pyrgos", "Neochori"};
 	
 	drones[] = {"B_T_UAV_03_F"};
+	tiVehicles[] = {"B_T_UAV_03_F","B_UAV_01_F","B_Heli_Attack_01_F","I_Heli_light_03_F","O_Heli_Attack_02_F","O_Heli_Attack_02_black_F"};
 };

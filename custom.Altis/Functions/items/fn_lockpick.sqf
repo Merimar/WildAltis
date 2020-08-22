@@ -6,8 +6,8 @@ life_interrupted = false;
 private _speed = ["repair"] call life_fnc_getSkillAdvantage;
 private _luck = ["lockpick"] call life_fnc_getSkillAdvantage;
 
-if(life_action_inUse || isNull _curTarget || {player getVariable ["restrained", false]} || {player getVariable ["playerSurrender", false]} || {!alive _curTarget}) exitWith {};
-if(LOCKPICK_TIMER) exitWith {["Du kannst nur alle 20 Sekunden ein Fahrzeug knacken.", "Dietrich"] spawn life_fnc_message;};
+if(life_action_inUse || isNull _curTarget || {player getVariable ["restrained", false]} || {player getVariable ["playerSurrender", false]} || {!(alive _curTarget)}) exitWith {};
+if(LOCKPICK_TIMER) exitWith {["Du kannst nur alle 20 Sekunden knacken.", "Dietrich"] spawn life_fnc_message;};
 private _distance = ((boundingBox _curTarget select 1) select 0) + 2;
 if(player distance _curTarget > _distance) exitWith {};
 
@@ -47,7 +47,7 @@ for "_i" from 0 to 1 step 0 do {
     _cP = _cP + 0.01;
     _progressBar progressSetPosition _cP;
     _titleText ctrlSetText format["%3 (%1%2)...", round(_cP * 100), "%", _text];
-    if (_cP >= 1 || life_isDead || life_istazed || life_isknocked || life_interrupted || {player getVariable["restrained",false]} || player distance _curTarget > _distance) exitWith {life_interrupted = false;};
+    if (_cP >= 1 || life_isDead || life_istazed || life_isknocked || life_interrupted || {player getVariable["restrained",false]} || player distance _curTarget > _distance || !(isNull objectParent player)) exitWith {life_interrupted = false;};
 };
 
 5 cutText ["","PLAIN"];

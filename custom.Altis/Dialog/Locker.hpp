@@ -2,20 +2,14 @@ class Locker {
 	idd = 398000;
 	
 	class ControlsBackground {
-		class Text_Background: RscBackground {
-			idc = -1;
-			x = 0.220572 * safezoneW + safezoneX;
-			y = 0.148 * safezoneH + safezoneY;
-			w = 0.558855 * safezoneW;
-			h = 0.737 * safezoneH;
-		};
+		class Picture_Background: BackgroundPicture {};
+		class Text_Title: Trans_Header {idc = -1; text = "Schließfach";};
 		
-		class Text_Sider1: RscSider {
+		class Text_SiderV1: RscSiderVertical {
 			idc = -1;
-			x = 0.497916 * safezoneW + safezoneX;
-			y = 0.237852 * safezoneH + safezoneY;
-			w = 0.001 * safezoneW;
-			h = 0.539 * safezoneH;
+			x = 0.493813 * safezoneW + safezoneX;
+			y = 0.181 * safezoneH + safezoneY;
+			h = 0.66 * safezoneH;
 		};
 		
 		class Text_Info1: Trans_TextHeader {
@@ -136,21 +130,22 @@ class Locker {
 			w = 0.103605 * safezoneW;
 			h = 0.022 * safezoneH;
 		};
-
+		
 		class Text_Info15: Trans_TextHeader {
 			idc = 398115;
-			text = "Schliessfach Inventar:";
-			x = 0.277442 * safezoneW + safezoneX;
-			y = 0.236 * safezoneH + safezoneY;
-			w = 0.180349 * safezoneW;
+			text = "Schließfach:";
+			x = 0.226719 * safezoneW + safezoneX;
+			y = 0.181 * safezoneH + safezoneY;
+			w = 0.2475 * safezoneW;
 			h = 0.022 * safezoneH;
 		};
+		
 		class Text_Info16: Trans_TextHeader {
 			idc = 398116;
-			text = "Dein Inventar:";
-			x = 0.542209 * safezoneW + safezoneX;
-			y = 0.236 * safezoneH + safezoneY;
-			w = 0.180349 * safezoneW;
+			text = "Spielerinventar:";
+			x = 0.520625 * safezoneW + safezoneX;
+			y = 0.181 * safezoneH + safezoneY;
+			w = 0.2475 * safezoneW;
 			h = 0.022 * safezoneH;
 		};
 	};
@@ -510,22 +505,22 @@ class Locker {
 
 		class List_Locker: RscPictureListBox {
 			idc = 398039;
-			x = 0.277493 * safezoneW + safezoneX;
-			y = 0.269 * safezoneH + safezoneY;
-			w = 0.180349 * safezoneW;
-			h = 0.484 * safezoneH;
+			x = 0.226719 * safezoneW + safezoneX;
+			y = 0.214 * safezoneH + safezoneY;
+			w = 0.2475 * safezoneW;
+			h = 0.627 * safezoneH;
 			onLBDrop = "_this call life_fnc_lockerDrop; true";
 			onMouseButtonDblClick = "_this call life_fnc_lockerDBClick;";
 		};
-
-		class List_Player: RscPictureListBox {
+		
+		class List_Inventar: RscPictureListBox {
 			idc = 398040;
-			x = 0.541397 * safezoneW + safezoneX;
-			y = 0.269 * safezoneH + safezoneY;
-			w = 0.180349 * safezoneW;
-			h = 0.484 * safezoneH;
+			x = 0.520625 * safezoneW + safezoneX;
+			y = 0.214 * safezoneH + safezoneY;
+			w = 0.2475 * safezoneW;
+			h = 0.627 * safezoneH;
 			onLBDrop = "_this call life_fnc_lockerDrop; true";
 			onMouseButtonDblClick = "_this call life_fnc_lockerDBClick;";
 		};
-	};	
+	};
 };

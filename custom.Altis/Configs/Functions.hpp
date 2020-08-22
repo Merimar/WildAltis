@@ -183,6 +183,7 @@ class CfgFunctions {
 			class actionKeyHandler {};
 			class bluforSavezone {};
 			class calWeightDiff {};
+			class canAddItem {};
 			class disableChannel {};
 			class drugTest {};
 			class endMission {};

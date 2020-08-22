@@ -103,9 +103,10 @@ life_veh_money set [4, 1];
 };
 
 case 3 : {
-life_veh_shop set [4, 3];
 private _previous = life_veh_shop select 4;
 private _newStep = if(_previous isEqualTo 4) then {2} else {4};
+
+life_veh_shop set [4, 3];
 
 if(playerSide in [west, independent]) exitWith {[_newStep] call life_fnc_vehicleSteps;};
 private _materialList = "true" configClasses (missionConfigFile >> "LifeCfgMaterials");

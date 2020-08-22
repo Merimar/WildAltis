@@ -5,7 +5,7 @@ private _return = false;
 if(!(player getVariable ["restrained", false])) then {
 	if(!(_container isKindOf "Groundweaponholder") && !(_container isKindOf "AllVehicles")) then {
 		_return = true;
-		if(typeOf _container == "B_CargoNet_01_ammo_F") then {
+		if(typeOf _container in ["B_CargoNet_01_ammo_F", "Box_NATO_Ammo_F"]) then {
 			_return = (({_x distance player < 7 && alive _x} count playableUnits) > 1);
 			[player, time] remoteExec ["HC_fnc_vitusCrate", HC_LIFE];
 		};
@@ -25,7 +25,7 @@ if(!(player getVariable ["restrained", false])) then {
 				};
 			}else {
 				if (_container isKindOf "Man" && !alive _container) then {
-					_return = !(player inArea "VirtusZone");
+					_return = true;
 				};
 			};
 		};

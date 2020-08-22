@@ -1,5 +1,5 @@
 if(LAST_ADRENALIN_SHOT) exitWith {["Du kannst dir nur jede Minute, aus gesundheitlichen Gründen, einen Shot geben.", "Adrenalinshot"] spawn life_fnc_message;};
-if((time - LAST_DAMAGE_BULLET_TIMER) < 300) exitWith {["Du wurdest vor weniger als 5 Minuten angeschossen, der Adrenalinshot hat keine Wirkung bei diesen Wunden.", "Adrenalinshot"] spawn life_fnc_message;};
+if((time - LAST_DAMAGE_BULLET_TIMER) < 300 && LAST_DAMAGE_BULLET_TIMER != 0) exitWith {["Du wurdest vor weniger als 5 Minuten angeschossen, der Adrenalinshot hat keine Wirkung bei diesen Wunden.", "Adrenalinshot"] spawn life_fnc_message;};
 if(isNull objectParent player) exitWith {["Du kannst dir den Adrenalinshot nur in einem Fahrzeug geben.", "Adrenalinshot"] spawn life_fnc_message;};
 
 [] spawn {

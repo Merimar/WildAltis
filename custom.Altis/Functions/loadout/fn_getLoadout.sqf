@@ -1,8 +1,8 @@
 #include "..\script_macros.hpp"
 disableserialization;
 if((lbCurSel 3751) isEqualTo -1) exitWith {["Du hast keinen Slot ausgewählt.", "Loadout"] spawn life_fnc_message;};
-if((time - life_action_delay) < 15) exitWith {["Du kannst nur alle 15 Sekunden ein Loadout laden.", "Loadout"] spawn life_fnc_message;};
-life_action_delay = time;
+if((time - life_loadout_delay) < 15) exitWith {["Du kannst nur alle 15 Sekunden ein Loadout laden.", "Loadout"] spawn life_fnc_message;};
+life_loadout_delay = time;
 private _curSel = (lbCurSel 3751) + 1;
 
 private _index = life_allLoadouts findIf {(_x select 1) isEqualTo _curSel};

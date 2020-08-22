@@ -74,6 +74,15 @@ class Markt {
 			w = 0.0825 * safezoneW;
 			h = 0.022 * safezoneH;
 		};
+		
+		class Text_Info8: Trans_Text {
+			idc = -1;
+			text = "Läuft ab in";
+			x = 0.438125 * safezoneW + safezoneX;
+			y = 0.643 * safezoneH + safezoneY;
+			w = 0.0825 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
 	};
 	
 	class controls {
@@ -135,6 +144,16 @@ class Markt {
 			colorBackground[] = {0,0,0,1};
 			x = 0.525781 * safezoneW + safezoneX;
 			y = 0.599 * safezoneH + safezoneY;
+			w = 0.0721875 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
+		
+		class Edit_Time: Trans_Edit {
+			idc = 1262;
+			text = "00:00 Minuten";
+			colorBackground[] = {0,0,0,1};
+			x = 0.525781 * safezoneW + safezoneX;
+			y = 0.643 * safezoneH + safezoneY;
 			w = 0.0721875 * safezoneW;
 			h = 0.022 * safezoneH;
 		};

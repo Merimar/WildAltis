@@ -286,7 +286,7 @@ class Items {
 		weight = 45;
 		type = "MARKT";
 		buyPrice = 80000;
-		sellPrice = 115000;
+		sellPrice = 120000;
 		edible = -1;
 		icon = "";
 		itemInfo = "";
@@ -298,7 +298,7 @@ class Items {
 		weight = 90;
 		type = "MARKT";
 		buyPrice = 205000;
-		sellPrice = 280000;
+		sellPrice = 290000;
 		edible = -1;
 		icon = "";
 		itemInfo = "";
@@ -696,7 +696,7 @@ class Items {
 		weight = 3;
 		type = "MARKT";
 		buyPrice = -1;
-		sellPrice = 1600;
+		sellPrice = 2100;
 		edible = -1;
 		icon = "";
 		itemInfo = "";

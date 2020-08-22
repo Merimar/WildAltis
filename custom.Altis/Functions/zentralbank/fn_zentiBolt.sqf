@@ -10,7 +10,7 @@ private _title = "Knacke Zentralbank";
 private _cP = 0.01;
 
 if(life_action_inUse || !(isNull _currentPlayer)) exitWith {};
-if(_cops < 20) exitWith {["Es sind nicht genügend Polizisten online, um die Zentralbank zu starten.<br/>Es müssen 20 Polizisten online sein", "Zentralbank"] spawn life_fnc_message;};
+if(_cops < 15) exitWith {["Es sind nicht genügend Polizisten online, um die Zentralbank zu starten.<br/>Es müssen 15 Polizisten online sein", "Zentralbank"] spawn life_fnc_message;};
 if(isNil "life_boltcutter_uses") then {life_boltcutter_uses = 0;};
 
 private _worldSpace = [0, 0, 0];

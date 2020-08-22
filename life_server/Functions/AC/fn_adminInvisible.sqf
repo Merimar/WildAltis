@@ -1,7 +1,7 @@
 private _unit = param [0, objNull, [objNull]];
-private _start = param [1, true, [true]];
+//private _start = param [1, true, [true]];
 
-if(remoteExecutedOwner in [HC_LIFE, 0]) exitWith {_unit hideObjectGlobal _start;};
+//if(remoteExecutedOwner in [HC_LIFE, 0]) exitWith {_unit hideObjectGlobal _start;};
 
 if(isNull _unit) exitWith {};
 if(remoteExecutedOwner != owner _unit) exitWith {};

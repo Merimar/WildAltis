@@ -6457,7 +6457,7 @@
             <Original>Klaus Skins</Original>
         </Key>
 		<Key ID="STR_License_Titan">
-            <Original>Titan Skins</Original>
+            <Original>Titanverarbeitung</Original>
         </Key>
         <Key ID="STR_License_Driver">
             <Original>Führerschein</Original>
@@ -11245,7 +11245,7 @@
 		</Key>
 		
 		<Key ID="STR_CELL_GE">
-			<Original>Ankündigung Gangeroberung</Original>
+			<Original>Ankündigung Gangfight</Original>
 		</Key>
 		
 		<Key ID="STR_CELL_AdminMSGPlayer">

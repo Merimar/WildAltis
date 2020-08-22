@@ -174,7 +174,7 @@ waituntil {isNull (finddisplay 602)};
 	addMissionEventHandler[ "Draw3D", {
 		_vehList = [];
 		_group = group player;
-		_units = (units _group) select {_x != player && !(_x getVariable ["restrained", false]) && !(_x getVariable ["Spectating", false]) && alive _x && !(_x getVariable ["isDead", false]) && !((vehicle _x) in _vehList) && _x != AUSWEIS_OBJECT};
+		_units = (units _group) select {_x != player && !(_x getVariable ["restrained", false]) && alive _x && _x != AUSWEIS_OBJECT};
 		{
 			_vehicle = vehicle _x;
 			_getPos = visiblePosition _vehicle;
@@ -187,9 +187,9 @@ waituntil {isNull (finddisplay 602)};
 				_vehList pushBack _vehicle;
 				if(!(isNull driver _vehicle) && HEXAGON_NAME) then {_name = name (driver _vehicle)};
 				_posZ = _modelToWorld;
-			};
-			if(_vehicle == _x || (_vehicle != _x && ((driver _vehicle) == _x))) then {
-		 		drawIcon3D ["\A3\ui_f\data\igui\cfg\cursors\select_ca.paa", [HEXAGON_R / 100, HEXAGON_G / 100, HEXAGON_B / 100, 1], [_posX, _posY, _posZ], HEXAGON_D, HEXAGON_D, 45, _name, 0, 0.02, "TahomaB", "center", HEXAGON_RAND];
+				drawIcon3D ["\A3\ui_f\data\igui\cfg\cursors\select_ca.paa", [HEXAGON_R / 100, HEXAGON_G / 100, HEXAGON_B / 100, 1], [_posX, _posY, _posZ], HEXAGON_D, HEXAGON_D, 45, _name, 0, 0.02, "TahomaB", "center", HEXAGON_RAND];
+			}else {
+				if(_vehicle == _x) then {drawIcon3D ["\A3\ui_f\data\igui\cfg\cursors\select_ca.paa", [HEXAGON_R / 100, HEXAGON_G / 100, HEXAGON_B / 100, 1], [_posX, _posY, _posZ], HEXAGON_D, HEXAGON_D, 45, _name, 0, 0.02, "TahomaB", "center", HEXAGON_RAND];};
 			};
 		}forEach _units;
 	}];

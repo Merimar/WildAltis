@@ -11,12 +11,12 @@ private _id = _dataArray select 0;
 private _classname = _dataArray select 1;
 private _displayName = ([_classname] call life_fnc_fetchVehInfo) select 3;
 
-if((time - life_action_delay) < 15) exitWith {["Du kannst nur alle 15 Sekunden ein Fahrzeug ausparken", "Wartezeit"] spawn life_fnc_message;};
+if((time - life_vehicle_delay_impound) < 15) exitWith {["Du kannst nur alle 15 Sekunden ein Fahrzeug ausparken", "Wartezeit"] spawn life_fnc_message;};
 if(!isClass (missionConfigFile >> "LifeCfgVehicles" >> _classname)) exitWith {["Dieses Fahrzeug gibt es nicht", "Ungültiges Fahrzeug"] spawn life_fnc_message;};
 
 private _storageFee = [_classname] call life_fnc_getStorageFee;
 if(BANK < _storageFee) exitWith {["Du kannst dir die Ausparkkosten nicht leisten", "Kein Geld"] spawn life_fnc_message;};
-life_action_delay = time;
+life_vehicle_delay_impound = time;
 
 if(VEHICLE_TYPE == "Air") then {private _vIndex = GARAGE_AIR_VEHICLES findIf {(_x select 0) isEqualTo _id};if(_vIndex != -1) then {GARAGE_AIR_VEHICLES deleteAt _vIndex;};};
 if(VEHICLE_TYPE == "Car") then {private _vIndex = GARAGE_VEHICLES findIf {(_x select 0) isEqualTo _id};if(_vIndex != -1) then {GARAGE_VEHICLES deleteAt _vIndex;};};

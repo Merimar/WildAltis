@@ -12,6 +12,9 @@ if(_isHacker || _amount <= 0) exitWith {};
 private _finalPrice = ([_item, "sellPrice"] call HC_fnc_getItemPrice) * _amount;
 if(_shopType == "gangdealer" && GANG_DEALER) then {_finalPrice = round (_finalPrice * 1.2);};
 
+private _itemType = getText (missionConfigFile >> "Items" >> _item >> "type");
+if(_itemType == "MARKT" && (_unit getVariable ["player_playtime", 0]) <= 600) then {_finalPrice = round (_finalPrice * 1.2);};
+
 private _displayName = getText (missionConfigFile >> "Items" >> _item >> "name");
 
 if(_price != _finalPrice) exitWith {

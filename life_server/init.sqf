@@ -48,6 +48,8 @@ if (life_server_extDB_notLoaded isEqualType []) exitWith {};
 ["UPDATE hacklog SET amount = '0'", 1] call DB_fnc_asyncCall;
 ["UPDATE vehicles SET active = '0'", 1] call DB_fnc_asyncCall;
 
+["CALL clearLocker()", 1] call DB_fnc_asyncCall;
+
 private _timeStamp = diag_tickTime;
 diag_log "----------------------------------------------------------------------------------------------------";
 diag_log "---------------------------------- Starting Altis Life Server Init ---------------------------------";

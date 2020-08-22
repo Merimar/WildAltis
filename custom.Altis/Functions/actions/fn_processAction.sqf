@@ -84,7 +84,7 @@ private _reliktNr = switch (true) do {
 	case (_random > 95) : {4};
 };
 private _relikt = format ["Relikt_%1", _reliktNr];
-if(_newRandom <= 30 && _type == "Relikt") exitWith {["", "Der Knochen ist zerbrochen"] spawn life_fnc_message;};
+if(_newRandom <= 20 && _type == "Relikt") exitWith {["", "Der Knochen ist zerbrochen"] spawn life_fnc_message;};
 
 if(_type != "Relikt") then {
 {

@@ -6,6 +6,7 @@ private _isHacker = [[_spawnName], _unit, remoteExecutedOwner, "fn_spawned"] cal
 if(_isHacker) exitWith {};
 
 private _jailTime = [getPlayerUID _unit] call HC_fnc_getArrested;
+[getPlayerUID _unit, true] call HC_fnc_handleAlive;
 if(_jailTime isEqualType 0 && {_jailTime > 0}) then {_position = markerPos "jail_marker"; _spawnName = "Gefängnis";};
 
 _msg = format ["Der Spieler %1 (%2 - %3) ist gespawnt (SPAWNPUNKT: %4)", name _unit, getPlayerUID _unit, side _unit, _spawnName];
@@ -26,6 +27,3 @@ _position = selectRandom _bPos;
 };
 
 if(_spawnName == "Flugzeugträger") then {_position set [2, 23]; _unit setPos _position;} else {_unit setPosAtl _position;};
-
-private _query = format ["UPDATE player_alive SET status = '1' WHERE player_id = '%1' AND side_id = '%2'", getPlayerUID _unit, [side _unit] call HC_fnc_getSideID];
-[_query, 1] call HC_fnc_asyncCall;

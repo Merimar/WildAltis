@@ -48,10 +48,6 @@ REDGULL = false;
 
 (findDisplay 7300) displaySetEventHandler ["keyDown", "_this call life_fnc_displayHandler"];
 
-_unit removeWeapon (primaryWeapon _unit);
-_unit removeWeapon (secondaryWeapon _unit);
-_unit removeWeapon (handgunWeapon _unit);
-
 life_save_gear = [];
 [] call life_fnc_disableChannel;
 
@@ -63,3 +59,32 @@ CURRENT_DEAD_UNIT = _unit;
 CURRENT_DEAD_KILLER = _killer;
 
 [] call life_fnc_hudUpdate;
+
+if(_unit inArea "VirtusZone") then {
+private _downPos = getPos _unit;
+_downPos set [2, 0];
+private _box = "Box_NATO_Ammo_F" createVehicle _downPos;
+_box setVectorUp (surfaceNormal _downPos);
+_box enableRopeAttach false;
+clearWeaponCargoGlobal _box;
+clearMagazineCargoGlobal _box;
+clearItemCargoGlobal _box;
+clearBackpackCargoGlobal _box;
+
+{_box addWeaponCargoGlobal [_x, 1];} forEach (weapons _unit);
+{_box addMagazineCargoGlobal [_x, 1];} forEach (magazines _unit);
+{_box addItemCargoGlobal [_x, 1];} forEach (items _unit);
+			
+_box addItemCargoGlobal [uniform _unit, 1];
+_box addItemCargoGlobal [vest _unit, 1];
+_box addBackpackCargoGlobal [unitBackpack _unit, 1];
+_box addUniform (uniform _unit);
+
+removeUniform _unit;
+removeVest _unit;
+removeBackpack _unit;
+};
+
+_unit removeWeapon (primaryWeapon _unit);
+_unit removeWeapon (secondaryWeapon _unit);
+_unit removeWeapon (handgunWeapon _unit);

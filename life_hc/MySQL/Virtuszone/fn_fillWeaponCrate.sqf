@@ -3,7 +3,7 @@ private _chance = [["arifle_Zafir_F",2], ["srifle_EBR_F",5], ["srifle_LRR_F",2],
 
 {
 private _className = _x select 0;
-private _perc = _x select 1;
+private _perc = (_x select 1) * 2;
 private _random = round(random(100));
 if(_random < _perc) then {
 private _ammo = (getArray (configfile >> "CfgWeapons" >> _classname >> "magazines")) param [0, "30Rnd_65x39_caseless_mag_Tracer"];

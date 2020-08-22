@@ -13,7 +13,7 @@ private _unitData = _listUnits lbData _index;
 private _allowed = toArray ('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz 0123456789ÄäÖöÜüß!#€()[]*+,-./<=>?@:&§^');
 private _msgArray = toArray (_message);
 
-if("call " in _message || "spawn " in _message) exitWith {["", "Du darfst call/spawn nicht in deiner Nachricht verwenden!"] spawn life_fnc_message;};
+if("call" in _message || "spawn" in _message) exitWith {["", "Du darfst call/spawn nicht in deiner Nachricht verwenden!"] spawn life_fnc_message;};
 if(_messageType != 7 && count _message < 3) exitWith {["", "Die Nachricht muss mind. 3 Zeichen lang sein"] spawn life_fnc_message;};
 if(_messageType isEqualTo 7 && ((group player) getVariable ["gang_name", ""]) == "") exitWith {["Du musst in einer Gang sein!"] spawn life_fnc_message;};
 

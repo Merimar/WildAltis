@@ -79,7 +79,6 @@ DEATH_ARRAY pushBack [_pID, _pName, _pSide, _unit, getPosASL _unit, getDir _unit
 DEATH_ARRAY set [_deathIndex, [_pID, _pName, _pSide, _unit, getPosASL _unit, getDir _unit]];
 };
 
-
 [_pID, false] call HC_fnc_handleAlive;
 [_pID, "", 1, false, true] call HC_fnc_handleVirt;
 [_pID, []] call HC_fnc_handleInv;

@@ -11,9 +11,9 @@ if(isNil "_unit" || {isNull _unit}) exitWith {["Der Spieler ist offline gegangen
 if(_unit == player) exitWith {};
 
 _unit switchCamera "EXTERNAL";
-[player, _unit, true] remoteExec ["HC_fnc_copSpectate", HC_LIFE];
+//[player, _unit, true] remoteExec ["HC_fnc_copSpectate", HC_LIFE];
 
-if(player getVariable ["Spectating", false]) exitWith {};
+//if(player getVariable ["Spectating", false]) exitWith {};
 
 player allowDamage false;
 [format["Du beobachtest nun %1. Mit F10 kannst du dieses Menu wieder verlassen", name _unit], "Spectate"] spawn life_fnc_message;
@@ -23,7 +23,7 @@ private _key = _this select 1;
 if(_key != 68) exitWith {};
 
 player allowDamage true;
-[player, objNull, false] remoteExec ["HC_fnc_copSpectate", HC_LIFE];
+//[player, objNull, false] remoteExec ["HC_fnc_copSpectate", HC_LIFE];
 player switchCamera "EXTERNAL";
 (findDisplay 46) displayRemoveEventHandler ['KeyDown', COP_EXIT];
 false;

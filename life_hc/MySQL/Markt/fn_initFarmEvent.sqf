@@ -34,9 +34,12 @@ bank_obj setVariable ["MarktEventMessage", _messageStart, true];
 bank_obj setVariable ["MarktEventPercentage", _kursPrefix, true];
 
 _time = time + _time;
+bank_obj setVariable ["MarktEventTime", _time, true];
 
 waitUntil {(_time - time) <= 0 || CANCEL_EVENT};
 CANCEL_EVENT = false;
+
+bank_obj setVariable ["MarktEventTime", nil, true];
 
 (MARKT_ARRAY select _index) set [6, -1];
 publicVariable "MARKT_ARRAY";

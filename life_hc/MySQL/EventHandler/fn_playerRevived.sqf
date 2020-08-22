@@ -35,13 +35,9 @@ private _playerItems = _informationArray select 2;
 private _playerMoney = _informationArray select 3;
 private _playerSide = _informationArray select 4;
 
-_index = _unit getVariable ["notruf_index", -1];
-if(_index != -1) then {
-_informationArray = bank_obj getVariable ["Emergency_Calls", []];
-_information = _informationArray select _index;
-_information set [5, true];
-bank_obj setVariable ["Emergency_Calls", _informationArray, true];
-};
+private _emergencies = bank_obj getVariable ["Emergency_Calls", []];
+private _notrufIndex = _emergencies findIf {name _unit == _x select 0 && {_x select 8}};
+if(_notrufIndex != -1) then {(_emergencies select _notrufIndex) set [5, true]; bank_obj setVariable ["Emergency_Calls", _emergencies, true];};
 
 private _deadPos = if(isNull _realCorpse) then {_deathArray select 4} else {visiblePositionASL _realCorpse};
 private _deadDir = if(isNull _realCorpse) then {_deathArray select 5} else {getDir _realCorpse};

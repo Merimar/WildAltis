@@ -19,6 +19,9 @@ life_action_delay = time;
 
 if(life_shop_type == "gangdealer") then {_price = round (_price * 1.2);};
 
+private _itemType = getText (missionConfigFile >> "Items" >> _item >> "type");
+if(_itemType == "MARKT" && life_playtime <= 600) then {_price = round (_price * 1.2);};
+
 [false, _item, _amount] call life_fnc_handleInv;
 CASH = CASH + _price;
 

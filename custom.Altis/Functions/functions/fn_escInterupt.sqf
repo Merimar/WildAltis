@@ -58,8 +58,8 @@ for "_i" from 0 to 1 step 0 do {
 
     _usebleCtrl = call _canUseControls;
     _usebleCtrl spawn _escSync;
-    if (_usebleCtrl) then {
-        _respawnButton ctrlEnable true; //Enable the button.
-    };
+    //if(_usebleCtrl) then {
+        //_respawnButton ctrlEnable true;
+    //};
     waitUntil{isNull (findDisplay 49)};
 };

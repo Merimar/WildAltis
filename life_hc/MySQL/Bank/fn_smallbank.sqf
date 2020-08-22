@@ -51,6 +51,7 @@ _msg = format ["Der Spieler %1 (%2 - %3) ist bei einem Bankraub gescheitert (GAN
 ["BankLog", _msg] call HC_fnc_Log;
 }else {
 _money = round (random [1000000, 1500000, 2000000]);
+_money = round (_money * 1.3);
 [_vault, _money, _geheimZahl] remoteExec ["life_fnc_smallbankcash", _unit];
 [_unit, _money, _group, _pName, _pID, _pSide] spawn {
 _unit = _this select 0;

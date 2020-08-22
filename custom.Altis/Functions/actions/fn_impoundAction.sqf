@@ -58,13 +58,15 @@ for "_i" from 0 to 1 step 0 do {
 life_action_inUse = false;
 
 if(_exit) exitWith {["", "Du hast dich zu weit entfernt"] spawn life_fnc_message;};
-if((count crew _vehicle) > 0) exitWith {["Es befinden sich noch Spieler im Fahrzeug", "Beschlagnahmen"] spawn life_fnc_message;};
+if(({alive _x} count crew _vehicle) > 0) exitWith {["Es befinden sich noch Spieler im Fahrzeug", "Beschlagnahmen"] spawn life_fnc_message;};
 
 private _action = if(playerSide isEqualTo west && _vehSide in [civilian, east]) then {["Möchtest du das Fahrzeug auf den Abstellhof oder in die Garage stellen?", "Fahrzeug abschleppen", "Abstellhof", "Garage"] call BIS_fnc_guiMessage} else {false};
 
 [_vehicle, player, _action] remoteExec ["HC_fnc_abschleppVehicle",HC_LIFE];
 
 ["impound"] call life_fnc_addSkill;
+["Für das abschleppen hast du €3500 erhalten", "Fahrzeuge angeschleppt"] spawn life_fnc_message;
+BANK = BANK + 3500;
 
 if(alive _vehicle) then {
     private _message = format ["%1 dein Fahrzeug wurde von der %2 %3", _vehicleData select 0 select 1, _notification, _extraInfo];

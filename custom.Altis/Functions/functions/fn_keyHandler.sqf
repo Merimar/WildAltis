@@ -257,6 +257,10 @@ switch (_code) do {
 					life_action_delay = time;
 					playSound "earplug";
 					if(soundVolume isEqualTo 1) exitWith {
+						1 fadeSound 0.01;
+						titleText ["Sound um 99% reduziert", "PLAIN"];
+					};
+					if(soundVolume isEqualTo 0.01) exitWith {
 						1 fadeSound 0.05;
 						titleText ["Sound um 95% reduziert", "PLAIN"];
 					};

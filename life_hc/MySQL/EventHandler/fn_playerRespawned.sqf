@@ -17,13 +17,9 @@ private _gear = [_unit] call HC_fnc_getPlayerGear;
 [getPlayerUID _unit, _gear] call HC_fnc_handleInv;
 [getPlayerUID _unit, "", 1, false, true] call HC_fnc_handleVirt;
 
-private _index = _unit getVariable ["notruf_index", -1];
-if(!(_index isEqualTo -1)) then {
-_informationArray = bank_obj getVariable ["Emergency_Calls", []];
-_information = _informationArray select _index;
-_information set [5, true];
-bank_obj setVariable ["Emergency_Calls", _informationArray, true];
-};
+private _emergencies = bank_obj getVariable ["Emergency_Calls", []];
+private _notrufIndex = _emergencies findIf {name _unit == _x select 0 && {_x select 8}};
+if(_notrufIndex != -1) then {(_emergencies select _notrufIndex) set [5, true];bank_obj setVariable ["Emergency_Calls", _emergencies, true];};
 
 if (!isNull _corpse) then {deleteVehicle _corpse;};
 

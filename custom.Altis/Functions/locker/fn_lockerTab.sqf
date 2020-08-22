@@ -6,7 +6,9 @@ private _ctrlList = [[398007, 398008, 398009, 398010, 398011, 398012, 398013, 39
 private _display = findDisplay 398000;
 private _disableBtn = _display displayCtrl (_btnList select _tab);
 {(_display displayCtrl _x) ctrlEnable true;}forEach _btnList;
+//NEW
 //_disableBtn ctrlEnable false;
+{(_display displayCtrl _x) ctrlShow false;}forEach _btnList;
 
 private _header = _display displayCtrl 398001;
 ctrlSetFocus _header;
@@ -315,12 +317,12 @@ private _itemInfo = [_className] call life_fnc_fetchCfgDetails;
 private _displayName = _itemInfo select 1;
 private _picture = _itemInfo select 2;
 _itemType = [_className] call life_fnc_getItemType;
-if(!(_itemType in [0, 1, 2, 5, 6, 7, 8])) then {
+//if(!(_itemType in [0, 1, 2, 5, 6, 7, 8])) then {
 _listLocker lbAdd format ["%1 (%2)", _displayName, _amount];
 _listLocker lbSetPicture [(lbSize _listLocker)-1, _picture];
 _listLocker lbSetData [(lbSize _listLocker)-1, _className];
 _listLocker lbSetValue [(lbSize _listLocker)-1, _amount];
-};
+//};
 };
 }forEach LOCKER;
 

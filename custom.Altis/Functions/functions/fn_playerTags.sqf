@@ -20,7 +20,7 @@ if (isNull _ui) then {
     _ui = uiNamespace getVariable ["Life_HUD_nameTags",displayNull];
 };
 
-private _units = (nearestObjects [(visiblePosition player), ["Man"], 20]) select {_x != player && !(_x getVariable ["Spectating", false])};
+private _units = (nearestObjects [(visiblePosition player), ["Man"], 20]) select {_x != player};
 
 {
     private "_text";
@@ -45,7 +45,7 @@ private _units = (nearestObjects [(visiblePosition player), ["Man"], 20]) select
 					if(_isPremium) then {_text = format ["%1 <img image='Images\Dialog\Diamond.paa' size='1'></img>", _text];};
 					
 					_groupName = (group _x) getVariable ["gang_name", "-1"];
-					_neuling = (_x getVariable ["player_playtime", 0]) < 180;
+					_neuling = (_x getVariable ["player_playtime", 0]) < 600;
 					if(_neuling) then {_text = format ["<t color = '#DAF7A6'>Neuling</t><br/>%1", _text];};
 					if(!(_groupName isEqualTo "-1")) then {
 						_text = format ["%1<br/><t size='0.9' color='#B6B6B6'>%2</t>", _text, _groupName];

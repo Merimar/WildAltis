@@ -20,6 +20,10 @@ private _money = switch (_pSide) do {
 	case east : {PAYCHECK_MONEY_EAST};
 };
 
+//private _extraMoney = [_pID] call HC_fnc_getHigherPaycheck;
+//if(isNil "_extraMoney" || {!(_extraMoney isEqualType 0)}) then {_extraMoney = 0;};
+//_money = _money + _extraMoney;
+
 if(_money <= 0) exitWith {};
 
 for "_int" from 0 to 1 step 0 do {

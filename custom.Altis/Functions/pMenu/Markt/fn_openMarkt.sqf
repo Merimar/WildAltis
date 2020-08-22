@@ -4,16 +4,21 @@ private _display = findDisplay 1250;
 private _itemList = _display displayCtrl 1251;
 private _editMarktEvent = _display displayCtrl 1256;
 private _editMarktEventProzent = _display displayCtrl 1257;
+private _editTime = _display displayCtrl 1262;
 private _btnSet = _display displayCtrl 1259;
 private _btnTrigger = _display displayCtrl 1260;
 private _btnEnd = _display displayCtrl 1261;
+
 lbClear _itemList;
 
 private _eventMessage = if((bank_obj getVariable ["MarktEventMessage", ""]) != "") then {bank_obj getVariable ["MarktEventMessage", ""]} else {"Aktuell ist alles ruhig am Markt ..."};
 private _eventPercentage = bank_obj getVariable ["MarktEventPercentage", 1];
+private _eventTime = bank_obj getVariable ["MarktEventTime", time];
+_eventTime = [(_eventTime - time),"HH:MM"] call BIS_fnc_secondsToString;
 
 _editMarktEvent ctrlSetText _eventMessage;
 _editMarktEventProzent ctrlSetText format ["+ %1%2", (_eventPercentage * 100) - 100, "%"];
+_editTime ctrlSetText format ["%1 Stunden", _eventTime];
 
 private _configLegal = "getText (_x >> 'type') == 'MARKT' && (getNumber (_x >> 'illegal')) isEqualTo 0" configClasses (missionConfigFile >> "Items");
 private _configNotLegal = "getText (_x >> 'type') == 'MARKT' && (getNumber (_x >> 'illegal')) isEqualTo 1" configClasses (missionConfigFile >> "Items");
