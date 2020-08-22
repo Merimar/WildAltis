@@ -212,3 +212,6 @@ _rankM = format ["STR_MEDIC_%1", call life_medicLevel];
 player setVariable ["adminLvl", call life_adminlevel, true];
 player setVariable ["police_rank", [localize _rankP, _icon], true];
 player setVariable ["medic_rank", localize _rankM, true];
+
+enableRadio false;
+enableSentences false;
