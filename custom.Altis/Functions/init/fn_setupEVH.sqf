@@ -8,7 +8,7 @@
 player addEventHandler["Killed", life_fnc_onPlayerKilled];
 player addEventHandler["handleDamage", life_fnc_handleDamage];
 player addEventHandler["Respawn", life_fnc_onPlayerRespawn];
-player addEventHandler["Take", life_fnc_onTakeItem];
+player addEventHandler["Take", {_this spawn life_fnc_onTakeItem}];
 player addEventHandler["Put", life_fnc_onPutItem];
 player addEventHandler["Fired", life_fnc_onFired];
 player addEventHandler["InventoryClosed", life_fnc_inventoryClosed];
