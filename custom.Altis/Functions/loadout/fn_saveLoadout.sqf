@@ -5,24 +5,9 @@ private _curSel = (lbCurSel 3751) + 1;
 
 private _flag = switch (playerSide) do {case civilian : {"reb_leicht"}; case east : {"reb_schwer"}; case west : {"cop"}; case independent : {"med"}};
 
-private _uniform = uniform player;
-private _vest = vest player;
-private _backpack = backpack player;
-private _goggles = goggles player;
-private _headgear = headgear player;
-private _items = assignedItems player;
-private _prim = primaryWeapon player;
-private _seco = handgunWeapon player;
-private _uItems = (uniformItems player) select {!(_x in magazines player)};
-private _uMags = (uniformItems player) select {(_x in magazines player)};
-private _vItems = (vestItems player) select {!(_x in magazines player)};
-private _vMags = (vestItems player) select {(_x in magazines player)};
-private _bItems = (backpackItems player) select {!(_x in magazines player)};
-private _bMags = (backpackItems player) select {(_x in magazines player)};
-private _pMag = if(count primaryWeaponMagazine player isEqualTo 0) then {[]} else {primaryWeaponMagazine player};
-private _hMag = if(count handgunMagazine player isEqualTo 0) then {[]} else {handgunMagazine player};
-private _pItems = primaryWeaponItems player + _pMag;
-private _hItems = handgunItems player + _hMag;
+private _unitloadout = getUnitLoadout player;
+private _convertedloadout = _unitloadout call life_fnc_convertLoadout;
+
 private _bad = false;
 
 {
@@ -35,13 +20,14 @@ if(_itemIndex isEqualTo -1) exitWith {_bad = true;};
 private _condition = _configArray select _itemIndex select 3;
 if(!(call compile _condition)) exitWith {_bad = true;};
 };
-}forEach [[_uniform, "uniform"], [_vest, "vest"], [_backpack, "backpack"], [_goggles, "goggles"], [_headgear, "headgear"], [_prim, "weapons"], [_seco, "weapons"]];
+}forEach [[_convertedloadout select 3, "uniform"], [_convertedloadout select 4, "vest"], [_convertedloadout select 5, "backpack"], [_unitloadout select 7, "goggles"], [_unitloadout select 6, "headgear"], [_convertedloadout select 0, "weapons"], [_convertedloadout select 1, "weapons"], [_convertedloadout select 2, "weapons"]];
 
 {
 private _xItems = _x;
 if(count _xItems > 0) then {
 {
-private _item = _x;
+private _iteminfo = _x;
+private _item = _iteminfo select 0;
 if(_item != "") then {
 private _notFound = true;
 {
@@ -57,11 +43,11 @@ if(_notFound) exitWith {_bad = true;};
 };
 }forEach _xItems;
 };
-}forEach [_items, _uItems, _uMags, _vItems, _vMags, _bItems, _bMags, _pItems, _hItems];
+}forEach [_convertedloadout select 12, _convertedloadout select 6, _convertedloadout select 7, _convertedloadout select 8, _convertedloadout select 9, _convertedloadout select 10, _convertedloadout select 11];
 
 if(_bad) exitWith {["Du kannst einige Items auf diesem Loadout nicht erwerben!", "Nicht dein Level"] spawn life_fnc_message;};
 
-private _loadout =  [[_uniform, _vest, _backpack, _goggles, _headgear, _items, _prim, _seco, _uItems, _uMags, _vItems, _vMags, _bItems, _bMags, _pItems, _hItems], _curSel];
+private _loadout =  [_unitloadout, _curSel];
 private _loadoutIndex = life_allLoadouts findIf {(_x select 1) isEqualTo _curSel};
 
 if(_loadoutIndex isEqualTo -1) then {
