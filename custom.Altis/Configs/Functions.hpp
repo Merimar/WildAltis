@@ -340,11 +340,11 @@ class CfgFunctions {
 		class Locker {
 			file = "Functions\locker";
 			class addItem {};
+			class lockerCanAdd {};
 			class lockerDBClick {};
 			class lockerDrop {};
 			class lockerManage {};
 			class lockerMenu {};
-			class lockerTab {};
 		};
 		
 		class Loginscreen {
