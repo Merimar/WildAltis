@@ -22,6 +22,7 @@ LAST_DAMAGE_BULLET_TIMER = 0;
 FIRST_MAP = false;
 COP_MONEY_REMOVE_TIMER = false;
 MEDIC_ABANDONED_TIMER = false;
+life_locker_delay = 0;
 life_loadout_delay = 0;
 GE_VORBEI = false;
 LAST_MESSAGE = "";

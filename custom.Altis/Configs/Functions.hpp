@@ -343,7 +343,6 @@ class CfgFunctions {
 			class lockerDrop {};
 			class lockerManage {};
 			class lockerMenu {};
-			class lockerTab {};
 		};
 		
 		class Loginscreen {
