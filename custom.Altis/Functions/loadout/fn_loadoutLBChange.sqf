@@ -12,24 +12,15 @@ if(_index isEqualTo -1) exitWith {_loadoutInfo ctrlSetStructuredText parseText "
 private _loadout = life_allLoadouts select _index select 0;
 private _price = [_loadout] call life_fnc_getLoadoutPrice;
 
-_loadout params [
-    "_uniform",
-    "_vest",
-    "_backpack",
-    "_goggles",
-    "_headgear",
-    ["_items",[]],
-    "_prim",
-    "_seco",
-    ["_uItems",[]],
-    ["_uMags",[]],
-    ["_bItems",[]],
-    ["_bMags",[]],
-    ["_vItems",[]],
-    ["_vMags",[]],
-    ["_pItems",[]],
-    ["_hItems",[]]
-];
+private _convertedloadout = _loadout call life_fnc_convertLoadout;
+_prim = _convertedloadout select 0;
+_seco = _convertedloadout select 1;
+_pistol = _convertedloadout select 2;
+_uniform = _convertedloadout select 3;
+_vest = _convertedloadout select 4;
+_backpack = _convertedloadout select 5;
+_headgear = _loadout select 6;
+_goggles = _loadout select 7;
 
 _WaffeChange = "Keine Waffe";
 _PistoleChange = "Keine Pistole";
@@ -40,7 +31,7 @@ _RucksackChange = "Kein Rucksack";
 _BrilleChange = "Keine Brille";
 
 if(_prim != "") then {_WaffeChange = ([_prim] call life_fnc_fetchCfgDetails) select 1;};
-if(_seco != "") then {_PistoleChange = ([_seco] call life_fnc_fetchCfgDetails) select 1;};
+if(_pistol != "") then {_PistoleChange = ([_pistol] call life_fnc_fetchCfgDetails) select 1;};
 if(_uniform != "") then {_UniformChange = ([_uniform] call life_fnc_fetchCfgDetails) select 1;};
 if(_vest != "") then {_WesteChange = ([_vest] call life_fnc_fetchCfgDetails) select 1;};
 if(_headgear != "") then {_HelmChange = ([_headgear] call life_fnc_fetchCfgDetails) select 1;};
@@ -55,13 +46,18 @@ _nvg = "Kein Nightvision";
 _binoculars = "Kein Fernglas";
 
 {
-if(_x == "ItemMap") then {_map = ([_x] call life_fnc_fetchCfgDetails) select 1;};
-if(_x == "ItemCompass") then {_compass = ([_x] call life_fnc_fetchCfgDetails) select 1;};
-if(_x == "ItemWatch") then {_watch = ([_x] call life_fnc_fetchCfgDetails) select 1;};
-if(_x == "ItemGPS") then {_gps = ([_x] call life_fnc_fetchCfgDetails) select 1;};
-if(_x == "NVGoggles" || _x == "NVGoggles_OPFOR" || _x == "NVGoggles_INDEP" || _x == "Integrated_NVG_F" || _x == "Integrated_NVG_TI_0_F" || _x == "Integrated_NVG_TI_1_F") then {_nvg = ([_x] call life_fnc_fetchCfgDetails) select 1;};
-if(_x == "Laserdesignator" || _x == "Laserdesignator_02" || _x == "Laserdesignator_03" || _x == "Rangefinder" || _x == "Binocular") then {_binoculars = ([_x] call life_fnc_fetchCfgDetails) select 1;};
-}forEach _items;
+    _items = _x;
+    {
+        _iteminfo = _x;
+        _item = _iteminfo select 0;
+        if(_item == "ItemMap") then {_map = ([_item] call life_fnc_fetchCfgDetails) select 1;};
+        if(_item == "ItemCompass") then {_compass = ([_item] call life_fnc_fetchCfgDetails) select 1;};
+        if(_item == "ItemWatch") then {_watch = ([_item] call life_fnc_fetchCfgDetails) select 1;};
+        if(_item == "ItemGPS") then {_gps = ([_item] call life_fnc_fetchCfgDetails) select 1;};
+        if(_item == "NVGoggles" || _item == "NVGoggles_OPFOR" || _item == "NVGoggles_INDEP" || _item == "Integrated_NVG_F" || _item == "Integrated_NVG_TI_0_F" || _item == "Integrated_NVG_TI_1_F") then {_nvg = ([_item] call life_fnc_fetchCfgDetails) select 1;};
+        if(_item == "Laserdesignator" || _item == "Laserdesignator_02" || _item == "Laserdesignator_03" || _item == "Rangefinder" || _item == "Binocular") then {_binoculars = ([_item] call life_fnc_fetchCfgDetails) select 1;};
+    } forEach _items;
+} forEach [_convertedloadout select 12, _convertedloadout select 6, _convertedloadout select 7, _convertedloadout select 8, _convertedloadout select 9, _convertedloadout select 10, _convertedloadout select 11];
 
 _loadoutInfo ctrlSetStructuredText parseText format[
 	"Waffe: <t color='#8cff9b'>%1</t><br/>"+

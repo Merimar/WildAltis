@@ -334,6 +334,7 @@ class CfgFunctions {
 			class loadoutLBChange {};
 			class openLoadout {};
 			class saveLoadout {};
+			class convertLoadout {};
 		};
 		
 		class Locker {
