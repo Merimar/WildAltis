@@ -2,6 +2,7 @@ disableSerialization;
 private _refresh = param [0, false, [false]];
 if(!("haus" in LICENSES)) exitWith {["", "Du brauchst eine Hauseigentümer Lizenz"] spawn life_fnc_message;};
 if(LOCKER_TIMER && !_refresh) exitWith {["Du kannst nur alle 30 Sekunden in dein Schliesfach schauen", "Schliesfach"] spawn life_fnc_message};
+if(playerSide in [west, independent]) exitWith {["Du darfst das Schliesfach nicht benutzen", "Schliesfach"] spawn life_fnc_message;};
 
 if(!_refresh) then {
 [] spawn {
