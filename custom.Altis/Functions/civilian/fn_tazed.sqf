@@ -2,6 +2,7 @@ private _unit = param [0, objNull];
 private _cop = param [1, objNull];
 
 if(isNull _unit || isNull _cop || {player getVariable["restrained", false]} || playerSide isEqualTo west || life_istazed) exitWith {};
+if((name _unit) == "Error: No unit" || (name _cop) == "Error: No unit") exitWith {};
 if(side _cop != west || playerSide == west) exitWith {};
 
 if(typeOf vehicle player in ["B_Quadbike_01_F", "C_Kart_01_Blu_F", "C_Kart_01_Fuel_F", "C_Kart_01_Red_F", "C_Kart_01_Vrana_F"]) then {player action["Eject", vehicle player];};

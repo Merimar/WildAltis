@@ -7,6 +7,7 @@ private _speed = ["repair"] call life_fnc_getSkillAdvantage;
 private _luck = ["lockpick"] call life_fnc_getSkillAdvantage;
 
 if(life_action_inUse || isNull _curTarget || {player getVariable ["restrained", false]} || {player getVariable ["playerSurrender", false]} || {!(alive _curTarget)}) exitWith {};
+if(JAIL_TIME > 0) exitWith {["Du kannst als Häftling keine Dietriche benutzen", "Dietrich"] spawn life_fnc_message;};
 if(LOCKPICK_TIMER) exitWith {["Du kannst nur alle 20 Sekunden knacken.", "Dietrich"] spawn life_fnc_message;};
 private _distance = ((boundingBox _curTarget select 1) select 0) + 2;
 if(player distance _curTarget > _distance) exitWith {};

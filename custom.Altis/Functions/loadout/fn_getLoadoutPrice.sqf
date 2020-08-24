@@ -26,10 +26,15 @@ private _category = _x;
 {
 private _iteminfo = _x;
 private _item = _iteminfo select 0;
+_amount = 1;
+if((count _iteminfo) isEqualTo 3) then {
+	_amount = _iteminfo select 1;
+};
 private _configArray = getArray(missionConfigFile >> "CfgItemShop" >> _flag >> _category);
 private _itemIndex = _configArray findIf {_x select 0 == _item};
 if(_itemIndex != -1) then {
 private _price = _configArray select _itemIndex select 2;
+_price = _price * _amount;
 _GesammtPreis = _GesammtPreis + _price;
 };
 }forEach _items;
