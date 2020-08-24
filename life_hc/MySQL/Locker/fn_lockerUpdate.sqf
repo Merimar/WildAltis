@@ -5,9 +5,7 @@ private _amount = param [2, 1, [0]];
 private _isHacker = [[str _item], _unit, remoteExecutedOwner, "fn_lockerUpdate"] call HC_fnc_checkSQLBreak;
 if(_isHacker) exitWith {};
 
-private _gear = [_unit] call HC_fnc_getPlayerGear;
 private _itemArray = [];
-[getPlayerUID _unit, _gear] call HC_fnc_handleInv;
 
 if(_item isEqualType "") then {
 [getPlayerUID _unit, _item, _amount] call HC_fnc_handleLocker;
@@ -25,3 +23,8 @@ _itemArray pushBack format ["%1 (%2x)", _displayName, _curAmount];
 
 private _msg = format ["Der Spieler %1 (%2 - %3) hat Items in seinem Schliesfach verändert: %4", name _unit, getPlayerUID _unit, side _unit, _itemArray joinString ", "];
 ["LockerLog", _msg] call HC_fnc_Log;
+
+sleep 1;
+
+private _gear = [_unit] call HC_fnc_getPlayerGear;
+[getPlayerUID _unit, _gear] call HC_fnc_handleInv;
