@@ -241,6 +241,7 @@ class CfgFunctions {
 			class reviveEffect {};
 			class searchFunction {};
 			class stripDownPlayer {};
+			class uranTimer {};
 			class useAlcohol {};
 			class useDrugs {};
 			class virtusTimer {};

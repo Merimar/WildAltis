@@ -43,12 +43,12 @@ class life_timer {
     duration = 99999999999;
     fadeout = 1;
     movingEnable = 0;
-    onLoad = "uiNamespace setVariable['life_timer',_this select 0]";
+    onLoad = "uiNamespace setVariable ['life_timer',_this select 0]";
     objects[] = {};
 
     class controlsBackground {
         class TimerIcon: life_RscPicture {
-            idc = -1;
+            idc = 38302;
             text = "\a3\ui_f\data\IGUI\RscTitles\MPProgress\timer_ca.paa";
             x = 0.00499997 * safezoneW + safezoneX;
             y = 0.291 * safezoneH + safezoneY;

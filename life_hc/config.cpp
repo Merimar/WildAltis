@@ -291,6 +291,7 @@ class CfgFunctions
 		class Uran {
             file = "\life_hc\MySQL\Uran";
 			class playerUran {};
+			class strahlungDeath {};
 			class vehicleUran {};
         };
 		

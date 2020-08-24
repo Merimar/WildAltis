@@ -343,6 +343,9 @@ class CfgRemoteExec {
 		F(HC_fnc_ticketPlayer,HC)
 		F(HC_fnc_ticketRefuse,HC)
 		
+		//Uran
+		F(HC_fnc_strahlungDeath,HC)
+		
 		//Vehicles
 		F(HC_fnc_butcherVehicle,HC)
 		F(HC_fnc_buyVehicle,HC)

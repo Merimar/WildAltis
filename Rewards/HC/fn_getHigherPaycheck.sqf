@@ -1,6 +1,6 @@
 private _pID = param [0, "", [""]];
 
-private _allPaycheckRewards = "getText (_x >> 'type') == 'PACHECK'" configClasses (missionConfigFile >> "CfgRewards");
+private _allPaycheckRewards = "getText (_x >> 'type') == 'PAYCHECK'" configClasses (missionConfigFile >> "CfgRewards");
 
 private _amount = 0;
 

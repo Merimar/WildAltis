@@ -42,7 +42,7 @@ class CfgRewards {
 	
 	class Day_5 {
 		displayName = "Du bekommst + €100 mehr in deinem Paycheck";
-		type = "PACHECK";
+		type = "PAYCHECK";
 		value[] = {100};
 		streak = 5;
 		level = "Anfänger";

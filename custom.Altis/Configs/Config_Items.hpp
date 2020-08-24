@@ -646,7 +646,7 @@ class Items {
 		illegal = true;
 		weight = 2;
 		type = "MARKT";
-		buyPrice = 20000;
+		buyPrice = -1;
 		sellPrice = 8500;
 		edible = -1;
 		icon = "";

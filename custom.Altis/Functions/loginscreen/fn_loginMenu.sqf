@@ -91,6 +91,7 @@ _progressText ctrlSetStructuredText parseText "Lege Spielerseite fest ...";
 [] call life_fnc_setupActions;
 [] call life_fnc_bluforSavezone;
 [] call life_fnc_disableChannel;
+[] call life_fnc_uranTimer;
 [] spawn life_fnc_survival;
 [] spawn life_fnc_initStamina;
 [] spawn life_fnc_initWeather;
@@ -98,6 +99,7 @@ _progressText ctrlSetStructuredText parseText "Lege Spielerseite fest ...";
 [] spawn life_fnc_menuCheck;
 [] spawn life_fnc_escInterupt;
 [] call life_fnc_clearRain;
+
 
 NIGHT_LIGHT = "#lightpoint" createVehicleLocal [0,0,0]; 
 NIGHT_LIGHT setLightBrightness 1.5; 
