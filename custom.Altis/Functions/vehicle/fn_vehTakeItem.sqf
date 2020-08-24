@@ -21,6 +21,7 @@ private _itemWeight = [_className] call life_fnc_itemWeight;
 private _vehicleCurrentWeight = _vehicleWeightInfo select 1;
 private _diff = floor ((life_maxWeight - life_carryWeight) / _itemWeight);
 
+if(_className == "uranUnstableP" && (player distance Vendor_Uran_1) >= 30) exitWith {["Du kannst Unstable Uran nur in der Nähe eines Verkäufers, unter Aufsicht von einem Spezialisten, aus einem Fahrzeug nehmen.", "Unstable Uran"] spawn life_fnc_message;};
 if(_diff <= 0) exitWith {["", "Dein Inventar ist voll"] spawn life_fnc_message;};
 if(_amount > _diff) then {_amount = _diff;};
 
@@ -36,5 +37,9 @@ private _newTrunk = [_inv, _vehicleCurrentWeight - (_itemWeight * _amount)];
 
 life_trunk_vehicle setVariable ["Trunk", _newTrunk, true];
 [life_trunk_vehicle] call life_fnc_vehInventory;
+
+if(_className == "uranUnstableP") then {
+if(_newAmount isEqualTo 0) then {life_trunk_vehicle setVariable ["UranTime", 0, true];};
+};
 
 [player, _className, _amount, life_trunk_vehicle] remoteExec ["HC_fnc_takeItemVehicle", HC_LIFE];

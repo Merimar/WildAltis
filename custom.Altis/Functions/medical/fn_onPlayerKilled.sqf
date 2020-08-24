@@ -10,6 +10,7 @@ if(playerSide isEqualTo west) then {COP_SAVE_GEAR = [getUnitLoadout _unit] call 
 _unit setVariable ["Revive", true, true];
 player setVariable ["isDead", true, true];
 player setVariable ["adminLvl", _adminLvl, true];
+player setVariable ["UranTime", 0, true];
 
 createDialog "DeathScreen";
 life_deathCamera = "CAMERA" camCreate (getPosATL _unit); 

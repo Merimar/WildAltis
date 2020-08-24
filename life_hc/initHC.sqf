@@ -112,6 +112,7 @@ diag_log format ["A3Log Loaded. Version: %1",("A3Log" callExtension "version")];
 [] execVM "\life_hc\initGangeroberung.sqf";
 [] execVM "\life_hc\initDatabase.sqf";
 [] execVM "\life_hc\initPlayerSkins.sqf";
+[] execVM "\life_hc\initStrahlung.sqf";
 
 if(DEBUG) then {
 [] spawn {

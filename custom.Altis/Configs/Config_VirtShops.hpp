@@ -130,6 +130,24 @@ class VirtualShops {
 		condition = "true";
 		items[] = { "traubenP"};
 	};
+	
+	class meth {
+		name = "Methhändler";
+		condition = "true";
+		items[] = { "methP"};
+	};
+	
+	class uranUnstable {
+		name = "Uranhändler - Unstable";
+		condition = "true";
+		items[] = { "uranUnstableP"};
+	};
+	
+	class uranStable {
+		name = "Uranhändler - Stable";
+		condition = "true";
+		items[] = { "uranStableP"};
+	};
 
 	class paketzentrum {
 		name = "Zoll-Stelle";

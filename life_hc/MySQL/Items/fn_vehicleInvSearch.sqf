@@ -48,5 +48,7 @@ private _removeText = _nameArray joinString "<br/>";
 
 _removeText = _nameArray joinString ", ";
 
+_vehicle setVariable ["UranTime", 0, true];
+
 private _msg = format ["Der Spieler %1 (%2 - %3) hat ein Fahrzeug durchsucht, und hat (%4) entfernt", name _unit, getPlayerUID _unit, side _unit, _removeText];
 ["SearchLog", _msg] call HC_fnc_Log;

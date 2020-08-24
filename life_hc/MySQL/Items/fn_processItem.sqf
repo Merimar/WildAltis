@@ -74,5 +74,7 @@ _itemArrayOutput pushBack (format ["%1 %2", 1, _displayName]);
 private _msg = format ["Der Spieler %1 (%2 - %3) hat Items verarbeitet (%4 zu %5)", name _unit, getPlayerUID _unit, side _unit, _itemArrayInput joinString ", ", _itemArrayOutput joinString ", "];
 ["ProcessLog", _msg] call HC_fnc_log;
 
+if(_type == "UranUnstable") then {[_unit] spawn HC_fnc_playerUran;};
+
 if(_type in ["Helium", "Dunkle", "Relikt"]) exitWith {};
 [getPlayerUID _unit, _processSkill] call HC_fnc_addSkill;

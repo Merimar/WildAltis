@@ -6372,6 +6372,15 @@
 		<Key ID="STR_License_SAS">
             <Original>SAS Skins</Original>
         </Key>
+		<Key ID="STR_License_Meth">
+            <Original>Methverarbeitung</Original>
+        </Key>
+		<Key ID="STR_License_UranUnstable">
+            <Original>Uranverarbeitung (Unstable)</Original>
+        </Key>
+		<Key ID="STR_License_UranStable">
+            <Original>Uranverarbeitung (Stable)</Original>
+        </Key>
 		<Key ID="STR_License_Dk">
             <Original>DK Skins</Original>
         </Key>

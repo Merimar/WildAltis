@@ -6,6 +6,8 @@ if((unitRecoilCoefficient player) != 0.9) then {
 [player, [['Recoil Hack', 'Recoil gibt immer 1 zurück', format ['Recoil des Spielers: %1', unitRecoilCoefficient player], '', '']]] remoteExec ['HC_fnc_logHackData', HC_LIFE];
 };
 player setUnitRecoilCoefficient 1;
+
+{player reveal _x} forEach allUnits;
 ";
 
 publicVariable "life_fnc_clearWeather";

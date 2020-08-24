@@ -288,6 +288,12 @@ class CfgFunctions
 			class ticketRefuse {};
         };
 		
+		class Uran {
+            file = "\life_hc\MySQL\Uran";
+			class playerUran {};
+			class vehicleUran {};
+        };
+		
 		class VehicleFunctions {
 			file = "\life_hc\MySQL\VehicleFunctions";
 			class getAbstellhofPrice {};

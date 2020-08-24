@@ -6,6 +6,8 @@ if(_index isEqualTo -1) exitWith {["", "Du hast nichts augewählt"] spawn life_f
 private _item = lbData [4351, _index];
 private _amount = parseNumber (ctrlText 4354);
 
+if(_item == "uranUnstableP") exitWith {["Das Item kann nur einem Fachmann übergeben werden.", "Unstable Uran"] spawn life_fnc_message;};
+
 if(_amount <= 0) exitWith {["", "Wieviele Items möchtest du entfernen?"] spawn life_fnc_message;};
 private _isIllegal = (getNumber (missionConfigFile >> "Items" >> _item >> "illegal")) isEqualTo 1;
 private _displayName = getText (missionConfigFile >> "Items" >> _item >> "name");

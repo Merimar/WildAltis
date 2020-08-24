@@ -23,7 +23,6 @@ class Items {
 		itemInfo = "Mit dem Adrenalinshot könnt ihr kleinere Verletzungen während der Autofahrt behandeln";
 	};
 
-
 	class defibrilator {
 		name = "Defibrilator";
 		illegal = false;
@@ -496,6 +495,30 @@ class Items {
 		itemInfo = "";
 	};
 	
+	class methU {
+		name = "Ungekochtes Meth";
+		illegal = true;
+		weight = 3;
+		type = "FARM";
+		buyPrice = -1;
+		sellPrice = -1;
+		edible = -1;
+		icon = "";
+		itemInfo = "";
+	};
+	
+	class uranU {
+		name = "Unverarbeitetes Uran";
+		illegal = true;
+		weight = 100;
+		type = "FARM";
+		buyPrice = -1;
+		sellPrice = -1;
+		edible = -1;
+		icon = "";
+		itemInfo = "";
+	};
+	
 	class heroinU {
 		name = "Unverarbeitetes Heroin";
 		illegal = true;
@@ -582,6 +605,30 @@ class Items {
 		itemInfo = "";
 	};
 	
+	class uranStableP {
+		name = "Uran (Stable)";
+		illegal = true;
+		weight = 80;
+		type = "MARKT";
+		buyPrice = -1;
+		sellPrice = 130000;
+		edible = -1;
+		icon = "";
+		itemInfo = "";
+	};
+	
+	class uranUnstableP {
+		name = "Uran (Unstable)";
+		illegal = true;
+		weight = 80;
+		type = "MARKT";
+		buyPrice = -1;
+		sellPrice = 500000;
+		edible = -1;
+		icon = "";
+		itemInfo = "";
+	};
+	
 	class marihuanaP {
 		name = "Marihuana";
 		illegal = true;
@@ -589,6 +636,18 @@ class Items {
 		type = "MARKT";
 		buyPrice = 19400;
 		sellPrice = 5535;
+		edible = -1;
+		icon = "";
+		itemInfo = "";
+	};
+	
+	class methP {
+		name = "Methamphetamine";
+		illegal = true;
+		weight = 2;
+		type = "MARKT";
+		buyPrice = 20000;
+		sellPrice = 8500;
 		edible = -1;
 		icon = "";
 		itemInfo = "";
@@ -624,7 +683,7 @@ class Items {
 		weight = 2;
 		type = "MARKT";
 		buyPrice = -1;
-		sellPrice = 6300;
+		sellPrice = 3900;
 		edible = -1;
 		icon = "";
 		itemInfo = "";
@@ -648,7 +707,7 @@ class Items {
 		weight = 3;
 		type = "MARKT";
 		buyPrice = -1;
-		sellPrice = 3075;
+		sellPrice = 4175;
 		edible = -1;
 		icon = "";
 		itemInfo = "";

@@ -33,6 +33,57 @@ class CfgFarmRoutes {
 		infoText = "";
 	};
 	
+	class Meth {
+		name = "Methamphetaminroute";
+		fields[] = {"Farm_Methamphetamin_1"};
+		processors[] = {"Processor_Methamphetamin_1"};
+		vendors[] = {"Vendor_Methamphetamin_1"};
+		gatherItem = "methU";
+		gatherSkill = "farmDrugs";
+		gatherTool = "";
+		farmZonesize = 30;
+		farmTime = 3;
+		processInput[] = {{"methU", 1}};
+		processOutput[] = {{"methP", 1}};
+		processText = "Koche Methamphetamine";
+		processSkill = "processDrugs";
+		infoText = "";
+	};
+	
+	class UranStable {
+		name = "Uranroute (Stable)";
+		fields[] = {"Farm_Uran_1"};
+		processors[] = {"Processor_Uran_2"};
+		vendors[] = {"Vendor_Uran_2"};
+		gatherItem = "uranU";
+		gatherSkill = "farmDrugs";
+		gatherTool = "";
+		farmZonesize = 30;
+		farmTime = 20;
+		processInput[] = {{"uranU", 1}};
+		processOutput[] = {{"uranStableP", 1}};
+		processText = "Verarbeite Stable Uran";
+		processSkill = "processDrugs";
+		infoText = "";
+	};
+	
+	class UranUnstable {
+		name = "Uranroute (Unstable)";
+		fields[] = {"Farm_Uran_1"};
+		processors[] = {"Processor_Uran_1"};
+		vendors[] = {"Vendor_Uran_1"};
+		gatherItem = "";
+		gatherSkill = "farmDrugs";
+		gatherTool = "";
+		farmZonesize = 0;
+		farmTime = 20;
+		processInput[] = {{"uranU", 1}};
+		processOutput[] = {{"uranUnstableP", 1}};
+		processText = "Verarbeite Unstable Uran";
+		processSkill = "processDrugs";
+		infoText = "";
+	};
+	
 	class Kokain {
 		name = "Kokainroute";
 		fields[] = {"Farm_Coke_1"};

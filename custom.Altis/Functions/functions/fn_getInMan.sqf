@@ -1,5 +1,7 @@
 params ["_unit", "_role", "_vehicle", "_turret"];
 
+_vehicle allowCrewInImmobile true;
+
 if(_role != "driver") exitWith {};
 
 _vehicle removeAllEventHandlers "Engine";

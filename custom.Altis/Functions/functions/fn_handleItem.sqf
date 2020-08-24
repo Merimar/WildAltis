@@ -372,11 +372,11 @@ if (_bool) then {
 } else {
     switch (_details select 6) do {
         case "CfgVehicles": {
-            removeBackpack player;
+            removeBackpackGlobal player;
         };
 
         case "CfgMagazines": {
-            player removeMagazine _item;
+            player removeMagazineGlobal _item;
         };
 
         case "CfgGlasses": {
@@ -420,7 +420,7 @@ if (_bool) then {
                                 _tWeapons = (getWeaponCargo (uniformContainer player)) select 0;
                                 _tWeaponCount = (getWeaponCargo (uniformContainer  player)) select 1;
 
-                                clearWeaponCargo (uniformContainer player);
+                                clearWeaponCargoGlobal (uniformContainer player);
                                 {
                                     _numVestWeps = _tWeaponCount select _forEachIndex;
                                     if (_x == _this) then
@@ -435,7 +435,7 @@ if (_bool) then {
                                 _tWeapons = (getWeaponCargo (vestContainer player)) select 0;
                                 _tWeaponCount = (getWeaponCargo (vestContainer  player)) select 1;
 
-                                clearWeaponCargo (vestContainer player);
+                                clearWeaponCargoGlobal (vestContainer player);
                                 {
                                     _numVestWeps = _tWeaponCount select _forEachIndex;
                                     if (_x == _this) then
@@ -450,7 +450,7 @@ if (_bool) then {
                                 _tWeapons = (getWeaponCargo (backpackContainer player)) select 0;
                                 _tWeaponCount = (getWeaponCargo (backpackContainer  player)) select 1;
 
-                                clearWeaponCargo (backpackContainer player);
+                                clearWeaponCargoGlobal (backpackContainer player);
                                 {
                                     _numVestWeps = _tWeaponCount select _forEachIndex;
                                     if (_x == _this) then
@@ -470,7 +470,7 @@ if (_bool) then {
                             case (_item in (uniformItems player)): {_item call _tmpfunction;};
                             case (_item in (vestItems player)) : {_item call _tmpfunction;};
                             case (_item in (backpackItems player)) : {_item call _tmpfunction;};
-                            default {player removeWeapon _item;};
+                            default {player removeWeaponGlobal _item;};
                         };
                     };
                 };

@@ -8,7 +8,8 @@ if(_usedPlayer != player) exitWith {closeDialog 0;};
 if(_index isEqualTo -1) exitWith {["", "Du musst etwas auswählen"] spawn life_fnc_message;};
 
 private _className = lbData [3502, _index];
-if(_className in ["titanU", "titanP"] && life_trunk_vehicle isKindOf "Air") exitWith {["Titan ist eine wöchentliche Farmroute und kann nur mit Landfahrzeugen gefarmt werden.", "Wöchentliche Farmroute"] spawn life_fnc_message;};
+if(_className in ["titanU", "titanP"] && life_trunk_vehicle isKindOf "Air") exitWith {["Titan kann nur mit Landfahrzeugen gefarmt werden.", "Farmroute"] spawn life_fnc_message;};
+if(_className in ["methU", "methP"] && life_trunk_vehicle isKindOf "LandVehicle") exitWith {["Meth kann nur mit Helikoptern gefarmt werden.", "Farmroute"] spawn life_fnc_message;};
 private _itemAmount = [_className] call life_fnc_getItemValue;
 private _amount = if(_storeAll) then {_itemAmount} else {parseNumber (ctrlText 3503)};
 if(_amount > _itemAmount) then {_amount = _itemAmount;};
@@ -20,6 +21,7 @@ private _vehicleMaxWeight = _vehicleWeightInfo select 0;
 private _vehicleCurrentWeight = _vehicleWeightInfo select 1;
 private _diff = floor ((_vehicleMaxWeight - _vehicleCurrentWeight) / _itemWeight);
 
+if(_className == "uranUnstableP" && (player distance Vendor_Uran_1) < 30) exitWith {["Du kannst Unstable Uran nicht in der Nähe eines Verkäufers, in ein Fahrzeug legen", "Unstable Uran"] spawn life_fnc_message;};
 if(_diff <= 0) exitWith {["", "Das Fahrzeug ist voll"] spawn life_fnc_message;};
 if(_amount > _diff) then {_amount = _diff;};
 
@@ -43,5 +45,10 @@ private _newTrunk = [_inv, _vehicleCurrentWeight + (_itemWeight * _amount)];
 
 life_trunk_vehicle setVariable ["Trunk", _newTrunk, true];
 [life_trunk_vehicle] call life_fnc_vehInventory;
+
+if(_className == "uranUnstableP") then {
+private _itemValue = ["uranUnstableP"] call life_fnc_getItemValue;
+if(_itemValue isEqualTo 0) then {player setVariable ["UranTime", 0, true];};
+};
 
 [player, _className, _amount, life_trunk_vehicle] remoteExec ["HC_fnc_storeItemVehicle", HC_LIFE];

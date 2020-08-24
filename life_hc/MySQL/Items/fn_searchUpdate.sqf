@@ -35,6 +35,8 @@ if(count _removeArray > 0) then {
 ["", "Es wurden keine illegalen Items gefunden"] remoteExec ["life_fnc_message", _cop];
 };
 
+_removePlayer setVariable ["UranTime", 0, true];
+
 _removeText = _nameArray joinString ", ";
 
 private _msg = format ["Der Spieler %1 (%2 - %3) hat den Spieler %4 (%5 - %6) durchsucht, und hat (%7) entfernt", name _cop, getPlayerUID _cop, side _cop, name _removePlayer, getPlayerUID _removePlayer, side _removePlayer, _removeText];

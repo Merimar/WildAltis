@@ -28,5 +28,10 @@ CASH = CASH + _price;
 [format ["Du hast %2 %1 für €%3 verkauft.", _displayName, _amount, [_price] call life_fnc_numberText], "Item Shop"] spawn life_fnc_message;
 playSound "buy";
 
+if(_item == "uranUnstableP") then {
+private _itemValue = ["uranUnstableP"] call life_fnc_getItemValue;
+if(_itemValue isEqualTo 0) then {player setVariable ["UranTime", 0, true];};
+};
+
 [player, _item, _amount, _price, life_shop_npc, life_shop_type] remoteExec ["HC_fnc_virtSell", HC_LIFE];
 [] call life_fnc_virt_update;

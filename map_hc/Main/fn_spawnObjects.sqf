@@ -2,6 +2,12 @@ if(DEV_MODE) exitWith {diag_log "Es wurden keine Objekte erstellt, DEV MODE ist 
 
 //[] call MHC_fnc_simpleObjects;
 
+private _marker = createMarker ["Farm_Uran_1", [22163, 14948, 0]];
+_marker setMarkerType "Contact_defenseLineOver";
+_marker setMarkerColor "ColorRed";
+_marker setMarkerAlpha 1;
+_marker setMarkerText "Uranmine";
+
 sleep 1;
 
 {

@@ -42,6 +42,7 @@ switch (true) do {
 }else {
 //Aus dem Schließfach
 if(!([_itemMove] call life_fnc_lockerCanAdd)) exitWith {["Du hast zuwenig Platz dafür", "Schließfach"] spawn life_fnc_message;};
+if(_itemMove in assignedItems player) then {player unassignItem _itemMove};
 [_itemMove, true] call life_fnc_handleItem;
 [_itemMove, -1] call life_fnc_lockerManage;
 };

@@ -24,7 +24,5 @@ _itemArray pushBack format ["%1 (%2x)", _displayName, _curAmount];
 private _msg = format ["Der Spieler %1 (%2 - %3) hat Items in seinem Schliesfach verändert: %4", name _unit, getPlayerUID _unit, side _unit, _itemArray joinString ", "];
 ["LockerLog", _msg] call HC_fnc_Log;
 
-sleep 1;
-
 private _gear = [_unit] call HC_fnc_getPlayerGear;
 [getPlayerUID _unit, _gear] call HC_fnc_handleInv;

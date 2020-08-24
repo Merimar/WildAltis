@@ -111,7 +111,7 @@ class CarShops {
 			{ "C_Quadbike_01_F", "call life_mediclevel >= 3" },
 			{ "C_SUV_01_F", "call life_mediclevel >= 3" },
 			{ "C_Hatchback_01_sport_F", "call life_mediclevel >= 4" },
-			{ "C_Offroad_01_repair_F", "call life_mediclevel >= 1" },
+			{ "C_Offroad_01_F", "call life_mediclevel >= 1" },
 			{ "C_Truck_02_covered_F", "call life_mediclevel >= 1" },
 			{ "I_MRAP_03_F", "call life_mediclevel >= 6" },
 			{ "C_Van_02_medevac_F", "call life_mediclevel >= 2" },
@@ -176,7 +176,7 @@ class CarShops {
 		vehicles[] = {
 			{ "B_Heli_Light_01_F", "call life_coplevel >= 2" }, //Humming
 			{ "I_Heli_light_03_unarmed_F", "call life_coplevel >= 3" }, //Hellcat
-			{ "O_Heli_Light_02_unarmed_F", "call life_coplevel >= 4" }, //Orca Kein Skin
+			{ "O_Heli_Light_02_unarmed_F", "call life_coplevel >= 3" }, //Orca Kein Skin
 			{ "O_Heli_Transport_04_F", "call life_coplevel >= 5" }, //Taru Kein Skin
 			{ "B_Heli_Transport_03_F", "call life_coplevel >= 5" }, //Huron
 			{ "B_Heli_Transport_01_F", "call life_coplevel >= 5" }, //Ghosthawk

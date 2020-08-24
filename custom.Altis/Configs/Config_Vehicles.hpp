@@ -127,16 +127,6 @@ class LifeCfgVehicles {
 				condition = "playerSide in [civilian, east]";
 				price = 1;
 			};
-        };
-    };
-
-	class C_Offroad_01_repair_F { 
-        vItemSpace = 100;
-		price = 56800;
-		chopPrice = 21840;
-		legal = 1;
-		bankCapacity = 0;
-        class textures {	
 			class Feuerwehr {
 				name = "Feuerwehr";
 				path[] = {"Images\Medic\fw_Offroad_1.jpg"};
