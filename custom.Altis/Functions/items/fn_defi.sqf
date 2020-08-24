@@ -41,9 +41,9 @@ for "_i" from 0 to 1 step 0 do {
 player playActionNow "stop";
 life_action_inUse = false;
 life_interrupted = false;
+_target setVariable ["Reviving", nil, true];
 
 if(_cP < 1) exitWith {};
-_target setVariable ["Reviving", nil, true];
 if(!([false, "defibrilator", 1] call life_fnc_handleInv)) exitWith {};
 
 [player, "defibrilator"] remoteExec ["HC_fnc_useItem", HC_LIFE];

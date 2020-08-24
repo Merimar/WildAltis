@@ -196,7 +196,7 @@ switch (_code) do {
     case 34: {
         if(!_shift) exitWith {};
 		_handled = true;
-		if(isNull cursorObject || {!(cursorObject isKindOf "Man") || !(isPlayer cursorObject) || !(alive cursorObject) || (cursorObject distance player) > 4 || (animationState cursorObject) isEqualTo "Incapacitated" || currentWeapon player in ["", "Rangefinder"] || life_knockout || life_istazed || {player getVariable ["restrained",false]}}) exitWith {};
+		if(isNull cursorObject || {!(cursorObject isKindOf "Man") || !(isPlayer cursorObject) || !(alive cursorObject) || (cursorObject distance player) > 4 || (animationState cursorObject) isEqualTo "Incapacitated" || currentWeapon player in ["", "Rangefinder"] || life_knockout || life_istazed || {player getVariable ["restrained",false]} || !(isNull objectParent cursorObject)}) exitWith {};
 		[cursorObject] spawn life_fnc_knockoutAction;
     };
 

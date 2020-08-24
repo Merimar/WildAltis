@@ -33,6 +33,6 @@ for "_i" from 3 to 5 do {
 _items = [];
 {_items pushBack [_x, 0];} forEach (_loadout select 9);
 _returnloadout pushBack _items;
-//prim 0, seco 1, pistol 2, uniform 3, vest 4, backpack 5, primitems 6, secoitems 7, pistolitems 8, uniformitems 9, secoitems 10, pistolitems 11, items 12
+//prim 0, seco 1, pistol 2, uniform 3, vest 4, backpack 5, primitems 6, secoitems 7, pistolitems 8, uniformitems 9, vestitems 10, backpackitems 11, items 12
 
 _returnloadout

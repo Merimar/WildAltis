@@ -10,7 +10,7 @@ private _selection = lbCurSel _comboSelection;
 if(_selection isEqualTo -1) exitWith {};
 private _messageType = _comboSelection lbValue _selection;
 private _unitData = _listUnits lbData _index;
-private _allowed = toArray ('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz 0123456789ÄäÖöÜüß!#€()[]*+,-./<=>?@:&§^');
+private _allowed = toArray ('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz 0123456789ÄäÖöÜüß!#€()[]*+,-./<=>?@:&§^' + endl);
 private _msgArray = toArray (_message);
 
 if("call" in _message || "spawn" in _message) exitWith {["", "Du darfst call/spawn nicht in deiner Nachricht verwenden!"] spawn life_fnc_message;};
