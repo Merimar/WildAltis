@@ -13,5 +13,6 @@ private _vehicle = _playerVehicles select 0;
 
 if(_vehicle getVariable ["rent", false]) exitWith {["", "Das Fahrzeug ist nur gemietet"] spawn life_fnc_message;};
 if(!alive _vehicle) exitWith {["", "Das Fahrzeug ist zerstört"] spawn life_fnc_message;};
+if(_vehicle getVariable ["UranTime", 0] != 0) exitWith {["In dem Fahrzeug befindet sich noch ein Unstable uran. Das Item kann nur einem Fachmann übergeben werden.", "Unstable Uran"] spawn life_fnc_message;};
 
 [player, _vehicle] remoteExec ["HC_fnc_vehicleStore", HC_LIFE];

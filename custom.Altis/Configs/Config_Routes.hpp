@@ -34,7 +34,7 @@ class CfgFarmRoutes {
 	};
 	
 	class Meth {
-		name = "Methamphetaminroute";
+		name = "Methamphetaminroute [Wochenroute]";
 		fields[] = {"Farm_Methamphetamin_1"};
 		processors[] = {"Processor_Methamphetamin_1"};
 		vendors[] = {"Vendor_Methamphetamin_1"};
@@ -57,9 +57,9 @@ class CfgFarmRoutes {
 		vendors[] = {"Vendor_Uran_2"};
 		gatherItem = "uranU";
 		gatherSkill = "farmDrugs";
-		gatherTool = "";
-		farmZonesize = 30;
-		farmTime = 20;
+		gatherTool = "pickaxe";
+		farmZonesize = 75;
+		farmTime = 15;
 		processInput[] = {{"uranU", 1}};
 		processOutput[] = {{"uranStableP", 1}};
 		processText = "Verarbeite Stable Uran";
@@ -74,9 +74,9 @@ class CfgFarmRoutes {
 		vendors[] = {"Vendor_Uran_1"};
 		gatherItem = "";
 		gatherSkill = "farmDrugs";
-		gatherTool = "";
+		gatherTool = "pickaxe";
 		farmZonesize = 0;
-		farmTime = 20;
+		farmTime = 15;
 		processInput[] = {{"uranU", 1}};
 		processOutput[] = {{"uranUnstableP", 1}};
 		processText = "Verarbeite Unstable Uran";
@@ -170,7 +170,7 @@ class CfgFarmRoutes {
 	};
 	
 	class Titan {
-		name = "Titanroute [Wochenroute]";
+		name = "Titanroute";
 		fields[] = {"Farm_Titan_1"};
 		processors[] = {"Processor_Titan_1"};
 		vendors[] = {"Vendor_Titan_1"};

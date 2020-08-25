@@ -26,7 +26,6 @@ private _vest = vest player;
 private _backpack = backpack player;
 private _headgear = headgear player;
 private _glasses = goggles player;
-private _binocular = binocular player;
 private _uniformItems = uniformItems player;
 private _vestItems = vestItems player;
 private _backpackItems = backpackItems player;
@@ -41,7 +40,7 @@ private _primaryA = primaryWeaponItems  player;
 private _secondaryA = secondaryWeaponItems player;
 private _handgunA = handgunItems player;
 
-private _allItems = [_uniform] + [_vest] + [_backpack] + [_headgear] + [_glasses] + [_binocular] + [_primary] + [_secondary] + [_handgun] + _uniformItems + _vestItems + _backpackItems + _assignedItems + _primaryA + _secondaryA + _handgunA;
+private _allItems = [_uniform] + [_vest] + [_backpack] + [_headgear] + [_glasses] + [_primary] + [_secondary] + [_handgun] + _uniformItems + _vestItems + _backpackItems + _assignedItems + _primaryA + _secondaryA + _handgunA;
 
 {
 private _classname = _x select 0;

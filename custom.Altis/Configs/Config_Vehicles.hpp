@@ -740,7 +740,7 @@ class LifeCfgVehicles {
     };
 
 	class B_Heli_Transport_03_unarmed_F {
-		vItemSpace = 440;
+		vItemSpace = 500;
 		price = 10455000;
 		chopPrice = 0;
 		legal = 1;

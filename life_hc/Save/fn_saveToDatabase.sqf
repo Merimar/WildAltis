@@ -3,6 +3,15 @@ private _saveAll = param [1, false, [false]];
 
 private _target = if(_saveAll) then {playableUnits} else {[_pID]};
 
+if(_saveAll) then {
+{
+[getPlayerUID _x, side _x] call HC_fnc_savePlaytime;
+
+private _index = PAYCHECK_HANDLE findIf {_x select 0 == getPlayerUID _x};
+if(_index >= 0) then {terminate (PAYCHECK_HANDLE select _index select 1);};
+}forEach playableUnits;
+};
+
 {
 private _curTarget = _x;
 private _pID = if(_curTarget isEqualType "") then {_curTarget} else {getPlayerUID _x};

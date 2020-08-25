@@ -48,7 +48,7 @@ if (life_server_extDB_notLoaded isEqualType []) exitWith {};
 ["UPDATE hacklog SET amount = '0'", 1] call DB_fnc_asyncCall;
 ["UPDATE vehicles SET active = '0'", 1] call DB_fnc_asyncCall;
 
-["CALL clearLocker()", 1] call DB_fnc_asyncCall;
+//["CALL clearLocker()", 1] call DB_fnc_asyncCall;
 
 private _timeStamp = diag_tickTime;
 diag_log "----------------------------------------------------------------------------------------------------";
@@ -112,8 +112,6 @@ diag_log format ["Tower an Stelle: %1 removed", _position];
 
 
 diag_log "Objects hided succesfully";
-waitUntil {life_map_loaded};
-diag_log "Map loaded succesfully";
 
 [] execVM "\life_server\sendTimeUpdate.sqf"; //Zeit Update für Clients
 //[] execVM "\life_server\initTime.sqf"; //Restart Zeit Broadcast

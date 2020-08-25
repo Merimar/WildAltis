@@ -2,6 +2,7 @@ class CfgItemShop {
 	class med {
 		uniform[] = {
 			{ "U_I_CombatUniform", "Feuerwehr Uniform", 150, "true"},
+			{ "U_C_CBRN_Suit_01_White_F", "Strahlenschutz-Anzug", 25000, "true"},
 			{ "U_C_Scientist", "", 150, "true"}
 		};
 		
@@ -108,7 +109,6 @@ class CfgItemShop {
 			{ "G_Combat", "", 510, "true"},
 			{ "G_EyeProtectors_F", "", 2200, "true"},
 			{ "G_EyeProtectors_Earpiece_F", "", 2200, "true"},
-			{ "G_AirPurifyingRespirator_02_black_F", "", 2200, "true"},
 			{ "G_AirPurifyingRespirator_02_olive_F", "", 2200, "true"},
 			{ "G_AirPurifyingRespirator_01_F", "", 2200, "true"},
 			{ "G_AirPurifyingRespirator_02_sand_F", "", 2200, "true"},
@@ -116,7 +116,8 @@ class CfgItemShop {
 			{ "G_Blindfold_01_white_F", "", 2200, "true"},
 			{ "G_RegulatorMask_F", "", 2200, "true"},
 			{ "G_WirelessEarpiece_F", "", 2200, "true"},
-			{ "G_Respirator_yellow_F", "", 2200, "true"}
+			{ "G_Respirator_yellow_F", "", 2200, "true"},
+			{ "G_AirPurifyingRespirator_02_black_F", "Strahlenschutz-Maske", 2200, "true"}
 		};
 		
 		vest[] = {
@@ -443,7 +444,8 @@ class CfgItemShop {
 			{ "U_O_FullGhillie_lsh", "", 2500, "call life_coplevel >= 6"},
 			{ "U_O_FullGhillie_sard", "", 2500, "call life_coplevel >= 6"},
 			{ "U_O_FullGhillie_ard", "", 2500, "call life_coplevel >= 6"},
-			{ "U_O_T_FullGhillie_tna_F", "", 2500, "call life_coplevel >= 6"}
+			{ "U_O_T_FullGhillie_tna_F", "", 2500, "call life_coplevel >= 6"},
+			{ "U_C_CBRN_Suit_01_White_F", "Strahlenschutz-Anzug", 25000, "true"}
 		};
 		
 		headgear[] = {
@@ -520,7 +522,8 @@ class CfgItemShop {
 			{ "G_Bandanna_aviator", "", 590, "call life_coplevel >= 6"},
 			{ "G_Lowprofile", "", 590, "call life_coplevel >= 1"},
 			{ "G_Combat", "", 590, "call life_coplevel >= 1"},
-			{ "G_Diving", "", 590, "call life_coplevel >= 1"}
+			{ "G_Diving", "", 590, "call life_coplevel >= 1"},
+			{ "G_AirPurifyingRespirator_02_black_F", "Strahlenschutz-Maske", 25000, "true"}
 		};
 
 		vest[] = {
@@ -2737,7 +2740,9 @@ class CfgItemShop {
 		uniform[] = {
 			{ "U_C_CBRN_Suit_01_White_F", "Strahlenschutz-Anzug", 25000, "true"}
 		};
-		goggles[] = {};
+		goggles[] = {
+			{ "G_AirPurifyingRespirator_02_black_F", "Strahlenschutz-Maske", 25000, "true"}
+		};
 		vest[] = {};
 		backpack[] = {};
 		headgear[] = {};

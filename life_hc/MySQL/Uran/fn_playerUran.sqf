@@ -1,5 +1,5 @@
 private _unit = param [0, objNull, [objNull]];
-private _endTime = servertime + (5 * 60);
+private _endTime = servertime + (6 * 60);
 
 if((_unit getVariable ["UranTime", 0]) != 0) exitWith {};
 

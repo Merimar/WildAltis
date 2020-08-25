@@ -3,7 +3,7 @@ disableSerialization;
 
 if(isNull LIFEdisplay) then {10 cutRsc ["playerHUD", "PLAIN", 2, false];};
 
-private _time = bank_obj getVariable ["time", []];
+private _time = bank_obj getVariable ["time", [0, 0, 0, 0, 16]];
 private _jahr = _time select 0;
 private _monat = _time select 1;
 private _tag = _time select 2;

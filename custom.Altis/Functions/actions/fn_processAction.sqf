@@ -4,6 +4,7 @@ private _vendor = param [0, objNull];
 private _type = param [1, ""];
 
 if(isNull _vendor || _type isEqualTo "" || (player distance _vendor) > 10 || !isNull objectParent player || !isClass (missionConfigFile >> "CfgFarmRoutes" >> _type) || life_action_inUse || life_is_processing) exitWith {};
+if(_type in ["UranUnstable"] && NIGHT) exitWith {["Die Uranfabrik hat nachts geschlossen", "Unstable Uran"] spawn life_fnc_message;};
 
 private _config = missionConfigFile >> "CfgFarmRoutes" >> _type;
 private _processInput = getArray (_config >> "processInput");

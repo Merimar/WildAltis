@@ -69,5 +69,7 @@ if(STONE_COUNTER >= STONE_MAX_COUNTER) then {
 titleText [format ["Du hast %1 %2 gesammelt", _diff, _displayName], "PLAIN"];
 [player, configName _route, _diff] remoteExec ["HC_fnc_gather", HC_LIFE];
 
+if((configName _route) == "UranStable") then {["ACHTUNG: Solltest du die Unstable Route wählen, lese dir alle Informationen im FAQ dazu durch!", "Uran"] spawn life_fnc_message;};
+
 if((configName _route) in ["Helium", "Dunkle", "Relikt"]) exitWith {};
 [_farmSkill] call life_fnc_addSkill;

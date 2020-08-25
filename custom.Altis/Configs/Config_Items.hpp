@@ -608,7 +608,7 @@ class Items {
 	class uranStableP {
 		name = "Uran (Stable)";
 		illegal = true;
-		weight = 80;
+		weight = 30;
 		type = "MARKT";
 		buyPrice = -1;
 		sellPrice = 130000;
@@ -620,7 +620,7 @@ class Items {
 	class uranUnstableP {
 		name = "Uran (Unstable)";
 		illegal = true;
-		weight = 80;
+		weight = 30;
 		type = "MARKT";
 		buyPrice = -1;
 		sellPrice = 500000;

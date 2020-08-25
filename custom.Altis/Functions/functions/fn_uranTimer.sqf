@@ -21,6 +21,9 @@ _timer ctrlSetPosition [0.0204688 * safezoneW + safezoneX, (0.2778 * safezoneH +
 _clock ctrlSetPosition [0.00499997 * safezoneW + safezoneX, (0.291 * safezoneH + safezoneY) + 0.2, 0.04, 0.045];
 };
 
+_timer ctrlCommit 0;
+_clock ctrlCommit 0;
+
 for "_i" from 0 to 1 step 0 do {
     if(isNull _uiDisp) then {
         _overlay cutRsc ["life_timer","PLAIN", -1, true];
@@ -34,10 +37,13 @@ for "_i" from 0 to 1 step 0 do {
 			_timer ctrlSetPosition [0.0204688 * safezoneW + safezoneX, (0.2778 * safezoneH + safezoneY) + 0.2, 0.12 * safezoneW, 0.055 * safezoneH];
 			_clock ctrlSetPosition [0.00499997 * safezoneW + safezoneX, (0.291 * safezoneH + safezoneY) + 0.2, 0.04, 0.045];
 		};
+		_timer ctrlCommit 0;
+		_clock ctrlCommit 0;
     };
     if(round (_time - servertime) < 1) exitWith {};
 	if(isNull _object) exitWith {};
 	if(_object getVariable ["UranTime", 0] isEqualTo 0) exitWith {};
+	if(isNull objectParent player && _isVehicle) exitWith {};
     _timer ctrlSetText format["%1 - %2", _prefix, [(_time - servertime),"MM:SS.MS"] call BIS_fnc_secondsToString];
     sleep 0.08;
 };
@@ -76,10 +82,12 @@ STRAHLUNG = true;
 private _uiDisp = uiNamespace getVariable "life_timer";
 private _timer = _uiDisp displayCtrl 38301;
 private _clock = _uiDisp displayCtrl 38302;
-private _time = time + 60;
+private _time = time + 20;
 
 _timer ctrlSetPosition [0.0204688 * safezoneW + safezoneX, (0.2778 * safezoneH + safezoneY) + 0.3, 0.12 * safezoneW, 0.055 * safezoneH];
 _clock ctrlSetPosition [0.00499997 * safezoneW + safezoneX, (0.291 * safezoneH + safezoneY) + 0.3, 0.04, 0.045];
+_timer ctrlCommit 0;
+_clock ctrlCommit 0;
 
 for "_i" from 0 to 1 step 0 do {
     if(isNull _uiDisp) then {
@@ -91,14 +99,17 @@ for "_i" from 0 to 1 step 0 do {
 		
 		_timer ctrlSetPosition [0.0204688 * safezoneW + safezoneX, (0.2778 * safezoneH + safezoneY) + 0.3, 0.12 * safezoneW, 0.055 * safezoneH];
 		_clock ctrlSetPosition [0.00499997 * safezoneW + safezoneX, (0.291 * safezoneH + safezoneY) + 0.3, 0.04, 0.045];
+		
+		_timer ctrlCommit 0;
+		_clock ctrlCommit 0;
     };
     if(round (_time - time) < 1) exitWith {};
-	if(life_isDead || !(player inArea "Zone_Verstrahlt_1" || player inArea "Zone_Verstrahlt_2" || player inArea "Zone_Verstrahlt_3" || player inArea "Zone_Verstrahlt_4" || player inArea "Zone_Verstrahlt_5")) exitWith {};
+	if(life_isDead || !(player inArea "Zone_Verstrahlt_1" || player inArea "Zone_Verstrahlt_2" || player inArea "Zone_Verstrahlt_3" || player inArea "Zone_Verstrahlt_4" || player inArea "Zone_Verstrahlt_5") || (uniform player == "U_C_CBRN_Suit_01_White_F" && goggles player == "G_AirPurifyingRespirator_02_black_F")) exitWith {};
     _timer ctrlSetText format["%1 - %2", "Strahlung", [(_time - time),"MM:SS.MS"] call BIS_fnc_secondsToString];
     sleep 0.08;
 };
 
-if(player inArea "Zone_Verstrahlt_1" || player inArea "Zone_Verstrahlt_2" || player inArea "Zone_Verstrahlt_3" || player inArea "Zone_Verstrahlt_4" || player inArea "Zone_Verstrahlt_5") then {STRAHLUNG = false;};
+if(!(player inArea "Zone_Verstrahlt_1" || player inArea "Zone_Verstrahlt_2" || player inArea "Zone_Verstrahlt_3" || player inArea "Zone_Verstrahlt_4" || player inArea "Zone_Verstrahlt_5") || (uniform player == "U_C_CBRN_Suit_01_White_F" && goggles player == "G_AirPurifyingRespirator_02_black_F")) then {STRAHLUNG = false;};
 
 8 cutText["","PLAIN"];
 STRAHLUNG_THREAD = objNull;
@@ -108,13 +119,13 @@ STRAHLUNG_THREAD = objNull;
 while {true} do {
 waitUntil {isNull STRAHLUNG_THREAD && alive player && (player inArea "Zone_Verstrahlt_1" || player inArea "Zone_Verstrahlt_2" || player inArea "Zone_Verstrahlt_3" || player inArea "Zone_Verstrahlt_4" || player inArea "Zone_Verstrahlt_5")};
 
-if(STRAHLUNG && uniform player == "U_C_CBRN_Suit_01_White_F") then {STRAHLUNG = false;};
-if(STRAHLUNG && uniform player != "U_C_CBRN_Suit_01_White_F") then {
+if(STRAHLUNG && (uniform player == "U_C_CBRN_Suit_01_White_F" && goggles player == "G_AirPurifyingRespirator_02_black_F")) then {STRAHLUNG = false;};
+if(STRAHLUNG && !(uniform player == "U_C_CBRN_Suit_01_White_F" && goggles player == "G_AirPurifyingRespirator_02_black_F")) then {
 ["Du bist durch eine zu hohe Ladung an Strahlung gestorben.", "Verstrahltes Gebiet"] spawn life_fnc_message;
 [player] remoteExec ["HC_fnc_strahlungDeath", HC_LIFE];
 STRAHLUNG = false;
 };
 
-if(uniform player != "U_C_CBRN_Suit_01_White_F") then {STRAHLUNG_THREAD = [] spawn STRAHLUNG_SCRIPT;};
+if(!(uniform player == "U_C_CBRN_Suit_01_White_F" && goggles player == "G_AirPurifyingRespirator_02_black_F") && alive player) then {STRAHLUNG_THREAD = [] spawn STRAHLUNG_SCRIPT;};
 };
 };
