@@ -26,4 +26,9 @@ playSound "buy";
 _playerMoney ctrlSetStructuredText parseText format ["Geld: <t color='#60F73B'>€%1</t>", [CASH] call life_fnc_numberText];
 [player, _classname, _amount, _price, SHOP_CONFIG, SHOP_FILTER] remoteExec ["HC_fnc_buyWeapon", HC_LIFE];
 
-sleep 0.5;
+private _badMagazines = ["100Rnd_65x39_caseless_mag","100Rnd_65x39_caseless_khaki_mag","100Rnd_65x39_caseless_black_mag","100Rnd_65x39_caseless_mag_Tracer","100Rnd_65x39_caseless_khaki_mag_tracer","100Rnd_65x39_caseless_black_mag_tracer","75Rnd_762x39_Mag_F","75Rnd_762x39_Mag_Tracer_F","75rnd_762x39_AK12_Mag_F","75rnd_762x39_AK12_Mag_Tracer_F","75rnd_762x39_AK12_Lush_Mag_F","75rnd_762x39_AK12_Lush_Mag_Tracer_F","75rnd_762x39_AK12_Arid_Mag_F","75rnd_762x39_AK12_Arid_Mag_Tracer_F"];
+private _badWeapons = ["arifle_MX_SW_F", "arifle_MX_SW_khk_F", "arifle_MX_SW_Black_F", "arifle_RPK12_F", "arifle_RPK12_lush_F", "arifle_RPK12_arid_F"];
+
+sleep 1;
+
+if((primaryWeaponMagazine player) in _badMagazines && (primaryWeapon player) in _badWeapons) then {player setAmmo [primaryWeapon player, 0];};

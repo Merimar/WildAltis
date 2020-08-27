@@ -61,7 +61,7 @@ private _questions = [
 ["Mit welcher Taste kann ich als Polizist Schranken von innerhalb eines Fahrzeuges öffnen?","Mit der Taste Q auf deiner Tastatur."], 
 ["Mit welcher Taste komme ich in den Kofferraum meines Autos?","Mit der Taste T auf deiner Tastaur."], 
 ["Wie kann ich einen Spieler festnehmen?"," Mit der Tastenkombination 'Shift + R'."], 
-["Was ist eine Sperrzone?","Ein Bereich der von der Polizei für eine nicht bestimmte Zeit zum Sperrgebiet gemacht wird, durch betreten der Zone besteht die Chance von Polizeilichen Maßnahmen betroffen zu werden z.B Festnahmen, Beschuss."]
+["Was ist eine Sperrzone?","Ein Bereich der von der Polizei für eine nicht bestimmte Zeit zum Sperrgebiet gemacht wird, durch betreten der Zone besteht die Chance von Polizeilichen Maßnahmen betroffen zu werden z.B Festnahmen, Beschuss."],
 ["Was ist das Verstrahlte Gebiet?", "In diesem Gebiet müsst ihr einen Strahlenschutzanzug und Maske tragen, da ihr ansonsten durch Radioaktivität sterbt."],
 ["Was ist die Unstable Uran Route?", "Unstable Uran ist eine Risiko Route. Sobald das Item verarbeitet ist zählt ein Timer von 7 Minuten runter. Solltest du das Item nicht rechtzeitig verkaufen, stirbst du. Packst du das Item in ein Fahrzeug zählt auch ein Timer für dein Fahrzeug. Packst du mehrere Items in dein Fahrzeug erweitert sich der Timer pro Item um 45 Sekunden. Durchsucht die Polizei dein Fahrzeug stoppt der Timer, da das Item Illegal ist. Das gleiche passiert wenn du durchsucht wirst. Solltest du überfallen werden empfehlen wir dir, den Schlüssel für dein Fahrzeug zu übergeben um dein Fahrzeug zu retten!"]
 ];

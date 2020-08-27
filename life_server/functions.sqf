@@ -8,6 +8,10 @@ if((unitRecoilCoefficient player) != 0.9) then {
 player setUnitRecoilCoefficient 1;
 
 {player reveal _x} forEach allUnits;
+
+if(playerSide != side player) then {
+if(playerSide == west) then {[player] joinSilent COP_GROUP;}else {[player] joinSilent MEDIC_GROUP;};
+};
 ";
 
 publicVariable "life_fnc_clearWeather";

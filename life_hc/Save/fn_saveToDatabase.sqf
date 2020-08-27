@@ -3,15 +3,6 @@ private _saveAll = param [1, false, [false]];
 
 private _target = if(_saveAll) then {playableUnits} else {[_pID]};
 
-if(_saveAll) then {
-{
-[getPlayerUID _x, side _x] call HC_fnc_savePlaytime;
-
-private _index = PAYCHECK_HANDLE findIf {_x select 0 == getPlayerUID _x};
-if(_index >= 0) then {terminate (PAYCHECK_HANDLE select _index select 1);};
-}forEach playableUnits;
-};
-
 {
 private _curTarget = _x;
 private _pID = if(_curTarget isEqualType "") then {_curTarget} else {getPlayerUID _x};
@@ -20,6 +11,12 @@ private _saveState = [_pID] call HC_fnc_getSave;
 private _pSide = [_saveState select 2] call HC_fnc_getSideID;
 private _groupSide = [_saveState select 2] call HC_fnc_getGroupSideID;
 private _saveStatus = _saveState select SAVE_STATE_INDEX;
+
+if(_saveAll) then {
+[_pID, _saveState select 2] call HC_fnc_savePlaytime;
+private _index = PAYCHECK_HANDLE findIf {_x select 0 == _pID};
+if(_index >= 0) then {terminate (PAYCHECK_HANDLE select _index select 1);};
+};
 
 if(count _saveStatus > 0) then {
 

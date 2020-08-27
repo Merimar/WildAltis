@@ -41,6 +41,7 @@ if(life_action_inUse && !life_interrupted && _code in _interruptionKeys) then {[
 if(!(count (actionKeys "User10") isEqualTo 0) && {(inputAction "User10" > 0)}) exitWith {if(!life_action_inUse) then {[] call life_fnc_actionKeyHandler;};};
 if(_code in _getOver && JAIL_TIME > 0) then {_handled = true;};
 if(_code in _cV) then {_handled = true;};
+if(_code == _interactionKey && {player getVariable ["execution",false]}) then {_handled = true;}; 
 
 if(!_handled) then {
 switch (_code) do {
