@@ -11,7 +11,7 @@ for "_i" from 0 to 2 do {
 		[] 
 	} else { 
 		_array = [];
-		for "_i2" from 0 to 6 do {
+		for "_i2" from 1 to 6 do {
 			if(((_loadout select _i) select _i2) isEqualType "") then {
 				_array pushBack [((_loadout select _i) select _i2), 0];
 			} else {
@@ -32,6 +32,9 @@ for "_i" from 3 to 5 do {
 };
 _items = [];
 {_items pushBack [_x, 0];} forEach (_loadout select 9);
+if(count (_loadout select 8) > 0) then {
+	_items pushBack [(_loadout select 8) select 0, 0];
+};
 _returnloadout pushBack _items;
 //prim 0, seco 1, pistol 2, uniform 3, vest 4, backpack 5, primitems 6, secoitems 7, pistolitems 8, uniformitems 9, vestitems 10, backpackitems 11, items 12
 
