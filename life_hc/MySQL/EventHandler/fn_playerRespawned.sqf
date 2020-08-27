@@ -23,4 +23,14 @@ if(_notrufIndex != -1) then {(_emergencies select _notrufIndex) set [5, true];ba
 
 if (!isNull _corpse) then {deleteVehicle _corpse;};
 
+private _allVirtaboRewards = "getText (_x >> 'type') == 'VIRT_ABO'" configClasses (missionConfigFile >> "CfgRewards");
+
+{
+private _isEnabled = [_pID, configName _x] call HC_fnc_getReward;
+if(_isEnabled) then {
+private _value = (getArray (_x >> "value"));
+[getPlayerUID _unit, _value select 0, _value select 1, true, false] call HC_fnc_handleVirt;
+};
+}forEach _allVirtaboRewards;
+
 ["RespawnLog", format ["%1 (%2 - %3) ist respawnt", name _unit, getPlayerUID _unit, side _unit]] call HC_fnc_Log;

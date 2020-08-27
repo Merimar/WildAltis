@@ -369,6 +369,14 @@ class CfgFunctions
 			class chargeZenti {};
 			class sellZenti {};
         };
+
+		class Reward {
+			file = "\life_hc\MySQL\Reward";
+			class claimReward;
+			class getHigherPaycheck;
+			class getReward;
+			class rewardQuery;
+		};
 		
 		class Config {
             file = "\life_hc\Config";

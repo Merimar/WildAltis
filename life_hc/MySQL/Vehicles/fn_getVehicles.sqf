@@ -18,8 +18,9 @@ private _color = _x select 4;
 private _material = _x select 5;
 private _insurance = _x select 6;
 private _impounded = _x select 7;
+private _abo = _x select 8;
 
-if(_active isEqualTo 0 && _type == _vType) then {_return pushBack [_id, _classname, _color, _material, _insurance, _impounded];};
+if(_active isEqualTo 0 && _type == _vType && _abo isEqualTo 0) then {_return pushBack [_id, _classname, _color, _material, _insurance, _impounded];};
 }forEach _databaseInformation;
 
 [_return, true] remoteExec ["life_fnc_getUpdateGarage",_unit];

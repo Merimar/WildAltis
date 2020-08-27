@@ -19,7 +19,7 @@ respawndelay = 0;
 disabledAI = 1;
 disableChannels[] = {{0,true,true},{1,false,true},{2,true,true}};
 respawnDialog = 0;
-allowFunctionsRecompile = 0;
+allowFunctionsRecompile = 1;
 respawnOnStart = -1;
 disableRandomization[] = {"All"};
 showHUD[] = {true,true,false,false,true,false,false,true};
@@ -30,6 +30,8 @@ corpseLimit = 150;
 corpseRemovalMinTime = 999;
 corpseRemovalMaxTime = 9999;
 unsafeCVL = 1;
+
+enableDebugConsole[] = {"76561198130513131"};
 
 #include "Configs\Config_Master.hpp"
 #include "Dialog\MasterHandler.hpp"
@@ -53,10 +55,10 @@ class CfgDisabledCommands
 		};
 	};
 	
-	class BIS_fnc_debugConsoleExec {
+	/*class BIS_fnc_debugConsoleExec {
 		class SYNTAX1 {
 			targets[] = {0, 0, 0};
 		};
-	};
+	};*/
 
 };

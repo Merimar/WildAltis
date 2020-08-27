@@ -25,6 +25,15 @@ private _handle = switch (playerSide) do {
 	case west : {[] spawn life_fnc_copLoadout;};
 };
 
+private _allPaycheckRewards = "getText (_x >> 'type') == 'VIRT_ABO'" configClasses (missionConfigFile >> "CfgRewards");
+{
+	private _isEnabled = [_pID, configName _x] call HC_fnc_getReward;
+	if(_isEnabled) then {
+		private _rewardValue = (getArray (_x >> "value"));
+		[true, _rewardValue select 0, _rewardValue select 1] call life_fnc_handleInv;
+	};
+} forEach _allPaycheckRewards;
+
 closeDialog 0;
 waitUntil {scriptDone _handle};
 

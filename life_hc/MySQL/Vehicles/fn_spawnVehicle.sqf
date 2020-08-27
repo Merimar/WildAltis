@@ -2,11 +2,22 @@
 private _unit = param [0, objNull, [objNull]];
 private _vUID = param [1, 0, [0]];
 private _sp = param [2, "", ["", []]];
+private _abo = param [3, "", [""]];
 
 private _isHacker = [[], _unit, remoteExecutedOwner, "fn_spawnVehicle"] call HC_fnc_checkSQLBreak;
 if(_isHacker) exitWith {};
 
 private _pID = getPlayerUID _unit;
+
+if(_abo != "") then {
+	private _query = format["SELECT vuid FROM vehicles WHERE owner_id = '%1' AND abo = '%2' AND active = 0 AND deleted_at IS NULL", _pID, (_abo splitString "_") select 1];
+	private _queryResult = [_query, 2] call HC_fnc_asyncCall;
+	if((count _queryResult) > 0) then {
+		_vUID = (_queryResult select 0);
+	};
+};
+if(_vUID isEqualTo 0) exitWith {};
+
 private _pSide = side _unit;
 private _pSideID = [_pSide] call HC_fnc_getGroupSideID;
 private _databaseInformation = [_vUID, _pID, _pSide] call HC_fnc_getVehicleDatabase;
@@ -22,19 +33,21 @@ private _insuranceName = _insurance isEqualTo 1;
 if(_active isEqualTo 1) exitWith {};
 if(_impounded isEqualTo 1) exitWith {};
 
-private _storageFee = [_classname, side _unit] call HC_fnc_getStorageFee;
-private _setUp = [_color, _material, _insuranceName];
-private _pMoney = [_pID, "bank"] call HC_fnc_getMoney;
+if(_abo == "") then {
+	private _storageFee = [_classname, side _unit] call HC_fnc_getStorageFee;
+	private _setUp = [_color, _material, _insuranceName];
+	private _pMoney = [_pID, "bank"] call HC_fnc_getMoney;
 
-if(_sp in ["Spawn_GE_CarGar_1", "gang_capture"]) then {
-	_storageFee = 0;
-};
+	if(_sp in ["Spawn_GE_CarGar_1", "gang_capture"]) then {
+		_storageFee = 0;
+	};
 
-if(_pMoney < _storageFee) exitWith {
-_reason1 = format ["Der Spieler %1 (%2 - %3) wollte ein Fahrzeug ausparken, kann sich die Ausparkkosten aber nicht leisten (%4 < %5)", name _unit, getPlayerUID _unit, side _unit, [_pMoney] call HC_fnc_numberSafe, [_storageFee] call HC_fnc_numberSafe];
-_reason2 = format ["Spieler welcher mit RemoteExecutedOwner rausgefunden wurde: %1", name _unit];
-[_unit, "VehicleUnimpound Hack", [_reason1,_reason2], true] call HC_fnc_reportHacker;
-[format["Bei dem Spieler %1 wurde ein VehicleUnimpound Hack festgestellt", name _unit], false] call HC_fnc_adminMessage;
+	if(_pMoney < _storageFee) exitWith {
+	_reason1 = format ["Der Spieler %1 (%2 - %3) wollte ein Fahrzeug ausparken, kann sich die Ausparkkosten aber nicht leisten (%4 < %5)", name _unit, getPlayerUID _unit, side _unit, [_pMoney] call HC_fnc_numberSafe, [_storageFee] call HC_fnc_numberSafe];
+	_reason2 = format ["Spieler welcher mit RemoteExecutedOwner rausgefunden wurde: %1", name _unit];
+	[_unit, "VehicleUnimpound Hack", [_reason1,_reason2], true] call HC_fnc_reportHacker;
+	[format["Bei dem Spieler %1 wurde ein VehicleUnimpound Hack festgestellt", name _unit], false] call HC_fnc_adminMessage;
+	};	
 };
 
 private _spInformation = [];
@@ -89,7 +102,7 @@ _vehicle lock 2;
 _vehicle setVariable ["VehicleSetup", _setUp, true];
 _vehicle setVariable ["trunk_in_use", false, true];
 _vehicle setVariable ["vehicle_info_owners", [[_pID, name _unit]], true];
-_vehicle setVariable ["dbInfo", [_pID, _pSide, _vUID], true];
+_vehicle setVariable ["dbInfo", [_pID, _pSide, _vUID, _abo], true];
 _vehicle enableRopeAttach false;
 clearWeaponCargo _vehicle;
 clearMagazineCargo _vehicle;

@@ -7,7 +7,7 @@ class Rewardbox {
 		
 		class Text_Info1: Trans_TextHeader {
 			idc = -1;
-			text = "Hier findest du eine Übersicht über alle deine aktiven Belohnunen:";
+			text = "Hier findest du eine Übersicht über alle deine aktiven Belohnungen:";
 			x = 0.221562 * safezoneW + safezoneX;
 			y = 0.192 * safezoneH + safezoneY;
 			w = 0.551719 * safezoneW;

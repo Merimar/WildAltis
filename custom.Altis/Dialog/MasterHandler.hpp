@@ -33,6 +33,7 @@
 #include "Trunk.hpp"
 #include "UBahn.hpp"
 #include "Weaponshop.hpp"
+#include "Rewardbox.hpp"
 
 #include "zinv\Affiliate.hpp"
 #include "zinv\Bugtracker.hpp"

@@ -727,6 +727,17 @@ class CfgFunctions {
 			class zentiTimer {};
 		};
 
+		class Reward {
+			file = "Functions\reward";
+			class claimReward;
+			class getReward;
+			class openReward;
+			class rewardLBChange;
+			class openRewardBox;
+			class rewardBoxLBChange;
+			class rewardActivate;
+		}
+
 		class Dialog_Controls {
 			file = "Dialog\function";
 			class bankDeposit {};

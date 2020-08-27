@@ -95,8 +95,8 @@ _query = format["SELECT player_names.name, player_affiliate_referrals.referrer_i
 private _affiliatePlayersQuery = [_query, 2, true] call HC_fnc_asyncCall;
 
 /** REWARDS **/
-//private _rewardQuery = [_pID] call HC_fnc_rewardQuery;
-_rewardQuery = [[], 0];
+private _rewardQuery = [_pID] call HC_fnc_rewardQuery;
+//_rewardQuery = [[], 0];
 
 /** GANG **/
 _query = format["SELECT gangs.name, gangs.owner_id, gangs.max_members, gangs.bank_balance, gangs.uid FROM player_gang LEFT JOIN gangs ON player_gang.gang_id = gangs.uid WHERE player_gang.player_id = '%1' AND player_gang.side_id = '%2' AND gangs.deleted_at IS NULL", _pID, _sideID];
