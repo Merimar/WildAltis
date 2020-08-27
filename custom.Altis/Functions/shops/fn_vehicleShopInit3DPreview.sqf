@@ -1,3 +1,5 @@
+setViewDistance 300;
+
 life_preview_3D_vehicle_cam = "camera" camCreate [11141, 22704, 0];
 life_preview_3D_vehicle_cam cameraEffect ["Internal", "BACK"];
 life_preview_3D_vehicle_cam camSetFocus [-1, -1];
