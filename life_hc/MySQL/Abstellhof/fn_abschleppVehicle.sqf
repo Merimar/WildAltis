@@ -3,7 +3,7 @@ private _unit = param [1, objNull, [objNull]];
 private _action = if(param [2, false, [false]]) then {1} else {0};
 
 if(isNull _vehicle) exitWith {};
-private _dbInfo = _vehicle getVariable["dbInfo", []];
+private _dbInfo = _vehicle getVariable ["dbInfo", []];
 private _rent = _vehicle getVariable ["rent", false];
 
 private _info = if(_rent) then {[]} else {[_dbInfo param [0, ""], _dbInfo param [1, ""], _dbInfo param [2, ""]]};
@@ -23,9 +23,7 @@ _reason2 = format ["Spieler welcher mit RemoteExecutedOwner rausgefunden wurde: 
 if(alive _vehicle) then {
 if(_rent) exitWith {
 private _vOtherInfo = _vehicle getVariable ["vehicle_info_owners", []];
-deleteVehicle _vehicle;
-[getPlayerUID _unit, "impound"] call HC_fnc_addSkill;
-_msg = format ["Der Spieler %1 (%2 - %3) hat ein gemietetes Fahrzeug des Spielers %4 (%5) abgeschleppt", name _unit, getPlayerUID _unit, side _unit, _vOtherInfo param [0, []] param [1, "Kein Name"], _vOtherInfo param [0, []] param [0, "Keine PID"]];
+private _msg = format ["Der Spieler %1 (%2 - %3) hat ein gemietetes Fahrzeug des Spielers %4 (%5) abgeschleppt", name _unit, getPlayerUID _unit, side _unit, _vOtherInfo param [0, []] param [1, "Kein Name"], _vOtherInfo param [0, []] param [0, "Keine PID"]];
 ["VehicleImpoundLog", _msg] call HC_fnc_Log;
 };
 

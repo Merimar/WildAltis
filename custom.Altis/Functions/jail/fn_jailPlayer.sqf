@@ -4,7 +4,7 @@ private _display = findDisplay 2000;
 
 if(isNull _criminal || isNull _display || playerSide != west || {_criminal distance player > 10 || (side _criminal) in [west, independent]}) exitWith {};
 private _jailLocations = getArray (missionConfigFile >> "Life_Settings" >> "jail_locations");
-private _countCheck = _jailLocations select {(markerPos _x) distance player < 100};
+private _countCheck = _jailLocations select {(markerPos _x) distance player < 250};
 if(count _countCheck <= 0) exitWith {["Du bist nicht in der Nähe eines HQ's", "Gefängnis"] spawn life_fnc_message;};
 private _time = parseNumber (ctrlText 2002);
 

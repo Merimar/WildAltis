@@ -441,6 +441,7 @@ class CfgFunctions {
 			class headline {};
 			class message {};
 			class notification_system {};
+			class showInfo {};
 			class showNotification {};
 			class sideMessage {};
 			class tileMessage {};

@@ -17,8 +17,10 @@ private _defaultMedic = if(_pID in _admins) then {9} else {0};
 private _query = format ["INSERT INTO players (steam_id) VALUES ('%1')", _pID];
 [_query, 1] call HC_fnc_asyncCall;
 
+/*
 private _query = format ["INSERT INTO rewards (player_id, next_seen) VALUES ('%1', 'now() + INTERVAL 1 DAY')", _pID];
 [_query, 1] call HC_fnc_asyncCall;
+*/
 
 sleep 1;
 

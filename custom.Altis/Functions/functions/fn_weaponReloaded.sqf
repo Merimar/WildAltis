@@ -16,4 +16,3 @@ _bad = true;
 
 if(_bad) then {["Du kannst dieses Magazin nicht in diese Waffe laden", "Magazin verboten"] spawn life_fnc_message;};
 [player, _weapon, _oldMagazine, _newMagazine] remoteExec ["HC_fnc_weaponReloaded", HC_LIFE];
-

@@ -176,7 +176,7 @@ waituntil {isNull (finddisplay 602)};
 	addMissionEventHandler[ "Draw3D", {
 		_vehList = [];
 		_group = group player;
-		_units = (units _group) select {_x != player && !(_x getVariable ["restrained", false]) && alive _x && _x != AUSWEIS_OBJECT};
+		_units = (units _group) select {_x != player && !(_x getVariable ["restrained", false]) && alive _x && _x != AUSWEIS_OBJECT && !(isNull _x)};
 		{
 			_vehicle = vehicle _x;
 			_getPos = visiblePosition _vehicle;

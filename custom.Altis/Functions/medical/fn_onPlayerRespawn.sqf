@@ -17,7 +17,7 @@ player setVariable ["transporting", false, true];
 player setVariable ["execution", false, true];
 player allowDamage false;
 
-_unit addRating 1e12;
+player addRating 1e12;
 player playMoveNow "AmovPpneMstpSrasWrflDnon";
 
 [CURRENT_DEAD_UNIT, CURRENT_DEAD_KILLER, player] remoteExec ["HC_fnc_playerKilled", HC_LIFE];
