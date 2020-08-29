@@ -78,6 +78,7 @@ class CfgFunctions {
 			class openHackMenu {};
 			class showHacks {};
 			class simpleCheck {};
+			class adminMapMarkers {};
 		};
 		
 		class Ausdauer {
