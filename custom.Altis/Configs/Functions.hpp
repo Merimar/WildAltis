@@ -279,6 +279,7 @@ class CfgFunctions {
 			class initCop {};
 			class initMedic {};
 			class initWeather {};
+			class initEnvironment { preInit = 1; };
 			class setupActions {};
 			class setupEVH {};
 			class survival {};
