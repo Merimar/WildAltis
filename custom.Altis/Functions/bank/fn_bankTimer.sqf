@@ -40,6 +40,7 @@ for "_i" from 0 to 1 step 0 do {
 	if(life_isDead) exitWith {_bad = true;};
 	if(player getVariable ["restrained", false]) exitWith {_bad = true;};
 	if(life_istazed) exitWith {_bad = true;};
+    if(!(isNull (objectParent player))) exitWith {_bad = true;};
 };
 5 cutText ["","PLAIN"];
 
