@@ -612,7 +612,7 @@ class LifeCfgVehicles {
 		bankCapacity = 0;
         class textures {
 			class PremTron {
-				name = "Digi Green";
+				name = "Wild";
 				path[] = {"Images\Donator\Tempest0.jpg","Images\Donator\Tempest1.jpg","Images\Donator\Tempest2.jpg","Images\Donator\Tempest3.jpg","Images\Donator\Tempest4.jpg"};
 				condition = "call life_donorlevel >= 3";
 				price = 1;

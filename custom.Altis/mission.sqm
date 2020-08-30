@@ -8,7 +8,7 @@ class EditorData
 	toggles=585;
 	class ItemIDProvider
 	{
-		nextID=34374;
+		nextID=34375;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=691;
+		nextID=696;
 	};
 	class Camera
 	{
-		pos[]={12871.183,110.71786,17663.18};
-		dir[]={-0.37511748,-0.89148104,0.2545684};
-		up[]={-0.73766649,0.45294714,0.50060821};
-		aside[]={0.56155199,-8.5619977e-006,0.82750839};
+		pos[]={12826.864,46.133308,17568.631};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
@@ -793,7 +793,7 @@ class Mission
 			type="loc_Tree";
 			colorName="Color3_FD_F";
 			id=5599;
-			atlOffset=5.3946953;
+			atlOffset=5.7926579;
 		};
 		class Item36
 		{
@@ -3770,6 +3770,7 @@ class Mission
 			type="c_car";
 			colorName="ColorWhite";
 			id=20337;
+			atlOffset=0.11392212;
 		};
 		class Item303
 		{
@@ -9466,7 +9467,7 @@ class Mission
 			name="Infosigns ";
 			class Entities
 			{
-				items=357;
+				items=358;
 				class Item0
 				{
 					dataType="Object";
@@ -13239,7 +13240,7 @@ class Mission
 					};
 					id=27521;
 					type="Land_InfoStand_V2_F";
-					atlOffset=4.3975477;
+					atlOffset=4.3899865;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -13765,7 +13766,7 @@ class Mission
 					};
 					id=27531;
 					type="Land_InfoStand_V2_F";
-					atlOffset=0.11354065;
+					atlOffset=0.11343384;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -16886,7 +16887,7 @@ class Mission
 					};
 					id=27595;
 					type="Land_InfoStand_V2_F";
-					atlOffset=0.39645624;
+					atlOffset=0.39599991;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -17441,6 +17442,7 @@ class Mission
 					};
 					id=27607;
 					type="Land_InfoStand_V2_F";
+					atlOffset=0.0016994476;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -17822,7 +17824,7 @@ class Mission
 					};
 					id=27616;
 					type="Land_InfoStand_V2_F";
-					atlOffset=0.14983368;
+					atlOffset=0.0129776;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -17856,7 +17858,6 @@ class Mission
 						angles[]={0,2.5589871,0};
 					};
 					side="Empty";
-					flags=4;
 					class Attributes
 					{
 						init="this setVariable [""Interaction"", true]; " \n "this setVariable [""Interaction_Side"", civilian];" \n "this setVariable [""Interaction_List"", [[""Waffenladen"", ""['Waffenladen', 'gun'] call life_fnc_weaponShopMenu;"", ""'gun' in LICENSES""]]];";
@@ -17865,7 +17866,7 @@ class Mission
 					};
 					id=27617;
 					type="Land_InfoStand_V2_F";
-					atlOffset=0.0038604736;
+					atlOffset=0.40437222;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -18919,7 +18920,6 @@ class Mission
 						angles[]={0,5.4881697,0};
 					};
 					side="Empty";
-					flags=4;
 					class Attributes
 					{
 						init="this setVariable [""Interaction"", true]; " \n "this setVariable [""Interaction_Side"", civilian];" \n "this setVariable [""Interaction_List"", [[""Führerschein kaufen (€1000)"", ""['driver'] call life_fnc_buyLicense;"", ""!('driver' in LICENSES)""], [""LKW Führerschein kaufen (€21.000)"", ""['lkw'] call life_fnc_buyLicense;"", ""!('lkw' in LICENSES)""], [""Bootschein kaufen (€1100)"", ""['boat'] call life_fnc_buyLicense;"", ""!('boat' in LICENSES)""], [""Pilotenschein kaufen (€35.000)"", ""['air'] call life_fnc_buyLicense;"", ""!('air' in LICENSES)""], [""Waffenschein kaufen (€35.000)"", ""['gun'] call life_fnc_buyLicense;"", ""!('gun' in LICENSES)""], [""Tauchschein kaufen (€2100)"", ""['dive'] call life_fnc_buyLicense;"", ""!('dive' in LICENSES)""], [""Hauseigentumslizenz kaufen (€600.000)"", ""['haus'] call life_fnc_buyLicense;"", ""!('haus' in LICENSES)""]]];";
@@ -18928,6 +18928,7 @@ class Mission
 					};
 					id=27641;
 					type="Land_InfoStand_V2_F";
+					atlOffset=0.84725952;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -23354,7 +23355,7 @@ class Mission
 					};
 					id=27741;
 					type="Land_InfoStand_V2_F";
-					atlOffset=9.5367432e-007;
+					atlOffset=0.067563057;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -23417,7 +23418,7 @@ class Mission
 					};
 					id=27742;
 					type="Land_InfoStand_V2_F";
-					atlOffset=0.15622497;
+					atlOffset=0.15442109;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -23882,7 +23883,7 @@ class Mission
 					};
 					id=27756;
 					type="MapBoard_altis_F";
-					atlOffset=0.64902687;
+					atlOffset=0.64885902;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -25895,9 +25896,52 @@ class Mission
 						nAttributes=1;
 					};
 				};
+				class Item357
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={12798.053,25.212414,17631.184};
+						angles[]={0,5.2503867,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						init="this setVariable [""Interaction"", true]; " \n "this setVariable [""Interaction_Side"", civilian];" \n "this setVariable [""Interaction_List"", [[""Rechenzentrum Shop"", ""['Rechenzentrum Shop', 'datacenter'] call life_fnc_weaponShopMenu;"", ""DATA_GEWINNER == ((group player) getVariable ['gang_name', ''])""]]];";
+						name="Datacenter_Shop";
+						disableSimulation=1;
+					};
+					id=34374;
+					type="Land_InfoStand_V2_F";
+					atlOffset=0.0059528351;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="allowDamage";
+							expression="_this allowdamage _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
 			};
 			id=27278;
-			atlOffset=80.2285;
+			atlOffset=0.67916489;
 		};
 		class Item518
 		{
@@ -76328,7 +76372,7 @@ class Mission
 					};
 					id=34254;
 					type="Land_Cargo_HQ_V1_F";
-					atlOffset=-6.1035156e-005;
+					atlOffset=-7.2479248e-005;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -78583,7 +78627,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={12750.673,46.923389,17636.24};
-						angles[]={-0,0.71663642,6.253861};
+						angles[]={0,0.71663642,6.253861};
 					};
 					side="Empty";
 					class Attributes
@@ -80207,7 +80251,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={12808.331,27.261253,17620.445};
-						angles[]={0,2.4277897,-0};
+						angles[]={0,2.4277897,0};
 					};
 					side="Empty";
 					class Attributes
@@ -80414,7 +80458,7 @@ class Mission
 					};
 					id=34342;
 					type="Land_ConnectorTent_01_white_open_F";
-					atlOffset=-0.00029373169;
+					atlOffset=-0.00027084351;
 					class CustomAttributes
 					{
 						class Attribute0

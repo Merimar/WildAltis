@@ -1,8 +1,14 @@
+DATACENTER_TASK = player createSimpleTask ["Datacenter"];
+DATACENTER_TASK setSimpleTaskDescription ["Einnehmen", "Hotzone", "Einnehmen"];
+DATACENTER_TASK setTaskState "Assigned";
+
 dataTimer = {
 private _isPrimary = param [0, false, [false]];
 private _overlay = if(_isPrimary) then {7} else {8};
 private _time = DATA_TIMER;
 private _prefix = if(_isPrimary) then {"Punkte in"} else {"Datacenter"};
+
+if(!_isPrimary) then {player setCurrentTask DATACENTER_TASK;};
 
 _overlay cutRsc ["life_timer","PLAIN", -1, true];
 private _uiDisp = uiNamespace getVariable "life_timer";
@@ -45,6 +51,8 @@ for "_i" from 0 to 1 step 0 do {
     sleep 0.08;
 };
 
+if(!_isPrimary) then {player removeSimpleTask DATACENTER_TASK;};
+
 _overlay cutText["","PLAIN"];
 };
 
@@ -63,5 +71,24 @@ private _handle = if(player inArea "Datacenter") then {[true] spawn dataTimer} e
 
 waitUntil {isNull _handle};
 sleep 1;
+};
+};
+
+[] spawn {
+while {true} do {
+DATACENTER_TASK setSimpleTaskDestination (getMarkerPos "Datacenter");
+private _updateSleep = if(player inArea "Datacenter_Zone") then {0.2} else {5};
+sleep 0.2;
+};
+};
+
+[] spawn {
+while {true} do {
+if(player inArea "Datacenter_Zone") then {
+private _list = [];
+{_list pushBack format ["%1 - %2 Punkte", _x select 0, _x select 1];}forEach DATA_POINTS;
+[_list joinString "<br/>", "Scoreboard"] spawn life_fnc_showInfo;
+};
+sleep 15;
 };
 };

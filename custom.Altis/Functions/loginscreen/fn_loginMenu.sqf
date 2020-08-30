@@ -43,7 +43,7 @@ _btnJoin ctrlShow false;
 _playerCount = count playableUnits;
 _teamspeak = "ts.Wild-Altis.de";
 _forum = "Wild-Altis.de";
-_news = "<t color = '#FFFFFF' font = 'RobotoCondensedBold'><br/>Willkommen auf Wild-Altis 2.0<br/>Es gibt wieder ein paar Neuigkeiten:<br/><br/>- Neue Wöchentliche Farmroute: Metamphetamine (Kann nur mit Helis gefarmt werden)<br/>- Titan ist nun keine Wöchentliche Farmroute mehr<br/>- Der Shop Chop wurde tagsüber für illegale Fahrzeuge wieder aktiviert<br/>- Neu: Uranroute - Es gibt 2 Variationen, beide sind aber illegal<br/>-> Es gibt nun verstrahlte Gebiete (Ihr braucht einen Strahlenschutzanzug und Maske)<br/>-> Stable Uran kann ganz normal gefarmt werden<br/>-> Unstable Uran muss schnell verkauft werden, ansonsten explodiert es<br/>-> Unstable Uran ist eine Risiko Route:<br/>    - Das Item kann nicht gelöscht, weder weitergegeben werden<br/>    - Fahrzeuge mit diesem Item im Kofferraum können nicht eingeparkt werden<br/>- ACHTUNG: LEST EUCH DIE NEUEN REGELN DURCH<br/>- ACHTUNG: Die Zeit bei der Uran Route wurde um 1 Minute verkürzt!!!</t>";
+_news = "<t color = '#FFFFFF' font = 'RobotoCondensedBold'><br/>Willkommen auf Wild-Altis 2.0<br/>Es gibt wieder ein paar Neuigkeiten:<br/><br/>- SOS Knopf für die Polizei (Shift + B)<br/>- NEU: Rechenzentrum - Alle Infos dazu im Forum</t>";
 
 _teamspeakCtrl ctrlSetStructuredText parseText _teamspeak;
 _forumCtrl ctrlSetStructuredText parseText _forum;

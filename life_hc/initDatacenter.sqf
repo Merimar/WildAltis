@@ -1,7 +1,17 @@
-//sleep (3 * 3600);
-sleep 60;
+private _query = "SELECT value FROM settings WHERE name = 'datacenter'";
+private _queryResult = [_query, 2] call HC_fnc_asyncCall;
+private _currentCaptured = _queryResult select 0;
 
 DATA_POINTS = [];
+DATA_GEWINNER = _currentCaptured;
+publicVariable "DATA_GEWINNER";
+
+private _markerMap = createMarker ["Datacenter_Map", markerPos "DATA_MAP"];
+_markerMap setMarkerColor "ColorBlack";
+_markerMap setMarkerText format ["Rechenzentrum - %1", _currentCaptured];
+_markerMap setMarkerType "loc_Frame";
+
+sleep (3 * 3600);
 
 private _rebs = playableUnits select {side _x in [civilian, east]};
 
@@ -27,10 +37,10 @@ _markerEntry setMarkerText format ["Eingang %1", _int];
 _markerEntry setMarkerType "loc_move";
 };
 
-private _markerMap = createMarker ["Datacenter_Map", markerPos "DATA_MAP"];
-_markerMap setMarkerColor "ColorBlack";
-_markerMap setMarkerText "Rechenzentrum";
-_markerMap setMarkerType "loc_Frame";
+private _markerWeapon = createMarker ["Datacenter_Weapon", getPos Datacenter_Shop];
+_markerWeapon setMarkerColor "ColorBlack";
+_markerWeapon setMarkerText "Rechenzentrum Shop";
+_markerWeapon setMarkerType "loc_Rifle";
 
 private _moveSpeed = 0.01;
 private _moveSleep = 0.01;
@@ -101,6 +111,14 @@ if(_points > _curPoints) then {_gewinner = _gang;_curPoints = _points;};
 }forEach DATA_POINTS;
 
 [format ["Die Gruppierung %1 hat mit %2 Punkten die Kontrolle über das Rechenzentrum erlangt.", _gewinner, _curPoints], "Rechenzentrum"] remoteExec ["life_fnc_message", -2];
+
+DATA_GEWINNER = _gewinner;
+publicVariable "DATA_GEWINNER";
+
+_markerMap setMarkerText format ["Rechenzentrum - %1", _gewinner];
+
+_query = format ["UPDATE settings SET value = '%1' WHERE name = 'datacenter'", _gewinner];
+[_query, 1] call HC_fnc_asyncCall;
 
 {
 private _xName = _x getVariable ["gang_name", ""];
