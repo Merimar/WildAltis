@@ -92,6 +92,7 @@ _progressText ctrlSetStructuredText parseText "Lege Spielerseite fest ...";
 [] call life_fnc_bluforSavezone;
 [] call life_fnc_disableChannel;
 [] call life_fnc_uranTimer;
+[] call life_fnc_dataTimer;
 [] spawn life_fnc_survival;
 [] spawn life_fnc_initStamina;
 [] spawn life_fnc_initWeather;

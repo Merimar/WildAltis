@@ -13,18 +13,20 @@ private _msg = format ["Der Spieler %1 (%2 - %3) hat die eine Sprengladung platz
 
 [_unit, "ZENTI_CHARGE"] call HC_fnc_fahndungHandle;
 
-[time, 0] remoteExec ["life_fnc_zentiTimer", west];
-[time, 1] remoteExec ["life_fnc_zentiTimer", (units (group _unit))];
+[servertime, 0] remoteExec ["life_fnc_zentiTimer", west];
+[servertime, 1] remoteExec ["life_fnc_zentiTimer", (units (group _unit))];
 
-private _time = time + (15 * 60);
+private _time = servertime + (15 * 60);
+
+zenti setVariable ["bombe", true, true];
 
 for "_i" from 0 to 1 step 0 do {
-    if(round(_time - time) < 1) exitWith {};
-    if(!(zenti getVariable ["bombe",false])) exitWith {};
+    if(round (_time - servertime) < 1) exitWith {};
+    if(!(zenti getVariable ["bombe", false])) exitWith {};
     sleep 1;
 };
 
-if(zenti getVariable ["bombe",false]) then {
+if(zenti getVariable ["bombe", false]) then {
 zenti setVariable ["open", true, true];
 _msg = format ["Der Spieler %1 (%2 - %3) hat die Zentralbank erfolgreich ausgeraubt", _pName, _pID, _pSide];
 ["BankLog", _msg] call HC_fnc_Log;

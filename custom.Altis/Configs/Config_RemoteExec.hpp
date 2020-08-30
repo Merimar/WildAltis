@@ -64,6 +64,7 @@ class CfgRemoteExec {
 		F(life_fnc_restrain,CLIENT)
 		F(life_fnc_searchClient,CLIENT)
 		F(life_fnc_siren,CLIENT)
+		F(life_fnc_sos,CLIENT)
 		F(life_fnc_spikeStripEffect,CLIENT)
 		F(life_fnc_spikeStripMarker,CLIENT)
 		

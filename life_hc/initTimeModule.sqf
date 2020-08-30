@@ -15,6 +15,6 @@ while {true} do {
 private _key = call compile (EXTDB "9:LOCAL_TIME");
 private _result = _key select 1;
 private _sekunden = _result select 5;
-if(_sekunden > 50) exitWith {["", true] call HC_fnc_saveToDatabase;};
+if(_sekunden > 50) exitWith {["ServerRestart"] remoteExec ["life_fnc_headlessdc", -2];};
 sleep 1;
 };

@@ -84,8 +84,8 @@ class CarShops {
 			{ "I_Truck_02_fuel_F", "true" },
             { "I_G_Van_01_fuel_F", "true" },
             { "O_T_Truck_03_fuel_ghex_F", "true" },
-			{ "I_MRAP_03_F", "false" },
-			{ "O_MRAP_02_F", "false" }
+			{ "I_MRAP_03_F", "true" },
+			{ "O_MRAP_02_F", "true" }
 		};
 	};
 

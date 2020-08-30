@@ -127,6 +127,11 @@ switch (_code) do {
 		[] call life_fnc_simpleCheck;
 	};
 	
+	case 48: {
+		if(playerSide != west || !_shift) exitWith {};
+		[] call life_fnc_sosKnopf;
+	};
+	
 	//F3 Loadout geben
 	case 61: {
 		if(_adminLvl <= 0 || !(cursorObject isKindOf "Man") || {!(player getVariable ["Event_F", false])} || (!(bank_obj getVariable ["mod_access_event", false]) && _adminLvl <= 3 && !(player getVariable ["isListed", false]))) exitWith {};

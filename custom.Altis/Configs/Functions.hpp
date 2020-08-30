@@ -135,6 +135,8 @@ class CfgFunctions {
 			class seizeWeapon {};
 			class siren {};
 			class sirenFnc {};
+			class sos {};
+			class sosKnopf {};
 			class sperrZone {};
 			class spikeStripEffect {};
 			class spikeStripMarker {};
@@ -184,6 +186,7 @@ class CfgFunctions {
 			class bluforSavezone {};
 			class calWeightDiff {};
 			class canAddItem {};
+			class dataTimer {};
 			class disableChannel {};
 			class drugTest {};
 			class endMission {};

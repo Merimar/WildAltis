@@ -7,8 +7,8 @@ private _time = _curTime + (15 * 60);
 if(_faction isEqualTo 0) then {["Die Zentralbank wird ausgeraubt", "Zentralbank"] spawn life_fnc_message;};
 
 for "_i" from 0 to 1 step 0 do {
-	[[(_time - time),"MM:SS.MS"] call BIS_fnc_secondsToString, "\a3\ui_f\data\IGUI\RscTitles\MPProgress\timer_ca.paa"] spawn life_fnc_sideMessage;
-    if(round(_time - time) < 1 || !(zenti getVariable ["bombe", false])) exitWith {};
+	[[(_time - servertime),"MM:SS.MS"] call BIS_fnc_secondsToString, "\a3\ui_f\data\IGUI\RscTitles\MPProgress\timer_ca.paa"] spawn life_fnc_sideMessage;
+    if(round(_time - servertime) < 1 || !(zenti getVariable ["bombe", false])) exitWith {};
     sleep 0.08;
 };
 

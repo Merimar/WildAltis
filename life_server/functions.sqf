@@ -10,7 +10,8 @@ player setUnitRecoilCoefficient 1;
 {player reveal _x} forEach allUnits;
 
 if(playerSide != side player) then {
-if(playerSide == west) then {[player] joinSilent COP_GROUP;}else {[player] joinSilent MEDIC_GROUP;};
+if(playerSide == west) then {[player] joinSilent COP_GROUP;};
+if(playerSide == independent) then {[player] joinSilent MEDIC_GROUP;};
 };
 ";
 
