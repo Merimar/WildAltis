@@ -9,3 +9,4 @@ life_preview_3D_vehicle_cam = objNull;
 life_pos_exist = false;
 life_pos_attach = [];
 showChat true;
+setViewDistance DISTANCE_FOOT;

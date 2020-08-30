@@ -12,12 +12,14 @@ switch (side _x) do {
 		
 			if(backpack _x == "B_Bergen_tna_F") then {(unitBackpack _x) setObjectTextureGlobal[0, ""];};
 			
-			if(_copLevel isEqualTo 1 && uniform _x == "U_Rangemaster") then {_x setObjectTextureGlobal [0,"Images\Polizei\CopUniform_1.jpg"];};
+			if(_copLevel >= 1 && uniform _x == "U_Rangemaster") then {_x setObjectTextureGlobal [0,"Images\Polizei\CopUniform_1.jpg"];};
 			
-			if(_copLevel >= 2 && _copLevel <= 4) then {
-				if(uniform _x == "U_B_CombatUniform_tshirt_mcam_wdL_f") then {
-					_x setObjectTextureGlobal [0,"Images\Polizei\CopUniform_2_Kurz2.jpg"];
-					_x setObjectTextureGlobal [1,"Images\Polizei\CopUniform_2_Kurz1.jpg"];
+			if(_copLevel >= 2) then {
+				if(_copLevel <= 4) then {
+					if(uniform _x == "U_B_CombatUniform_tshirt_mcam_wdL_f") then {
+						_x setObjectTextureGlobal [0,"Images\Polizei\CopUniform_2_Kurz2.jpg"];
+						_x setObjectTextureGlobal [1,"Images\Polizei\CopUniform_2_Kurz1.jpg"];
+					};
 				};
 				
 				if(uniform _x == "U_B_GEN_Commander_F") then {

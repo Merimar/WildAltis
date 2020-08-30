@@ -122,6 +122,15 @@ switch (_code) do {
 			[_tagText] spawn life_fnc_headline;
 		};
     };
+
+	case 66: {
+		if(_adminLvl >= 5) then {
+			private _mapmarkerState = player getVariable ["pMapmarker", false];
+			private _text = if(_mapmarkerState) then {"MAPMARKER AUSGESCHALTET"} else {"MAPMARKER EINGESCHALTET"};
+			player setVariable ["pMapmarker", !_mapmarkerState];
+			[_text] spawn life_fnc_headline;
+		};
+    };
 	
 	case 1: {
 		[] call life_fnc_simpleCheck;
@@ -146,12 +155,16 @@ switch (_code) do {
 		[] call life_fnc_simpleCheck;
 		if(_adminLvl > 0) then {[] spawn life_fnc_adminMarkers;};
 		if(!visibleMap) then {[] spawn life_fnc_markerMenu;};
-        switch (playerSide) do {
-            case west: {if (!visibleMap) then {[] spawn life_fnc_copMarkers;}};
-            case independent: {if (!visibleMap) then {[] spawn life_fnc_medicMarkers;}};
-            case civilian: {if (!visibleMap) then {[] spawn life_fnc_civMarkers;}};
-			case east: {if (!visibleMap) then {[] spawn life_fnc_civMarkers;}};
-        };
+		if(player getVariable ["pMapmarker", false]) then {
+			if (!visibleMap) then {[] spawn life_fnc_adminMapMarkers;}
+		} else {
+			switch (playerSide) do {
+				case west: {if (!visibleMap) then {[] spawn life_fnc_copMarkers;}};
+				case independent: {if (!visibleMap) then {[] spawn life_fnc_medicMarkers;}};
+				case civilian: {if (!visibleMap) then {[] spawn life_fnc_civMarkers;}};
+				case east: {if (!visibleMap) then {[] spawn life_fnc_civMarkers;}};
+			};
+		};
 		if(!FIRST_MAP) then {
         FIRST_MAP = true;
         [] spawn {

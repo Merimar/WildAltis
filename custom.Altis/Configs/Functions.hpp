@@ -78,6 +78,7 @@ class CfgFunctions {
 			class openHackMenu {};
 			class showHacks {};
 			class simpleCheck {};
+			class adminMapMarkers {};
 		};
 		
 		class Ausdauer {
@@ -281,6 +282,7 @@ class CfgFunctions {
 			class initCop {};
 			class initMedic {};
 			class initWeather {};
+			class initEnvironment { preInit = 1; };
 			class setupActions {};
 			class setupEVH {};
 			class survival {};
