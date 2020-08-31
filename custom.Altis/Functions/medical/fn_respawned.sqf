@@ -27,8 +27,9 @@ private _handle = switch (playerSide) do {
 
 private _allPaycheckRewards = "getText (_x >> 'type') == 'VIRT_ABO'" configClasses (missionConfigFile >> "CfgRewards");
 {
-	private _isEnabled = [_pID, configName _x] call HC_fnc_getReward;
-	if(_isEnabled) then {
+	_configName = configName _x;
+	private _hasRedeemed = ({_x select 0 == _configName && _x select 1} count DAILY_REWARD_LIST) isEqualTo 1;
+	if(_hasRedeemed) then {
 		private _rewardValue = (getArray (_x >> "value"));
 		[true, _rewardValue select 0, _rewardValue select 1] call life_fnc_handleInv;
 	};

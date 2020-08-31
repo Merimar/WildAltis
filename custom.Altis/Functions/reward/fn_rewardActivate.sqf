@@ -20,3 +20,5 @@ switch (_rewardType) do {
 	};
 	default { };
 };
+
+closeDialog 0;

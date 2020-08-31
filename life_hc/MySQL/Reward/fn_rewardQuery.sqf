@@ -19,19 +19,19 @@ private _yearNext = _nextSeen select 0;
 private _monthNext = _nextSeen select 1;
 private _dayNext = _nextSeen select 2;
 
-private _february = if((_monthLast % 4) isEqualTo 0) then {28} else {29};
+private _february = if((_yearLast % 4) isEqualTo 0) then {28} else {29};
 private _lastDay = [31, _february, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 private _currentLastDay = _lastDay select (_monthLast - 1);
 
 private _isNextDay = _yearLast isEqualTo _yearNext && _monthLast isEqualTo _monthNext && _dayLast isEqualTo _dayNext;
-private _isSameDay = (_yearLast isEqualTo _yearNext && _monthLast isEqualTo _monthNext && _dayLast isEqualTo (_dayNext - 1)) || (_yearLast isEqualTo (_yearNext - 1) && _monthLast isEqualTo 12 && _monthNext isEqualTo 1 && _dayLast isEqualTo 31 && _dayNext isEqualTo 1) && (_yearLast isEqualTo _yearNext && _monthLast isEqualTo (_monthNext - 1) && _dayLast isEqualTo _currentLastDay);
+private _isSameDay = (_yearLast isEqualTo _yearNext && _monthLast isEqualTo _monthNext && _dayLast isEqualTo (_dayNext - 1)) || (_yearLast isEqualTo (_yearNext - 1) && _monthLast isEqualTo 12 && _monthNext isEqualTo 1 && _dayLast isEqualTo 31 && _dayNext isEqualTo 1) || (_yearLast isEqualTo _yearNext && _monthLast isEqualTo (_monthNext - 1) && _dayLast isEqualTo _currentLastDay);
 private _isWrong = !_isSameDay && !_isNextDay;
 
 _query = format["UPDATE rewards SET last_seen = now() WHERE player_id = '%1'", _pID];
 [_query, 1] call HC_fnc_asyncCall;
 
 if(_isWrong || _isNextDay) then {
-_query = format["UPDATE rewards SET next_seen = 'now() + INTERVAL 1 DAY' WHERE player_id = '%1'", _pID];
+_query = format["UPDATE rewards SET next_seen = now() + INTERVAL 1 DAY WHERE player_id = '%1'", _pID];
 [_query, 1] call HC_fnc_asyncCall;
 };
 

@@ -59,23 +59,26 @@ private _activeRewards = [];
 		_rewardList lbSetData [_index, ""];
 
 		{
+			_rewardclass = _x;
 			_rewardtext = switch (_rewardtype) do {
 				case "VEHICLE_ABO" : {
-					_status = "NICHT AUSGEPARKT"
+					_status = "NICHT AUSGEPARKT";
 					{
-						if(_x getVariable [""])//work
+						if(((_x getVariable ["dbInfo", ["", sideUnknown, -1, ""]]) select 3) == _rewardclass) exitWith {
+							_status = "AUSGEPARKT";
+						};
 					} forEach life_vehicles;
-					format["%1 [%2]", getText (configFile >> "CfgVehicles" >> ((getArray (missionConfigFile >> "CfgRewards" >> _x >> "value")) select 0) >> "displayName"), _status]
+					format["%1 [%2]", getText (configFile >> "CfgVehicles" >> ((getArray (missionConfigFile >> "CfgRewards" >> _rewardclass >> "value")) select 0) >> "displayName"), _status]
 				};
-				case "VIRT_ABO" : {_arr = getArray (missionConfigFile >> "CfgRewards" >> _x >> "value"); format["%1x %2", _arr select 1, getText (configFile >> "Items" >> (_arr select 0) >> "name")]};
-				case "ITEM_ABO" : {_arr = getArray (missionConfigFile >> "CfgRewards" >> _x >> "value"); format["%1x %2", _arr select 1, getText (configFile >> "CfgWeapons" >> (_arr select 0) >> "displayName")]};
-				case "PAYCHECK" : {format["+%1€", getArray (missionConfigFile >> "CfgRewards" >> _x >> "value") select 0]};
-				case "SKILL" : {_arr = getArray (missionConfigFile >> "CfgRewards" >> _x >> "value"); format["%1 +%2 Punkte", localize ("STR_Skill_" + (_arr select 0)), _arr select 1]};
-				case "PREMIUM" : {format["Premium Level %1", getArray (missionConfigFile >> "CfgRewards" >> _x >> "value") select 0]};
+				case "VIRT_ABO" : {_arr = getArray (missionConfigFile >> "CfgRewards" >> _rewardclass >> "value"); format["%1x %2", _arr select 1, getText (configFile >> "Items" >> (_arr select 0) >> "name")]};
+				case "ITEM_ABO" : {_arr = getArray (missionConfigFile >> "CfgRewards" >> _rewardclass >> "value"); format["%1x %2", _arr select 1, getText (configFile >> "CfgWeapons" >> (_arr select 0) >> "displayName")]};
+				case "PAYCHECK" : {format["+%1€", getArray (missionConfigFile >> "CfgRewards" >> _rewardclass >> "value") select 0]};
+				case "SKILL" : {_arr = getArray (missionConfigFile >> "CfgRewards" >> _rewardclass >> "value"); format["%1 +%2 Punkte", localize ("STR_Skill_" + (_arr select 0)), _arr select 1]};
+				case "PREMIUM" : {format["Premium Level %1", getArray (missionConfigFile >> "CfgRewards" >> _rewardclass >> "value") select 0]};
 			};
 			_index = _rewardList lbAdd _rewardtext;
 			switch (_rewardtype) do {
-				case "VEHICLE_ABO": { _rewardList lbSetData [_index, _x]; };
+				case "VEHICLE_ABO": { _rewardList lbSetData [_index, _rewardclass]; };
 				default { _rewardList lbSetData [_index, ""]; };
 			};
 		} forEach _rewardarray;

@@ -109,7 +109,7 @@ _msg = format ["Der Spieler %1 (%2 - %3) hat ein Fahrzeug gekauft (FAHRZEUG: %4 
 private _vUID = round (random 999999);
 private _vehInvID = format ["VEHICLE_INV_%1", _vUID];
 _vehicle setVariable ["rent", true, true];
-_vehicle setVariable ["dbInfo", [_pID, _pSide, _vUID], true];
+_vehicle setVariable ["dbInfo", [_pID, _pSide, _vUID, ""], true];
 missionNamespace setVariable [_vehInvID, [[], 0]];
 [format["Du hast dir ein %1 %2$ gemietet", _nameVehicle, [_price] call life_fnc_numberText], "Fahrzeug gemietet"] remoteExec ["life_fnc_message",_unitOwner];
 _msg = format ["Der Spieler %1 (%2 - %3) hat ein Fahrzeug gemietet (FAHRZEUG: %4 PREIS: %5 SHOP: %6 SETUP: %7)", name _unit, getPlayerUID _unit, side _unit, typeOf _vehicle, [_price] call HC_fnc_numberSafe, _shop select 0, str _setUp];
