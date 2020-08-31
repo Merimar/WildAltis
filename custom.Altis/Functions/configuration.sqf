@@ -76,6 +76,7 @@ life_knockout = false;
 life_interrupted = false;
 life_spawned = false;
 life_healing = false;
+life_blockshooting = false;
 life_action_gathering = false;
 tawvd_addon_disable = true;
 life_god = false;
