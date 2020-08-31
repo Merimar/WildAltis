@@ -10,8 +10,6 @@ class Licenses {
 	LICENSE(driver,"STR_License_Driver",1000,false,"civ",10000)
 	LICENSE(boat,"STR_License_Boat",1100,false,"civ",10000)
 	LICENSE(dive,"STR_License_Diving",2100,false,"civ",10000)
-	
-	
 	LICENSE(ziegel,"STR_License_Lehm",6500,false,"civ",10000)
 	LICENSE(kupfer,"STR_License_Kupfer",8000,false,"civ",10000)
 	LICENSE(wein,"STR_License_Wein",9000,false,"civ",10000)

@@ -1,6 +1,4 @@
-DATACENTER_TASK = player createSimpleTask ["Datacenter"];
-DATACENTER_TASK setSimpleTaskDescription ["Einnehmen", "Hotzone", "Einnehmen"];
-DATACENTER_TASK setTaskState "Assigned";
+
 
 dataTimer = {
 private _isPrimary = param [0, false, [false]];
@@ -8,7 +6,12 @@ private _overlay = if(_isPrimary) then {7} else {8};
 private _time = DATA_TIMER;
 private _prefix = if(_isPrimary) then {"Punkte in"} else {"Datacenter"};
 
-if(!_isPrimary) then {player setCurrentTask DATACENTER_TASK;};
+if(!_isPrimary) then {
+DATACENTER_TASK = player createSimpleTask ["Datacenter"];
+DATACENTER_TASK setSimpleTaskDescription ["Einnehmen", "Hotzone", "Einnehmen"];
+DATACENTER_TASK setTaskState "Assigned";
+player setCurrentTask DATACENTER_TASK;
+};
 
 _overlay cutRsc ["life_timer","PLAIN", -1, true];
 private _uiDisp = uiNamespace getVariable "life_timer";
@@ -48,6 +51,7 @@ for "_i" from 0 to 1 step 0 do {
 	if(!(player inArea "Datacenter_Zone") && !_isPrimary) exitWith {};
 	if(!(player inArea "Datacenter") && _isPrimary) exitWith {};
     _timer ctrlSetText format["%1 - %2", _prefix, [(_time - servertime),"MM:SS.MS"] call BIS_fnc_secondsToString];
+	DATACENTER_TASK setSimpleTaskDestination (getMarkerPos "Datacenter");
     sleep 0.08;
 };
 
@@ -71,14 +75,6 @@ private _handle = if(player inArea "Datacenter") then {[true] spawn dataTimer} e
 
 waitUntil {isNull _handle};
 sleep 1;
-};
-};
-
-[] spawn {
-while {true} do {
-DATACENTER_TASK setSimpleTaskDestination (getMarkerPos "Datacenter");
-private _updateSleep = if(player inArea "Datacenter_Zone") then {0.2} else {5};
-sleep 0.2;
 };
 };
 

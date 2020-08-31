@@ -35,7 +35,7 @@ _playtimeQuery = [_playtimeQuery, 0] call HC_fnc_multiArrayToArray;
 /** LICENSES **/
 _query = format["SELECT life_licenses.license FROM player_licenses LEFT JOIN life_licenses ON player_licenses.license_id = life_licenses.id WHERE player_licenses.player_id = '%1'", _pID];
 private _licenseQuery = [_query, 2, true] call HC_fnc_asyncCall;
-_licenseQuery = [_licenseQuery, 0] call HC_fnc_multiArrayToArray;
+_licenseQuery = [_licenseQuery, 0, true] call HC_fnc_multiArrayToArray;
 
 /** SKILLS **/
 _query = format["SELECT life_skills.skill, player_skills.xp FROM player_skills LEFT JOIN life_skills ON player_skills.skill_id = life_skills.id WHERE player_skills.player_id = '%1'", _pID];

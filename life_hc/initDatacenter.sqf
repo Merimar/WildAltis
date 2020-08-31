@@ -38,9 +38,14 @@ _markerEntry setMarkerType "loc_move";
 };
 
 private _markerWeapon = createMarker ["Datacenter_Weapon", getPos Datacenter_Shop];
-_markerWeapon setMarkerColor "ColorBlack";
+_markerWeapon setMarkerColor "ColorUnknown";
 _markerWeapon setMarkerText "Rechenzentrum Shop";
 _markerWeapon setMarkerType "loc_Rifle";
+
+private _markerCar = createMarker ["Datacenter_CAR", markerPos "DATA_CAR"];
+_markerCar setMarkerColor "ColorUnknown";
+_markerCar setMarkerText "Rechenzentrum Fahrzeuge";
+_markerCar setMarkerType "loc_car";
 
 private _moveSpeed = 0.01;
 private _moveSleep = 0.01;

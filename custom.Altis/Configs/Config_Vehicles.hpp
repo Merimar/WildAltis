@@ -1588,8 +1588,8 @@ class LifeCfgVehicles {
 	
 	class O_APC_Wheeled_02_rcws_F {
 		vItemSpace = 300;
-		price = 250000;
-		chopPrice = 5500000;
+		price = 25000000;
+		chopPrice = 4000000;
 		legal = 1;
 		bankCapacity = 0;
         class textures {
