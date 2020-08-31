@@ -19,6 +19,7 @@ MAP_MARKER_ILLEGAL_MARKER = ["", "Uranshop", "Vendor_Uran_2", "Vendor_Uran_1", "
 MAP_MARKER_DP_MARKER = ["dp_1", "dp_2", "dp_3", "dp_4", "dp_5", "dp_6", "dp_7", "dp_8", "dp_9", "dp_10", "dp_11", "dp_12", "dp_13", "dp_14", "dp_15", "dp_16", "dp_17", "dp_18", "dp_19", "dp_20", "dp_21", "dp_22", "dp_23", "dp_24", "dp_25"];
 LIFE_MESSAGE_SAVE = [];
 LAST_DAMAGE_BULLET_TIMER = 0;
+SOS = false;
 FIRST_MAP = false;
 COP_MONEY_REMOVE_TIMER = false;
 MEDIC_ABANDONED_TIMER = false;

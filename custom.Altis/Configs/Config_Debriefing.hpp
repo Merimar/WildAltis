@@ -9,6 +9,15 @@ class CfgDebriefing {
 		pictureColor[] = {0,0.3,0.6,1};
 	};
 	
+	class ServerRestart {
+		title = "Server Restart";
+		subtitle = "Der Server startet neu";
+		description = "Wir sind gleich wieder da";
+		pictureBackground = "";
+		picture = "";
+		pictureColor[] = {0,0.3,0.6,1};		
+	};
+	
 	class Blacklisted
 	{
 		title = "Mission Failed";

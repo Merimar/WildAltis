@@ -22,6 +22,18 @@ class Items {
 		icon = "";
 		itemInfo = "Mit dem Adrenalinshot könnt ihr kleinere Verletzungen während der Autofahrt behandeln";
 	};
+	
+	class sos {
+		name = "SOS Knopf";
+		illegal = false;
+		weight = 2;
+		type = "NORMAL";
+		buyPrice = 2700;
+		sellPrice = 750;
+		edible = -1;
+		icon = "";
+		itemInfo = "Der SOS Knopf ist eine Methode für die Polizei schnell eine Notsituation zu erklären";
+	};
 
 	class defibrilator {
 		name = "Defibrilator";

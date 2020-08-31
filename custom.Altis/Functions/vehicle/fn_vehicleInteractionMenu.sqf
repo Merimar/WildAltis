@@ -42,7 +42,9 @@ private _butcher = ({"hemtt_1.jpg" in (str (getObjectTextures _x))} count _nearH
 
 if(alive CUR_VEHICLE_IDC) then {
 ["Umdrehen", "closeDialog 0; [CUR_VEHICLE_IDC] spawn life_fnc_flipVehicle;", (_halter || _einsteigen) && !_restrained] call _createElement;
+if(CUR_VEHICLE_IDC isKindOf "Ship") then {
 ["Schieben", "closeDialog 0; [CUR_VEHICLE_IDC] spawn life_fnc_pushObject;", (_halter || _einsteigen) && !_restrained] call _createElement;
+};
 ["Reparieren", "closeDialog 0; [CUR_VEHICLE_IDC] spawn life_fnc_repairTruck;", _repair && !_restrained] call _createElement;
 ["Einsteigen", "if(player distance CUR_VEHICLE_IDC < 20) then {closeDialog 0; player moveInAny CUR_VEHICLE_IDC;};", _einsteigen && !_restrained] call _createElement;
 ["Aus Fahrzeug ziehen", "if(player distance CUR_VEHICLE_IDC < 20) then {closeDialog 0; [CUR_VEHICLE_IDC] spawn life_fnc_pulloutAction;};", _pullOut && !_restrained] call _createElement;

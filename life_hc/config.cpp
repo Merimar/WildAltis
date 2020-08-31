@@ -90,6 +90,11 @@ class CfgFunctions
 			class isBuffOn {};
         };
 		
+		class Datacenter {
+            file = "\life_hc\MySQL\Datacenter";
+            class awardPoints {};
+        };
+		
 		class EventHandler {
             file = "\life_hc\MySQL\EventHandler";
 			class playerAdrenalin {};

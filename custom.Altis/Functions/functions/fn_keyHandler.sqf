@@ -110,6 +110,7 @@ switch (_code) do {
     };
 	
 	case 41: {
+		if(!(isNull objectParent player)) exitWith {};
 		SHOW_NAMES = !SHOW_NAMES;
 		if(!(isNil "NAME_THREAD")) then {terminate NAME_THREAD;};
 		NAME_THREAD = [] spawn {sleep 15; SHOW_NAMES = false;};
@@ -136,6 +137,11 @@ switch (_code) do {
 	
 	case 1: {
 		[] call life_fnc_simpleCheck;
+	};
+	
+	case 48: {
+		if(playerSide != west || !_shift) exitWith {};
+		[] call life_fnc_sosKnopf;
 	};
 	
 	//F3 Loadout geben

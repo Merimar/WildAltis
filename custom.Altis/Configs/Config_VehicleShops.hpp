@@ -80,12 +80,10 @@ class CarShops {
 			{ "B_T_LSV_01_unarmed_F", "true" },
 			{ "O_T_LSV_02_unarmed_F", "true" },
 			{ "B_MRAP_01_F", "true" },
-			{ "O_APC_Wheeled_02_rcws_F", "true" },
 			{ "I_Truck_02_fuel_F", "true" },
             { "I_G_Van_01_fuel_F", "true" },
-            { "O_T_Truck_03_fuel_ghex_F", "true" },
-			{ "I_MRAP_03_F", "false" },
-			{ "O_MRAP_02_F", "false" }
+			{ "I_APC_Wheeled_03_cannon_F", "true" },
+            { "O_T_Truck_03_fuel_ghex_F", "true" }
 		};
 	};
 
@@ -103,6 +101,13 @@ class CarShops {
 			{ "I_Plane_Fighter_04_F", "true" },
 			{ "O_Plane_Fighter_02_F", "true" },
 			{ "B_Plane_Fighter_01_F", "true" }
+		};
+	};
+	
+	class datacenter {
+		vehicles[] = {
+			{ "I_MRAP_03_F", "true" },
+			{ "O_MRAP_02_F", "true" }
 		};
 	};
 

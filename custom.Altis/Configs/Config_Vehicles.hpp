@@ -211,6 +211,30 @@ class LifeCfgVehicles {
 				condition = "playerSide in [civilian, east]";
 				price = 1;
 			};
+			class PremBunt {
+				name = "Bunt";
+				path[] = {"Images\Donator\SUVBunt.jpg"};
+				condition = "playerSide in [civilian, east] && call life_donorlevel >= 1";
+				price = 1;
+			};
+			class PremComic {
+				name = "Comic";
+				path[] = {"Images\Donator\SUVComic.jpg"};
+				condition = "playerSide in [civilian, east] && call life_donorlevel >= 2";
+				price = 1;
+			};
+			class PremRedline {
+				name = "Redline";
+				path[] = {"Images\Donator\SUVRedline.jpg"};
+				condition = "playerSide in [civilian, east] && call life_donorlevel >= 3";
+				price = 1;
+			};
+			class PremTron {
+				name = "Tron";
+				path[] = {"Images\Donator\SUVTron.jpg"};
+				condition = "playerSide in [civilian, east] && call life_donorlevel >= 3";
+				price = 1;
+			};
 			class Polizei {
 				name = "Polizei";
 				path[] = {"Images\Polizei\SUV.jpg"};
@@ -269,6 +293,30 @@ class LifeCfgVehicles {
 				condition = "playerSide in [civilian, east]";
 				price = 1;
 			};
+			class PremBunt {
+				name = "Bunt";
+				path[] = {"Images\Donator\SportlimoBunt.jpg"};
+				condition = "playerSide in [civilian, east] && call life_donorlevel >= 1";
+				price = 1;
+			};
+			class PremComic {
+				name = "Sticker";
+				path[] = {"Images\Donator\SportlimoSticker.jpg"};
+				condition = "playerSide in [civilian, east] && call life_donorlevel >= 2";
+				price = 1;
+			};
+			class PremValo {
+				name = "ValoYellow";
+				path[] = {"Images\Donator\SportlimoValorant.jpg"};
+				condition = "playerSide in [civilian, east] && call life_donorlevel >= 3";
+				price = 1;
+			};
+			class PremTron {
+				name = "Tron";
+				path[] = {"Images\Donator\SportlimoTron.jpg"};
+				condition = "playerSide in [civilian, east] && call life_donorlevel >= 3";
+				price = 1;
+			};
 			class Polizei {
 				name = "Polizei";
 				path[] = {"Images\Polizei\Sportlimo_Polizei.jpg"};
@@ -299,48 +347,72 @@ class LifeCfgVehicles {
 		legal = 1;
 		bankCapacity = 0;
         class textures {
-		class Red {
-			name = "Red";
-			path[] = {"\a3\soft_f_gamma\Hatchback_01\data\hatchback_01_ext_sport01_co.paa"};
-			condition = "playerSide in [civilian, east]";
-			price = 1;
+			class Red {
+				name = "Red";
+				path[] = {"\a3\soft_f_gamma\Hatchback_01\data\hatchback_01_ext_sport01_co.paa"};
+				condition = "playerSide in [civilian, east]";
+				price = 1;
+				};
+			class Dark_Blue {
+				name = "Dark Blue";
+				path[] = {"\a3\soft_f_gamma\Hatchback_01\data\hatchback_01_ext_sport02_co.paa"};
+				condition = "playerSide in [civilian, east]";
+				price = 1;
+				};
+			class Orange {
+				name = "Orange";
+				path[] = {"\a3\soft_f_gamma\Hatchback_01\data\hatchback_01_ext_sport03_co.paa"};
+				condition = "playerSide in [civilian, east]";
+				price = 1;
+				};
+			class Black_White {
+				name = "Black / White";
+				path[] = {"\a3\soft_f_gamma\Hatchback_01\data\hatchback_01_ext_sport04_co.paa"};
+				condition = "playerSide in [civilian, east]";
+				price = 1;
+				};
+			class Beige {
+				name = "Beige";
+				path[] = {"\a3\soft_f_gamma\Hatchback_01\data\hatchback_01_ext_sport05_co.paa"};
+				condition = "playerSide in [civilian, east]";
+				price = 1;
+				};
+			class Green {
+				name = "Green";
+				path[] = {"\a3\soft_f_gamma\Hatchback_01\data\hatchback_01_ext_sport06_co.paa"};
+				condition = "playerSide in [civilian, east]";
+				price = 1;
+				};
+			class PremBunt {
+				name = "Bunt";
+				path[] = {"Images\Donator\SportlimoBunt.jpg"};
+				condition = "playerSide in [civilian, east] && call life_donorlevel >= 1";
+				price = 1;
 			};
-		class Dark_Blue {
-			name = "Dark Blue";
-			path[] = {"\a3\soft_f_gamma\Hatchback_01\data\hatchback_01_ext_sport02_co.paa"};
-			condition = "playerSide in [civilian, east]";
-			price = 1;
+			class PremComic {
+				name = "Sticker";
+				path[] = {"Images\Donator\SportlimoSticker.jpg"};
+				condition = "playerSide in [civilian, east] && call life_donorlevel >= 2";
+				price = 1;
 			};
-		class Orange {
-			name = "Orange";
-			path[] = {"\a3\soft_f_gamma\Hatchback_01\data\hatchback_01_ext_sport03_co.paa"};
-			condition = "playerSide in [civilian, east]";
-			price = 1;
+			class PremValo {
+				name = "ValoYellow";
+				path[] = {"Images\Donator\SportlimoValorant.jpg"};
+				condition = "playerSide in [civilian, east] && call life_donorlevel >= 3";
+				price = 1;
 			};
-		class Black_White {
-			name = "Black / White";
-			path[] = {"\a3\soft_f_gamma\Hatchback_01\data\hatchback_01_ext_sport04_co.paa"};
-			condition = "playerSide in [civilian, east]";
-			price = 1;
+			class PremTron {
+				name = "Tron";
+				path[] = {"Images\Donator\SportlimoTron.jpg"};
+				condition = "playerSide in [civilian, east] && call life_donorlevel >= 3";
+				price = 1;
 			};
-		class Beige {
-			name = "Beige";
-			path[] = {"\a3\soft_f_gamma\Hatchback_01\data\hatchback_01_ext_sport05_co.paa"};
-			condition = "playerSide in [civilian, east]";
-			price = 1;
-			};
-		class Green {
-			name = "Green";
-			path[] = {"\a3\soft_f_gamma\Hatchback_01\data\hatchback_01_ext_sport06_co.paa"};
-			condition = "playerSide in [civilian, east]";
-			price = 1;
-			};
-		class Polizei {
-			name = "Polizei";
-			path[] = {"Images\Polizei\Sportlimo_Polizei.jpg"};
-			condition = "playerSide in [west]";
-			price = 0.05;
-			};
+			class Polizei {
+				name = "Polizei";
+				path[] = {"Images\Polizei\Sportlimo_Polizei.jpg"};
+				condition = "playerSide in [west]";
+				price = 0.05;
+				};
         };
     };
 
@@ -538,7 +610,14 @@ class LifeCfgVehicles {
 		chopPrice = 3900000;
 		legal = 1;
 		bankCapacity = 0;
-        class textures {};
+        class textures {
+			class PremTron {
+				name = "Wild";
+				path[] = {"Images\Donator\Tempest0.jpg","Images\Donator\Tempest1.jpg","Images\Donator\Tempest2.jpg","Images\Donator\Tempest3.jpg","Images\Donator\Tempest4.jpg"};
+				condition = "call life_donorlevel >= 3";
+				price = 1;
+			};
+		};
     };
 
 	class B_Heli_Light_01_F {
@@ -1508,19 +1587,28 @@ class LifeCfgVehicles {
 	};
 	
 	class O_APC_Wheeled_02_rcws_F {
+		vItemSpace = 300;
+		price = 25000000;
+		chopPrice = 4000000;
+		legal = 1;
+		bankCapacity = 0;
+        class textures {
+			class Polizei {
+				name = "Polizei";
+				path[] = {"Images\Polizei\Marid1.jpg","Images\Polizei\Marid2.jpg","Images\Polizei\Turret.jpg","Images\Polizei\Gorgon3.jpg","Images\Polizei\Marid3.jpg"};
+				condition = "playerSide in [west]";
+				price = 1;
+			};
+		};
+	};
+	
+	class I_APC_Wheeled_03_cannon_F {
 		vItemSpace = 4100;
 		price = 25000000;
 		chopPrice = 4000000;
 		legal = 0;
 		bankCapacity = 0;
-        class textures {
-			class Polizei {
-				name = "Polizei";
-				path[] = {"Images\Polizei\Marid1.jpg","Images\Polizei\Marid2.jpg","Images\Polizei\Turret.jpg","Images\Polizei\Marid3.jpg","Images\Polizei\Marid3.jpg"};
-				condition = "playerSide in [west]";
-				price = 0.1;
-			};
-		};
+        class textures {};
 	};
 	
 	class B_Heli_Transport_01_camo_F {

@@ -109,6 +109,7 @@ diag_log format ["A3Log Loaded. Version: %1",("A3Log" callExtension "version")];
 [] call HC_fnc_initHouses;
 [] execVM "\life_hc\initVehicleExplosion.sqf";
 [] execVM "\life_hc\initTimeModule.sqf";
+[] execVM "\life_hc\initDatacenter.sqf";
 [] execVM "\life_hc\initGangeroberung.sqf";
 [] execVM "\life_hc\initDatabase.sqf";
 [] execVM "\life_hc\initPlayerSkins.sqf";

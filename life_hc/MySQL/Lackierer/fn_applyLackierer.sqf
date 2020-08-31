@@ -12,7 +12,7 @@ private _material = param [9, "", [""]];
 private _isHacker = [[_classname, _apply, _color, _material], _unit, remoteExecutedOwner, "fn_applyLackierer"] call HC_fnc_checkSQLBreak;
 if(_isHacker || _classname == "" || _apply == "") exitWith {};
 
-private _sideID = [_realSide] call HC_fnc_getSideID;
+private _sideID = [_realSide] call HC_fnc_getGroupSideID;
 private _lackiererType = if(_skinMaterial isEqualTo 0) then {"SKIN"} else {"FOLIE"};
 private _typeColumn = if(_skinMaterial isEqualTo 0) then {"color_id"} else {"material_id"};
 private _typeTable = if(_skinMaterial isEqualTo 0) then {"life_vehicle_colors"} else {"life_vehicle_materials"};

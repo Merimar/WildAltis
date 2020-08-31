@@ -19,9 +19,9 @@ private _allItems = switch (true) do {
 	case (_itemMove == uniform player) : {([_itemMove] + uniformItems player)};
 	case (_itemMove == vest player) : {([_itemMove] + vestItems player)};
 	case (_itemMove == backpack player) : {([_itemMove] + backpackItems player)};
-	case (_itemMove == primaryWeapon player) : {([_itemMove] + primaryWeaponItems player)};
-	case (_itemMove == secondaryWeapon player) : {([_itemMove] + secondaryWeaponItems player)};
-	case (_itemMove == handgunWeapon player) : {([_itemMove] + handgunItems player)};
+	case (_itemMove == primaryWeapon player) : {([_itemMove] + primaryWeaponItems player + primaryWeaponMagazine player)};
+	case (_itemMove == secondaryWeapon player) : {([_itemMove] + secondaryWeaponItems player + secondaryWeaponMagazine player)};
+	case (_itemMove == handgunWeapon player) : {([_itemMove] + handgunItems player + handgunMagazine player)};
 	default {[_itemMove]};
 };
 
@@ -37,18 +37,17 @@ switch (true) do {
 	case (_itemMove == primaryWeapon player) : {player removeWeapon (primaryWeapon player);};
 	case (_itemMove == secondaryWeapon player) : {player removeWeapon (secondaryWeapon player);};
 	case (_itemMove == handgunWeapon player) : {player removeWeapon (handgunWeapon player);};
+	case (_itemMove in ["Binocular", "Rangefinder"] && _itemMove in assignedItems player) : {player removeWeapon _itemMove;};
 	default {[_itemMove, false] call life_fnc_handleItem;};
 };
 }else {
 //Aus dem Schließfach
 if(!([_itemMove] call life_fnc_lockerCanAdd)) exitWith {["Du hast zuwenig Platz dafür", "Schließfach"] spawn life_fnc_message;};
-if(_itemMove in assignedItems player) then {player unassignItem _itemMove;};
-if(_itemMove in ["Binocular", "Rangefinder"] && _itemMove in assignedItems player) then {
-player removeWeapon _itemMove;
+if(_itemMove in ["ItemMap", "ItemRadio", "ItemCompass", "ItemWatch", "ItemGPS", "Rangefinder", "Binocular"]) then {
+player addItem _itemMove;
 }else {
 [_itemMove, true] call life_fnc_handleItem;
 };
-
 [_itemMove, -1] call life_fnc_lockerManage;
 };
 

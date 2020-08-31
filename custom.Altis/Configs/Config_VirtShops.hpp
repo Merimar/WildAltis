@@ -38,7 +38,7 @@ class VirtualShops {
 	class cop {
 		name = "Polizei Laden";
 		condition = "true";
-		items[] = { "donuts", "defibrilator", "coffee", "waterBottle", "apple", "fuelFull", "redgull", "spikeStrip", "defusekit", "firstaidkit", "adrenalinshot", "medikit", "lockpick", "schloss", "adrenalin"};
+		items[] = { "donuts", "defibrilator", "coffee", "waterBottle", "apple", "fuelFull", "redgull", "spikeStrip", "sos", "defusekit", "firstaidkit", "adrenalinshot", "medikit", "lockpick", "schloss", "adrenalin"};
 	};
 
 	class drugdealer {
