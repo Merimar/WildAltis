@@ -589,7 +589,7 @@ class CfgItemShop {
 			{ "srifle_DMR_06_olive_F", "", 1000, "call life_coplevel >= 2"},
 			{ "20Rnd_762x51_Mag", "", 1000, "call life_coplevel >= 2"},
 			{ "srifle_DMR_01_F", "", 1000, "call life_coplevel >= 2"},
-			{ "20Rnd_762x51_Mag", "", 1000, "call life_coplevel >= 2"},
+			{ "10Rnd_762x54_Mag", "", 1000, "call life_coplevel >= 2"},
 			{ "arifle_CTARS_blk_F", "", 1000, "call life_coplevel >= 3"},
 			{ "100Rnd_580x42_Mag_Tracer_F", "", 1000, "call life_coplevel >= 3"},
 			{ "arifle_ARX_blk_F", "", 1000, "call life_coplevel >= 3"},
