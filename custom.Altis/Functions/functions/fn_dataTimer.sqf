@@ -35,7 +35,7 @@ for "_i" from 0 to 1 step 0 do {
         _uiDisp = uiNamespace getVariable "life_timer";
         _timer = _uiDisp displayCtrl 38301;
 		_clock = _uiDisp displayCtrl 38302;
-		if(_isVehicle) then {
+		if(_isPrimary) then {
 			_timer ctrlSetPosition [0.0204688 * safezoneW + safezoneX, (0.2778 * safezoneH + safezoneY) + 0.1, 0.12 * safezoneW, 0.055 * safezoneH];
 			_clock ctrlSetPosition [0.00499997 * safezoneW + safezoneX, (0.291 * safezoneH + safezoneY) + 0.1, 0.04, 0.045];
 		}else {

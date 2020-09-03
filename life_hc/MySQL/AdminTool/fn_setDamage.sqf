@@ -15,5 +15,7 @@ case 2 : {format ["Der Spieler %1 (%2 - %3) hat ein Fahrzeug repariert", name _u
 private _alive = if(_cause != 2) then {[getPlayerUID _damageObj, "alive"] call HC_fnc_getSpecialLevel} else {true};
 if(_amount >= 1 && !_alive) exitWith {};
 
+if(_cause isEqualTo 0) then {(objectParent _damageObj) setDamage _amount;};
+
 _damageObj setDamage _amount;
 ["AdminLog", _msg] call HC_fnc_Log;

@@ -7,7 +7,7 @@ if(_isHacker) exitWith {};
 
 private _pID = getPlayerUID _unit;
 private _pSide = side _unit;
-private _pSideID = [_pSide] call HC_fnc_getSideID;
+private _pSideID = [_pSide] call HC_fnc_getGroupSideID;
 private _databaseInformation = [_vUID, _pID, _pSide] call HC_fnc_getVehicleDatabase;
 if(count _databaseInformation isEqualTo 0) exitWith {};
 private _id = _databaseInformation select 0;

@@ -1,9 +1,9 @@
 private _unit = param [0, objNull, [objNull]];
 private _item = param [1, "", [""]];
-private _container = param [2, objNull, [objNull]];
+private _container = param [2, objNull, [objNull, ""]];
 
 private _isHacker = [[_item], _unit, remoteExecutedOwner, "fn_putItem"] call HC_fnc_checkSQLBreak;
-if(_isHacker) exitWith {};
+if(_isHacker || _container isEqualType "") exitWith {};
 
 private _itemType = [_item] call HC_fnc_getItemType;
 private _event = _container getVariable ["eventContainer", false];

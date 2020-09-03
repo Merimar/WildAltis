@@ -11,6 +11,16 @@ _markerMap setMarkerColor "ColorBlack";
 _markerMap setMarkerText format ["Rechenzentrum - %1", _currentCaptured];
 _markerMap setMarkerType "loc_Frame";
 
+private _markerWeapon = createMarker ["Datacenter_Weapon", getPos Datacenter_Shop];
+_markerWeapon setMarkerColor "ColorUnknown";
+_markerWeapon setMarkerText "Rechenzentrum Shop";
+_markerWeapon setMarkerType "loc_Rifle";
+
+private _markerCar = createMarker ["Datacenter_CAR", markerPos "DATA_CAR"];
+_markerCar setMarkerColor "ColorUnknown";
+_markerCar setMarkerText "Rechenzentrum Fahrzeuge";
+_markerCar setMarkerType "loc_car";
+
 sleep (3 * 3600);
 
 private _rebs = playableUnits select {side _x in [civilian, east]};
@@ -37,22 +47,12 @@ _markerEntry setMarkerText format ["Eingang %1", _int];
 _markerEntry setMarkerType "loc_move";
 };
 
-private _markerWeapon = createMarker ["Datacenter_Weapon", getPos Datacenter_Shop];
-_markerWeapon setMarkerColor "ColorUnknown";
-_markerWeapon setMarkerText "Rechenzentrum Shop";
-_markerWeapon setMarkerType "loc_Rifle";
-
-private _markerCar = createMarker ["Datacenter_CAR", markerPos "DATA_CAR"];
-_markerCar setMarkerColor "ColorUnknown";
-_markerCar setMarkerText "Rechenzentrum Fahrzeuge";
-_markerCar setMarkerType "loc_car";
-
 private _moveSpeed = 0.01;
 private _moveSleep = 0.01;
 private _movePrescision = 0.3;
 private _start = true;
 
-DATA_TIMER = servertime + (45 * 60);
+DATA_TIMER = servertime + (55 * 60);
 publicVariable "DATA_TIMER";
 
 [] spawn {
@@ -76,6 +76,12 @@ private _markerPos2Y = _markerPos2 select 1;
 
 private _stopX = false;
 private _stopY = false;
+
+{
+if(_x inArea "Datacenter_Zone" && _x isKindOf "LandVehicle") then {
+if({alive _x} count crew _x isEqualTo 0) then {deleteVehicle _x;};
+};
+}forEach vehicles;
 
 while {!_stopX || !_stopY} do {
 private _markerPos3 = markerPos _marker;
