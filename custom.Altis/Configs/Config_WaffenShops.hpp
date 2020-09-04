@@ -583,16 +583,14 @@ class CfgItemShop {
 			{ "30Rnd_580x42_Mag_F", "", 1000, "call life_coplevel >= 2"},
 			{ "arifle_MXM_Black_F", "", 1000, "call life_coplevel >= 2"},
 			{ "30Rnd_65x39_caseless_black_mag", "", 1000, "call life_coplevel >= 1"},
-			{ "arifle_MX_SW_Black_F", "", 1000, "call life_coplevel >= 4"},
-			{ "100Rnd_65x39_caseless_black_mag_tracer", "", 1000, "call life_coplevel >= 4"},
+			{ "arifle_MX_SW_Black_F", "", 1000, "call life_coplevel >= 5"},
+			{ "100Rnd_65x39_caseless_black_mag_tracer", "", 1000, "call life_coplevel >= 5"},
 			{ "srifle_DMR_06_camo_F", "", 1000, "call life_coplevel >= 2"},
 			{ "srifle_DMR_06_olive_F", "", 1000, "call life_coplevel >= 2"},
 			{ "20Rnd_762x51_Mag", "", 1000, "call life_coplevel >= 2"},
-			{ "srifle_DMR_01_F", "", 1000, "call life_coplevel >= 2"},
-			{ "10Rnd_762x54_Mag", "", 1000, "call life_coplevel >= 2"},
 			{ "arifle_CTARS_blk_F", "", 1000, "call life_coplevel >= 4"},
 			{ "100Rnd_580x42_Mag_Tracer_F", "", 1000, "call life_coplevel >= 4"},
-			{ "arifle_ARX_blk_F", "", 1000, "call life_coplevel >= 5"},
+			{ "arifle_ARX_blk_F", "", 1000, "call life_coplevel >= 3"},
 			{ "30Rnd_65x39_caseless_green", "", 1000, "call life_coplevel >= 3"},
 			{ "10Rnd_50BW_Mag_F", "", 1000, "call life_coplevel >= 8"},
 			{ "arifle_MSBS65_mark_black_F", "", 1000, "call life_coplevel >= 3"},
@@ -601,11 +599,11 @@ class CfgItemShop {
 			{ "SMG_03_TR_black", "", 1000, "call life_coplevel >= 3"},
 			{ "SMG_03_black", "", 1000, "call life_coplevel >= 3"},
 			{ "50Rnd_570x28_SMG_03", "", 1000, "call life_coplevel >= 3"},
-			{ "arifle_SPAR_03_blk_F", "", 1000, "call life_coplevel >= 2"},
+			{ "arifle_SPAR_03_blk_F", "", 1000, "call 1 >= 2"},
 			{ "20Rnd_762x51_Mag", "", 1000, "call life_coplevel >= 2"},
 			{ "srifle_EBR_F", "", 1000, "call life_coplevel >= 3"},
-			{ "srifle_DMR_03_F", "", 1000, "call life_coplevel >= 4"},
-			{ "20Rnd_762x51_Mag", "", 1000, "call life_coplevel >= 4"},					
+			{ "srifle_DMR_03_F", "", 1000, "call life_coplevel >= 3"},
+			{ "20Rnd_762x51_Mag", "", 1000, "call life_coplevel >= 3"},					
 			{ "arifle_AK12_F", "", 1000, "call life_coplevel >= 3"},
 			{ "30Rnd_762x39_Mag_F", "", 1000, "call life_coplevel >= 3"},
 			{ "arifle_AK12U_F", "", 1000, "call life_coplevel >= 3"},
@@ -2087,7 +2085,7 @@ class CfgItemShop {
 			{ "srifle_DMR_06_camo_F", "", 202000, "true"}, //MK14
 			{ "srifle_DMR_06_olive_F", "", 202000, "true"}, //MK14
 			{ "20Rnd_762x51_Mag", "", 8900, "true"},
-			{ "srifle_DMR_03_khaki_F", "", 2700000, "true"}, //MK1
+			{ "srifle_DMR_03_khaki_F", "", 270000, "true"}, //MK1
 			{ "srifle_DMR_03_tan_F", "", 270000, "true"}, //MK1
 			{ "srifle_DMR_03_woodland_F", "", 270000, "true"}, //MK1
 			{ "srifle_DMR_03_multicam_F", "", 270000, "true"}, //MK1
@@ -3571,6 +3569,7 @@ class CfgItemShop {
 			{ "20Rnd_650x39_Cased_Mag_F", "", 2450, "true"},
 			{ "arifle_ARX_ghex_F", "", 184500, "true"}, //TYPE
 			{ "arifle_ARX_hex_F", "", 184500, "true"}, //TYPE
+			{ "10Rnd_50BW_Mag_F", "", 200000, "true"},
 			{ "30Rnd_65x39_caseless_green", "", 1550, "true"},
 			{ "arifle_MX_SW_F", "", 401000, "true"}, //MXSW
 			{ "arifle_MX_SW_khk_F", "", 401000, "true"}, //MXSW
@@ -3585,7 +3584,7 @@ class CfgItemShop {
 			{ "srifle_DMR_06_camo_F", "", 202000, "true"}, //MK14
 			{ "srifle_DMR_06_olive_F", "", 202000, "true"}, //MK14
 			{ "20Rnd_762x51_Mag", "", 8900, "true"},
-			{ "srifle_DMR_03_khaki_F", "", 2700000, "true"}, //MK1
+			{ "srifle_DMR_03_khaki_F", "", 270000, "true"}, //MK1
 			{ "srifle_DMR_03_tan_F", "", 270000, "true"}, //MK1
 			{ "srifle_DMR_03_woodland_F", "", 270000, "true"}, //MK1
 			{ "srifle_DMR_03_multicam_F", "", 270000, "true"}, //MK1

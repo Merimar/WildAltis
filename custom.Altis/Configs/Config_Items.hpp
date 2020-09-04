@@ -23,6 +23,42 @@ class Items {
 		itemInfo = "Mit dem Adrenalinshot könnt ihr kleinere Verletzungen während der Autofahrt behandeln";
 	};
 	
+	class firstaidkit {
+		name = "Verbandskasten";
+		illegal = false;
+		weight = 2;
+		type = "NORMAL";
+		buyPrice = 1715;
+		sellPrice = 500;
+		edible = -1;
+		icon = "";
+		itemInfo = "Mit dem Verbandskasten kannst du dich heilen. Je nach deiner Skillstufe kriegst du nach der Benutzung mehr Lebenspunkte. Das Item ist nach einer Nutzung weg.";
+	};
+	
+	class medikit {
+		name = "Medikit";
+		illegal = false;
+		weight = 8;
+		type = "NORMAL";
+		buyPrice = 7500;
+		sellPrice = 500;
+		edible = -1;
+		icon = "";
+		itemInfo = "Mit dem Meditkit kannst du dich unabhängig von deinem Heillevel voll heilen. Das Meditkit hat im Gegensatz zu dem normalen Verbandskasten allerdings eine längere Benutzungsdauer.";
+	};
+	
+	class adrenalin {
+		name = "Epi-Pen";
+		illegal = false;
+		weight = 10;
+		type = "NORMAL";
+		buyPrice = 56500;
+		sellPrice = 11000;
+		edible = -1;
+		icon = "";
+		itemInfo = "";
+	};
+	
 	class sos {
 		name = "SOS Knopf";
 		illegal = false;
@@ -107,6 +143,42 @@ class Items {
 		itemInfo = "";
 	};
 	
+	class kabelbinder {
+		name = "Kabelbinder";
+		illegal = true;
+		weight = 2;
+		type = "NORMAL";
+		buyPrice = 25000;
+		sellPrice = 2000;
+		edible = -1;
+		icon = "";
+		itemInfo = "Mit dem Kabelbinder kannst du Personen festnehmen. Die Tasten zum Festnehmen sind SHIFT + R.";
+	};
+	
+	class schloss {
+		name = "Schloss";
+		illegal = true;
+		weight = 10;
+		type = "NORMAL";
+		buyPrice = 10000;
+		sellPrice = 500;
+		edible = -1;
+		icon = "";
+		itemInfo = "Mit dem Schloss können die Polizisten die Zellen abschliessen.";
+	};
+	
+	class medmarihuana {
+		name = "Medizinisches Marihuana";
+		illegal = false;
+		weight = 5;
+		type = "NORMAL";
+		buyPrice = 5000;
+		sellPrice = 50;
+		edible = -1;
+		icon = "";
+		itemInfo = "Eine bezaubernde Droge die hauptsächlich von den Medics verwendet wird.";
+	};
+	
 	class defusekit {
 		name = "Entschärfungs Kit";
 		illegal = true;
@@ -132,6 +204,7 @@ class Items {
 		icon = "";
 		itemInfo = "Ein heisser Kaffee ohne Milch und Zucker. Der Kaffee regeneriert dein Durst um 100 Punkte";
 	};
+	
 	class waterBottle {
 		name = "Wasserflasche";
 		illegal = false;
@@ -143,6 +216,7 @@ class Items {
 		icon = "";
 		itemInfo = "Eine Wasserflasche mit Wasser drinnen. Wer hätts gedacht. Das Wasser regeneriert dein Durst um 100 Punkte";
 	};
+	
 	class wodka {
 		name = "Wodka";
 		illegal = false;
@@ -154,6 +228,7 @@ class Items {
 		icon = "";
 		itemInfo = "Zdorovaya voda, xaxaxaxa))";
 	};
+	
 	class bier {
 		name = "Bier";
 		illegal = false;
@@ -203,43 +278,6 @@ class Items {
 		icon = "";
 		itemInfo = "Ein fertiges Steak vom Klaus Grillt feines Grill BBQ. Rin in die hohle brin. Das Steak regeneriert dein Hunger um 75 Punkte.";
 	};
-
-
-	class firstaidkit {
-		name = "Verbandskasten";
-		illegal = false;
-		weight = 2;
-		type = "NORMAL";
-		buyPrice = 1715;
-		sellPrice = 500;
-		edible = -1;
-		icon = "";
-		itemInfo = "Mit dem Verbandskasten kannst du dich heilen. Je nach deiner Skillstufe kriegst du nach der Benutzung mehr Lebenspunkte. Das Item ist nach einer Nutzung weg.";
-	};
-	
-	class medikit {
-		name = "Medikit";
-		illegal = false;
-		weight = 8;
-		type = "NORMAL";
-		buyPrice = 7500;
-		sellPrice = 500;
-		edible = -1;
-		icon = "";
-		itemInfo = "Mit dem Meditkit kannst du dich unabhängig von deinem Heillevel voll heilen. Das Meditkit hat im Gegensatz zu dem normalen Verbandskasten allerdings eine längere Benutzungsdauer.";
-	};
-	
-	class adrenalin {
-		name = "Epi-Pen";
-		illegal = false;
-		weight = 10;
-		type = "NORMAL";
-		buyPrice = 56500;
-		sellPrice = 11000;
-		edible = -1;
-		icon = "";
-		itemInfo = "";
-	};
 	
 	class donuts {
 		name = "Donut";
@@ -252,46 +290,10 @@ class Items {
 		icon = "";
 		itemInfo = "Paar leckere Donuts. Kannst damit vielleicht Cops bestechen. Die Donuts regeneriern dein Hunger um 80 Punkte.";
 	};
-	
-	class kabelbinder {
-		name = "Kabelbinder";
-		illegal = true;
-		weight = 2;
-		type = "NORMAL";
-		buyPrice = 25000;
-		sellPrice = 2000;
-		edible = -1;
-		icon = "";
-		itemInfo = "Mit dem Kabelbinder kannst du Personen festnehmen. Die Tasten zum Festnehmen sind SHIFT + R.";
-	};
-	
-	class schloss {
-		name = "Schloss";
-		illegal = true;
-		weight = 10;
-		type = "NORMAL";
-		buyPrice = 10000;
-		sellPrice = 500;
-		edible = -1;
-		icon = "";
-		itemInfo = "Mit dem Schloss können die Polizisten die Zellen abschliessen.";
-	};
-	
-	class medmarihuana {
-		name = "Medizinisches Marihuana";
-		illegal = false;
-		weight = 5;
-		type = "NORMAL";
-		buyPrice = 5000;
-		sellPrice = 50;
-		edible = -1;
-		icon = "";
-		itemInfo = "Eine bezaubernde Droge die hauptsächlich von den Medics verwendet wird.";
-	};
 
 	//FARMING ITEMS
 
-	class danger{
+	class danger {
 		name = "Blindgänger";
 		illegal = true;
 		weight = 45;
@@ -310,18 +312,6 @@ class Items {
 		type = "MARKT";
 		buyPrice = 205000;
 		sellPrice = 290000;
-		edible = -1;
-		icon = "";
-		itemInfo = "";
-	};
-
-	class moonshineP {
-		name = "Schwarzgebrannter";
-		illegal = true;
-		weight = 3;
-		type = "MARKT";
-		buyPrice = -1;
-		sellPrice = 4120;
 		edible = -1;
 		icon = "";
 		itemInfo = "";
@@ -373,19 +363,7 @@ class Items {
 		edible = -1;
 		icon = "";
 		itemInfo = "";
-	};
-	
-	class titanU {
-		name = "Titanerz";
-		illegal = false;
-		weight = 4;
-		type = "FARM";
-		buyPrice = -1;
-		sellPrice = -1;
-		edible = -1;
-		icon = "";
-		itemInfo = "";
-	};
+	};	
 	
 	class diamantenU {
 		name = "Ungeschliffene Diamanten";
@@ -403,18 +381,6 @@ class Items {
 		name = "Eisenerz";
 		illegal = false;
 		weight = 5;
-		type = "FARM";
-		buyPrice = -1;
-		sellPrice = -1;
-		edible = -1;
-		icon = "";
-		itemInfo = "";
-	};
-
-	class erdgasU {
-		name = "Biogas";
-		illegal = false;
-		weight = 4;
 		type = "FARM";
 		buyPrice = -1;
 		sellPrice = -1;
@@ -458,71 +424,11 @@ class Items {
 		icon = "";
 		itemInfo = "";
 	};
-	
-	class ziegelU {
-		name = "Lehm";
-		illegal = false;
-		weight = 6;
-		type = "FARM";
-		buyPrice = -1;
-		sellPrice = -1;
-		edible = -1;
-		icon = "";
-		itemInfo = "";
-	};
-	
-	class paketeP {
-		name = "Koffer";
-		illegal = false;
-		weight = 25;
-		type = "MARKT";
-		buyPrice = -1;
-		sellPrice = 7570;
-		edible = -1;
-		icon = "";
-		itemInfo = "";
-	};
-	
-	class heliumP {
-		name = "Methan";
-		illegal = false;
-		weight = 90;
-		type = "MARKT";
-		buyPrice = -1;
-		sellPrice = 24600;
-		edible = -1;
-		icon = "";
-		itemInfo = "";
-	};
-	
+
 	class kokainU {
 		name = "Unverarbeitetes Kokain";
 		illegal = true;
 		weight = 6;
-		type = "FARM";
-		buyPrice = -1;
-		sellPrice = -1;
-		edible = -1;
-		icon = "";
-		itemInfo = "";
-	};
-	
-	class methU {
-		name = "Ungekochtes Meth";
-		illegal = true;
-		weight = 3;
-		type = "FARM";
-		buyPrice = -1;
-		sellPrice = -1;
-		edible = -1;
-		icon = "";
-		itemInfo = "";
-	};
-	
-	class uranU {
-		name = "Unverarbeitetes Uran";
-		illegal = true;
-		weight = 100;
 		type = "FARM";
 		buyPrice = -1;
 		sellPrice = -1;
@@ -546,7 +452,7 @@ class Items {
 	class marihuanaU {
 		name = "Cannabis";
 		illegal = true;
-		weight = 5;
+		weight = 4;
 		type = "FARM";
 		buyPrice = -1;
 		sellPrice = -1;
@@ -567,34 +473,10 @@ class Items {
 		itemInfo = "";
 	};
 	
-	class baumwolleU {
-		name = "Reisblätter";
-		illegal = false;
-		weight = 4;
-		type = "FARM";
-		buyPrice = -1;
-		sellPrice = -1;
-		edible = -1;
-		icon = "";
-		itemInfo = "";
-	};
-	
 	class oilU {
 		name = "Öl";
 		illegal = false;
 		weight = 4;
-		type = "";
-		buyPrice = 10;
-		sellPrice = 5;
-		edible = -1;
-		icon = "";
-		itemInfo = "";
-	};
-	
-	class relikt {
-		name = "Unbekannter Knochen";
-		illegal = true;
-		weight = 110;
 		type = "FARM";
 		buyPrice = -1;
 		sellPrice = -1;
@@ -603,15 +485,207 @@ class Items {
 		itemInfo = "";
 	};
 
-	//VERARBEITETE ITEMS
+	class weizenU {
+		name = "Weizen";
+		illegal = false;
+		weight = 3;
+		type = "FARM";
+		buyPrice = -1;
+		sellPrice = -1;
+		edible = -1;
+		icon = "";
+		itemInfo = "";
+	};
 
-	class diamantenP {
-		name = "Geschliffene Diamanten";
+	class beerU {
+		name = "Bier";
+		illegal = false;
+		weight = 3;
+		type = "FARM";
+		buyPrice = -1;
+		sellPrice = -1;
+		edible = -1;
+		icon = "";
+		itemInfo = "";
+	};
+
+	class gummiU {
+		name = "Gummireste";
 		illegal = false;
 		weight = 2;
+		type = "FARM";
+		buyPrice = -1;
+		sellPrice = -1;
+		edible = -1;
+		icon = "";
+		itemInfo = "";
+	};
+
+	class baumwolleU {
+		name = "Baumwolle";
+		illegal = false;
+		weight = 1;
+		type = "FARM";
+		buyPrice = -1;
+		sellPrice = -1;
+		edible = -1;
+		icon = "";
+		itemInfo = "";
+	};
+
+	class holzU {
+		name = "Baumstamm";
+		illegal = false;
+		weight = 2;
+		type = "FARM";
+		buyPrice = -1;
+		sellPrice = -1;
+		edible = -1;
+		icon = "";
+		itemInfo = "";
+	};
+
+	class treibstoffU {
+		name = "Unreiner Treibstoff";
+		illegal = false;
+		weight = 2;
+		type = "FARM";
+		buyPrice = -1;
+		sellPrice = -1;
+		edible = -1;
+		icon = "";
+		itemInfo = "";
+	};
+
+	class raritaetU {
+		name = "Rarität";
+		illegal = false;
+		weight = 90;
+		type = "FARM";
+		buyPrice = -1;
+		sellPrice = -1;
+		edible = -1;
+		icon = "";
+		itemInfo = "";
+	};
+
+	class recyclingP {
+		name = "Schrott";
+		illegal = false;
+		weight = 1;
 		type = "MARKT";
 		buyPrice = -1;
-		sellPrice = 3900;
+		sellPrice = 650;
+		edible = -1;
+		icon = "";
+		itemInfo = "";
+	};
+
+	class sprengstoffU {
+		name = "Schwarzpulver";
+		illegal = true;
+		weight = 6;
+		type = "FARM";
+		buyPrice = -1;
+		sellPrice = 650;
+		edible = -1;
+		icon = "";
+		itemInfo = "";
+	};
+
+	class zuckerU {
+		name = "Zuckerrohr";
+		illegal = false;
+		weight = 3;
+		type = "FARM";
+		buyPrice = -1;
+		sellPrice = 650;
+		edible = -1;
+		icon = "";
+		itemInfo = "";
+	};
+
+	class lsdU {
+		name = "Frösche";
+		illegal = true;
+		weight = 6;
+		type = "FARM";
+		buyPrice = -1;
+		sellPrice = -1;
+		edible = -1;
+		icon = "";
+		itemInfo = "";
+	};
+	
+	class methU {
+		name = "Ungekochtes Meth";
+		illegal = true;
+		weight = 6;
+		type = "FARM";
+		buyPrice = -1;
+		sellPrice = -1;
+		edible = -1;
+		icon = "";
+		itemInfo = "";
+	};
+	
+	class uranU {
+		name = "Unverarbeitetes Uran";
+		illegal = true;
+		weight = 100;
+		type = "FARM";
+		buyPrice = -1;
+		sellPrice = -1;
+		edible = -1;
+		icon = "";
+		itemInfo = "";
+	};
+	
+	class kohleU {
+		name = "Unverarbeitete Kohle";
+		illegal = false;
+		weight = 6;
+		type = "FARM";
+		buyPrice = -1;
+		sellPrice = -1;
+		edible = -1;
+		icon = "";
+		itemInfo = "";
+	};
+	
+	//VERARBEITETE ITEMS
+	
+	class paketeP {
+		name = "Koffer";
+		illegal = false;
+		weight = 25;
+		type = "MARKT";
+		buyPrice = -1;
+		sellPrice = 7570;
+		edible = -1;
+		icon = "";
+		itemInfo = "";
+	};
+	
+	class kohleP {
+		name = "Kohle";
+		illegal = false;
+		weight = 3;
+		type = "MARKT";
+		buyPrice = -1;
+		sellPrice = 3150;
+		edible = -1;
+		icon = "";
+		itemInfo = "";
+	};
+	
+	class heliumP {
+		name = "Methan";
+		illegal = false;
+		weight = 90;
+		type = "MARKT";
+		buyPrice = -1;
+		sellPrice = 24600;
 		edible = -1;
 		icon = "";
 		itemInfo = "";
@@ -628,7 +702,7 @@ class Items {
 		icon = "";
 		itemInfo = "";
 	};
-	
+
 	class uranUnstableP {
 		name = "Uran (Unstable)";
 		illegal = true;
@@ -641,56 +715,152 @@ class Items {
 		itemInfo = "";
 	};
 	
-	class marihuanaP {
-		name = "Marihuana";
-		illegal = true;
-		weight = 3;
-		type = "MARKT";
-		buyPrice = 19400;
-		sellPrice = 5535;
-		edible = -1;
-		icon = "";
-		itemInfo = "";
-	};
-	
 	class methP {
-		name = "Methamphetamine";
-		illegal = true;
-		weight = 2;
-		type = "MARKT";
-		buyPrice = -1;
-		sellPrice = 8500;
-		edible = -1;
-		icon = "";
-		itemInfo = "";
-	};
-	
-	class heroinP {
-		name = "Verarbeitetes Heroin";
+		name = "Meth";
 		illegal = true;
 		weight = 4;
 		type = "MARKT";
-		buyPrice = 19000;
-		sellPrice = 7070;
+		buyPrice = 12000;
+		sellPrice = 3200;
 		edible = -1;
 		icon = "";
 		itemInfo = "";
 	};
 	
-	class kokainP {
-		name = "Verarbeitetes Kokain";
+	class lsdP {
+		name = "LSD";
 		illegal = true;
+		weight = 4;
+		type = "MARKT";
+		buyPrice = 8000;
+		sellPrice = 2600;
+		edible = -1;
+		icon = "";
+		itemInfo = "";
+	};
+	
+	class zuckerP {
+		name = "Feiner Zucker";
+		illegal = false;
 		weight = 2;
 		type = "MARKT";
-		buyPrice = 29000;
-		sellPrice = 8610;
+		buyPrice = -1;
+		sellPrice = 1600;
 		edible = -1;
 		icon = "";
 		itemInfo = "";
 	};
 	
-	class titanP {
-		name = "Titanbarren";
+	class sprengstoffP {
+		name = "Sprengstoff";
+		illegal = true;
+		weight = 5;
+		type = "MARKT";
+		buyPrice = -1;
+		sellPrice = 8300;
+		edible = -1;
+		icon = "";
+		itemInfo = "";
+	};
+	
+	class raritaetP {
+		name = "Rarität";
+		illegal = false;
+		weight = 90;
+		type = "MARKT";
+		buyPrice = -1;
+		sellPrice = 65000;
+		edible = -1;
+		icon = "";
+		itemInfo = "";
+	};
+	
+	class treibstoffP {
+		name = "Treibstoff";
+		illegal = false;
+		weight = 1;
+		type = "MARKT";
+		buyPrice = -1;
+		sellPrice = 1760;
+		edible = -1;
+		icon = "";
+		itemInfo = "";
+	};
+	
+	class holzP {
+		name = "Bretter";
+		illegal = false;
+		weight = 1;
+		type = "MARKT";
+		buyPrice = -1;
+		sellPrice = 650;
+		edible = -1;
+		icon = "";
+		itemInfo = "";
+	};
+	
+	class gummiP {
+		name = "Gummi";
+		illegal = false;
+		weight = 2;
+		type = "FARM";
+		buyPrice = -1;
+		sellPrice = -1;
+		edible = -1;
+		icon = "";
+		itemInfo = "";
+	};
+
+	class baumwolleP {
+		name = "Kleidung";
+		illegal = false;
+		weight = 1;
+		type = "MARKT";
+		buyPrice = -1;
+		sellPrice = 900;
+		edible = -1;
+		icon = "";
+		itemInfo = "";
+	};
+
+	class geoxP {
+		name = "Goxschuhe";
+		illegal = false;
+		weight = 1;
+		type = "MARKT";
+		buyPrice = -1;
+		sellPrice = 1950;
+		edible = -1;
+		icon = "";
+		itemInfo = "";
+	};
+	
+	class beerP {
+		name = "Bierflasche";
+		illegal = false;
+		weight = 2;
+		type = "MARKT";
+		buyPrice = 10;
+		sellPrice = 1900;
+		edible = -1;
+		icon = "";
+		itemInfo = "";
+	};
+	
+	class weizenP {
+		name = "Mehl";
+		illegal = false;
+		weight = 2;
+		type = "MARKT";
+		buyPrice = -1;
+		sellPrice = 1500;
+		edible = -1;
+		icon = "";
+		itemInfo = "";
+	};
+	
+	class diamantenP {
+		name = "Geschliffene Diamanten";
 		illegal = false;
 		weight = 2;
 		type = "MARKT";
@@ -701,30 +871,42 @@ class Items {
 		itemInfo = "";
 	};
 	
-	class kleidungP {
-		name = "Reis";
-		illegal = false;
-		weight = 2;
+	class marihuanaP {
+		name = "Marihuana";
+		illegal = true;
+		weight = 3;
 		type = "MARKT";
-		buyPrice = -1;
-		sellPrice = 2275;
+		buyPrice = 13400;
+		sellPrice = 2900;
 		edible = -1;
 		icon = "";
 		itemInfo = "";
 	};
 	
-	class ziegelP {
-		name = "Ziegel";
-		illegal = false;
-		weight = 3;
+	class heroinP {
+		name = "Verarbeitetes Heroin";
+		illegal = true;
+		weight = 4;
 		type = "MARKT";
-		buyPrice = -1;
-		sellPrice = 4175;
+		buyPrice = 11000;
+		sellPrice = 3000;
 		edible = -1;
 		icon = "";
 		itemInfo = "";
 	};
-
+	
+	class kokainP {
+		name = "Verarbeitetes Kokain";
+		illegal = true;
+		weight = 4;
+		type = "MARKT";
+		buyPrice = 29000;
+		sellPrice = 6100;
+		edible = -1;
+		icon = "";
+		itemInfo = "";
+	};
+	
 	class eisenP {
 		name = "Eisenbarren";
 		illegal = false;
@@ -771,32 +953,20 @@ class Items {
 		edible = -1;
 		icon = "";
 		itemInfo = "";
-	};
-	
-	class erdgasP {
-		name = "Verarbeitetes Biogas";
+	};	
+
+	class wineP_A {
+		name = "Amateur Wein";
 		illegal = false;
 		weight = 3;
 		type = "MARKT";
 		buyPrice = -1;
-		sellPrice = 5045;
+		sellPrice = 1200;
 		edible = -1;
 		icon = "";
 		itemInfo = "";
 	};
-	
-	class traubenP {
-		name = "Wein";
-		illegal = false;
-		weight = 2;
-		type = "MARKT";
-		buyPrice = 4920;
-		sellPrice = 1620;
-		edible = 20;
-		icon = "";
-		itemInfo = "";
-	};
-	
+
 	class oilP {
 		name = "Raffiniertes Öl";
 		illegal = false;
@@ -809,66 +979,6 @@ class Items {
 		itemInfo = "";
 	};
 	
-	class Relikt_0 {
-		name = "Wertloser Knochen";
-		illegal = true;
-		weight = 80;
-		type = "MARKT";
-		buyPrice = -1;
-		sellPrice = 147000;
-		edible = -1;
-		icon = "";
-		itemInfo = "";
-	};
-	
-	class Relikt_1 {
-		name = "Abgenutzter Knochen";
-		illegal = true;
-		weight = 80;
-		type = "MARKT";
-		buyPrice = -1;
-		sellPrice = 307500;
-		edible = -1;
-		icon = "";
-		itemInfo = "";
-	};
-	
-	class Relikt_2 {
-		name = "Tigerknochen";
-		illegal = true;
-		weight = 80;
-		type = "MARKT";
-		buyPrice = -1;
-		sellPrice = 369000;
-		edible = -1;
-		icon = "";
-		itemInfo = "";
-	};
-	
-	class Relikt_3 {
-		name = "Mammutknochen";
-		illegal = true;
-		weight = 80;
-		type = "MARKT";
-		buyPrice = -1;
-		sellPrice = 492000;
-		edible = -1;
-		icon = "";
-		itemInfo = "";
-	};
-
-	class Relikt_4 {
-		name = "Dinosaurierknochen";
-		illegal = true;
-		weight = 80;
-		type = "MARKT";
-		buyPrice = -1;
-		sellPrice = 615000;
-		edible = -1;
-		icon = "";
-		itemInfo = "";
-	};
-
 	class Salema_F {
 		name = $STR_ANIM_Salema;
 		illegal = true;
@@ -960,6 +1070,80 @@ class Items {
 		type = "MARKT";
 		buyPrice = -1;
 		sellPrice = 690;
+		edible = -1;
+		icon = "";
+		itemInfo = "";
+	};
+	
+	//Doppelt Verarbeitete Items
+	
+	class kokainPS {
+		name = "Gestrecktes Kokain";
+		illegal = true;
+		weight = 4;
+		type = "MARKT";
+		buyPrice = 16000;
+		sellPrice = 7400;
+		edible = -1;
+		icon = "";
+		itemInfo = "";
+	};
+
+	class heroinPS {
+		name = "Gestrecktes Heroin";
+		illegal = true;
+		weight = 4;
+		type = "MARKT";
+		buyPrice = 14000;
+		sellPrice = 4200;
+		edible = -1;
+		icon = "";
+		itemInfo = "";
+	};
+
+	class marihuanaPS {
+		name = "Gestrecktes Marihuana";
+		illegal = true;
+		weight = 3;
+		type = "MARKT";
+		buyPrice = 14000;
+		sellPrice = 4200;
+		edible = -1;
+		icon = "";
+		itemInfo = "";
+	};
+
+	class lsdPS {
+		name = "Gestrecktes LSD";
+		illegal = true;
+		weight = 4;
+		type = "MARKT";
+		buyPrice = 14000;
+		sellPrice = 3450;
+		edible = -1;
+		icon = "";
+		itemInfo = "";
+	};
+	
+	class methPS {
+		name = "Gestrecktes Meth";
+		illegal = true;
+		weight = 4;
+		type = "MARKT";
+		buyPrice = 14000;
+		sellPrice = 5300;
+		edible = -1;
+		icon = "";
+		itemInfo = "";
+	};
+	
+	class wineP_S {
+		name = "Experten Wein";
+		illegal = false;
+		weight = 3;
+		type = "MARKT";
+		buyPrice = -1;
+		sellPrice = 2000;
 		edible = -1;
 		icon = "";
 		itemInfo = "";

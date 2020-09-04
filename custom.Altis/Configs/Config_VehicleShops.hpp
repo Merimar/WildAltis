@@ -29,6 +29,7 @@ class CarShops {
 			{ "B_Truck_01_covered_F", "true" },
 			{ "B_Truck_01_box_F", "true" },
 			{ "O_Truck_03_covered_F", "true"},
+			{ "O_T_Truck_03_repair_ghex_F", "true"},
 			{ "O_Truck_03_device_F", "true" }
 		};
 	};
@@ -82,6 +83,7 @@ class CarShops {
 			{ "B_MRAP_01_F", "true" },
 			{ "I_Truck_02_fuel_F", "true" },
             { "I_G_Van_01_fuel_F", "true" },
+			{ "B_CTRG_LSV_01_light_F", "true" },
 			{ "I_APC_Wheeled_03_cannon_F", "true" },
             { "O_T_Truck_03_fuel_ghex_F", "true" }
 		};
@@ -122,7 +124,7 @@ class CarShops {
 			{ "C_Van_02_medevac_F", "call life_mediclevel >= 2" },
 			{ "C_Van_01_box_F", "call life_mediclevel >= 1" },
 			{ "B_Truck_01_fuel_F", "call life_mediclevel >= 4" },
-			{ "B_T_LSV_01_unarmed_F", "call life_mediclevel >= 4" },
+			{ "B_CTRG_LSV_01_light_F", "call life_mediclevel >= 4" },
 			{ "B_MRAP_01_F", "call life_mediclevel >= 5" },
 			{ "O_Truck_03_repair_F", "call life_mediclevel >= 5" },
 			{ "C_Offroad_02_unarmed_F", "call life_mediclevel >= 2" },
@@ -169,7 +171,7 @@ class CarShops {
 			{ "B_MRAP_01_F", "call life_coplevel >= 5" },
 			{ "O_MRAP_02_F", "call life_coplevel >= 7" },
 			{ "I_MRAP_03_F", "call life_coplevel >= 6" },
-			{ "B_T_LSV_01_unarmed_F", "call life_coplevel >= 3" },
+			{ "B_CTRG_LSV_01_light_F", "call life_coplevel >= 3" },
 			{ "O_T_LSV_02_unarmed_F", "call life_coplevel >= 4" },
 			{ "I_Truck_02_covered_F", "call life_coplevel >= 3" },
 			{ "O_APC_Wheeled_02_rcws_F", "call life_coplevel >= 7" },

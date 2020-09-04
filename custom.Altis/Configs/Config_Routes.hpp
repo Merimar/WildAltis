@@ -1,9 +1,9 @@
 class CfgFarmRoutes {
 	class Oil {
 		name = "Ölroute";
-		fields[] = {"Farm_Oil_1","Farm_Oil_2"};
+		fields[] = {"Farm_Oil"};
 		processors[] = {"Processor_Oil_1"};
-		vendors[] = {"Vendor_Oil_1"};
+		vendors[] = {"Vendor_OilTreibstoff_1"};
 		gatherItem = "oilU";
 		gatherSkill = "farmFossil";
 		gatherTool = "pickaxe";
@@ -18,9 +18,9 @@ class CfgFarmRoutes {
 
 	class Diamanten {
 		name = "Diamantenroute";
-		fields[] = {"Farm_Diamond_1", "Farm_Diamond_2"};
-		processors[] = {"Processor_Diamond_1", "Processor_Diamond_2"};
-		vendors[] = {"Vendor_Diamond_1"};
+		fields[] = {"Farm_Diamant_1"};
+		processors[] = {"Processor_Diamant_1"};
+		vendors[] = {"Vendor_Diamant_1"};
 		gatherItem = "diamantenU";
 		gatherSkill = "farmStone";
 		gatherTool = "pickaxe";
@@ -33,19 +33,19 @@ class CfgFarmRoutes {
 		infoText = "";
 	};
 	
-	class Meth {
-		name = "Methamphetaminroute [Wochenroute]";
-		fields[] = {"Farm_Methamphetamin_1"};
-		processors[] = {"Processor_Methamphetamin_1"};
-		vendors[] = {"Vendor_Methamphetamin_1"};
-		gatherItem = "methU";
+	class Kokain {
+		name = "Kokainroute";
+		fields[] = {"Farm_Kokain_1"};
+		processors[] = {"Processor_Kokain_1"};
+		vendors[] = {"Drugdealer_1", "Drugdealer_2", "Drugdealer_3","Drugdealer_4"};
+		gatherItem = "kokainU";
 		gatherSkill = "farmDrugs";
 		gatherTool = "";
-		farmZonesize = 30;
+		farmZonesize = 50;
 		farmTime = 3;
-		processInput[] = {{"methU", 1}};
-		processOutput[] = {{"methP", 1}};
-		processText = "Koche Methamphetamine";
+		processInput[] = {{"kokainU", 1}};
+		processOutput[] = {{"kokainP", 1}};
+		processText = "Verarbeite Kokain";
 		processSkill = "processDrugs";
 		infoText = "";
 	};
@@ -53,7 +53,7 @@ class CfgFarmRoutes {
 	class UranStable {
 		name = "Uranroute (Stable)";
 		fields[] = {"Farm_Uran_1"};
-		processors[] = {"Processor_Uran_2"};
+		processors[] = {"Proccessor_Uran_2"};
 		vendors[] = {"Vendor_Uran_2"};
 		gatherItem = "uranU";
 		gatherSkill = "farmDrugs";
@@ -70,7 +70,7 @@ class CfgFarmRoutes {
 	class UranUnstable {
 		name = "Uranroute (Unstable)";
 		fields[] = {"Farm_Uran_1"};
-		processors[] = {"Processor_Uran_1"};
+		processors[] = {"Proccessor_Uran_1"};
 		vendors[] = {"Vendor_Uran_1"};
 		gatherItem = "";
 		gatherSkill = "farmDrugs";
@@ -80,23 +80,6 @@ class CfgFarmRoutes {
 		processInput[] = {{"uranU", 1}};
 		processOutput[] = {{"uranUnstableP", 1}};
 		processText = "Verarbeite Unstable Uran";
-		processSkill = "processDrugs";
-		infoText = "";
-	};
-	
-	class Kokain {
-		name = "Kokainroute";
-		fields[] = {"Farm_Coke_1"};
-		processors[] = {"Processor_Coke_1"};
-		vendors[] = {"Drugdealer_1", "Drugdealer_2", "Drugdealer_3","Drugdealer_4"};
-		gatherItem = "kokainU";
-		gatherSkill = "farmDrugs";
-		gatherTool = "";
-		farmZonesize = 50;
-		farmTime = 3;
-		processInput[] = {{"kokainU", 1}};
-		processOutput[] = {{"kokainP", 1}};
-		processText = "Verarbeite Kokain";
 		processSkill = "processDrugs";
 		infoText = "";
 	};
@@ -120,8 +103,8 @@ class CfgFarmRoutes {
 	
 	class Marihuana {
 		name = "Marihuanaroute";
-		fields[] = {"Farm_Weed_1"};
-		processors[] = {"Processor_Weed_1"};
+		fields[] = {"Farm_Cannabis_1"};
+		processors[] = {"Processor_Cannabis_1"};
 		vendors[] = {"Drugdealer_1", "Drugdealer_2", "Drugdealer_3","Drugdealer_4"};
 		gatherItem = "marihuanaU";
 		gatherSkill = "farmDrugs";
@@ -152,7 +135,7 @@ class CfgFarmRoutes {
 		infoText = "";
 	};
 	
-	class Salz {
+	class Salt {
 		name = "Salzroute";
 		fields[] = {"Farm_Salt_1"};
 		processors[] = {"Processor_Salt_1"};
@@ -169,28 +152,11 @@ class CfgFarmRoutes {
 		infoText = "";
 	};
 	
-	class Titan {
-		name = "Titanroute";
-		fields[] = {"Farm_Titan_1"};
-		processors[] = {"Processor_Titan_1"};
-		vendors[] = {"Vendor_Titan_1"};
-		gatherItem = "titanU";
-		gatherSkill = "farmOre";
-		gatherTool = "pickaxe";
-		farmZonesize = 30;
-		farmTime = 3;
-		processInput[] = {{"titanU", 1}};
-		processOutput[] = {{"titanP", 1}};
-		processText = "Verarbeite Titan";
-		processSkill = "processOre";
-		infoText = "";
-	};
-	
 	class Kupfer {
 		name = "Kupferroute";
-		fields[] = {"Farm_Copper_1", "Farm_Copper_2"};
-		processors[] = {"Processor_Copper_1","Processor_Copper_2"};
-		vendors[] = {"Vendor_Metal_1", "Vendor_Metal_2","Vendor_Metal_3"};
+		fields[] = {"Farm_Kupfer_1"};
+		processors[] = {"Processor_Kupfer_1"};
+		vendors[] = {"Vendor_KupferEisen_1"};
 		gatherItem = "kupferU";
 		gatherSkill = "farmOre";
 		gatherTool = "pickaxe";
@@ -205,9 +171,9 @@ class CfgFarmRoutes {
 	
 	class Eisen {
 		name = "Eisenroute";
-		fields[] = {"Farm_Iron_1","Farm_Iron_2"};
-		processors[] = {"Processor_Iron_1","Processor_Iron_2"};
-		vendors[] = {"Vendor_Metal_1", "Vendor_Metal_2","Vendor_Metal_3"};
+		fields[] = {"Farm_Eisen_1"};
+		processors[] = {"Processor_Eisen_1"};
+		vendors[] = {"Vendor_KupferEisen_1"};
 		gatherItem = "eisenU";
 		gatherSkill = "farmOre";
 		gatherTool = "pickaxe";
@@ -219,114 +185,12 @@ class CfgFarmRoutes {
 		processSkill = "processOre";
 		infoText = "";
 	};
-	
-	class Erdgas {
-		name = "Biogas";
-		fields[] = {"Farm_Gas_1"};
-		processors[] = {"Processor_Gas_1"};
-		vendors[] = {"Vendor_Gas_1"};
-		gatherItem = "erdgasU";
-		gatherSkill = "farmFossil";
-		gatherTool = "";
-		farmZonesize = 100;
-		farmTime = 3;
-		processInput[] = {{"erdgasU", 1}};
-		processOutput[] = {{"erdgasP", 1}};
-		processText = "Verarbeite Biogas";
-		processSkill = "processFossil";
-		infoText = "";
-	};
-	
-	class Ziegel {
-		name = "Ziegelroute";
-		fields[] = {"Farm_Brick_1"};
-		processors[] = {"Processor_Brick_1"};
-		vendors[] = {"Vendor_Brick_1"};
-		gatherItem = "ziegelU";
-		gatherSkill = "farmStone";
-		gatherTool = "";
-		farmZonesize = 50;
-		farmTime = 3;
-		processInput[] = {{"ziegelU", 1}};
-		processOutput[] = {{"ziegelP", 1}};
-		processText = "Verarbeite Ziegel";
-		processSkill = "processRock";
-		infoText = "";
-	};
-	
-	class Reis {
-		name = "Reisroute";
-		fields[] = {"Farm_Reis_1"};
-		processors[] = {"Processor_Reis_1","Processor_Reis_2"};
-		vendors[] = {"Markt_1","Markt_2","Markt_3","Markt_4","Markt_5","Markt_6","Markt_7","Markt_8","Markt_9","Markt_10"};
-		gatherItem = "baumwolleU";
-		gatherSkill = "farmGrapes";
-		gatherTool = "";
-		farmZonesize = 30;
-		farmTime = 3;
-		processInput[] = {{"baumwolleU", 1}};
-		processOutput[] = {{"kleidungP", 1}};
-		processText = "Verarbeite Reis";
-		processSkill = "processGrapes";
-		infoText = "";
-	};
-	
-	class Wein {
-		name = "Weinroute";
-		fields[] = {"Farm_Grape_1"};
-		processors[] = {"Processor_GrapeLegal_1"};
-		vendors[] = {"Vendor_GrapeLegal_1"};
-		gatherItem = "traubenU";
-		gatherSkill = "farmGrapes";
-		gatherTool = "";
-		farmZonesize = 30;
-		farmTime = 3;
-		processInput[] = {{"traubenU", 1}};
-		processOutput[] = {{"traubenP", 1}};
-		processText = "Verarbeite Trauben";
-		processSkill = "processGrapes";
-		infoText = "";
-	};
-	
-	class Moonshine {
-		name = "Schwarzgebrannterroute";
-		fields[] = {"Farm_Grape_1"};
-		processors[] = {"Processor_GrapeIllegal_1"};
-		vendors[] = {"Vendor_Wongs_1", "Vendor_Wongs_2", "Vendor_Wongs_3", "Vendor_Wongs_4"};
-		gatherItem = "traubenU";
-		gatherSkill = "farmGrapes";
-		gatherTool = "";
-		farmZonesize = 30;
-		farmTime = 3;
-		processInput[] = {{"traubenU", 2}};
-		processOutput[] = {{"moonshineP", 1}};
-		processText = "Verarbeite Schwarzgebrannten";
-		processSkill = "processDrugs";
-		infoText = "";
-	};
-	
-	class Relikt {
-		name = "Knochenroute";
-		fields[] = {"Farm_Relikttempel_1"};
-		processors[] = {"Processor_Relikttempel_1"};
-		vendors[] = {"Vendor_Relikttempel_1", "Vendor_Relikttempel_2"};
-		gatherItem = "relikt";
-		gatherSkill = "farmFossil";
-		gatherTool = "";
-		farmZonesize = 12;
-		farmTime = 15;
-		processInput[] = {{"relikt", 1}};
-		processOutput[] = {};
-		processText = "Verarbeite Knochen";
-		processSkill = "";
-		infoText = "";
-	};
 
 	class Helium {
 		name = "Methanroute";
-		fields[] = {"Farm_Helium_1"};
+		fields[] = {"Farm_Methan_1"};
 		processors[] = {""};
-		vendors[] = {"Vendor_Helium_1"};
+		vendors[] = {"Vendor_Methan_1"};
 		gatherItem = "heliumP";
 		gatherSkill = "farmFossil";
 		gatherTool = "";
@@ -367,23 +231,6 @@ class CfgFarmRoutes {
 		farmZonesize = 30;
 		farmTime = 3;
 		processInput[] = {{"apple", 1}};
-		processOutput[] = {};
-		processText = "";
-		processSkill = "processGrapes";
-		infoText = "";
-	};
-
-	class Bananen {
-		name = "Karottenroute";
-		fields[] = {"Farm_Karotten_1", "Farm_Karotten_2", "Farm_Karotten_3", "Farm_Karotten_4", "Farm_Karotten_5", "Farm_Karotten_6", "Farm_Karotten_7"};
-		processors[] = {""};
-		vendors[] = {"Markt_1","Markt_2","Markt_3","Markt_4","Markt_5","Markt_6","Markt_7","Markt_8","Markt_9","Markt_10"};
-		gatherItem = "bananen";
-		gatherSkill = "farmFruit";
-		gatherTool = "";
-		farmZonesize = 30;
-		farmTime = 3;
-		processInput[] = {{"bananen", 1}};
 		processOutput[] = {};
 		processText = "";
 		processSkill = "processGrapes";
@@ -460,18 +307,362 @@ class CfgFarmRoutes {
 
 	class Unterhaendler {
 		name = "Gefahrengutroute";
-		fields[] = {""};
+		fields[] = {"Gefahr_Buy_1"};
 		processors[] = {""};
-		vendors[] = {"Gefahr_Buy_1","Gefahr_Sell_1"};
+		vendors[] = {"Gefahr_Sell_1"};
 		gatherItem = "";
 		gatherSkill = "";
 		gatherTool = "";
-		farmZonesize = 30;
-		farmTime = 2;
+		farmZonesize = 0;
+		farmTime = 100;
 		processInput[] = {};
 		processOutput[] = {};
 		processText = "";
 		processSkill = "";
 		infoText = "";
 	};
+
+	class Baecker {
+		name = "Bäckereiroute";
+		fields[] = {"Farm_Baecker_1"};
+		processors[] = {"Processor_Baecker_1"};
+		vendors[] = {"Vendor_Baecker_1"};
+		gatherItem = "beerU";
+		gatherSkill = "farmFruit";
+		gatherTool = "";
+		farmZonesize = 30;
+		farmTime = 3;
+		processInput[] = {{"beerU", 1}};
+		processOutput[] = {{"beerP", 1}};
+		processText = "Verarbeite Weizen";
+		processSkill = "processGrapes";
+		infoText = "";
+	};
+
+	class Beer {
+		name = "Bierroute";
+		fields[] = {"Farm_Beer_1"};
+		processors[] = {"Processor_Beer_1"};
+		vendors[] = {"Vendor_BeerWine_1"};
+		gatherItem = "weizenU";
+		gatherSkill = "farmFruit";
+		gatherTool = "";
+		farmZonesize = 30;
+		farmTime = 3;
+		processInput[] = {{"weizenU", 1}};
+		processOutput[] = {{"weizenP", 1}};
+		processText = "Verarbeite Weizen";
+		processSkill = "processGrapes";
+		infoText = "";
+	};
+	
+	class WineE {
+		name = "Weinroute [Experte]";
+		fields[] = {"Farm_Wine_1"};
+		processors[] = {"Processor_Wine_1"};
+		vendors[] = {"Vendor_BeerWine_1"};
+		gatherItem = "traubenU";
+		gatherSkill = "farmFruit";
+		gatherTool = "";
+		farmZonesize = 30;
+		farmTime = 3;
+		processInput[] = {{"traubenU", 1}};
+		processOutput[] = {{"wineP_S", 1}};
+		processText = "Verarbeite Wein";
+		processSkill = "processGrapes";
+		infoText = "";
+	};
+
+	class WineA {
+		name = "Weinroute [Amateur]";
+		fields[] = {"Farm_Wine_1"};
+		processors[] = {"Processor_Wine_2"};
+		vendors[] = {"Vendor_BeerWine_1"};
+		gatherItem = "traubenU";
+		gatherSkill = "farmFruit";
+		gatherTool = "";
+		farmZonesize = 30;
+		farmTime = 3;
+		processInput[] = {{"traubenU", 1}};
+		processOutput[] = {{"wineP_A", 1}};
+		processText = "Verarbeite Wein";
+		processSkill = "processGrapes";
+		infoText = "";
+	};
+
+	class Gox {
+		name = "Deichfrauroute";
+		fields[] = {"Farm_Gummi_1"};
+		processors[] = {"Processor_Deichfrau_1"};
+		vendors[] = {"Vendor_Deichfrau_1"};
+		gatherItem = "gummiU";
+		gatherSkill = "farmFossil";
+		gatherTool = "";
+		farmZonesize = 30;
+		farmTime = 3;
+		processInput[] = {{"gummiU", 1}};
+		processOutput[] = {{"geoxP", 1}};
+		processText = "Verarbeite zu Gox";
+		processSkill = "processFossil";
+		infoText = "";
+	};
+
+	class Baumwolle {
+		name = "Baumwolleroute";
+		fields[] = {"Farm_Baumwolle_1"};
+		processors[] = {"Processor_Baumwolle_1"};
+		vendors[] = {"Markt_1","Markt_2","Markt_3","Markt_4","Markt_5","Markt_6","Markt_7","Markt_8","Markt_9","Markt_10"};
+		gatherItem = "baumwolleU";
+		gatherSkill = "farmFruit";
+		gatherTool = "";
+		farmZonesize = 30;
+		farmTime = 3;
+		processInput[] = {{"baumwolleU", 1}};
+		processOutput[] = {{"baumwolleP", 1}};
+		processText = "Verarbeite zu Gox";
+		processSkill = "processGrapes";
+		infoText = "";
+	};
+
+	class Holz {
+		name = "Holzroute";
+		fields[] = {"Farm_Holz_1"};
+		processors[] = {"Processor_Holz_1"};
+		vendors[] = {"Vendor_Holz_1"};
+		gatherItem = "holzU";
+		gatherSkill = "farmFruit";
+		gatherTool = "";
+		farmZonesize = 30;
+		farmTime = 3;
+		processInput[] = {{"holzU", 1}};
+		processOutput[] = {{"holzP", 1}};
+		processText = "Verarbeite Holz";
+		processSkill = "processGrapes";
+		infoText = "";
+	};
+
+	class Kohle {
+		name = "Kohleroute";
+		fields[] = {"Farm_Kohle_1"};
+		processors[] = {"Processor_Kohle_1"};
+		vendors[] = {"Vendor_Kohle_1"};
+		gatherItem = "kohleU";
+		gatherSkill = "farmOre";
+		gatherTool = "";
+		farmZonesize = 30;
+		farmTime = 3;
+		processInput[] = {{"kohleU", 1}};
+		processOutput[] = {{"kohleP", 1}};
+		processText = "Verarbeite Kohle";
+		processSkill = "processOre";
+		infoText = "";
+	};
+
+	class Treibstoff {
+		name = "Treibstoffroute";
+		fields[] = {"Farm_Treibstoff_1"};
+		processors[] = {"Processor_Treibstoff_1"};
+		vendors[] = {"Vendor_OilTreibstoff_1"};
+		gatherItem = "treibstoffU";
+		gatherSkill = "farmFossil";
+		gatherTool = "";
+		farmZonesize = 30;
+		farmTime = 3;
+		processInput[] = {{"treibstoffU", 1}};
+		processOutput[] = {{"treibstoffP", 1}};
+		processText = "Verarbeite Treibstoff";
+		processSkill = "processFossil";
+		infoText = "";
+	};
+
+	class Raritaet {
+		name = "Raritätenroute";
+		fields[] = {"Farm_Raritaet_1"};
+		processors[] = {"Processor_Raritaet_1"};
+		vendors[] = {"Vendor_Raritaet_1"};
+		gatherItem = "raritaetU";
+		gatherSkill = "farmFossil";
+		gatherTool = "";
+		farmZonesize = 30;
+		farmTime = 10;
+		processInput[] = {{"raritaetU", 1}};
+		processOutput[] = {{"raritaetP", 1}};
+		processText = "Verarbeite Rarität";
+		processSkill = "processFossil";
+		infoText = "";
+	};
+
+	class Recyling {
+		name = "Recyclingroute";
+		fields[] = {"Farm_Schrott_1"};
+		processors[] = {""};
+		vendors[] = {"Vendor_Recycling_1"};
+		gatherItem = "recyclingP";
+		gatherSkill = "farmOre";
+		gatherTool = "";
+		farmZonesize = 30;
+		farmTime = 3;
+		processInput[] = {{"recyclingP", 1}};
+		processOutput[] = {};
+		processText = "Verarbeite Schrott";
+		processSkill = "processOre";
+		infoText = "";
+	};
+
+	class Sprengstoff {
+		name = "Sprengstoffroute";
+		fields[] = {"Farm_Schwarzpulver_1"};
+		processors[] = {"Processor_Sprengstoff_1"};
+		vendors[] = {"Vendor_Sprengstoff_1"};
+		gatherItem = "sprengstoffU";
+		gatherSkill = "farmFossil";
+		gatherTool = "";
+		farmZonesize = 30;
+		farmTime = 3;
+		processInput[] = {{"sprengstoffU", 1}};
+		processOutput[] = {{"sprengstoffP", 1}};
+		processText = "Verarbeite Sprengstoff";
+		processSkill = "processFossil";
+		infoText = "";
+	};
+
+	class Zucker {
+		name = "Zuckerroute";
+		fields[] = {"Farm_Zuckerrohr_1"};
+		processors[] = {"Processor_Zucker_1"};
+		vendors[] = {"Vendor_Zucker_1"};
+		gatherItem = "zuckerU";
+		gatherSkill = "farmFruit";
+		gatherTool = "";
+		farmZonesize = 30;
+		farmTime = 3;
+		processInput[] = {{"zuckerU", 1}};
+		processOutput[] = {{"zuckerP", 1}};
+		processText = "Verarbeite Zucker";
+		processSkill = "processGrapes";
+		infoText = "";
+	};
+
+	class LSD {
+		name = "LSDroute";
+		fields[] = {"Farm_LSD_1"};
+		processors[] = {"Processor_LSD_1"};
+		vendors[] = {"Drugdealer_1", "Drugdealer_2", "Drugdealer_3","Drugdealer_4"};
+		gatherItem = "lsdU";
+		gatherSkill = "farmDrugs";
+		gatherTool = "";
+		farmZonesize = 30;
+		farmTime = 3;
+		processInput[] = {{"lsdU", 1}};
+		processOutput[] = {{"lsdP", 1}};
+		processText = "Verarbeite Frösche";
+		processSkill = "processDrugs";
+		infoText = "";
+	};
+
+	class Meth {
+		name = "Methroute";
+		fields[] = {"Farm_Meth_1"};
+		processors[] = {"Processor_Meth_1"};
+		vendors[] = {"Drugdealer_1", "Drugdealer_2", "Drugdealer_3","Drugdealer_4"};
+		gatherItem = "methU";
+		gatherSkill = "farmDrugs";
+		gatherTool = "";
+		farmZonesize = 30;
+		farmTime = 3;
+		processInput[] = {{"methU", 1}};
+		processOutput[] = {{"methP", 1}};
+		processText = "Verarbeite Meth";
+		processSkill = "processDrugs";
+		infoText = "";
+	};
+
+
+
+////////////////////////////////////////////////////////////
+
+	class LSDS {
+		name = "LSDroute [Gestreckt]";
+		fields[] = {""};
+		processors[] = {"Processor_Strecken_1", "Processor_Strecken_2", "Processor_Strecken_3"};
+		vendors[] = {"Drugdealer_1", "Drugdealer_2", "Drugdealer_3","Drugdealer_4"};
+		gatherItem = "";
+		gatherSkill = "";
+		gatherTool = "";
+		farmZonesize = 30;
+		farmTime = 3;
+		processInput[] = {{"lsdP", 1}};
+		processOutput[] = {{"lsdPS", 1}};
+		processText = "Strecke LSD";
+		processSkill = "processDrugs";
+		infoText = "";
+	};
+
+	class MethS {
+		name = "Methroute [Gestreckt]";
+		fields[] = {""};
+		processors[] = {"Processor_Strecken_1", "Processor_Strecken_2", "Processor_Strecken_3"};
+		vendors[] = {"Drugdealer_1", "Drugdealer_2", "Drugdealer_3","Drugdealer_4"};
+		gatherItem = "";
+		gatherSkill = "";
+		gatherTool = "";
+		farmZonesize = 30;
+		farmTime = 3;
+		processInput[] = {{"methP", 1}};
+		processOutput[] = {{"methPS", 1}};
+		processText = "Strecke Meth";
+		processSkill = "processDrugs";
+		infoText = "";
+	};
+
+	class KokainS {
+		name = "Kokainroute [Gestreckt]";
+		fields[] = {""};
+		processors[] = {"Processor_Strecken_1", "Processor_Strecken_2", "Processor_Strecken_3"};  
+		vendors[] = {"Drugdealer_1", "Drugdealer_2", "Drugdealer_3","Drugdealer_4"};
+		gatherItem = "";
+		gatherSkill = "";
+		gatherTool = "";
+		farmZonesize = 50;
+		farmTime = 3;
+		processInput[] = {{"kokainP", 1}};
+		processOutput[] = {{"kokainPS", 1}};
+		processText = "Strecke Kokain";
+		processSkill = "processDrugs";
+		infoText = "";
+	};
+	
+	class HeroinS {
+		name = "Heroinroute [Gestreckt]";
+		fields[] = {""};
+		processors[] = {"Processor_Strecken_1", "Processor_Strecken_2", "Processor_Strecken_3"};
+		vendors[] = {"Drugdealer_1", "Drugdealer_2", "Drugdealer_3","Drugdealer_4"};
+		gatherItem = "";
+		gatherSkill = "";
+		gatherTool = "";
+		farmZonesize = 50;
+		farmTime = 3;
+		processInput[] = {{"heroinP", 1}};
+		processOutput[] = {{"heroinPS", 1}};
+		processText = "Strecke Heroin";
+		processSkill = "processDrugs";
+		infoText = "";
+	};
+	
+	class MarihuanaS {
+		name = "Marihuanaroute [Gestreckt]";
+		fields[] = {""};
+		processors[] = {"Processor_Strecken_1", "Processor_Strecken_2", "Processor_Strecken_3"};
+		vendors[] = {"Drugdealer_1", "Drugdealer_2", "Drugdealer_3","Drugdealer_4"};
+		gatherItem = "";
+		gatherSkill = "";
+		gatherTool = "";
+		farmZonesize = 50;
+		farmTime = 3;
+		processInput[] = {{"marihuanaP", 1}};
+		processOutput[] = {{"marihuanaPS", 1}};
+		processText = "Strecke Cannabis";
+		processSkill = "processDrugs";
+		infoText = "";
+	};	
 };

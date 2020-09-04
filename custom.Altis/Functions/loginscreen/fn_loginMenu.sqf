@@ -66,7 +66,7 @@ sleep 0.1;
 
 _display displaySetEventHandler ["keyDown", "_this call life_fnc_displayHandler"];
 
-_progressText ctrlSetStructuredText parseText "Fordere Spielderdaten an ...";
+_progressText ctrlSetStructuredText parseText "Fordere Spielerdaten an ...";
 waitUntil {!isNil "life_session_completed"};
 
 _firstJoinDate = format ["%1.%2.%3", life_first_join_date select 2, life_first_join_date select 1, life_first_join_date select 0];

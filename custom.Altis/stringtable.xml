@@ -48,8 +48,44 @@
 		<Key ID="STR_Shops_Rebel">
             <Original>Rebellen Shop</Original>
         </Key>
-		<Key ID="STR_Shops_C">
-            <Original>Zivilisten Shop</Original>
+		<Key ID="STR_License_Baecker">
+            <Original>Bäckereilizenz</Original>
+        </Key>
+		<Key ID="STR_License_Beer">
+            <Original>Brauereilizenz</Original>
+        </Key>
+		<Key ID="STR_License_Wine">
+            <Original>Weinverarbeitung</Original>
+        </Key>
+		<Key ID="STR_License_Geox">
+            <Original>Goxvearbeitung</Original>
+        </Key>
+		<Key ID="STR_License_Holz">
+            <Original>Holzvearbeitung</Original>
+        </Key>
+		<Key ID="STR_License_Kohle">
+            <Original>Kohlevearbeitung</Original>
+        </Key>
+		<Key ID="STR_License_Treibstoff">
+            <Original>Treibstoffearbeitung</Original>
+        </Key>
+		<Key ID="STR_License_Raritaet">
+            <Original>Raritätvearbeitung</Original>
+        </Key>
+		<Key ID="STR_License_Sprengstoff">
+            <Original>Sprengstoffvearbeitung</Original>
+        </Key>
+		<Key ID="STR_License_Zucker">
+            <Original>Zuckervearbeitung</Original>
+        </Key>
+		<Key ID="STR_License_LSD">
+            <Original>LSDvearbeitung</Original>
+        </Key>
+		<Key ID="STR_License_Labor">
+            <Original>DrogenLabor</Original>
+        </Key>
+		<Key ID="STR_License_Baumwolle">
+            <Original>Baumwolle</Original>
         </Key>
         <Key ID="STR_Shops_C_Gun">
             <Original>Billy Joe's Clothing</Original>

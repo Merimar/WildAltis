@@ -32,6 +32,7 @@ private _hasPremium = if(_materialClassname != "-1") then {(_premiumLvl >= getNu
 private _hasSkin = if(_skinClassname != "-1") then {call compile (getText (missionConfigFile >> "LifeCfgVehicles" >> _vehicleClassname >> "textures" >> _skinClassname >> "condition"))} else {true};
 private _buyOrRent = if(_buyClassname) then {"kaufen"} else {"mieten"};
 
+if(_vehicleClassname == "O_APC_Wheeled_02_rcws_F" && _buyClassname) exitWith {["Du kannst dir den Gorgon aktuell nur mieten", "Fahrzeugshop"] spawn life_fnc_message;};
 if(!_hasPremium) exitWith {["Du kannst dir dieses Fahrzeug aufgrund der ausgewählten Folie nicht kaufen", "Fahrzeugshop"] spawn life_fnc_message;};
 if(!_hasSkin) exitWith {["Du kannst dir dieses Fahrzeug aufgrund des ausgewählten Skins nicht kaufen", "Fahrzeugshop"] spawn life_fnc_message;};
 if(_finalPrice <= 0) exitWith {["Das Fahrzeug hat keinen Preis", "Fahrzeugshop"] spawn life_fnc_message;};

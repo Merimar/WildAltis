@@ -25,7 +25,7 @@ _isIn;
 
 if(count _route isEqualTo 0) exitWith {["", "Keine Route in der Nähe"] spawn life_fnc_message;};
 _route = _route select 0;
-if((configName _route) in ["Helium", "Dunkle", "Relikt"]) exitWith {};
+if((configName _route) in ["Helium", "Dunkle", "Relikt", "Raritaet"]) exitWith {};
 
 private _farmItem = getText (_route >> "gatherItem");
 

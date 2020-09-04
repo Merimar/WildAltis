@@ -437,7 +437,7 @@ class LifeCfgVehicles {
 
 	class C_Van_01_box_F {
 		vItemSpace = 200;
-		price = 252500;
+		price = 227280;
 		chopPrice = 95000;
 		legal = 1;
 		bankCapacity = 0;
@@ -465,7 +465,7 @@ class LifeCfgVehicles {
 
 	class C_Van_01_transport_F {
 		vItemSpace = 160;
-		price = 185000;
+		price = 166500;
 		chopPrice = 74500;
 		legal = 1;
 		bankCapacity = 0;
@@ -488,7 +488,7 @@ class LifeCfgVehicles {
 
 	class B_Truck_01_transport_F {
 		vItemSpace = 500;
-		price = 1240000;
+		price = 1116000;
 		chopPrice = 402100;
 		legal = 1;
 		bankCapacity = 0;
@@ -507,7 +507,7 @@ class LifeCfgVehicles {
 	
 	class B_Truck_01_covered_F {
 		vItemSpace = 800;
-		price = 2750000;
+		price = 2475000;
 		chopPrice = 1200000;
 		legal = 1;
 		bankCapacity = 0;
@@ -540,7 +540,7 @@ class LifeCfgVehicles {
 
 	class C_Van_01_fuel_F {
 		vItemSpace = 180;
-		price = 215000;
+		price = 193500;
 		chopPrice = 86000;
 		legal = 1;
 		bankCapacity = 0;
@@ -563,7 +563,7 @@ class LifeCfgVehicles {
 
 	class O_Truck_03_transport_F {
 		vItemSpace = 700;
-		price = 2320000;
+		price = 2088000;
 		chopPrice = 1100000;
 		legal = 1;
 		bankCapacity = 0;
@@ -572,7 +572,7 @@ class LifeCfgVehicles {
 	
 	class C_Truck_02_fuel_F {
 		vItemSpace = 350;
-		price = 465000;
+		price = 418500;
 		chopPrice = 212200;
 		legal = 1;
 		bankCapacity = 0;
@@ -581,7 +581,7 @@ class LifeCfgVehicles {
 
 	class B_Truck_01_box_F {
 		vItemSpace = 1100;
-		price = 4250000;
+		price = 3825000;
 		chopPrice = 1610200;
 		legal = 1;
 		bankCapacity = 0;
@@ -597,7 +597,7 @@ class LifeCfgVehicles {
 
 	class O_Truck_03_covered_F {
 		vItemSpace = 2025;
-		price = 8715000;
+		price = 7843500;
 		chopPrice = 2683000;
 		legal = 1;
 		bankCapacity = 0;
@@ -606,18 +606,27 @@ class LifeCfgVehicles {
 
 	class O_Truck_03_device_F {
 		vItemSpace = 2425;
-		price = 14145000;
+		price = 12730500;
 		chopPrice = 3900000;
 		legal = 1;
 		bankCapacity = 0;
         class textures {
 			class PremTron {
-				name = "Wild";
+				name = "Wild Tron";
 				path[] = {"Images\Donator\Tempest0.jpg","Images\Donator\Tempest1.jpg","Images\Donator\Tempest2.jpg","Images\Donator\Tempest3.jpg","Images\Donator\Tempest4.jpg"};
 				condition = "call life_donorlevel >= 3";
 				price = 1;
 			};
 		};
+    };
+
+	class O_T_Truck_03_repair_ghex_F {
+		vItemSpace = 2800;
+		price = 10500000;
+		chopPrice = 3900000;
+		legal = 1;
+		bankCapacity = 0;
+        class textures {};
     };
 
 	class B_Heli_Light_01_F {
@@ -838,7 +847,7 @@ class LifeCfgVehicles {
 
 	class B_Heli_Transport_03_unarmed_F {
 		vItemSpace = 500;
-		price = 10455000;
+		price = 9409500;
 		chopPrice = 0;
 		legal = 1;
 		bankCapacity = 0;
@@ -847,7 +856,7 @@ class LifeCfgVehicles {
 	
 	class I_Plane_Fighter_03_AA_F {
 		vItemSpace = 1800;
-		price = 10100000;
+		price = 9090000;
 		chopPrice = 0;
 		legal = 1;
 		bankCapacity = 0;
@@ -902,7 +911,7 @@ class LifeCfgVehicles {
 
 	class O_Heli_Transport_04_F {
 		vItemSpace = 300;
-		price = 8874450;
+		price = 7987005;
 		chopPrice = 0;
 		legal = 1;
 		bankCapacity = 0;
@@ -912,7 +921,7 @@ class LifeCfgVehicles {
 
 	class O_Heli_Transport_04_box_F {
 		vItemSpace = 650;
-		price = 19003500;
+		price = 17103150;
 		chopPrice = 0;
 		legal = 0;
 		bankCapacity = 0;
@@ -921,7 +930,7 @@ class LifeCfgVehicles {
 
 	class I_Heli_Transport_02_F {
 		vItemSpace = 400;
-		price = 8274825;
+		price = 7447342;
 		chopPrice = 0;
 		legal = 1;
 		bankCapacity = 0;
@@ -1265,9 +1274,40 @@ class LifeCfgVehicles {
         class textures {};
 	};
 
+
 	class B_T_LSV_01_unarmed_F {
 		vItemSpace = 80;
 		price = 1150000;
+		chopPrice = 320000;
+		legal = 0;
+		bankCapacity = 0;
+        class textures {
+			class Feuerwehr {
+				name = "Feuerwehr";
+				path[] = {"Images\Medic\fw_prowler_1.jpg","Images\Medic\fw_prowler_2.jpg"};
+				condition = "playerSide in [independent]";
+				price = 1;
+			};
+			
+			class Polizei {
+				name = "Polizei";
+				path[] = {"Images\Polizei\Prowler1.jpg","Images\Polizei\Prowler2.jpg","Images\Polizei\Prowler3.jpg","Images\Polizei\Prowler4.jpg"};
+				condition = "playerSide in [west]";
+				price = 0.05;
+			};
+			
+			class Black {
+				name = "Schwarz";
+				path[] = {"#(argb,8,8,3)color(0.05,0.05,0.05,1)","#(argb,8,8,3)color(0.05,0.05,0.05,1)","#(argb,8,8,3)color(0.05,0.05,0.05,1)","#(argb,8,8,3)color(0.05,0.05,0.05,1)"};
+				condition = "playerSide in [west]";
+				price = 0.05;
+			};
+		};
+	};
+
+	class B_CTRG_LSV_01_light_F {
+		vItemSpace = 80;
+		price = 750000;
 		chopPrice = 320000;
 		legal = 0;
 		bankCapacity = 0;
@@ -1427,7 +1467,7 @@ class LifeCfgVehicles {
 
 	class O_Truck_03_fuel_F {
 		vItemSpace = 860;
-		price = 3125000;
+		price = 2812500;
 		chopPrice = 1500000;
 		legal = 1;
 		bankCapacity = 0;
@@ -1436,7 +1476,7 @@ class LifeCfgVehicles {
 	
 	class B_Truck_01_fuel_F {
 		vItemSpace = 620;
-		price = 1962500;
+		price = 1766250;
 		chopPrice = 1;
 		legal = 1;
 		bankCapacity = 0;
@@ -1631,7 +1671,7 @@ class LifeCfgVehicles {
 	
 	class O_MRAP_02_F {
 		vItemSpace = 150;
-		price = 8500000;
+		price = 7900000;
 		chopPrice = 2500000;
 		legal = 0;
 		bankCapacity = 0;

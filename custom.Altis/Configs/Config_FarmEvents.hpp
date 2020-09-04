@@ -8,39 +8,12 @@ class LifeCfgFarmEvent {
 		time = 7200;
 	};
 
-	class moonshine {
-		name = "Schwarzgebrannter";
-		descriptionStart = "Maxi aus der 12b wird 18! Er benötigt genug Schwarzgebrannten für seine große Party.";
-		descriptionEnd = "Maxi's Geburtstag war sprichwörtlich ein voller Erfolg";
-		maxValue = 2.3;
-		minValue = 1.5;
-		time = 7200;
-	};
-
 	class oilP {
 		name = "Öl";
 		descriptionStart = "Russland dreht die Leitungen zu, der Verkaufspreis für das im Inland produzierte Öl steigt.";
 		descriptionEnd = "Alle Ölreserven sind gefüllt. Die Regierung bedankt sich!";
 		maxValue = 4.0;
 		minValue = 2.5;
-		time = 7200;
-	};
-
-	class traubenP {
-		name = "Wein";
-		descriptionStart = "Der Lagerbestand ist befallen. Es werden neuer Trauben benötigt.";
-		descriptionEnd = "Die Örtlichen Märkte bedanken sich für die schnelle Reaktion der Lieferanten.";
-		maxValue = 1.5;
-		minValue = 1.3;
-		time = 7200;
-	};
-
-	class erdgasP {
-		name = "Biogas";
-		descriptionStart = "Durch eine Gasexplosion sind große Mengen an Gas verloren gegangen, es wird Ersatz benötigt.";
-		descriptionEnd = "Alle Häuser haben wieder warme Wohnzimmer.";
-		maxValue = 1.8;
-		minValue = 1.4;
 		time = 7200;
 	};
 
@@ -67,24 +40,6 @@ class LifeCfgFarmEvent {
 		descriptionStart = "Für den Bau eines neuen Flugzeugträgers werden große Mengen an Eisen benötigt.";
 		descriptionEnd = "Der Flugzeugträger ist ein Statussymbol des Staates geworden. ";
 		maxValue = 1.95;
-		minValue = 1.5;
-		time = 7200;
-	};
-
-	class ziegelP {
-		name = "Ziegel";
-		descriptionStart = "Die alten Asbest Ziegel sind nicht mehr erlaubt, es wird Ersatz benötigt.";
-		descriptionEnd = "Die Bauunternehmer bedanken sich an alle beteiligten.";
-		maxValue = 2;
-		minValue = 1.4;
-		time = 7200;
-	};
-
-	class kleidungP {
-		name = "Reis";
-		descriptionStart = "Eine große Menge an Reis wird für Sushi benötigt.";
-		descriptionEnd = "Jeder hat genug von Sushi. Es wird kein Reis mehr benötigt.";
-		maxValue = 1.9;
 		minValue = 1.5;
 		time = 7200;
 	};
@@ -140,6 +95,96 @@ class LifeCfgFarmEvent {
 		descriptionEnd = "Es wurde eine alternative zum Methangas gefunden. Der Preis normalisiert sich.";
 		maxValue = 1.9;
 		minValue = 1.4;
+		time = 7200;
+	};
+
+	class recyclingP {
+		name = "Schrott";
+		descriptionStart = "Es sind zu viel Schrottteiler auf dem Schrottplatz, helfe dabei den Schrottplatz zu säubern.";
+		descriptionEnd = "Danke für die Mithilfe der Schrottplatz ist wieder sauber.";
+		maxValue = 2.1;
+		minValue = 1.5;
+		time = 7200;
+	};
+
+	class methP {
+		name = "Meth";
+		descriptionStart = "Hausparty bei Labumbis. Meth wird benötigt.";
+		descriptionEnd = "Die Hausparty geht steil, Danke für die Mithilfe.";
+		maxValue = 1.9;
+		minValue = 1.4;
+		time = 7200;
+	};
+
+	class lsdP {
+		name = "LSD";
+		descriptionStart = "Fangt die Frösche wieder ein!";
+		descriptionEnd = "Danke für die Hilfe, ich habe meinen Frösche wieder.";
+		maxValue = 1.9;
+		minValue = 1.4;
+		time = 7200;
+	};
+
+	class zuckerP {
+		name = "Zucker";
+		descriptionStart = "Der Bäcker benötigt Zucker! Bringt Zucker zum Zuckerverkäufer damit die LKW´s beladen werden können.";
+		descriptionEnd = "Danke für die Hilfe, der Zuckervorrat reicht für die nächsten 2 Jahre.";
+		maxValue = 1.9;
+		minValue = 1.4;
+		time = 7200;
+	};
+
+	class sprengstoffP {
+		name = "Sprengstoff";
+		descriptionStart = "Bald wird es Raketenwerfer geben, wir benötigen Sprengstoff für die Raketen.";
+		descriptionEnd = "Danke, wird sind einen Schritt näher gekommen!";
+		maxValue = 1.9;
+		minValue = 1.4;
+		time = 7200;
+	};
+
+	class treibstoffP {
+		name = "Treibstoff";
+		descriptionStart = "Die Tankstellen müssen aufgefüllt werden, der Staat Atlis benötigt Treibstoff.";
+		descriptionEnd = "Die Tankstellen sind wieder gefüllt!";
+		maxValue = 1.9;
+		minValue = 1.4;
+		time = 7200;
+	};
+
+	class holzP {
+		name = "Holz";
+		descriptionStart = "Merimar will sich ein neues haus bauen, er benötigt Bretter.";
+		descriptionEnd = "Endlich hat Merimar wieder ein neues Haus.";
+		maxValue = 1.9;
+		minValue = 1.4;
+		time = 7200;
+	};
+
+	class geoxP {
+		name = "Goxschuhe";
+		descriptionStart = "Avego benötigt neue Schuhe, bringt ihm seine Goxschuhe.";
+		descriptionEnd = "Avego hat nun für sein Leben mit Schuhen ausgesorgt!";
+		maxValue = 1.9;
+		minValue = 1.4;
+		time = 7200;
+	};
+
+	class beerP {
+		name = "Bierflasche";
+		descriptionStart = "Actor der Alkoholiker benötigt ein paar Flaschen Bier";
+		descriptionEnd = "Danke, Actor geht es wieder blendet durch das leckere Bier!";
+		maxValue = 1.9;
+		minValue = 1.4;
+		time = 7200;
+	};
+
+	class baumwolleP {
+		name = "Kleidung";
+		descriptionStart = "Durch den Bürgerkrieg auf Altis sind alle T-Shirts kaputt gegangen, wir brauchen neue T-Shirts.";
+		descriptionEnd = "Der Staat bedankt sich für die gazen T-Shirts";
+		maxValue = 1.9;
+		minValue = 1.6;
 		time = 7200;
 	};
 };

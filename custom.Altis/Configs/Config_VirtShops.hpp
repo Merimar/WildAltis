@@ -34,6 +34,18 @@ class VirtualShops {
 		condition = "true";
 		items[] = { "bacon", "waterBottle", "apple", "steak", "firstaidkit", "medikit"};
 	};
+	
+	class uranUnstable {
+		name = "Uranhändler - Unstable";
+		condition = "true";
+		items[] = { "uranUnstableP"};
+	};
+	
+	class uranStable {
+		name = "Uranhändler - Stable";
+		condition = "true";
+		items[] = { "uranStableP"};
+	};
 
 	class cop {
 		name = "Polizei Laden";
@@ -44,7 +56,7 @@ class VirtualShops {
 	class drugdealer {
 		name = "Drogendealer";
 		condition = "true";
-		items[] = { "kokainP", "heroinP", "marihuanaP"};
+		items[] = { "kokainP", "heroinP", "marihuanaP", "lsdP", "methP","kokainPS", "heroinPS", "marihuanaPS", "lsdPS", "methPS"};
 	};
 
 	class wongs {
@@ -71,17 +83,17 @@ class VirtualShops {
 		items[] = { "kupferP", "eisenP"};
 	};
 
-	class ziegel {
-		name = "Ziegelhändler";
-		condition = "true";
-		items[] = { "ziegelP"};
-	};
+//	class ziegel {
+//		name = "Ziegelhändler";
+//		condition = "true";
+//		items[] = { "ziegelP"};
+//	};
 	
-	class titan {
-		name = "Titanhändler";
-		condition = "true";
-		items[] = { "titanP"};
-	};
+//	class titan {
+//		name = "Titanhändler";
+//		condition = "true";
+//		items[] = { "titanP"};
+//	};
 
 	class danger_sell {
 		name = "Fabrik";
@@ -107,11 +119,11 @@ class VirtualShops {
 		items[] = { "sandP"};
 	};
 
-	class erdgas {
-		name = "Gashändler";
-		condition = "true";
-		items[] = { "erdgasP"};
-	};
+//	class erdgas {
+//		name = "Gashändler";
+//		condition = "true";
+//		items[] = { "erdgasP"};
+//	};
 
 	class dunkle {
 		name = "Astrologe";
@@ -125,29 +137,29 @@ class VirtualShops {
 		items[] = { "heliumP"};
 	};
 
-	class wein {
-		name = "Weinhändler";
-		condition = "true";
-		items[] = { "traubenP"};
-	};
+//	class wein {
+//		name = "Weinhändler";
+//		condition = "true";
+//		items[] = { "traubenP"};
+//	};
 	
-	class meth {
-		name = "Methhändler";
-		condition = "true";
-		items[] = { "methP"};
-	};
+//	class meth {
+//		name = "Methhändler";
+//		condition = "true";
+//		items[] = { "methP"};
+//	};
 	
-	class uranUnstable {
-		name = "Uranhändler - Unstable";
-		condition = "true";
-		items[] = { "uranUnstableP"};
-	};
+//	class uranUnstable {
+//		name = "Uranhändler - Unstable";
+//		condition = "true";
+//		items[] = { "uranUnstableP"};
+//	};
 	
-	class uranStable {
-		name = "Uranhändler - Stable";
-		condition = "true";
-		items[] = { "uranStableP"};
-	};
+//	class uranStable {
+//		name = "Uranhändler - Stable";
+//		condition = "true";
+//		items[] = { "uranStableP"};
+//	};
 
 	class paketzentrum {
 		name = "Zoll-Stelle";
@@ -155,16 +167,75 @@ class VirtualShops {
 		items[] = { "paketeP", "briefeP"};
 	};
 
-	class business {
-		name = "Knochendealer";
-		condition = "true";
-		items[] = { "Relikt_0", "Relikt_1", "Relikt_2", "Relikt_3", "Relikt_4"};
-	};
-
+//	class business {
+//		name = "Knochendealer";
+//		condition = "true";
+//		items[] = { "Relikt_0", "Relikt_1", "Relikt_2", "Relikt_3", "Relikt_4"};
+//	};
 
 	class gangdealer {
 		name = "Schwarzmarkt";
 		condition = "true";
 		items[] = { "kokainP", "heroinP", "marihuanaP"};
+	};
+	
+	class baecker {
+		name = "Bäckerei";
+		condition = "true";
+		items[] = { "mehlP"};
+	};
+	
+	class beerwine {
+		name = "Bier und Weinankauf";
+		condition = "true";
+		items[] = { "beerP", "wineP"};
+	};
+	
+	class deichfrau {
+		name = "Bier und Weinankauf";
+		condition = "true";
+		items[] = { "geoxP"};
+	};
+
+	class holz {
+		name = "Holzankauf";
+		condition = "true";
+		items[] = { "holzP"};
+	};
+
+	class kohle {
+		name = "Holzankauf";
+		condition = "true";
+		items[] = { "kohleP"};
+	};
+
+	class oiltreibstoff {
+		name = "Öl und Treibstoffhändler";
+		condition = "true";
+		items[] = { "oilP", "treibstoffP"};
+	};
+
+	class raritaet {
+		name = "Raritätenhändler";
+		condition = "true";
+		items[] = { "raritaetP"};
+	};
+
+	class recycling {
+		name = "Recyclinghof";
+		condition = "true";
+		items[] = { "recyclingP"};
+	};
+	
+	class sprengstoff {
+		name = "Sprengstoffankauf";
+		condition = "true";
+		items[] = { "sprengstoffP"};
+	};
+	
+	class zucker {
+		name = "Zuckerankauf";
+		condition = "true";
+		items[] = { "zuckerP"};
 	};
 };
