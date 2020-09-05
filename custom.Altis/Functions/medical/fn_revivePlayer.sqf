@@ -39,7 +39,8 @@ for "_i" from 0 to 1 step 0 do {
     _cP = _cP + .01;
     _progressBar progressSetPosition _cP;
     _titleText ctrlSetText format["%3 (%1%2)...", round(_cP * 100), "%", _title];
-    if (_cP >= 1 || life_isDead || life_istazed || life_isknocked || life_interrupted || {player getVariable["restrained",false]} || isNull _target) exitWith {life_interrupted = false;};
+    if(_cP >= 1 || life_isDead || life_istazed || life_isknocked || life_interrupted || {player getVariable["restrained",false]} || isNull _target) exitWith {life_interrupted = false;};
+	if((_target getVariable ["Reviving", objNull]) != player) exitWith {};
 };
 
 5 cutText ["","PLAIN"];

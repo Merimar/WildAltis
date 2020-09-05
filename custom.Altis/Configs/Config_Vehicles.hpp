@@ -621,9 +621,9 @@ class LifeCfgVehicles {
     };
 
 	class O_T_Truck_03_repair_ghex_F {
-		vItemSpace = 2800;
-		price = 10500000;
-		chopPrice = 3900000;
+		vItemSpace = 3000;
+		price = 15500000;
+		chopPrice = 4900000;
 		legal = 1;
 		bankCapacity = 0;
         class textures {};

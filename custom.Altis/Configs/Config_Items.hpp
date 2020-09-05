@@ -498,7 +498,7 @@ class Items {
 	};
 
 	class beerU {
-		name = "Bier";
+		name = "Hopfen";
 		illegal = false;
 		weight = 3;
 		type = "FARM";
@@ -812,12 +812,12 @@ class Items {
 	};
 
 	class baumwolleP {
-		name = "Kleidung";
+		name = "Baumwolle";
 		illegal = false;
 		weight = 1;
 		type = "MARKT";
 		buyPrice = -1;
-		sellPrice = 900;
+		sellPrice = 700;
 		edible = -1;
 		icon = "";
 		itemInfo = "";
@@ -840,7 +840,7 @@ class Items {
 		illegal = false;
 		weight = 2;
 		type = "MARKT";
-		buyPrice = 10;
+		buyPrice = 2300;
 		sellPrice = 1900;
 		edible = -1;
 		icon = "";
@@ -900,7 +900,7 @@ class Items {
 		illegal = true;
 		weight = 4;
 		type = "MARKT";
-		buyPrice = 29000;
+		buyPrice = 15000;
 		sellPrice = 6100;
 		edible = -1;
 		icon = "";

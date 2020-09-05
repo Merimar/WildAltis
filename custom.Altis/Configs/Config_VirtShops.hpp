@@ -2,7 +2,7 @@ class VirtualShops {
 	class civ {
 		name = "Markt";
 		condition = "true";
-		items[] = { "bacon", "apple", "bananen", "pickaxe", "defibrilator", "adrenalin", "fuelFull", "waterBottle", "steak", "redgull", "firstaidkit", "medikit", "adrenalinshot", "pfirsich", "kleidungP", "traubenP"};
+		items[] = { "bacon", "apple", "bananen", "pickaxe", "defibrilator", "adrenalin", "fuelFull", "waterBottle", "steak", "redgull", "firstaidkit", "medikit", "adrenalinshot", "pfirsich", "kleidungP", "traubenP", "baumwolleP"};
 	};
 
 	class kneipe {
@@ -59,7 +59,7 @@ class VirtualShops {
 		items[] = { "kokainP", "heroinP", "marihuanaP", "lsdP", "methP","kokainPS", "heroinPS", "marihuanaPS", "lsdPS", "methPS"};
 	};
 
-	class wongs {
+	class wong {
 		name = "Wongs";
 		condition = "true";
 		items[] = { "Turtle_F", "CatShark_F", "Mullet_F", "Tuna_F", "Mackerel_F", "Ornate_random_F", "Salema_F", "moonshineP"};
@@ -75,6 +75,12 @@ class VirtualShops {
 		name = "Diamantenhändler";
 		condition = "true";
 		items[] = { "diamantenP"};
+	};
+
+	class gummi {
+		name = "Gummiankauf";
+		condition = "true";
+		items[] = { "gummiP"};
 	};
 
 	class kupfereisen {
@@ -182,17 +188,17 @@ class VirtualShops {
 	class baecker {
 		name = "Bäckerei";
 		condition = "true";
-		items[] = { "mehlP"};
+		items[] = { "weizenP"};
 	};
 	
 	class beerwine {
 		name = "Bier und Weinankauf";
 		condition = "true";
-		items[] = { "beerP", "wineP"};
+		items[] = { "beerP", "wineP_A", "wineP_S"};
 	};
 	
 	class deichfrau {
-		name = "Bier und Weinankauf";
+		name = "Deichfrau";
 		condition = "true";
 		items[] = { "geoxP"};
 	};
@@ -204,7 +210,7 @@ class VirtualShops {
 	};
 
 	class kohle {
-		name = "Holzankauf";
+		name = "Kohleankauf";
 		condition = "true";
 		items[] = { "kohleP"};
 	};

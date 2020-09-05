@@ -15,7 +15,7 @@ class CfgFarmRoutes {
 		processSkill = "processFossil";
 		infoText = "";
 	};
-
+	
 	class Diamanten {
 		name = "Diamantenroute";
 		fields[] = {"Farm_Diamant_1"};
@@ -327,23 +327,6 @@ class CfgFarmRoutes {
 		fields[] = {"Farm_Baecker_1"};
 		processors[] = {"Processor_Baecker_1"};
 		vendors[] = {"Vendor_Baecker_1"};
-		gatherItem = "beerU";
-		gatherSkill = "farmFruit";
-		gatherTool = "";
-		farmZonesize = 30;
-		farmTime = 3;
-		processInput[] = {{"beerU", 1}};
-		processOutput[] = {{"beerP", 1}};
-		processText = "Verarbeite Weizen";
-		processSkill = "processGrapes";
-		infoText = "";
-	};
-
-	class Beer {
-		name = "Bierroute";
-		fields[] = {"Farm_Beer_1"};
-		processors[] = {"Processor_Beer_1"};
-		vendors[] = {"Vendor_BeerWine_1"};
 		gatherItem = "weizenU";
 		gatherSkill = "farmFruit";
 		gatherTool = "";
@@ -355,6 +338,23 @@ class CfgFarmRoutes {
 		processSkill = "processGrapes";
 		infoText = "";
 	};
+
+	class Beer {
+		name = "Bierroute";
+		fields[] = {"Farm_Beer_1"};
+		processors[] = {"Processor_Beer_1"};
+		vendors[] = {"Vendor_BeerWine_1"};
+		gatherItem = "beerU";
+		gatherSkill = "farmGrapes";
+		gatherTool = "";
+		farmZonesize = 30;
+		farmTime = 3;
+		processInput[] = {{"beerU", 1}};
+		processOutput[] = {{"beerP", 1}};
+		processText = "Verarbeite Hopfen";
+		processSkill = "processGrapes";
+		infoText = "";
+	};
 	
 	class WineE {
 		name = "Weinroute [Experte]";
@@ -362,7 +362,7 @@ class CfgFarmRoutes {
 		processors[] = {"Processor_Wine_1"};
 		vendors[] = {"Vendor_BeerWine_1"};
 		gatherItem = "traubenU";
-		gatherSkill = "farmFruit";
+		gatherSkill = "farmGrapes";
 		gatherTool = "";
 		farmZonesize = 30;
 		farmTime = 3;
@@ -379,7 +379,7 @@ class CfgFarmRoutes {
 		processors[] = {"Processor_Wine_2"};
 		vendors[] = {"Vendor_BeerWine_1"};
 		gatherItem = "traubenU";
-		gatherSkill = "farmFruit";
+		gatherSkill = "farmGrapes";
 		gatherTool = "";
 		farmZonesize = 30;
 		farmTime = 3;
@@ -392,18 +392,35 @@ class CfgFarmRoutes {
 
 	class Gox {
 		name = "Deichfrauroute";
-		fields[] = {"Farm_Gummi_1"};
+		fields[] = {""};
 		processors[] = {"Processor_Deichfrau_1"};
 		vendors[] = {"Vendor_Deichfrau_1"};
+		gatherItem = "";
+		gatherSkill = "";
+		gatherTool = "";
+		farmZonesize = 30;
+		farmTime = 3;
+		processInput[] = {{"gummiU", 1},{"baumwolleU", 1}};
+		processOutput[] = {{"geoxP", 1}};
+		processText = "Verarbeite zu Gox";
+		processSkill = "processFossil";
+		infoText = "";
+	};
+
+	class Gummi {
+		name = "Gummiroute";
+		fields[] = {"Farm_Gummi_1"};
+		processors[] = {"Processor_Gummi_1"};
+		vendors[] = {"Vendor_Gummi_1"};
 		gatherItem = "gummiU";
-		gatherSkill = "farmFossil";
+		gatherSkill = "farmGrapes";
 		gatherTool = "";
 		farmZonesize = 30;
 		farmTime = 3;
 		processInput[] = {{"gummiU", 1}};
-		processOutput[] = {{"geoxP", 1}};
-		processText = "Verarbeite zu Gox";
-		processSkill = "processFossil";
+		processOutput[] = {{"gummiP", 1}};
+		processText = "Verarbeite Gummi";
+		processSkill = "processGrapes";
 		infoText = "";
 	};
 
@@ -413,13 +430,13 @@ class CfgFarmRoutes {
 		processors[] = {"Processor_Baumwolle_1"};
 		vendors[] = {"Markt_1","Markt_2","Markt_3","Markt_4","Markt_5","Markt_6","Markt_7","Markt_8","Markt_9","Markt_10"};
 		gatherItem = "baumwolleU";
-		gatherSkill = "farmFruit";
+		gatherSkill = "farmGrapes";
 		gatherTool = "";
 		farmZonesize = 30;
 		farmTime = 3;
 		processInput[] = {{"baumwolleU", 1}};
 		processOutput[] = {{"baumwolleP", 1}};
-		processText = "Verarbeite zu Gox";
+		processText = "Verarbeite Baumwolle";
 		processSkill = "processGrapes";
 		infoText = "";
 	};
@@ -430,7 +447,7 @@ class CfgFarmRoutes {
 		processors[] = {"Processor_Holz_1"};
 		vendors[] = {"Vendor_Holz_1"};
 		gatherItem = "holzU";
-		gatherSkill = "farmFruit";
+		gatherSkill = "farmGrapes";
 		gatherTool = "";
 		farmZonesize = 30;
 		farmTime = 3;
@@ -481,14 +498,14 @@ class CfgFarmRoutes {
 		processors[] = {"Processor_Raritaet_1"};
 		vendors[] = {"Vendor_Raritaet_1"};
 		gatherItem = "raritaetU";
-		gatherSkill = "farmFossil";
+		gatherSkill = "farmGrapes";
 		gatherTool = "";
 		farmZonesize = 30;
 		farmTime = 10;
 		processInput[] = {{"raritaetU", 1}};
 		processOutput[] = {{"raritaetP", 1}};
 		processText = "Verarbeite Rarität";
-		processSkill = "processFossil";
+		processSkill = "processGrapes";
 		infoText = "";
 	};
 
@@ -498,14 +515,14 @@ class CfgFarmRoutes {
 		processors[] = {""};
 		vendors[] = {"Vendor_Recycling_1"};
 		gatherItem = "recyclingP";
-		gatherSkill = "farmOre";
+		gatherSkill = "farmGrapes";
 		gatherTool = "";
 		farmZonesize = 30;
 		farmTime = 3;
 		processInput[] = {{"recyclingP", 1}};
 		processOutput[] = {};
 		processText = "Verarbeite Schrott";
-		processSkill = "processOre";
+		processSkill = "processGrapes";
 		infoText = "";
 	};
 
@@ -515,14 +532,14 @@ class CfgFarmRoutes {
 		processors[] = {"Processor_Sprengstoff_1"};
 		vendors[] = {"Vendor_Sprengstoff_1"};
 		gatherItem = "sprengstoffU";
-		gatherSkill = "farmFossil";
+		gatherSkill = "farmStone";
 		gatherTool = "";
 		farmZonesize = 30;
 		farmTime = 3;
 		processInput[] = {{"sprengstoffU", 1}};
 		processOutput[] = {{"sprengstoffP", 1}};
 		processText = "Verarbeite Sprengstoff";
-		processSkill = "processFossil";
+		processSkill = "processRock";
 		infoText = "";
 	};
 
@@ -589,7 +606,7 @@ class CfgFarmRoutes {
 		gatherItem = "";
 		gatherSkill = "";
 		gatherTool = "";
-		farmZonesize = 30;
+		farmZonesize = 0;
 		farmTime = 3;
 		processInput[] = {{"lsdP", 1}};
 		processOutput[] = {{"lsdPS", 1}};
@@ -606,7 +623,7 @@ class CfgFarmRoutes {
 		gatherItem = "";
 		gatherSkill = "";
 		gatherTool = "";
-		farmZonesize = 30;
+		farmZonesize = 0;
 		farmTime = 3;
 		processInput[] = {{"methP", 1}};
 		processOutput[] = {{"methPS", 1}};
@@ -623,7 +640,7 @@ class CfgFarmRoutes {
 		gatherItem = "";
 		gatherSkill = "";
 		gatherTool = "";
-		farmZonesize = 50;
+		farmZonesize = 0;
 		farmTime = 3;
 		processInput[] = {{"kokainP", 1}};
 		processOutput[] = {{"kokainPS", 1}};
@@ -640,7 +657,7 @@ class CfgFarmRoutes {
 		gatherItem = "";
 		gatherSkill = "";
 		gatherTool = "";
-		farmZonesize = 50;
+		farmZonesize = 0;
 		farmTime = 3;
 		processInput[] = {{"heroinP", 1}};
 		processOutput[] = {{"heroinPS", 1}};
@@ -657,7 +674,7 @@ class CfgFarmRoutes {
 		gatherItem = "";
 		gatherSkill = "";
 		gatherTool = "";
-		farmZonesize = 50;
+		farmZonesize = 0;
 		farmTime = 3;
 		processInput[] = {{"marihuanaP", 1}};
 		processOutput[] = {{"marihuanaPS", 1}};

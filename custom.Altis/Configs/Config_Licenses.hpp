@@ -42,6 +42,7 @@ class Licenses {
 	LICENSE(beer,"STR_License_Beer",22000,false,"civ",10000)
 	LICENSE(wine,"STR_License_Wine",22000,false,"civ",10000)
 	LICENSE(gox,"STR_License_Geox",17000,false,"civ",10000)
+	LICENSE(gummi,"STR_License_Gummi",17000,false,"civ",10000)
 	LICENSE(holz,"STR_License_Holz",11000,false,"civ",10000)
 	LICENSE(kohle,"STR_License_Kohle",31000,false,"civ",10000)
 	LICENSE(treibstoff,"STR_License_Treibstoff",19000,false,"civ",10000)

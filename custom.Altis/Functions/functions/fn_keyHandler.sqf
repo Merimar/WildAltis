@@ -139,7 +139,7 @@ switch (_code) do {
 		[] call life_fnc_simpleCheck;
 	};
 	
-	case 48: {
+	case 49: {
 		if(playerSide != west || !_shift) exitWith {};
 		[] call life_fnc_sosKnopf;
 	};
