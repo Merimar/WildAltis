@@ -387,7 +387,12 @@ class CfgRemoteExec {
 		
 		//Transaktionen
 		F(HC_fnc_removeItemInteraction,HC)
-		
+
+		//Reward
+		F(HC_fnc_activateItemAbo,HC)
+		F(HC_fnc_claimReward,HC)
+		F(HC_fnc_valueClaim,HC)
+
 		//--------------------------------------------------------------------------------------------SERVER----------------------------------------------------------------------------------------
 		
 		//AC

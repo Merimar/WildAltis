@@ -18,6 +18,9 @@ switch (_rewardType) do {
 	case "VEHICLE_ABO": { 
 		[player, 0, VEHICLE_SPAWNPOINT, _rewardClass] remoteExec ["HC_fnc_spawnVehicle", HC_Life];
 	};
+	case "ITEM_ABO": {
+		[player, LIFE_INTERACTION_OBJECT, _rewardClass] remoteExec ["HC_fnc_activateItemAbo", HC_Life];
+	};
 	default { };
 };
 

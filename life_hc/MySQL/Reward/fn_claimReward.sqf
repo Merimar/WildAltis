@@ -35,7 +35,7 @@ _reason2 = format ["Spieler welcher mit RemoteExecutedOwner rausgefunden wurde: 
 
 private _save = [_pID] call HC_fnc_getSave;
 private _currentRewards = _save select SAVE_STATE_INDEX select 23 select 0;
-private _rewardIndex = _currentRewards findIf {_x select == _rewardClass};
+private _rewardIndex = _currentRewards findIf {(_x select 0) == _rewardClass};
 (_currentRewards select _rewardIndex) set [1, true];
 
 _query = format["INSERT INTO player_rewards (player_id, reward) VALUES ('%1', '%2')", _pID, _rewardClass];

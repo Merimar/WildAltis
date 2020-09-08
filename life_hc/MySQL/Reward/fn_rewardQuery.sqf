@@ -1,6 +1,9 @@
 private _pID = param [0, "", [""]];
 private _allRewards = "true" configClasses (missionConfigFile >> "CfgRewards");
 
+_query = format["UPDATE rewards SET last_seen = now() WHERE player_id = '%1'", _pID];
+[_query, 1] call HC_fnc_asyncCall;
+
 private _query = format["SELECT reward, claimed, valueclaimed FROM player_rewards WHERE player_id = '%1'", _pID];
 private _input = [_query, 2, true] call HC_fnc_asyncCall;
 
@@ -26,9 +29,6 @@ private _currentLastDay = _lastDay select (_monthLast - 1);
 private _isNextDay = _yearLast isEqualTo _yearNext && _monthLast isEqualTo _monthNext && _dayLast isEqualTo _dayNext;
 private _isSameDay = (_yearLast isEqualTo _yearNext && _monthLast isEqualTo _monthNext && _dayLast isEqualTo (_dayNext - 1)) || (_yearLast isEqualTo (_yearNext - 1) && _monthLast isEqualTo 12 && _monthNext isEqualTo 1 && _dayLast isEqualTo 31 && _dayNext isEqualTo 1) || (_yearLast isEqualTo _yearNext && _monthLast isEqualTo (_monthNext - 1) && _dayLast isEqualTo _currentLastDay);
 private _isWrong = !_isSameDay && !_isNextDay;
-
-_query = format["UPDATE rewards SET last_seen = now() WHERE player_id = '%1'", _pID];
-[_query, 1] call HC_fnc_asyncCall;
 
 if(_isWrong || _isNextDay) then {
 _query = format["UPDATE rewards SET next_seen = now() + INTERVAL 1 DAY WHERE player_id = '%1'", _pID];

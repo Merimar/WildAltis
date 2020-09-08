@@ -185,4 +185,5 @@ life_role = -1;
 life_istazed = false;
 life_isknocked = false;
 life_vehicles = [];
+LIFE_INTERACTION_OBJECT = objNull;
 saveProfileNamespace;

@@ -5,7 +5,7 @@ private _allPaycheckRewards = "getText (_x >> 'type') == 'PAYCHECK'" configClass
 private _amount = 0;
 
 {
-private _isEnabled = [_pID, configName _x] call HC_fnc_getReward;
+private _isEnabled = ([_pID, configName _x] call HC_fnc_getReward) select 0;
 if(_isEnabled) then {
 private _value = (getArray (_x >> "value")) select 0;
 _amount = _amount + _value;

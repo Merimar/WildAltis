@@ -4,6 +4,8 @@ private _sign = cursorObject;
 private _signSide = _sign getVariable ["Interaction_Side", sideUnknown];
 private _interactions = _sign getVariable ["Interaction_List", []];
 
+LIFE_INTERACTION_OBJECT = _sign;
+
 private _compareSide = switch (playerSide) do {case west : {west}; case independent : {independent}; case civilian : {civilian}; case east : {civilian};};
 
 if((!(_signSide isEqualTo _compareSide) && !(_signSide isEqualTo sideUnknown)) || _interactions isEqualTo []) exitWith {["", "Dieses Schild ist nicht für deine Fraktion"] spawn life_fnc_message};

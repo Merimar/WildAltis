@@ -376,6 +376,8 @@ class CfgFunctions
 			class getHigherPaycheck;
 			class getReward;
 			class rewardQuery;
+			class activateItemAbo;
+			class valueClaim;
 		};
 		
 		class Config {

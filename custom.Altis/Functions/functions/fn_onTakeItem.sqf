@@ -6,6 +6,17 @@ private _items = uniformItems player + vestItems player + backpackItems player +
 
 if(isNull _unit || isNull _container || _item isEqualTo "") exitWith {};
 
+private _rewardbox = _container getVariable ["rewardbox", false];
+
+if(_rewardbox) then {
+	private _rewardboxclass = _container getVariable ["rewardbox_class", ""];
+
+	if(_rewardboxclass != "") then {
+		[player, _rewardboxclass] remoteExecCall ["HC_fnc_valueClaim", HC_LIFE];
+		closeDialog 0;
+	};
+};
+
 private _items = uniformItems player + vestItems player + backpackItems player + [uniform player, vest player, backpack player];
 
 if(!(isNull objectParent player)) then {
@@ -16,7 +27,7 @@ DUPE_ARRAY set [_index, [_item, _count]];
 
 [] call life_fnc_updateCom;
 
-if(!((typeOf _container) isKindOf "AllVehicles") && !((typeOf _container) isKindOf "groundweaponholder")) then {
+if(!((typeOf _container) isKindOf "AllVehicles") && !((typeOf _container) isKindOf "groundweaponholder") && !(_container getVariable ["rewardbox", false])) then {
 {
 private _con = _x select 1;
 clearItemCargo _con;

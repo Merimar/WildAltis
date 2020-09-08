@@ -3,7 +3,7 @@ private _container = _this select 1;
 private _return = false;
 
 if(!(player getVariable ["restrained", false])) then {
-	if(!(_container isKindOf "Groundweaponholder") && !(_container isKindOf "AllVehicles")) then {
+	if(!(_container isKindOf "Groundweaponholder") && !(_container isKindOf "AllVehicles") && !(_container getVariable ["rewardbox", false])) then {
 		_return = true;
 		if(typeOf _container in ["B_CargoNet_01_ammo_F", "Box_NATO_Ammo_F"]) then {
 			_return = (({_x distance player < 7 && alive _x} count playableUnits) > 1);

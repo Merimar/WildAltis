@@ -54,7 +54,12 @@ _extraBtn3 ctrlShow false;
 _extraBtn4 ctrlShow false;
 _extraBtn5 ctrlShow false;
 
-_gangBtn ctrlEnable (playerSide in [civilian, east]);
+if(playerSide in [civilian, east]) then {
+	_gangBtn ctrlEnable true;
+	_extraBtn5 ctrlShow true;
+	_extraBtn5 ctrlSetText "Rewards";
+	_extraBtn5 buttonSetAction "[] call life_fnc_openReward;";
+};
 
 if(playerSide isEqualTo west) then {
 _extraBtn1 ctrlShow true;

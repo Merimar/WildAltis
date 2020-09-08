@@ -4,6 +4,13 @@ private _item = param [2, ""];
 
 if(isNull _unit || isNull _container || _item isEqualTo "") exitWith {};
 
+if(_container getVariable ["rewardbox", false]) exitWith {
+	clearItemCargo _container;
+	player addItem _item;
+	["Du darfst nichts in die Rewardbox packen!", "Rewardbox"] spawn life_fnc_message;
+	closeDialog 0;
+};
+
 private _cargo = magazineCargo _container;
 private _ammoCargo = magazinesAmmoCargo _container;
 private _index = _ammoCargo findIf {(_x select 1) isEqualTo 0};

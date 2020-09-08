@@ -26,7 +26,7 @@ if (!isNull _corpse) then {deleteVehicle _corpse;};
 private _allVirtaboRewards = "getText (_x >> 'type') == 'VIRT_ABO'" configClasses (missionConfigFile >> "CfgRewards");
 
 {
-private _isEnabled = [_pID, configName _x] call HC_fnc_getReward;
+private _isEnabled = ([_pID, configName _x] call HC_fnc_) select 0;
 if(_isEnabled) then {
 private _value = (getArray (_x >> "value"));
 [getPlayerUID _unit, _value select 0, _value select 1, true, false] call HC_fnc_handleVirt;

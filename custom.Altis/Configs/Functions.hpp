@@ -736,6 +736,7 @@ class CfgFunctions {
 			class openRewardBox;
 			class rewardBoxLBChange;
 			class rewardActivate;
+			class getItemAboReward;
 		}
 
 		class Dialog_Controls {

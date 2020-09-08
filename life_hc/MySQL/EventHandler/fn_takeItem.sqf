@@ -7,7 +7,7 @@ if(_isHacker) exitWith {};
 private _itemType = [_item] call HC_fnc_getItemType;
 private _event = _container getVariable ["eventContainer", false];
 
-if(_itemType in [5,6,7] && !_event) then {
+if(_itemType in [5,6,7] && !_event && !_rewardbox) then {
 private _itemList = _container getVariable ["itemList", []];
 private _index = _itemList findIf {_x select 0 == _item};
 if(_index isequalTo -1) then {

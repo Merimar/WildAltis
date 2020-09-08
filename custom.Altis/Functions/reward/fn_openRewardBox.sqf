@@ -79,6 +79,7 @@ private _activeRewards = [];
 			_index = _rewardList lbAdd _rewardtext;
 			switch (_rewardtype) do {
 				case "VEHICLE_ABO": { _rewardList lbSetData [_index, _rewardclass]; };
+				case "ITEM_ABO": {_rewardList lbSetData [_index, _rewardclass]; };
 				default { _rewardList lbSetData [_index, ""]; };
 			};
 		} forEach _rewardarray;
