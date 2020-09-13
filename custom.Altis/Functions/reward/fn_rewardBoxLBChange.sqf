@@ -14,11 +14,11 @@ private _rewardIndex = DAILY_REWARD_LIST findIf {_x select 0 == _rewardClass};
 private _hasClaimed = DAILY_REWARD_LIST select _rewardIndex select 1;
 
 private _rewardName = getText (missionConfigFile >> "CfgRewards" >> _rewardClass >> "displayName");
-private _rewardTime = getNumber (missionConfigFile >> "CfgRewards" >> _rewardClass >> "streak");
+private _rewardTime = parseNumber((_rewardClass splitString "_") select 1);
 private _rewardLevel = getNumber (missionConfigFile >> "CfgRewards" >> _rewardClass >> "level");
-private _icon = getText (missionConfigFile >> "CfgRewards" >> _rewardClass >> "icon");
-private _isArma = getNumber (missionConfigFile >> "CfgRewards" >> _rewardClass >> "isArma");
-private _picture = if(_isArma isEqualTo 1) then {([_icon] call life_fnc_fetchCfgDetails) select 2} else {_icon};
+private _icon = ((getArray (missionConfigFile >> "CfgRewards" >> _rewardClass >> "value")) select 0);
+private _isArma = (getText (missionConfigFile >> "CfgRewards" >> _rewardClass >> "type") in ["VEHICLE", "VEHICLE_ABO", "ITEM", "ITEM_ABO"]);
+private _picture = if(_isArma) then {([_icon] call life_fnc_fetchCfgDetails) select 2} else {_icon};
 private _redeemed = if(_hasClaimed) then {"Ja"} else {"Nein"};
 private _redeemedPicture = if(_hasClaimed) then {"Images\Dialog\RewardGet.paa"} else {"Images\Dialog\RewardGetNot.paa"};
 

@@ -16,8 +16,8 @@ private _counterQuery = [_query, 2] call HC_fnc_asyncCall;
 
 private _inputIndex = _input findIf {_x select 0 == _rewardClass};
 private _currentCounter = _counterQuery select 0;
-private _canReward = if(_inputIndex != -1) then {_input select _inputIndex select 1} else {false};
-private _rewardTime = getNumber (missionConfigFile >> "CfgRewards" >> _rewardClass >> "streak");
+private _canReward = if(_inputIndex != -1) then {(_input select _inputIndex select 1) isEqualTo 0} else {true};
+private _rewardTime = parseNumber((_rewardClass splitString "_") select 1);
 
 if(!_canReward) exitWith {
 _reason1 = format ["Der Spieler %1 (%2 - %3) wollte eine Belohung einlösen %4 hat diese Belohung aber schon eingelöst", _pName, _pID, _pSide, _rewardClass];
@@ -58,7 +58,7 @@ private _query = format ["INSERT INTO vehicles (vuid, owner_id, side_id, classna
 [_query, 1] call HC_fnc_asyncCall;
 };
 case "VEHICLE_ABO" : {
-private _query = format ["INSERT INTO vehicles (vuid, owner_id, side_id, classname_id, color_id, material_id, insurance, active, abo) VALUES ('%1', '%2', '%3', (SELECT id FROM life_classnames WHERE classname = '%4'), (SELECT id FROM life_vehicle_colors WHERE color = '%5'), (SELECT id FROM life_vehicle_materials WHERE material = '%6'), '%7', '%8', '%9')", round(random(100000000)), _pID, [_pSide] call HC_fnc_getSideID, _reward, "-1", "-1", 0, 0, parseNumber((_rewardClass splitString "_") select 1];
+private _query = format ["INSERT INTO vehicles (vuid, owner_id, side_id, classname_id, color_id, material_id, insurance, active, abo) VALUES ('%1', '%2', '%3', (SELECT id FROM life_classnames WHERE classname = '%4'), (SELECT id FROM life_vehicle_colors WHERE color = '%5'), (SELECT id FROM life_vehicle_materials WHERE material = '%6'), '%7', '%8', '%9')", round(random(100000000)), _pID, [_pSide] call HC_fnc_getSideID, _reward, "-1", "-1", 0, 0, parseNumber((_rewardClass splitString "_") select 1)];
 [_query, 1] call HC_fnc_asyncCall;
 };
 case "MONEY" : {[_pID, "bank", _reward, true] call HC_fnc_handleMoney;};
@@ -66,5 +66,7 @@ case "SKILL" : {[_pID, _reward, _amount] call HC_fnc_addSkill;};
 case "VIRT" : {[_pID, _reward, _amount, true] call HC_fnc_handleVirt;};
 case "VIRT_ABO" : {[_pID, _reward, _amount, true] call HC_fnc_handleVirt;};
 };
+
+private _geheimZahl = [getPlayerUID _unit] call HC_fnc_getGeheimzahl;
 
 [_geheimZahl, _rewardType, _rewardValue] remoteExec ["life_fnc_getReward", _unit];

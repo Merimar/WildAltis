@@ -11,7 +11,7 @@ private _allRewards = "true" configClasses (missionConfigFile >> "CfgRewards");
 
 {
 private _rewardClass = configName _x;
-private _rewardTime = getNumber (_x >> "streak");
+private _rewardTime = parseNumber((_rewardClass splitString "_") select 1);
 private _rewardName = getText (_x >> "displayName");
 
 private _picture = if(DAILY_REWARD_COUNTER >= (_forEachIndex + 1)) then {"Images\Dialog\RewardGet.paa"} else {"Images\Dialog\RewardGetNot.paa"};

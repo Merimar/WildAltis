@@ -19,4 +19,6 @@ if(_hasClaimed) exitWith {["Du hast diese Belohnung schon eingefordert!", "Rewar
 
 DAILY_REWARD_LIST select _rewardIndex set [1, true];
 
+diag_log "testsss";
+
 [player, _rewardClass] remoteExec ["HC_fnc_claimReward", HC_LIFE];
