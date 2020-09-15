@@ -188,4 +188,5 @@ life_role = -1;
 life_istazed = false;
 life_isknocked = false;
 life_vehicles = [];
+life_devicemine_handle = scriptNull;
 saveProfileNamespace;

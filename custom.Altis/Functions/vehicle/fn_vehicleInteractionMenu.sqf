@@ -34,7 +34,7 @@ private _repair = ("ToolKit" in (items player));
 private _restrained = player getVariable ["restrained", false];
 private _isDevice = ((typeOf CUR_VEHICLE_IDC) in ["O_Truck_03_device_F", "O_T_Truck_03_device_ghex_F"]);
 private _deviceName = if(_device) then {"Gerät ausschalten"} else {"Gerät anschalten"};
-private _deviceAction = if(_device) then {"closeDialog 0; [CUR_VEHICLE_IDC, false] spawn life_fnc_deviceMine"} else {"closeDialog 0; [CUR_VEHICLE_IDC, true] spawn life_fnc_deviceMine"};
+private _deviceAction = if(_device) then {"closeDialog 0; [CUR_VEHICLE_IDC, false] spawn life_fnc_deviceMine;"} else {"closeDialog 0; if(scriptDone life_devicemine_handle) then { life_devicemine_handle = [CUR_VEHICLE_IDC, true] spawn life_fnc_deviceMine; } else { ['Warte kurz, dein Gerät arbeitet gerade noch!', 'Gerät'] spawn life_fnc_message; };"};
 private _amount = CUR_VEHICLE_IDC getVariable ["zenti_fuel", 0];
 private _scorpion = (CUR_VEHICLE_IDC distance zenti_sell_1) <= 20 || (CUR_VEHICLE_IDC distance zenti_sell_2) <= 20;
 private _nearHemtts = nearestObjects [getPos CUR_VEHICLE_IDC, ["B_Truck_01_box_F"], 30];
