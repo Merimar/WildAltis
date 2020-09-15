@@ -52,7 +52,7 @@ private _moveSleep = 0.01;
 private _movePrescision = 0.3;
 private _start = true;
 
-DATA_TIMER = servertime + (55 * 60);
+DATA_TIMER = servertime + (30 * 60);
 publicVariable "DATA_TIMER";
 
 [] spawn {
