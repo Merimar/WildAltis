@@ -114,19 +114,19 @@ class CarShops {
 
 	class med_car {
 		vehicles[] = {
-			{ "C_Quadbike_01_F", "call life_mediclevel >= 3" },
-			{ "C_SUV_01_F", "call life_mediclevel >= 3" },
+			{ "C_Quadbike_01_F", "call life_mediclevel >= 6" },
+			{ "C_SUV_01_F", "call life_mediclevel >= 2" },
 			{ "C_Hatchback_01_sport_F", "call life_mediclevel >= 4" },
 			{ "C_Offroad_01_repair_F", "call life_mediclevel >= 1" },
-			{ "C_Truck_02_covered_F", "call life_mediclevel >= 1" },
+			{ "C_Truck_02_covered_F", "call life_mediclevel >= 3" },
 			{ "I_MRAP_03_F", "call life_mediclevel >= 6" },
 			{ "C_Van_02_medevac_F", "call life_mediclevel >= 2" },
 			{ "C_Van_01_box_F", "call life_mediclevel >= 1" },
-			{ "B_Truck_01_fuel_F", "call life_mediclevel >= 4" },
-			{ "B_CTRG_LSV_01_light_F", "call life_mediclevel >= 4" },
+			{ "B_Truck_01_fuel_F", "call life_mediclevel >= 3" },
+			{ "B_CTRG_LSV_01_light_F", "call life_mediclevel >= 3" },
 			{ "B_MRAP_01_F", "call life_mediclevel >= 5" },
-			{ "O_Truck_03_repair_F", "call life_mediclevel >= 5" },
-			{ "C_Offroad_02_unarmed_F", "call life_mediclevel >= 2" },
+			{ "O_Truck_03_repair_F", "call life_mediclevel >= 4" },
+			{ "C_Offroad_02_unarmed_F", "call life_mediclevel >= 1" },
 			{ "C_Truck_02_box_F", "call life_mediclevel >= 2" }
 		};
 	};
@@ -135,27 +135,27 @@ class CarShops {
 		vehicles[] = {
 			{ "I_Heli_light_03_unarmed_F", "call life_mediclevel >= 4" },
 			{ "B_Heli_Light_01_F", "call life_mediclevel >= 1" },
-			{ "O_Heli_Transport_04_medevac_F", "call life_mediclevel >= 5" },
+			{ "O_Heli_Transport_04_medevac_F", "call life_mediclevel >= 3" },
 			{ "C_Heli_Light_01_civil_F", "call life_mediclevel >= 1" },
 			{ "I_Heli_Transport_02_F", "call life_mediclevel >= 3" },
 			{ "O_T_VTOL_02_infantry_F", "call life_mediclevel >= 5" },
 			{ "O_Heli_Light_02_unarmed_F", "call life_mediclevel >= 2" },
 			{ "B_T_VTOL_01_vehicle_F", "call life_mediclevel >= 6" },
 			{ "B_Heli_Transport_01_F", "call life_mediclevel >= 7" },
-			{ "B_T_VTOL_01_infantry_F", "call life_mediclevel >= 5" },
+			{ "B_T_VTOL_01_infantry_F", "call life_mediclevel >= 6" },
 			{ "C_Plane_Civil_01_F", "call life_mediclevel >= 7" },
-			{ "B_Heli_Transport_03_F", "call life_mediclevel >= 6" }
+			{ "B_Heli_Transport_03_F", "call life_mediclevel >= 5" }
 		};
 	};
 
 	class med_ship {
 		vehicles[] = {
-			{ "B_Boat_Transport_01_F", "call life_mediclevel >= 6" },
+			{ "B_Boat_Transport_01_F", "call life_mediclevel >= 1" },
 			{ "C_Boat_Transport_02_F", "call life_mediclevel >= 3" },
-			{ "B_Boat_Armed_01_minigun_F", "call life_mediclevel >= 6" },
+			{ "B_Boat_Armed_01_minigun_F", "call life_mediclevel >= 7" },
 			{ "O_Lifeboat", "call life_mediclevel >= 2" },
-			{ "C_Scooter_Transport_01_F", "call life_mediclevel >= 1" },
-			{ "B_SDV_01_F", "call life_mediclevel >= 5" }
+			{ "C_Scooter_Transport_01_F", "call life_mediclevel >= 6" },
+			{ "B_SDV_01_F", "call life_mediclevel >= 4" }
 		};
 	};
 

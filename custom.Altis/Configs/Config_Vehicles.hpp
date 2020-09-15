@@ -1645,7 +1645,7 @@ class LifeCfgVehicles {
 	class I_APC_Wheeled_03_cannon_F {
 		vItemSpace = 4100;
 		price = 25000000;
-		chopPrice = 4000000;
+		chopPrice = 7000000;
 		legal = 0;
 		bankCapacity = 0;
         class textures {};
