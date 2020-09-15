@@ -48,6 +48,9 @@
 		<Key ID="STR_Shops_Rebel">
             <Original>Rebellen Shop</Original>
         </Key>
+		<Key ID="STR_License_Gummi">
+            <Original>Gummiverarbeitung</Original>
+        </Key>
 		<Key ID="STR_License_Baecker">
             <Original>Bäckereilizenz</Original>
         </Key>

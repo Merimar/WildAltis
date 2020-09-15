@@ -36,21 +36,14 @@ _details = [_item] call life_fnc_fetchCfgDetails;
 if(((count _details) > 0) && ((_details select 6) == "CfgWeapons") && ((_details select 5) == 801)) then {
 	if(!(player isUniformAllowed _item)) then {
 		if(uniform player != "") then {
-			_action = [format["Möchtest du die Uniform %1 direkt anziehen? Deine alte Uniform wird entfernt!",_details select 1],"Uniform direkt anziehen","Ja","Nein"] call BIS_fnc_guiMessage;
-			if(!_action) exitWith {};
+			private _uItems = uniformItems player;
 			removeUniform player;
-			private _backpackitems = backpackItems player;
-			_backpackitems deleteAt (_backpackitems find _item);
-			clearAllItemsFromBackpack player;
-			{player addItemToBackpack _x}forEach _backpackitems;
+			player removeItemFromBackpack _item;
 			player forceAddUniform _item;
 			{player addItemToUniform _x} forEach (uniformItems player);
 		} else {
 			player forceAddUniform _item;
-			private _backpackitems = backpackItems player;
-			_backpackitems deleteAt (_backpackitems find _item);
-			clearAllItemsFromBackpack player;
-			{player addItemToBackpack _x;}forEach _backpackitems;
+			player removeItemFromBackpack _item;
 		};
 	};
 };

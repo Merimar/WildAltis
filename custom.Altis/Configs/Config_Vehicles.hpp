@@ -516,7 +516,7 @@ class LifeCfgVehicles {
 	
 	class O_T_LSV_02_unarmed_F {
 		vItemSpace = 120;
-		price = 1706000;
+		price = 1206000;
 		chopPrice = 500000;
 		legal = 0;
 		bankCapacity = 0;

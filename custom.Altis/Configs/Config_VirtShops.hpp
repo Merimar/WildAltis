@@ -103,13 +103,13 @@ class VirtualShops {
 
 	class danger_sell {
 		name = "Fabrik";
-		condition = "";
+		condition = "false";
 		items[] = { "danger", "dangernuclear"};
 	};
 
 	class danger_buy {
 		name = "Gefahrengutverkäufer";
-		condition = "";
+		condition = "false";
 		items[] = { "danger", "dangernuclear"};
 	};
 
@@ -182,7 +182,7 @@ class VirtualShops {
 	class gangdealer {
 		name = "Schwarzmarkt";
 		condition = "true";
-		items[] = { "kokainP", "heroinP", "marihuanaP"};
+		items[] = { "kokainP", "heroinP", "marihuanaP", "lsdP", "methP","kokainPS", "heroinPS", "marihuanaPS", "lsdPS", "methPS"};
 	};
 	
 	class baecker {

@@ -733,7 +733,7 @@ class Items {
 		weight = 4;
 		type = "MARKT";
 		buyPrice = 8000;
-		sellPrice = 2600;
+		sellPrice = 2800;
 		edible = -1;
 		icon = "";
 		itemInfo = "";
@@ -769,7 +769,7 @@ class Items {
 		weight = 90;
 		type = "MARKT";
 		buyPrice = -1;
-		sellPrice = 65000;
+		sellPrice = 75000;
 		edible = -1;
 		icon = "";
 		itemInfo = "";
@@ -781,7 +781,7 @@ class Items {
 		weight = 1;
 		type = "MARKT";
 		buyPrice = -1;
-		sellPrice = 1760;
+		sellPrice = 1960;
 		edible = -1;
 		icon = "";
 		itemInfo = "";
@@ -793,7 +793,7 @@ class Items {
 		weight = 1;
 		type = "MARKT";
 		buyPrice = -1;
-		sellPrice = 650;
+		sellPrice = 1450;
 		edible = -1;
 		icon = "";
 		itemInfo = "";
@@ -803,9 +803,9 @@ class Items {
 		name = "Gummi";
 		illegal = false;
 		weight = 2;
-		type = "FARM";
+		type = "MARKT";
 		buyPrice = -1;
-		sellPrice = -1;
+		sellPrice = 990;
 		edible = -1;
 		icon = "";
 		itemInfo = "";
@@ -877,7 +877,7 @@ class Items {
 		weight = 3;
 		type = "MARKT";
 		buyPrice = 13400;
-		sellPrice = 2900;
+		sellPrice = 3800;
 		edible = -1;
 		icon = "";
 		itemInfo = "";
@@ -889,7 +889,7 @@ class Items {
 		weight = 4;
 		type = "MARKT";
 		buyPrice = 11000;
-		sellPrice = 3000;
+		sellPrice = 3200;
 		edible = -1;
 		icon = "";
 		itemInfo = "";
@@ -901,7 +901,7 @@ class Items {
 		weight = 4;
 		type = "MARKT";
 		buyPrice = 15000;
-		sellPrice = 6100;
+		sellPrice = 7400;
 		edible = -1;
 		icon = "";
 		itemInfo = "";
@@ -958,7 +958,7 @@ class Items {
 	class wineP_A {
 		name = "Amateur Wein";
 		illegal = false;
-		weight = 3;
+		weight = 2;
 		type = "MARKT";
 		buyPrice = -1;
 		sellPrice = 1200;
@@ -1083,7 +1083,7 @@ class Items {
 		weight = 4;
 		type = "MARKT";
 		buyPrice = 16000;
-		sellPrice = 7400;
+		sellPrice = 10300;
 		edible = -1;
 		icon = "";
 		itemInfo = "";
@@ -1095,7 +1095,7 @@ class Items {
 		weight = 4;
 		type = "MARKT";
 		buyPrice = 14000;
-		sellPrice = 4200;
+		sellPrice = 6200;
 		edible = -1;
 		icon = "";
 		itemInfo = "";
@@ -1107,7 +1107,7 @@ class Items {
 		weight = 3;
 		type = "MARKT";
 		buyPrice = 14000;
-		sellPrice = 4200;
+		sellPrice = 4800;
 		edible = -1;
 		icon = "";
 		itemInfo = "";
@@ -1119,7 +1119,7 @@ class Items {
 		weight = 4;
 		type = "MARKT";
 		buyPrice = 14000;
-		sellPrice = 3450;
+		sellPrice = 3850;
 		edible = -1;
 		icon = "";
 		itemInfo = "";
@@ -1140,7 +1140,7 @@ class Items {
 	class wineP_S {
 		name = "Experten Wein";
 		illegal = false;
-		weight = 3;
+		weight = 2;
 		type = "MARKT";
 		buyPrice = -1;
 		sellPrice = 2000;

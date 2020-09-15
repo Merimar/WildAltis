@@ -78,7 +78,6 @@ class CarShops {
 		vehicles[] = {
 			{ "O_G_Offroad_01_armed_F", "true"},
 			{ "O_G_Offroad_01_F", "true" },
-			{ "B_T_LSV_01_unarmed_F", "true" },
 			{ "O_T_LSV_02_unarmed_F", "true" },
 			{ "B_MRAP_01_F", "true" },
 			{ "I_Truck_02_fuel_F", "true" },

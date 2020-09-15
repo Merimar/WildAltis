@@ -99,9 +99,9 @@ if(!(_classname in _tiVehicles)) then {_vehicle disableTIEquipment true;};
 
 if(_classname in _aiDrones) then {_vehicle lock 0;};
 
-if(_classname == "O_APC_Wheeled_02_rcws_F" && _pSide isEqualTo west) then {
-_vehicle animate ["showslathull", 1];
-};
+if(_classname == "O_APC_Wheeled_02_rcws_F" && _pSide isEqualTo west) then {_vehicle animate ["showslathull", 1];};
+if(_classname == "O_T_LSV_02_unarmed_F") then {_vehicle animate ["Unarmed_Doors_Hide", 1];};
+if(_classname == "B_T_LSV_01_unarmed_F") then {_vehicle animate ["HideDoor1", 1]; _vehicle animate ["HideDoor2", 1]; _vehicle animate ["HideDoor3", 1]; _vehicle animate ["HideDoor4", 1];};
 
 [_vehicle] call HC_fnc_addExplosionEH;
 //[_vehicle] remoteExec ["TON_fnc_localEH", 2];

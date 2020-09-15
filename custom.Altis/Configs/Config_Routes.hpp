@@ -148,7 +148,7 @@ class CfgFarmRoutes {
 		processInput[] = {{"salzU", 1}};
 		processOutput[] = {{"salzP", 1}};
 		processText = "Verarbeite Salz";
-		processSkill = "processFossil";
+		processSkill = "processSand";
 		infoText = "";
 	};
 	

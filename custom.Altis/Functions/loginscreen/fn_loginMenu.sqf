@@ -43,7 +43,7 @@ _btnJoin ctrlShow false;
 _playerCount = count playableUnits;
 _teamspeak = "ts.Wild-Altis.de";
 _forum = "Wild-Altis.de";
-_news = "<t color = '#FFFFFF' font = 'RobotoCondensedBold'><br/>Willkommen auf Wild-Altis 2.0<br/>Es gibt wieder ein paar Neuigkeiten:<br/><br/>- SOS Knopf für die Polizei (Shift + B)<br/>- NEU: Rechenzentrum - Alle Infos dazu im Forum</t>";
+_news = "<t color = '#FFFFFF' font = 'RobotoCondensedBold'><br/>Willkommen auf Wild-Altis 2.0<br/>- Solltet ihr als neue Gruppierung auf unseren Server joinen informiert euch über aktuell geltende Vorteile</t>";
 
 _teamspeakCtrl ctrlSetStructuredText parseText _teamspeak;
 _forumCtrl ctrlSetStructuredText parseText _forum;
