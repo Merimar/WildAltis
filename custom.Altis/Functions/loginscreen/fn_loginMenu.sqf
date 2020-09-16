@@ -43,7 +43,7 @@ _btnJoin ctrlShow false;
 _playerCount = count playableUnits;
 _teamspeak = "ts.Wild-Altis.de";
 _forum = "Wild-Altis.de";
-_news = "<t color = '#FFFFFF' font = 'RobotoCondensedBold'><br/>Willkommen auf Wild-Altis 2.0<br/>- Solltet ihr als neue Gruppierung auf unseren Server joinen informiert euch über aktuell geltende Vorteile</t>";
+_news = "<t color = '#FFFFFF' font = 'RobotoCondensedBold'><br/>Willkommen auf Wild-Altis 2.0<br/>- Neue Position des Rechenzentrums <br/>- Die Zeit des Rechenzentrums wurde auf 30 Min gesetzt<br/>- Rechenzentrumshop wurde angepasst<br/>- ASP wurde auf wunsch der Community Entfernt<br/>- Animationen von 1-4 wurden auf 7,8,9,0 gelegt</t>";
 
 _teamspeakCtrl ctrlSetStructuredText parseText _teamspeak;
 _forumCtrl ctrlSetStructuredText parseText _forum;

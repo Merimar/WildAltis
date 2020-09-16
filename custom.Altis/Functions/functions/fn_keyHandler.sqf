@@ -339,27 +339,27 @@ switch (_code) do {
     };
 	
 	//ANIMATIONEN
-	case 2: {
+	case 8: {
 		if(!((player getVariable["restrained",false]) || (player getVariable["execution",false])) && (vehicle player isEqualTo player)) then {
 			player playAction "gestureHi";
 		};
 	};
-	case 3: {
+	case 9: {
 		if(!((player getVariable["restrained",false]) || (player getVariable["execution",false])) && (vehicle player isEqualTo player)) then {
 			player playAction "gestureHiB";
 		};
 	};
-	case 4: {
+	case 10: {
 		if(!((player getVariable["restrained",false]) || (player getVariable["execution",false])) && (vehicle player isEqualTo player)) then {
 			player playAction "gestureHiC";
 		};
 	};
-	case 5: {
+	case 11: {
 		if(!((player getVariable["restrained",false]) || (player getVariable["execution",false])) && (vehicle player isEqualTo player)) then {
 			player playAction "gestureNod";
 		};
 	};
-	case 6: {
+	case 7: {
 		if(!((player getVariable["restrained",false]) || (player getVariable["execution",false])) && (vehicle player isEqualTo player)) then {
 			player playAction "gestureYes";
 		};
