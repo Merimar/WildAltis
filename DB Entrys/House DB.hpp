@@ -1,0 +1,14 @@
+INSERT INTO life_classnames(classname, type_id, slug) VALUES('Land_i_House_Big_01_V2_F', '5', 'House (Large, Yellow)');
+INSERT INTO life_classnames(classname, type_id, slug) VALUES('Land_i_Garage_V1_F', '5', 'Garage (New)');
+INSERT INTO life_classnames(classname, type_id, slug) VALUES('Land_i_Garage_V2_F', '5', 'Garage (Old)');
+INSERT INTO life_classnames(classname, type_id, slug) VALUES('Land_i_House_Big_02_V1_F', '5', 'House (Big, White)');
+INSERT INTO life_classnames(classname, type_id, slug) VALUES('Land_i_House_Small_01_V3_F', '5', 'House (Stone)');
+INSERT INTO life_classnames(classname, type_id, slug) VALUES('Land_i_House_Small_03_V1_F', '5', 'Bungalow');
+INSERT INTO life_classnames(classname, type_id, slug) VALUES('Land_i_House_Small_02_V2_F', '5', 'House (Small, Yellow)');
+INSERT INTO life_classnames(classname, type_id, slug) VALUES('Land_i_House_Big_02_V3_F', '5', 'House (Big, Stone)');
+INSERT INTO life_classnames(classname, type_id, slug) VALUES('Land_i_Stone_HouseSmall_V3_F', '5', 'Stone House (Brown)');
+INSERT INTO life_classnames(classname, type_id, slug) VALUES('Land_i_Stone_HouseSmall_V1_F', '5', 'Stone House (Grey)');
+INSERT INTO life_classnames(classname, type_id, slug) VALUES('Land_i_House_Big_01_V3_F', '5', 'House (Large, Stone)');
+INSERT INTO life_classnames(classname, type_id, slug) VALUES('Land_i_House_Small_01_V1_F', '5', 'House (White)');
+INSERT INTO life_classnames(classname, type_id, slug) VALUES('Land_i_House_Big_02_V2_F', '5', 'House (Big, Yellow)');
+INSERT INTO life_classnames(classname, type_id, slug) VALUES('Land_i_Stone_HouseSmall_V2_F', '5', 'Stone House (White)');

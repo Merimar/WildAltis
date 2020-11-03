@@ -1,0 +1,9 @@
+Dieses Script dient dazu eine Config in Google Docs "Format" zu bringen.
+Einfach eure Aktuelle Config hier reinziehen und das script ausführen, ihr erhaltet dann in eure
+Zwischenablage einen Text den Ihr in eure Google Docs Liste reinkopiert.
+
+Um euch so ein Google Docs Dokument zu erstellen klickt auf folgenden Link: 
+
+https://docs.google.com/spreadsheets/d/12av7-lNSYo51KDgdck1qH9BQMI_OXrak4uWD1yWY-8w/edit#gid=562980210
+
+und macht eine Kopie von dem Dokument.

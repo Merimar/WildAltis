@@ -1,0 +1,41 @@
+//RemoteExec Sicherheit
+- RemoteExec an Client mit Geheimcode
+- RemoteExec an Server und HC mit Owner Abfrage
+
+//Logs
+- Log Format: [PLAYER, LOG_TYPE, [EXTRA_INFO_ARRAY]]
+
+//Money Cheating
+- Alle Methoden zum Geld earnen laufen über den Server und werden geloggt
+- Weapon Shop Buy + Loadout muss auch über den Server laufen um Items aktuell zu halten
+- Inventory Eventhandler werden über Client Scripts vom Server aus gestartet und halten Items aktuell
+
+//Shop Design
+	- CLIENT: Buy oder Sell + Nachricht + addItem/removeItem (Money auf Client aktuell halten)
+	- SERVER: LOG (Money UND Item auf Server aktuell halten)
+	
+//FARM Design
+- DESIGN:
+	- CLIENT: Gather (+Item)
+	- SERVER: Log + alle Checks(+Item)
+	
+Checks:
+	- Steht der Spieler am Feld als AUSCHLUSS FAKTOR
+	- Wieviel Platz hat der Spieler im Inventar als AUSCHLUSS FAKTOR
+	- Steht ein Fahrzeug in der Nähe als POSTIVIV FACTOR (+3 Punkte)
+	- Steht ein anderer Spieler in der Nähe als POSITIV FACTOR (+ 1 Punkt)
+	- Hat der Spieler die Verarbeitungs Lizenz als POSITIV FACTOR (+1 Punkt)
+	- Belädt der Spieler ein Fahrzeug als POSITIV FACTOR (+3 Punkte)
+	- Fährt der Spieler mit einem Fahrzeug zum Verarbeiten als POSITIV FACTOR (+3 Punkte)
+	-> Unter 6 Punkten wird der Spieler als verdächtig markiert
+	
+
+
+--> Inventory ist also immer aktuell, beim Speichern kann also ein Gegencheck gemacht werden
+
+//RESULT: 
+- Komplette Sicherheit für virtuelle Items
+- Komplette Sicherheit für richtige Items
+- Komplette Sicherheit für virtuelle Lizenzen
+- Komplette Sicherheit für Geld
+- Komplette Sicherheit für Playtime

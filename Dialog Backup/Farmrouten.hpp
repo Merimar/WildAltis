@@ -1,0 +1,30 @@
+/* #Cemyqo
+$[
+	1.063,
+	["Farmrouten",[[0,0,1,1],0.025,0.04,"GUI_GRID"],0,0,0],
+	[1500,"List_Items",[1,"",["0.304062 * safezoneW + safezoneX","0.247 * safezoneH + safezoneY","0.165 * safezoneW","0.506 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1200,"Map_Map",[1,"#(argb,8,8,3)color(1,1,1,1)",["0.479375 * safezoneW + safezoneX","0.28 * safezoneH + safezoneY","0.226875 * safezoneW","0.198 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[2400,"Btn_showFeld",[1,"Feld anzeigen",["0.716563 * safezoneW + safezoneX","0.313 * safezoneH + safezoneY","0.128906 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[2401,"Btn_showVerarbeiter",[1,"Verarbeiter anzeigen",["0.716563 * safezoneW + safezoneX","0.357 * safezoneH + safezoneY","0.128906 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[2402,"Btn_showHandler",[1,"VerkÃ¤ufer anzeigen",["0.716563 * safezoneW + safezoneX","0.401 * safezoneH + safezoneY","0.128906 * safezoneW","0.033 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1001,"Text_Info2",[1,"Position auf der Map anzeigen lassen:",["0.711406 * safezoneW + safezoneX","0.28 * safezoneH + safezoneY","0.134062 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1002,"Text_Info3",[1,"Zum Farmen brauchst du:",["0.479375 * safezoneW + safezoneX","0.489 * safezoneH + safezoneY","0.0928125 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1400,"Edit_Farmtool",[1,"",["0.5825 * safezoneW + safezoneX","0.489 * safezoneH + safezoneY","0.0928125 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1003,"Text_Info4",[1,"Die kÃ¼rzeste Route ist",["0.479375 * safezoneW + safezoneX","0.522 * safezoneH + safezoneY","0.0825 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1401,"Edit_Distance",[1,"",["0.561875 * safezoneW + safezoneX","0.522 * safezoneH + safezoneY","0.0309375 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1004,"Text_Info5",[1,"Meter lang",["0.592812 * safezoneW + safezoneX","0.522 * safezoneH + safezoneY","0.0515625 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1005,"Text_Info6",[1,"Dein Farmskill:",["0.479375 * safezoneW + safezoneX","0.555 * safezoneH + safezoneY","0.0567187 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1402,"Edit_farmSkill",[1,"",["0.572187 * safezoneW + safezoneX","0.555 * safezoneH + safezoneY","0.0309375 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1006,"Text_Info7",[1,"Dein Verarbeitungsskill:",["0.479375 * safezoneW + safezoneX","0.588 * safezoneH + safezoneY","0.0876563 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1403,"Edit_processSkill",[1,"",["0.572187 * safezoneW + safezoneX","0.588 * safezoneH + safezoneY","0.0309375 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1007,"Text_Info1",[1,"Die Route ist",["0.479375 * safezoneW + safezoneX","0.247 * safezoneH + safezoneY","0.0515625 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1404,"Edit_Legal",[1,"",["0.54125 * safezoneW + safezoneX","0.247 * safezoneH + safezoneY","0.0928125 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1000,"Text_Info8",[1,"NÃ¼tzliche Informationen:",["0.479375 * safezoneW + safezoneX","0.621 * safezoneH + safezoneY","0.0876563 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1405,"Edit_Infos",[1,"",["0.479375 * safezoneW + safezoneX","0.654 * safezoneH + safezoneY","0.226875 * safezoneW","0.055 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1008,"Text_Info9",[1,"Aus",["0.479375 * safezoneW + safezoneX","0.731 * safezoneH + safezoneY","0.020625 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1406,"Edit_Aus",[1,"",["0.5 * safezoneW + safezoneX","0.731 * safezoneH + safezoneY","0.113437 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1009,"Text_Info10",[1,"wird",["0.613437 * safezoneW + safezoneX","0.731 * safezoneH + safezoneY","0.020625 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1407,"Edit_Wird",[1,"",["0.634062 * safezoneW + safezoneX","0.731 * safezoneH + safezoneY","0.113437 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1201,"Picture_Background",[1,"Images\Dialog\Background.jpg",["0.29375 * safezoneW + safezoneX","0.214 * safezoneH + safezoneY","0.567187 * safezoneW","0.572 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]]
+]
+*/

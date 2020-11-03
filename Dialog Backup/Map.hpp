@@ -1,0 +1,31 @@
+/* #Mucogy
+$[
+	1.063,
+	["Map",[[0,0,1,1],0.025,0.04,"GUI_GRID"],0,0,0],
+	[1000,"Text_Info4",[1,"Allgemein:",["0.144219 * safezoneW + safezoneX","0.863 * safezoneH + safezoneY","0.0515625 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,0.7],[-1,-1,-1,-1],"","-1"],[]],
+	[1001,"Text_Info10",[1,"Polizei:",["0.237031 * safezoneW + safezoneX","0.896 * safezoneH + safezoneY","0.0515625 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,0.7],[-1,-1,-1,-1],"","-1"],[]],
+	[1002,"Text_Info11",[1,"Feuerwehr:",["0.237031 * safezoneW + safezoneX","0.951 * safezoneH + safezoneY","0.0515625 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,0.7],[-1,-1,-1,-1],"","-1"],[]],
+	[1003,"Text_Info9",[1,"Rebell:",["0.237031 * safezoneW + safezoneX","0.841 * safezoneH + safezoneY","0.0515625 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,0.7],[-1,-1,-1,-1],"","-1"],[]],
+	[1004,"Text_Info6",[1,"Shops:",["0.0101562 * safezoneW + safezoneX","0.951 * safezoneH + safezoneY","0.0515625 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,0.7],[-1,-1,-1,-1],"","-1"],[]],
+	[1005,"Text_Info8",[1,"Legal:",["0.144219 * safezoneW + safezoneX","0.951 * safezoneH + safezoneY","0.0515625 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,0.7],[-1,-1,-1,-1],"","-1"],[]],
+	[1006,"Text_Info7",[1,"Illegal:",["0.144219 * safezoneW + safezoneX","0.918 * safezoneH + safezoneY","0.0515625 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,0.7],[-1,-1,-1,-1],"","-1"],[]],
+	[1007,"Text_Info5",[1,"DP Missions:",["0.0101562 * safezoneW + safezoneX","0.918 * safezoneH + safezoneY","0.0515625 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,0.7],[-1,-1,-1,-1],"","-1"],[]],
+	[1900,"Slider_Size",[1,"",["0.066875 * safezoneW + safezoneX","0.83 * safezoneH + safezoneY","0.144375 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[2400,"Btn_Reset",[1,"Reset",["0.0101562 * safezoneW + safezoneX","0.863 * safezoneH + safezoneY","0.0515625 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1100,"Text_SiderH1",[1,"",["0.226719 * safezoneW + safezoneX","0.797 * safezoneH + safezoneY","0.004125 * safezoneW","0.176 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[2807,"Box_DP",[1,"",["0.0823437 * safezoneW + safezoneX","0.918 * safezoneH + safezoneY","0.0154688 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1008,"Text_Info3",[1,"GrÃ¶se:",["0.0101562 * safezoneW + safezoneX","0.83 * safezoneH + safezoneY","0.0515625 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,0.7],[-1,-1,-1,-1],"","-1"],[]],
+	[1201,"Picture_Header",[1,"Header.jpg",["0.00499997 * safezoneW + safezoneX","0.423 * safezoneH + safezoneY","0.159844 * safezoneW","0.055 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1101,"Text_Info1",[1,"Genrelle Marker:",["0.0101562 * safezoneW + safezoneX","0.797 * safezoneH + safezoneY","0.211406 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1102,"Text_SiderV1",[1,"",["0.0101562 * safezoneW + safezoneX","0.896 * safezoneH + safezoneY","0.211406 * safezoneW","0.0055 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[2800,"Box_Shops",[1,"",["0.0823437 * safezoneW + safezoneX","0.951 * safezoneH + safezoneY","0.0154688 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[2801,"Box_Illegal",[1,"",["0.206094 * safezoneW + safezoneX","0.918 * safezoneH + safezoneY","0.0154688 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[2802,"Box_Legal",[1,"",["0.206094 * safezoneW + safezoneX","0.951 * safezoneH + safezoneY","0.0154688 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[2803,"Box_Allgemein",[1,"",["0.206094 * safezoneW + safezoneX","0.863 * safezoneH + safezoneY","0.0154688 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1103,"Text_Info2",[1,"Fraktions Marker:",["0.237031 * safezoneW + safezoneX","0.797 * safezoneH + safezoneY","0.0928125 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[2804,"Box_Rebell",[1,"",["0.314375 * safezoneW + safezoneX","0.841 * safezoneH + safezoneY","0.0154688 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[2805,"Box_Polizei",[1,"",["0.314375 * safezoneW + safezoneX","0.896 * safezoneH + safezoneY","0.0154688 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[2806,"Box_Feuerwehr",[1,"",["0.314375 * safezoneW + safezoneX","0.951 * safezoneH + safezoneY","0.0154688 * safezoneW","0.022 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1200,"Picture_Background",[1,"",["0.00499997 * safezoneW + safezoneX","0.786 * safezoneH + safezoneY","0.33 * safezoneW","0.198 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]]
+]
+*/

@@ -1,0 +1,31 @@
+/* #Qujuje
+$[
+	1.063,
+	["Ausweis",[[0,0,1,1],0.025,0.04,"GUI_GRID"],0,0,0],
+	[1000,"Text_Sider1",[1,"",["0.293017 * safezoneW + safezoneX","0.269 * safezoneH + safezoneY","0.413967 * safezoneW","0.0055 * safezoneH"],[-1,-1,-1,-1],[0.86,0.07,0.188,1],[-1,-1,-1,-1],"","-1"],[]],
+	[1001,"Text_Header",[1,"",["0.293017 * safezoneW + safezoneX","0.225 * safezoneH + safezoneY","0.413967 * safezoneW","0.044 * safezoneH"],[-1,-1,-1,-1],[0.1,0.1,0.16,1],[-1,-1,-1,-1],"","-1"],[]],
+	[1002,"Text_Name",[1,"Name",["0.293017 * safezoneW + safezoneX","0.291 * safezoneH + safezoneY","0.413967 * safezoneW","0.044 * safezoneH"],[1,0.83,0.247,1],[0.1,0.1,0.16,1],[-1,-1,-1,-1],"","-1"],[]],
+	[1003,"Text_Land",[1,"Land:",["0.303366 * safezoneW + safezoneX","0.489 * safezoneH + safezoneY","0.0517458 * safezoneW","0.044 * safezoneH"],[1,0.83,0.247,1],[0.1,0.1,0.16,1],[-1,-1,-1,-1],"","-1"],[]],
+	[1004,"Text_Provinz",[1,"Provinz:",["0.489651 * safezoneW + safezoneX","0.489 * safezoneH + safezoneY","0.062095 * safezoneW","0.044 * safezoneH"],[1,0.83,0.247,1],[0.1,0.1,0.16,1],[-1,-1,-1,-1],"","-1"],[]],
+	[1005,"Text_Wohnort",[1,"Wohnort:",["0.303366 * safezoneW + safezoneX","0.555 * safezoneH + safezoneY","0.0517458 * safezoneW","0.044 * safezoneH"],[1,0.83,0.247,1],[0.1,0.1,0.16,1],[-1,-1,-1,-1],"","-1"],[]],
+	[1006,"Text_Strase",[1,"StraÃŸe:",["0.303366 * safezoneW + safezoneX","0.621 * safezoneH + safezoneY","0.0517458 * safezoneW","0.044 * safezoneH"],[1,0.83,0.247,1],[0.1,0.1,0.16,1],[-1,-1,-1,-1],"","-1"],[]],
+	[1007,"Text_Hausnummer",[1,"Hausnummer:",["0.489651 * safezoneW + safezoneX","0.621 * safezoneH + safezoneY","0.062095 * safezoneW","0.044 * safezoneH"],[1,0.83,0.247,1],[0.1,0.1,0.16,1],[-1,-1,-1,-1],"","-1"],[]],
+	[1008,"Text_Postleitzahl",[1,"Postleitzahl:",["0.489651 * safezoneW + safezoneX","0.555 * safezoneH + safezoneY","0.062095 * safezoneW","0.044 * safezoneH"],[1,0.83,0.247,1],[0.1,0.1,0.16,1],[-1,-1,-1,-1],"","-1"],[]],
+	[1009,"Text_Adresse",[1,"Adresse",["0.293017 * safezoneW + safezoneX","0.423 * safezoneH + safezoneY","0.413967 * safezoneW","0.044 * safezoneH"],[1,0.83,0.247,1],[0.1,0.1,0.16,1],[-1,-1,-1,-1],"","-1"],[]],
+	[1400,"Edit_Vorname",[1,"",["0.365461 * safezoneW + safezoneX","0.357 * safezoneH + safezoneY","0.113841 * safezoneW","0.044 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1010,"Text_Vorname",[1,"Vorname:",["0.303366 * safezoneW + safezoneX","0.357 * safezoneH + safezoneY","0.0517458 * safezoneW","0.044 * safezoneH"],[1,0.83,0.247,1],[0.1,0.1,0.16,1],[-1,-1,-1,-1],"","-1"],[]],
+	[1011,"Text_Nachname",[1,"Nachname (Keine Pflicht):",["0.489651 * safezoneW + safezoneX","0.357 * safezoneH + safezoneY","0.103492 * safezoneW","0.044 * safezoneH"],[1,0.83,0.247,1],[0.1,0.1,0.16,1],[-1,-1,-1,-1],"","-1"],[]],
+	[1401,"Edit_Nachname",[1,"",["0.603492 * safezoneW + safezoneX","0.357 * safezoneH + safezoneY","0.0931425 * safezoneW","0.044 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[2100,"Combo_Land",[1,"",["0.365461 * safezoneW + safezoneX","0.489 * safezoneH + safezoneY","0.113841 * safezoneW","0.044 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[2101,"Combo_Provinz",[1,"",["0.562095 * safezoneW + safezoneX","0.489 * safezoneH + safezoneY","0.113841 * safezoneW","0.044 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[2102,"Combo_Wohnort",[1,"",["0.365461 * safezoneW + safezoneX","0.555 * safezoneH + safezoneY","0.113841 * safezoneW","0.044 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[2105,"Combo_Hausnummer",[1,"",["0.562095 * safezoneW + safezoneX","0.621 * safezoneH + safezoneY","0.062095 * safezoneW","0.044 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1402,"Edit_Postleitzahl",[1,"",["0.562095 * safezoneW + safezoneX","0.555 * safezoneH + safezoneY","0.062095 * safezoneW","0.044 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1403,"Edit_Strase",[1,"",["0.365461 * safezoneW + safezoneX","0.621 * safezoneH + safezoneY","0.113841 * safezoneW","0.044 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1012,"Text_Daten",[1,"Daten Abschicken",["0.293017 * safezoneW + safezoneX","0.687 * safezoneH + safezoneY","0.413967 * safezoneW","0.044 * safezoneH"],[1,0.83,0.247,1],[0.1,0.1,0.16,1],[-1,-1,-1,-1],"","-1"],[]],
+	[2400,"Btn_Beantragen",[1,"Ausweis beantragen",["0.313715 * safezoneW + safezoneX","0.753 * safezoneH + safezoneY","0.12419 * safezoneW","0.055 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[2401,"Btn_Lobby",[1,"Back to Lobby",["0.458603 * safezoneW + safezoneX","0.753 * safezoneH + safezoneY","0.12419 * safezoneW","0.055 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1013,"Text_Background",[1,"",["0.293017 * safezoneW + safezoneX","0.269 * safezoneH + safezoneY","0.413967 * safezoneW","0.572 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,0.8],[-1,-1,-1,-1],"","-1"],[]],
+	[1100,"Text_Tip",[1,"TIP: Ihr kÃ¶nnt euren Ausweis spÃ¤ter nur noch gegen eine GebÃ¼hr Ã¤ndern lassen",["0.603492 * safezoneW + safezoneX","0.742 * safezoneH + safezoneY","0.0931425 * safezoneW","0.088 * safezoneH"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]]
+]
+*/
