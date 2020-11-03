@@ -1,0 +1,1 @@
+Alle enthaltenen Dateien dienen zu Lehrzwecken und dürfen nicht ohne Zustimmung von mir (Merimar) verwendet werden.
