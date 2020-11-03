@@ -1,0 +1,165 @@
+//new2
+5 drawArrow !BIS_ !_drawArrow !fn_
+5 Draw3D != "isNull(finddisplay 602)};};};[]spawn{addMissionEventHandler[\"Draw3D\",{_vehList=[];_group=group player;_units=(units _group) sele" !BIS_ !fn_
+5 drawEllipse !BIS_ !_drawEllipse !fn_
+5 drawLine !BIS_ !_drawLine !fn_
+5 drawLink !BIS_ !_drawLink !fn_
+5 drawLocation !BIS_ !_drawLocation !fn_
+5 drawPolygon !BIS_ !_drawPolygon !fn_
+5 drawRectangle !BIS_ !_drawRectangle !fn_
+5 drawTriangle !BIS_ !_drawTriangle !fn_
+5 addForce !BIS_ !fn_
+5 allMapMarkers !BIS_ !fn_ !"allMapMarkers select"
+5 "forEach allMissionObjects" !BIS_ !fn_
+5 "forEach (allMissionObjects)" !BIS_ !fn_
+5 allVariables !BIS_ !fn_
+5 "hint " !BIS_ !fn_
+5 "hint str" !BIS_ !fn_
+5 "hint localize" !BIS_ !fn_
+5 customChat !BIS_ !fn_
+5 customRadio !BIS_ !fn_
+5 disableTIEquipment !BIS_ !fn_
+5 enableAimPrecision !BIS_ !fn_
+5 loadFile !BIS_ !fn_
+5 tvCurSel !BIS_ !fn_
+5 tvData !BIS_ !fn_
+5 tvSetData !BIS_ !fn_
+5 tvText !BIS_ !fn_
+5 tvSetPicture !BIS_ !fn_
+5 tvAdd !BIS_ !fn_
+5 tvClear !BIS_ !fn_
+5 tvSetCurSel !BIS_ !fn_
+5 getDirVisual !BIS_ !fn_
+5 setAnimSpeedCoef !BIS_ !fn_
+5 setWeaponReloadingTime !BIS_ !fn_
+5 setOxygenRemaining !BIS_ !fn_
+5 setVehicleAmmo !BIS_ !fn_
+5 setVelocity !BIS_ !fn_
+5 " setPos " !BIS_ !fn_
+5 ")setPos " !BIS_ !fn_
+5  setPos(" !BIS_ !fn_
+5 ")setPos(" !BIS_ !fn_
+5 " setDamage " !BIS_ !fn_ !"{\n_x setDamage 1;\n} forEach (_col nearObjects _x);"
+5 ")setDamage " !BIS_ !fn_ !"{\n_x setDamage 1;\n} forEach (_col nearObjects _x);"
+5  setDamage(" !BIS_ !fn_ !"{\n_x setDamage 1;\n} forEach (_col nearObjects _x);"
+5 ")setDamage(" !BIS_ !fn_ !"{\n_x setDamage 1;\n} forEach (_col nearObjects _x);"
+5 " setDammage " !BIS_ !fn_ !"{\n_x setDamage 1;\n} forEach (_col nearObjects _x);"
+5 ")setDammage " !BIS_ !fn_ !"{\n_x setDamage 1;\n} forEach (_col nearObjects _x);"
+5  setDammage(" !BIS_ !fn_ !"{\n_x setDamage 1;\n} forEach (_col nearObjects _x);"
+5 ")setDammage(" !BIS_ !fn_ !"{\n_x setDamage 1;\n} forEach (_col nearObjects _x);"
+5 "selectionPosition \"neck\"" !BIS_ !fn_
+5 removeMissionEventHandler !"removeMissionEventHandler [\"Draw3D\", missionNamespace getVariable [						\"BIS\"" !BIS_ !fn_
+5 endMission'endDefault' !BIS_ !fn_
+5 "\"HelicopterExploSmall\" createVehicleLocal"
+5 "\"HelicopterExploBig\" createVehicleLocal"
+5 "\"2Rnd_GBU12_LGB\" createVehicleLocal"
+5 "\"2Rnd_GBU12_LGB_MI10\" createVehicleLocal"
+5 "\"2Rnd_Mk82\" createVehicleLocal"
+5 "\"2Rnd_Mk82_MI08\" createVehicleLocal"
+5 "\"2Rnd_Missile_AA_04_F\" createVehicleLocal"
+5 "\"6Rnd_Missile_AGM_02_F\" createVehicleLocal"
+5 "\"7Rnd_Rocket_04_HE_F\" createVehicleLocal"
+5 "\"7Rnd_Rocket_04_AP_F\" createVehicleLocal"
+5 "\"4Rnd_Bomb_04_F\" createVehicleLocal"
+5 "\"2Rnd_Missile_AA_03_F\" createVehicleLocal"
+5 "\"4Rnd_Missile_AGM_01_F\" createVehicleLocal"
+5 "\"20Rnd_Rocket_03_HE_F\" createVehicleLocal"
+5 "\"20Rnd_Rocket_03_AP_F\" createVehicleLocal"
+5 "\"2Rnd_Bomb_03_F\" createVehicleLocal"
+5 "\"PylonRack_1Rnd_Missile_AA_04_F\" createVehicleLocal"
+5 "\"PylonMissile_1Rnd_Missile_AA_04_F\" createVehicleLocal"
+5 "\"PylonRack_1Rnd_AAA_missiles\" createVehicleLocal"
+5 "\"PylonMissile_1Rnd_AAA_missiles\" createVehicleLocal"
+5 "\"PylonRack_1Rnd_GAA_missiles\" createVehicleLocal"
+5 "\"PylonMissile_1Rnd_GAA_missiles\" createVehicleLocal"
+5 "\"PylonRack_1Rnd_Missile_AGM_02_F\" createVehicleLocal"
+5 "\"PylonRack_3Rnd_Missile_AGM_02_F\" createVehicleLocal"
+5 "\"PylonRack_1Rnd_LG_scalpel\" createVehicleLocal"
+5 "\"PylonMissile_1Rnd_LG_scalpel\" createVehicleLocal"
+5 "\"PylonRack_3Rnd_LG_scalpel\" createVehicleLocal"
+5 "\"PylonRack_4Rnd_LG_scalpel\" createVehicleLocal"
+5 "\"PylonRack_7Rnd_Rocket_04_HE_F\" createVehicleLocal"
+5 "\"PylonRack_7Rnd_Rocket_04_AP_F\" createVehicleLocal"
+5 "\"PylonRack_12Rnd_PG_missiles\" createVehicleLocal"
+5 "\"PylonRack_12Rnd_missiles\" createVehicleLocal"
+5 "\"PylonMissile_1Rnd_Bomb_04_F\" createVehicleLocal"
+5 "\"PylonMissile_1Rnd_Mk82_F\" createVehicleLocal"
+5 "\"PylonRack_20Rnd_Rocket_03_HE_F\" createVehicleLocal"
+5 "\"PylonRack_20Rnd_Rocket_03_AP_F\" createVehicleLocal"
+5 "\"PylonRack_19Rnd_Rocket_Skyfire\" createVehicleLocal"
+5 "\"PylonRack_1Rnd_Missile_AA_03_F\" createVehicleLocal"
+5 "\"PylonMissile_1Rnd_Missile_AA_03_F\" createVehicleLocal"
+5 "\"PylonRack_1Rnd_Missile_AGM_01_F\" createVehicleLocal"
+5 "\"PylonMissile_1Rnd_Bomb_03_F\" createVehicleLocal"
+5 "\"ATMine_Range_Mag\" createVehicleLocal"
+5 "\"4Rnd_LG_Jian\" createVehicleLocal"
+5 "\"RPG7_F\" createVehicleLocal"
+5 "\"magazine_Missile_rim116_x21\" createVehicleLocal"
+5 "\"magazine_Missile_rim162_x8\" createVehicleLocal"
+5 "\"magazine_Missile_AMRAAM_C_x1\" createVehicleLocal"
+5 "\"magazine_Missile_AMRAAM_D_x1\" createVehicleLocal"
+5 "\"magazine_Missile_BIM9X_x1\" createVehicleLocal"
+5 "\"magazine_Missile_AGM_02_x1\" createVehicleLocal"
+5 "\"magazine_Bomb_GBU12_x1\" createVehicleLocal"
+5 "\"PylonMissile_Missile_AMRAAM_C_x1\" createVehicleLocal"
+5 "\"PylonRack_Missile_AMRAAM_C_x1\" createVehicleLocal"
+5 "\"PylonRack_Missile_AMRAAM_C_x2\" createVehicleLocal"
+5 "\"PylonMissile_Missile_AMRAAM_D_x1\" createVehicleLocal"
+5 "\"PylonMissile_Missile_AMRAAM_D_INT_x1\" createVehicleLocal"
+5 "\"PylonRack_Missile_AMRAAM_D_x1\" createVehicleLocal"
+5 "\"PylonRack_Missile_AMRAAM_D_x2\" createVehicleLocal"
+5 "\"PylonMissile_Missile_BIM9X_x1\" createVehicleLocal"
+5 "\"PylonRack_Missile_BIM9X_x1\" createVehicleLocal"
+5 "\"PylonRack_Missile_BIM9X_x2\" createVehicleLocal"
+5 "\"PylonMissile_Missile_AGM_02_x1\" createVehicleLocal"
+5 "\"PylonMissile_Missile_AGM_02_x2\" createVehicleLocal"
+5 "\"PylonRack_Missile_AGM_02_x1\" createVehicleLocal"
+5 "\"PylonRack_Missile_AGM_02_x2\" createVehicleLocal"
+5 "\"PylonMissile_Bomb_GBU12_x1\" createVehicleLocal"
+5 "\"PylonRack_Bomb_GBU12_x2\" createVehicleLocal"
+5 "\"magazine_Fighter02_Gun30mm_AA_x180\" createVehicleLocal"
+5 "\"magazine_Missile_AA_R73_x1\" createVehicleLocal"
+5 "\"magazine_Missile_AA_R77_x1\" createVehicleLocal"
+5 "\"magazine_Missile_AGM_KH25_x1\" createVehicleLocal"
+5 "\"magazine_Bomb_KAB250_x1\" createVehicleLocal"
+5 "\"PylonMissile_Missile_AA_R73_x1\" createVehicleLocal"
+5 "\"PylonMissile_Missile_AA_R77_x1\" createVehicleLocal"
+5 "\"PylonMissile_Missile_AA_R77_INT_x1\" createVehicleLocal"
+5 "\"PylonMissile_Missile_AGM_KH25_x1\" createVehicleLocal"
+5 "\"PylonMissile_Missile_AGM_KH25_INT_x1\" createVehicleLocal"
+5 "\"PylonMissile_Bomb_KAB250_x1\" createVehicleLocal"
+5 "\"1Rnd_Leaflets_West_F\" createVehicleLocal"
+5 "\"1Rnd_Leaflets_East_F\" createVehicleLocal"
+5 "\"1Rnd_Leaflets_Guer_F\" createVehicleLocal"
+5 "\"1Rnd_Leaflets_Civ_F\" createVehicleLocal"
+5 "\"1Rnd_Leaflets_Custom_01_F\" createVehicleLocal"
+5 "\"1Rnd_Leaflets_Custom_02_F\" createVehicleLocal"
+5 "\"1Rnd_Leaflets_Custom_03_F\" createVehicleLocal"
+5 "\"1Rnd_Leaflets_Custom_04_F\" createVehicleLocal"
+5 "\"1Rnd_Leaflets_Custom_05_F\" createVehicleLocal"
+5 "\"1Rnd_Leaflets_Custom_06_F\" createVehicleLocal"
+5 "\"1Rnd_Leaflets_Custom_07_F\" createVehicleLocal"
+5 "\"1Rnd_Leaflets_Custom_08_F\" createVehicleLocal"
+5 "\"1Rnd_Leaflets_Custom_09_F\" createVehicleLocal"
+5 "\"1Rnd_Leaflets_Custom_10_F\" createVehicleLocal"
+5 "\"4Rnd_BombCluster_01_F\" createVehicleLocal"
+5 "\"4Rnd_BombCluster_02_F\" createVehicleLocal"
+5 "\"4Rnd_BombCluster_03_F\" createVehicleLocal"
+5 "\"PylonRack_4Rnd_BombDemine_01_F\" createVehicleLocal"
+5 "\"PylonRack_4Rnd_BombDemine_01_Dummy_F\" createVehicleLocal"
+5 "\"PylonMissile_1Rnd_BombCluster_01_F\" createVehicleLocal"
+5 "\"PylonRack_2Rnd_BombCluster_01_F\" createVehicleLocal"
+5 "\"PylonMissile_1Rnd_BombCluster_02_F\" createVehicleLocal"
+5 "\"PylonMissile_1Rnd_BombCluster_02_cap_F\" createVehicleLocal"
+5 "\"PylonMissile_1Rnd_BombCluster_03_F\" createVehicleLocal"
+5 "\"PylonRack_2Rnd_BombCluster_03_F\" createVehicleLocal"
+5 "\"magazine_Bomb_SDB_x1\" createVehicleLocal"
+5 "\"PylonRack_Bomb_SDB_x4\" createVehicleLocal"
+5 "\"magazine_Missile_AGM_KH25_x1\" createVehicleLocal"
+5 "\"magazine_Missile_AGM_KH25_x1\" createVehicleLocal"
+5 "\"magazine_Missile_AGM_KH25_x1\" createVehicleLocal"
+5 "\"magazine_Missile_AGM_KH25_x1\" createVehicleLocal"
+5 "\"magazine_Missile_AGM_KH25_x1\" createVehicleLocal"
+5 "\"magazine_Missile_AGM_KH25_x1\" createVehicleLocal"
+5 "\"magazine_Missile_AGM_KH25_x1\" createVehicleLocal"
+//1 "TZ = UZ"

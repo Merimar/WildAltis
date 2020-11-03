@@ -1,0 +1,2 @@
+//regex
+5 "" !="" !="vehicle this flyInHeight ^[0-9]{0,4}$"  !="vehicle this land '(LAND|GET IN|GET OUT|NONE)'"

@@ -1,0 +1,8 @@
+//new2
+
+5 "call BIS_fnc_log;"
+5 "spawn BIS_fnc_log;"
+5 "toString"
+5 "setVariable"
+
+5 !="\w+?_fnc_\w+? \[[\S\s]*\]"

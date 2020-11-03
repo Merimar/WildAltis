@@ -1,0 +1,2 @@
+//new2
+5 "" !B_RangeMaster_F !C_man_1 !O_medic_F !I_medic_F !I_Fieldpack_oli_Medic !O_Survivor_F !I_Survivor_F !B_Survivor_F
