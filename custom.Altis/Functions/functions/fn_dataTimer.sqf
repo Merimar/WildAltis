@@ -1,6 +1,7 @@
 
 
 dataTimer = {
+if(isNil "DATA_TIMER") exitWith {};
 private _isPrimary = param [0, false, [false]];
 private _overlay = if(_isPrimary) then {7} else {8};
 private _time = DATA_TIMER;
@@ -62,6 +63,7 @@ _overlay cutText["","PLAIN"];
 
 [] spawn {
 while {true} do {
+if(isNil "DATA_TIMER") then {continue;};
 private _handle = if(player inArea "Datacenter_Zone") then {[false] spawn dataTimer} else {objNull};
 
 waitUntil {isNull _handle};
