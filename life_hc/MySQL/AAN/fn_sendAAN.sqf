@@ -5,7 +5,7 @@ private _header = param [2, "", [""]];
 private _isHacker = [[_message, _header], _unit, remoteExecutedOwner, "fn_sendAAN"] call HC_fnc_checkSQLBreak;
 if(_isHacker) exitWith {};
 
-private _money = [getPlayerUID _unit, side _unit, "cash"] call HC_fnc_getMoney;
+private _money = [getPlayerUID _unit, "cash"] call HC_fnc_getMoney;
 if(_money < 100000) exitWith {
 _reason1 = format ["Der Spieler %1 (%2 - %3) wollte eine AAN News Nachricht schreiben, hat aber nicht genug Geld", name _unit, getPlayerUID _unit, side _unit];
 _reason2 = format ["Spieler welcher mit RemoteExecutedOwner rausgefunden wurde: %1", name _unit];
